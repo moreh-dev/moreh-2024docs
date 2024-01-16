@@ -1,0 +1,30 @@
+poweredByRetype: false
+
+input: .
+output: .retype
+
+url: https://docs.moreh.io
+
+branding:
+  logo: ./img/logo-white.png
+  title: Moreh Documentation
+  label: Docs
+
+links:
+- text: About Moreh
+  link: https://moreh.io/
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+
+
+steps:
+- uses: actions/checkout@v3
+
+- uses: retypeapp/action-build@latest
+
+
+
+hub:
+  link: https://docs.moreh.io/ 
+
+

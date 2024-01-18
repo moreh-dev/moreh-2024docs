@@ -46,7 +46,7 @@ ubuntu@vm:~$ python train.py
 
 ```
 
-### 2. RM 옵션 값 확인하기
+### 2. Large Language Model 옵션 값 확인하기
 
 현재 `get-reference-model` 에서 지원하는 옵션 값들을 보고 싶으시다면, 아무런 옵션 값을 주지 않고 실행하거나, `-h` 옵션을 주면 보실 수 있습니다.
 

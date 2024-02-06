@@ -100,7 +100,7 @@ ubuntu@vm:~$ get-reference-model resnet --download-dir ./test
 
 다음은 HOME경로에 있는 `test` 폴더에 `instsall_resnet.sh` 파일만 다운로드하는 명령어 예시입니다.
 
-```bash
+```bashㄴㅋㅋ
 ubuntu@vm:~$ get-reference-model resnet --download-only --download-dir ./test
 ```
 

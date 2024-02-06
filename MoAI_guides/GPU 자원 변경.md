@@ -5,7 +5,6 @@ order: 70
 ---
 # GPU 자원 변경하기
 
-
 ## `moreh-switch-model`
 VM에서 사용할 GPU의 개수를 조정할 수 있습니다. 다음 명령어(moreh-switch-model)를 통해 SDA를 변경할 수 있습니다. 
 

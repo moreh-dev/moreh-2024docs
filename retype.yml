@@ -28,3 +28,7 @@ hub:
   link: https://docs.moreh.com/ 
 
 
+cname: docs.moreh.com
+
+edit: 
+  repo: https://github.com/moreh-dev/moreh-2024docs

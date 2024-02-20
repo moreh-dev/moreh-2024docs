@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-01-16T04:43:04Z",
+  "created": "2024-02-20T05:20:25Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -86,10 +86,14 @@
       "path": "moai_guides/k8s-cluster에서-moreh-솔루션-사용하기/index.html"
     },
     {
+      "path": "moai_guides/large-model-학습하기/index.html"
+    },
+    {
       "path": "moai_guides/moreh-솔루션-업데이트-하기/index.html"
     },
     {
-      "path": "moai_guides/reference-model-학습하기/index.html"
+      "path": "moai_guides/reference-model-학습하기/index.html",
+      "old": true
     },
     {
       "path": "moai_guides/troubleshooting/index.html"

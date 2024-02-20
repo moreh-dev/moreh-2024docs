@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761721622966">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Web Console Components</title>
+    <meta name="title" content="Web Console Components">
+    <meta name="description" content="이 문서는 HAC Web Console로 GPU 자원 모니터링 및 관련 작업 등을 위한 가이드입니다. KTC 관리자가 HAC 클러스터의 자원 사용을 최적화하고 발생 가능한 문제를 빠르게 대응하는데 도움을 줍니다.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.moreh.io/products/moreh-web-console/components/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.moreh.io/products/moreh-web-console/components/">
+    <meta property="og:title" content="Web Console Components">
+    <meta property="og:description" content="이 문서는 HAC Web Console로 GPU 자원 모니터링 및 관련 작업 등을 위한 가이드입니다. KTC 관리자가 HAC 클러스터의 자원 사용을 최적화하고 발생 가능한 문제를 빠르게 대응하는데 도움을 줍니다.">
+    <meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/5ad76520-9827-4af7-bea6-ce08e7fecc55/Untitled.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.moreh.io/products/moreh-web-console/components/">
+    <meta property="twitter:title" content="Web Console Components">
+    <meta property="twitter:description" content="이 문서는 HAC Web Console로 GPU 자원 모니터링 및 관련 작업 등을 위한 가이드입니다. KTC 관리자가 HAC 클러스터의 자원 사용을 최적화하고 발생 가능한 문제를 빠르게 대응하는데 도움을 줍니다.">
+    <meta property="twitter:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/5ad76520-9827-4af7-bea6-ce08e7fecc55/Untitled.png">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.5.0.761721622966" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.761721622966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.761721622966" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo-white.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo-white.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Moreh Documentation</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="about-moreh">https://docs.moreh.io</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="about-moreh">https://docs.moreh.io</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <nav class="breadcrumb" aria-label="Breadcrumb">
+                                    <ol role="list">
+                                        <li class="pr-4">
+                                            <a href="../../../" class="pr-4">
+                                                Moreh Documentation Hub
+                                            </a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <a href="../../../products/" class="pr-4">
+                                                Products
+                                            </a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <span class="pr-4">
+                                                Moreh Web Console
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <a href="../../../products/moreh-web-console/components/" class="pr-4">
+                                                Web Console Components
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                
+                                <!-- Page content  -->
+<p>이 문서는 HAC Web Console로 GPU 자원 모니터링 및 관련 작업 등을 위한 가이드입니다.
+KTC 관리자가 HAC 클러스터의 자원 사용을 최적화하고 발생 가능한 문제를 빠르게 대응하는데 도움을 줍니다.</p>
+<doc-anchor-target id="web-console-components" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#web-console-components">#</doc-anchor-trigger>
+        <span>Web Console Components</span>
+    </h1>
+</doc-anchor-target>
+<ol>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Cluster List</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ol>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Admin User Manage</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Notification Manage</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+</ol>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Home GPU 모니터링</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Global 모니터링</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Job &amp; History</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>HAC 사용자 계정 관리</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>SDA 모델 관리</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>클러스터 설정</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+</ol>
+<doc-anchor-target id="1-hac-web-console-개요">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-hac-web-console-개요">#</doc-anchor-trigger>
+        <span>1. HAC Web Console 개요</span>
+    </h2>
+</doc-anchor-target>
+<p>HAC Web Console은 KT Cloud 관리자를 위한 GPU 관리 도구로, GPU 리소스 상태를 실시간으로 모니터링하여 현재 할당된 AI 가속기의 작업 상태와 클러스터 내부의 문제를 빠르게 감지하고 관리할 수 있는 플랫폼입니다.</p>
+<p>HAC Web Console을 사용하면 KTC 관리자는 다음과 같은 기능을 활용할 수 있습니다:</p>
+<ol>
+<li><strong>실시간 GPU 상태 모니터링</strong>: 서버 상태와 노드별 동작 여부를 확인하고, GPU의 가용성 및 예약 현황을 실시간으로 쉽게 파악할 수 있습니다. 또한, GPU 관련 작업 로그를 통해 성능 이슈나 문제를 신속하게 분석할 수 있습니다.</li>
+<li><strong>개발자의 니즈에 따라 GPU 자원 조정 가능:</strong> GPU 자원 분배에 관한 상태 값을 사용자의 편의와 요구에 따라 다양하게 조정할 수 있으며, 원활한 서비스 제공을 위해 필요한 조치를 즉시 취할 수 있습니다.</li>
+</ol>
+<p>위 제공된 기능들을 통해 KT Cloud 관리자는 GPU 리소스를 효율적으로 관리하고, 클러스터의 안정성을 바탕으로 사용자들에게 원활한 서비스를 제공할 수 있습니다.</p>
+<p>HAC Web Console은 여러 인터넷 브라우저를 지원하지만 크롬에서 가장 적합한 사용자 경험을 제공합니다.</p>
+<doc-anchor-target id="2-web-console-components">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-web-console-components">#</doc-anchor-trigger>
+        <span>2. Web Console Components</span>
+    </h2>
+</doc-anchor-target>
+<p>HAC GPU 사용을 위한 전용 관리 페이지입니다.</p>
+<p>Web Console의 요소들과 각 기능을 어떻게 사용할 수 있는지 설명합니다.</p>
+<ol>
+<li><a href="https://www.notion.so/HAC-Web-Console-KT-03033de2d8a84ab18b502a3ccf9fc54a?pvs=21" class="outbound" target="_blank"><span>Cluster List</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>GPU 클러스터의 상태 및 실시간 사용 정보를 지표로 나타냅니다.</li>
+<li>Admin User Manage (관리자 정보 변경 및 권한 설정하기)</li>
+<li>Notification Manage (전체 알림 관리하기)</li>
+</ul>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Home GPU 모니터링</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>각각의 클러스터에 포함된 GPU 자원의 종합적인 모니터링이 가능하며 HAC 사용자에게 제공되는 GPU를 관리할 수 있습니다.</li>
+</ul>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Global 모니터링</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>어떤 페이지에서든 빠르게 전체 GPU 클러스터에 포함된 GPU Node 들의 상태를 모니터링할 수 있습니다.</li>
+</ul>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>Job &amp; History</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>클러스터 내 GPU를 사용하는 작업을 관리하고 작업 진행 상황과 작업에 관련된 로그 및 세부사항을 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>HAC 사용자 관리</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>각 클러스터에 포함된 모든 HAC 사용자 정보(사용자 그룹 수, 누적 사용량, 전체 SDA 개수 등)를 제공합니다.</li>
+</ul>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>SDA 모델 관리</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>각 클러스터에서 HAC 사용자에게 제공되는 SDA Model을 관리할 수 있습니다.</li>
+</ul>
+</li>
+<li><a href="https://www.notion.so/HAC-Moreh-Cloud-Platform-KT-cc7296411cc84b0a93ae215a9c53b8d7?pvs=21" class="outbound" target="_blank"><span>클러스터 설정</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>
+<ul>
+<li>각 클러스터 당 모레 솔루션의 버전을 관리할 수 있습니다.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="1-cluster-list">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-cluster-list">#</doc-anchor-trigger>
+        <span>1. Cluster List</span>
+    </h3>
+</doc-anchor-target>
+<p>로그인 인증 정보로 로그인하여 HAC 웹콘솔에 접속하면 첫 페이지가 다음과 같이 표시됩니다.</p>
+<p>이 페이지에서 클러스터의 개요 정보를 확인하고, 클러스터 목록을 통해 개별 클러스터로 진입할 수 있습니다. 또한 관리자 계정의 개인정보와 권한을 설정할 수 있습니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/5ad76520-9827-4af7-bea6-ce08e7fecc55/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>상단 우측의 [Notification Manage] <strong>버튼</strong>과 [Admin User Manage] <strong>버튼</strong>을 클릭한 후 각 알람 관리 페이지와 Admin 사용자 관리 페이지로 이동하여 Admin 사용자 개인정보와 권한 및 웹콘솔의 모든 알림과 Admin 사용자를 관리할 수 있습니다.</p>
+<p><strong>Cluster List</strong>는 HAC Web Console의 모든 클러스터에 대한 통합 개요 정보와 특정 클러스터의 세부 정보(패키지 배포 서버 상태, SDA Manager 상태, GPU의 클러스터 사용률 등)를 제공합니다.</p>
+<p><strong>Cluster 추가하기</strong></p>
+<ol>
+<li><p>웹 콘솔의 첫 화면에서 아래 클러스터 추가 [+ ADD Cluster] 아이콘을 클릭합니다.</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/b21885b5-889d-4567-a7e6-61ef07aeb8a7/Untitled.png" alt="Untitled" /></p>
+</li>
+<li><p>아래 모달 창이 뜨면 추가할 클러스터 정보(이름, IP 주소, Description)를 입력합니다.</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/d21d45dc-5f9f-4831-9e04-3faf54ed66d4/Untitled.png" alt="Untitled" /></p>
+</li>
+</ol>
+<ul>
+<li>Cluster 이름, IP 주소는 필수 입력 항목입니다.</li>
+<li>개별 클러스터 삭제 시 확인 모달에서 [삭제] 버튼 클릭</li>
+</ul>
+<p><strong>Admin User Manage (관리자 개인 정보 변경 및 권한 설정하기)</strong></p>
+<p>사용자 관리 페이지에서 왼쪽 사이드바의 [Permission Manage]를 클릭하면 아래와 같이 Admin User List가 나타납니다. Admin User List에는 사용자 프로필 아이콘, 관리자 ID, 관리자 이름, 권한 Type 정보와 Master 권한의 관리자가 상호작용가능한 아이콘이 제공됩니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/9b2d41d9-422f-4d85-a0c6-c4ea38c6730a/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/0e39d2f3-53c2-4525-a35a-656a1b10e88b/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>Admin User List에서 특정 관리자의 첫번째 Interaction 아이콘을 클릭하면 관리자에 대한 정보를 수정할 수 있습니다. Master 계정의 사용자는 계정(General, Master 모두)에 대한 정보를 수정 가능 하며, General 계정의 사용자는 개인 계정 정보만 수정 가능합니다.</p>
+<p>아래와 같은 ****모달이 뜨면 다음 정보를 입력합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/b4f0d2ac-fad3-4438-8c0e-93a3273d68d6/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ol>
+<li>프로필 사진
+<ul>
+<li>선택 사항이며 미입력시 디폴트 아이콘이 제공됩니다.</li>
+<li>권장사이즈: 120px(width) * 120px(height) 또는 1:1 비율</li>
+</ul>
+</li>
+<li>관리자 ID
+<ul>
+<li>메일 주소이며 한 번 생성된 후에는 변경 불가능합니다.</li>
+</ul>
+</li>
+<li>비밀번호 (필수 입력 사항)
+<ol>
+<li>영문, 숫자 또는 대문자 포함 제한이 없습니다.</li>
+</ol>
+</li>
+<li>관리자 이름 (필수 입력 사항)</li>
+<li>관리자 권한
+<ul>
+<li>Master 권한, General 중 선택합니다.
+<ul>
+<li>Master 계정 : Moreh에서 직접 만들어서 제공하는 계정이며 General, Master 계정 모두 생성과 수정 가능</li>
+<li>General 계정 : 개인 계정 정보만 수정 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/eeb88caf-b07b-4f28-9ec5-b7c0149e9578/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/2ad0ff11-7820-4e82-943b-57b8275ab565/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>두번째 Interaction 아이콘을 클릭하면 해당 관리자의 권한을 General/Master로 변경할 수 있습니다.  <span class="docs-emoji">&#x2714;&#xFE0F;</span>Master 권한의 관리자만 변경 가능합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/5dd2b90d-cd34-480f-8d0c-c7038bf2c599/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>세번째 휴지통 모양의 Interaction 아이콘을 클릭하면 해당 관리자를 삭제할 수 있습니다. <span class="docs-emoji">&#x2714;&#xFE0F;</span>Master 권한의 관리자만 삭제 가능합니다.</p>
+<p><strong>Admin 관리자 계정 추가하기</strong></p>
+<p><span class="docs-emoji">&#x2714;&#xFE0F;</span>Master 권한의 관리자만 새로운 Admin 계정을 추가할 수 있습니다.</p>
+<p>Admin User List 상단의 [+ Add] <strong>버튼을</strong> 클릭하면 Modify Personal Info(Admin 개인 정보 수정) 모달과 동일한 모달이 아래와 같이 등장합니다. 모달에 추가할 관리자 정보를 입력합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/4109b4dd-f98f-4a5a-a652-e185768c81f3/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ol>
+<li>프로필 사진
+<ul>
+<li>선택 사항이며 미입력시 디폴트 아이콘이 제공됩니다.</li>
+<li>권장사이즈: 120px(width) * 120px(height) 또는 1:1 비율</li>
+</ul>
+</li>
+<li>관리자 ID
+<ul>
+<li>메일 주소이며 한 번 생성된 후에는 변경 불가능합니다.</li>
+</ul>
+</li>
+<li>비밀번호 (필수 입력 사항)
+<ol>
+<li>영문, 숫자 또는 대문자 포함 제한이 없습니다.</li>
+</ol>
+</li>
+<li>관리자 이름 (필수 입력 사항)</li>
+<li>관리자 권한
+<ul>
+<li>Master 권한, General 중 선택합니다.
+<ul>
+<li>Master 계정 : Moreh에서 직접 만들어서 제공하는 계정이며 General, Master 계정 모두 생성과 수정 가능</li>
+<li>General 계정 : 개인 계정 정보만 수정 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Notification Manage (전체 알림 관리하기)</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/167a24f0-cd42-42b5-b0da-78e3c0ef811d/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>Notification Manage 페이지의 Notification List(클러스터 알람 목록)에 [+ Add Filter] 버튼을 클릭하면 다음 필터 패널이 나타납니다. 알림 특정 태그를 추가/제외 가능합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/e5407889-7989-4c34-8150-ab395ba89b86/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li>모니터링할 특정 기간에 대해 년, 월, 일 시간으로 시작 날짜와 종료 날짜를 입력합니다.</li>
+<li>알림리스트 중 모니터링할 클러스터를 선택 가능합니다.</li>
+<li>제공되는 알림 분류 중 선택 가능합니다.
+<ol>
+<li>GPU 에러
+<ul>
+<li>물리 GPU에 에러가 발생한 경우</li>
+</ul>
+</li>
+<li>GPU 부족
+<ul>
+<li>클러스터에 배정된 GPU 자원이 부족하여 대기열 속 다음 작업을 진행하지 못하는 경우</li>
+</ul>
+</li>
+<li>GPU 온도
+<ul>
+<li>GPU 디바이스 온도가 86~93°C인 경우 주의 단계 알림</li>
+<li>GPU 디바이스 온도가 94~97°C인 경우 경고 단계 알림</li>
+<li>GPU 디바이스 온도가 98~°C인 경우 조치 단계 알림</li>
+</ul>
+</li>
+<li>작업 에러
+<ul>
+<li>진행 중이던 작업이 에러가 발생하여 멈춘 경우</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<doc-anchor-target id="2-home-gpu-monitoring">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-home-gpu-monitoring">#</doc-anchor-trigger>
+        <span>2. Home GPU Monitoring</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/94847bc5-22a8-41f4-8264-55ee20d911c4/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li><p><strong>Overview 클러스터 개요</strong></p>
+<ul>
+<li>해당 클러스터에 포함되어 있는 전체 노드 수
+<ul>
+<li>Node 개수와 GPU 자원의 양으로 나타냄</li>
+</ul>
+</li>
+<li>현재 클러스터에서 사용 중인 노드 수
+<ul>
+<li>사용중인 Node 개수와 GPU 자원의 양을 전체 대비 백분율로 나타냄</li>
+</ul>
+</li>
+<li>현재 클러스터에서 사용 불가능한 노드 수
+<ul>
+<li>전체 노드 중 사용 불가능한 노드와 GPU 자원의 양을 전체 대비 백분율로 나타냄</li>
+</ul>
+</li>
+<li>평균 사용 중인 노드 수
+<ul>
+<li>전일 기준으로 1주일 동안 평균 사용한 노드 수와 GPU 디바이스 수 (전체 대비 백분율)</li>
+</ul>
+</li>
+<li>HAC Web Console 효율성 (Service Efficiency)
+<ul>
+<li>전체 사용자 계정이 선택한 SDA Model의 GPU 자원의 총합  / 평균 사용중인 GPU 자원의 양 = %</li>
+</ul>
+</li>
+<li>패키지 배포 서버 상태 (원활/불량)</li>
+<li>SDA Manager 상태 (원활/불량)</li>
+<li>해당 클러스터를 사용중인 HAC 사용자 계정 개수
+<ul>
+<li>링크 클릭시 HAC 사용자 관리 페이지로 이동합니다.</li>
+</ul>
+</li>
+<li>사용 가능한 노드 개수</li>
+<li>GPU 디바이스 종류의 개수
+<ul>
+<li>현재 해당 클러스터에 등록된 물리적인 GPU 제품 종류의 개수
+<ul>
+<li>(예시) Group A 클러스터에 등록된  A100, V100, MI250 세 종류가 있을 경우 <strong>GPU 디바이스 종류의 개수: 3개</strong>로 표현</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Node Monitor</strong></p>
+<ul>
+<li>모니터링 리스트는 Grid(바둑판 뷰)와 List(목록형 뷰)로 제공되며 사용중인 노드와 이름 순서로 정렬됩니다.</li>
+</ul>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/260d542a-8f64-4644-b6cd-4bff921e8699/Untitled.png" alt="Untitled" /></p>
+<ul>
+<li><p><strong>Node - Grid</strong>에서 노드 1개의 정보는 아래와 같이 나타납니다.</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/ae932aae-987a-4fef-a64c-ea435c467841/Untitled.png" alt="Grid(바둑판 뷰)의 노드 1개의 이미지" /></p>
+<p>Grid(바둑판 뷰)의 노드 1개의 이미지</p>
+<ul>
+<li>노드 이름 (호스트 이름)</li>
+<li>노드가 소속된 GPU 디바이스 그룹</li>
+<li>Description (Cluster 추가 시 Admin 관리자가 입력한 노드 사용 관련 내용 )</li>
+<li>CPU 온도와 노드 메모리 사용률 정보</li>
+<li>GPU 정보
+<ul>
+<li>00번 부터 07번까지 각 GPU 디바이스로 구분</li>
+<li>최상단 디바이스 번호에 토큰 포함관계가 표현
+<ul>
+<li><code v-pre>00~05</code>로 그룹핑되어있는 부분이 같은 사용자가 사용하는 노드입니다. 그룹핑된 부분에 마우스 오버시 해당 디바이스 묶음을 사용하는 토큰에 대한 정보가 툴팁으로 제공됩니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GPU 메모리 정보
+<ul>
+<li>해당 디바이스 메모리의 현재 온도와 사용률을 나타냄</li>
+<li>GPU 디바이스의 사용 현황이 색상으로 표현됨
+<ul>
+<li>초록 - 사용중 (Processing)</li>
+<li>회색 - 대기중 (Idle)</li>
+<li>빨간색 - 사용 불가 (Shutdown)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Node List</strong> 에서 모니터링 리스트에서 제공하는 노드 정보는 위 Node - Grid(바둑판 뷰)의 셀과 동일합니다.</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/7c14fea2-a540-449a-aa4d-7a03f0541046/Untitled.png" alt="Untitled" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>노드 목록에 필터링 적용하기</strong></p>
+<p>Add Filter를 적용할 경우 선택된 필터링 내용을 해시태그 형태로 제공합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/6343585b-a293-4d91-98ef-f4b90e6df705/Screen_Shot_2023-07-30_at_4.19.00_PM.png" alt="Screen Shot 2023-07-30 at 4.19.00 PM.png">
+    <figcaption class="caption">Screen Shot 2023-07-30 at 4.19.00 PM.png</figcaption>
+</figure>
+</p>
+<p>리스트 우측 상단에 다음 [+ Add Filter] 버튼을 클릭하여 아래 모달에 노드 목록에 표시될 항목을 선택합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/8ed1e862-02bf-4f32-82ad-d03cdb355547/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li><p>GPU 현재 상태를 다음 3가지로 구분하여 선택된 상태에 해당하는 노드가 필터링 결과로 제공됩니다.</p>
+<ul>
+<li>대기중 (Idle)</li>
+<li>사용중 (Processing)</li>
+<li>사용 불가 (Shutdown)</li>
+</ul>
+</li>
+<li><p>GPU 종류</p>
+<ul>
+<li>현재 해당 클러스터에 존재하는 사용자가 설정한 GPU 종류에 따라 필터링 가능하며 체크 박스 형태로 여러개 선택 가능합니다.</li>
+</ul>
+</li>
+<li><p>노드 그룹</p>
+<ul>
+<li>전체 노드 그룹, Group A, Group B, Group C에 해당하는 노드가 필터링 결과로 제공됩니다.</li>
+</ul>
+</li>
+<li><p>User</p>
+<ul>
+<li>전체 사용자 계정이 제공되며 특정 계정을 추가하거나 제외할 수 있습니다.</li>
+</ul>
+</li>
+<li><p><strong>Node Group</strong></p>
+</li>
+</ul>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/a1b5ba4a-075c-44fe-92ec-8da93ee5c5f8/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li>Node Group은 다음 정보를 제공합니다.
+<ul>
+<li>Node Group 이름</li>
+<li>설명</li>
+<li>호함된 노드 수</li>
+<li>포함된 디바이스 종류</li>
+<li>연관된 SDA 모델 그룹</li>
+<li>상호작용
+<ul>
+<li>삭제</li>
+<li>수정</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>노드 그룹 추가하기</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/bc98bbd0-af3a-48d5-952a-ff3dcee8322a/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>Node Group List 우측 상단에 [+ Add] 버튼을 클릭한 후 아래 모달에서 필요한 정보를 입력합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/d892353e-9cd8-4f51-aa57-29ae2da50ce0/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li>노드 그룹 이름 (필수 입력 사항)</li>
+<li>그룹에 대한 설명</li>
+<li>포함된 노드 개수</li>
+<li>선택된 노드리스트
+<ul>
+<li>클러스터에 포함된 전체 노드 리스트와 선택된 노드 리스트가 제공되며 검색, 체크박스 선택 등을 통해서 상호작용이 가능합니다.</li>
+<li>특정 노드 이름 혹은 그룹이름에 대해 검색창에 찾아볼 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="3-global-모니터링">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-global-모니터링">#</doc-anchor-trigger>
+        <span>3. Global 모니터링</span>
+    </h3>
+</doc-anchor-target>
+<p>Global Monitoring 페이지는 사용자가 HAC Web Console 내부에서 전체 클러스터를 빠르게 시각적으로 모니터링할 수 있도록 도와주는 패널입니다. 로컬 화면의 좌측 Navigation 바 하단에 위치한 글로벌 모니터링 아이콘을 클릭하면 다음 페이지가 나타납니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/b3de0a9d-259a-49db-bd48-20591c14d534/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>Global Monitoring 페이지의 전체 클러스터 개요와 각 클러스터는 다음과 같은 정보를 포함합니다.</p>
+<ul>
+<li><strong>Overview - All Clusters (클러스터 개별 개요)</strong>
+<ul>
+<li>전체 노드 수</li>
+<li>사용중인 노드 수</li>
+<li>사용 가능한 노드 수</li>
+<li>사용 불가능한 노드 수</li>
+<li>평균 사용 노드 수</li>
+<li>서비스 효율성</li>
+<li>패키지 배포 서버</li>
+<li>SDA Manager서버</li>
+</ul>
+</li>
+<li><strong>클러스터 모니터링</strong>
+<ul>
+<li>클러스터의 각 노드에 마우스 오버시 현상태에 따라 아래 정보가 제공됩니다.
+<ul>
+<li>초록 Processing - 해당 노드를 사용하는 사용자 계정 정보와 사용시간</li>
+<li>빨강 Shutdown -  해당 노드를 사용했던 사용자 계정 정보와 셧다운된 시각</li>
+<li>회색 Idle - 해당 노드가 포함된 GPU 그룹 정보</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/9b3f9c1a-e4cb-45d8-908b-06c1b63bf444/Untitled.png" alt="하나의 노드를 한명의 HAC 사용자 사용했을때 툴팁">
+    <figcaption class="caption">하나의 노드를 한명의 HAC 사용자 사용했을때 툴팁</figcaption>
+</figure>
+</p>
+<p>하나의 노드를 한명의 HAC 사용자 사용했을때 툴팁</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/b88589aa-a9c3-4781-8207-37e1870b6897/Untitled.png" alt="하나의 노드를 여러명의 HAC 사용자 사용했을때 툴팁">
+    <figcaption class="caption">하나의 노드를 여러명의 HAC 사용자 사용했을때 툴팁</figcaption>
+</figure>
+</p>
+<p>하나의 노드를 여러명의 HAC 사용자 사용했을때 툴팁</p>
+<p>노드들 중 간혹 두 명 이상의 HAC 사용자가 하나의 노드를 나누어서 사용하는 경우가 있습니다.</p>
+<p>이런 경우 노드에 마우스 오버 시 나오는 정보 툴팁도 해당 노드를 사용하는 HAC 사용자가 한명일 때와 여러 명일 때가 구분됩니다. 예를 들어 3개의 노드와 4개의 GPU를 사용하는 경우 해당 HAC 사용자가 사용하는 3개의 노드에 마우스 오버하면 한 명의 유저에 대한 툴팁만 나오겠지만, 4번째 노드인 GPU 4개를 사용하는 노드에 마우스를 오버하면 해당 노드를 나누어서 사용하는 모든 엔드 유저에 대한 정보가 툴팁에 제공됩니다. 또한 툴팁에 제공되는 모든 엔드유저가 사용 중인 노드 시각화 또한 하이라이트 됩니다.</p>
+<p>따라서 하나의 노드를 두 명 이상의 HAC 사용자가 사용하는 경우에는 해당 노드에 마우스 오버 시 아래 툴팁 이미지와 같이 사용중인 노드 이름과 현재 상태(Processing/Idle/Shutdown), 사용시간, GPU index 번호, 해당 노드를 나누어서 사용하는 모든 엔드 유저에 대한 정보가 나타납니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/6f861595-a3cc-4071-a410-79e12748a436/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="4-job--history">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-job--history">#</doc-anchor-trigger>
+        <span>4. Job &amp; History</span>
+    </h3>
+</doc-anchor-target>
+<p>개별 클러스터에서 GPU를 사용하여 해당 클러스터에서 진행중인 작업(Job)과 작업 히스토리를 확인하고 GPU 배정이 필요한 작업 간의 우선 순위를 조정하여 먼저 할당 받을 수 있는 페이지입니다. 작업 목록에서 개별 작업 항목을 클릭하면 세부 로그를 확인할 수 있는 페이지로 이동합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/8d2b6efc-144f-4d7f-9895-3926bb6c0efd/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li><p><strong>Overview (작업 개요)</strong></p>
+<ul>
+<li>현재 사용 가능한 디바이스와 에러가 발생한 작업수 등을 표시됩니다.</li>
+</ul>
+</li>
+<li><p><strong>Job List (작업목록)</strong></p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/fa7b41f7-aa23-4dcc-8672-a2f50a28dec9/Untitled.png" alt="Untitled" /></p>
+<p>작업 목록에는 다음 정보가 표시됩니다.</p>
+<ul>
+<li><p>Id (아이디)</p>
+<ul>
+<li>해당 작업이 가지는 고유 ID 정보</li>
+</ul>
+</li>
+<li><p>User (사용자)</p>
+</li>
+<li><p>Job Priority (작업 우선순위)</p>
+<ul>
+<li>작업 우선순위는 Job Queue에서 대기중인 Job중에서 할당받는 순서를 결정합니다.</li>
+<li>사용자 계정 별로 기본 우선순위가 있으며 Queue에서 우선순위가 가장 높은 Job이 먼저 GPU 노드를 할당 받을 수 있습니다.</li>
+</ul>
+</li>
+<li><p>Status (현재 상태)</p>
+<ul>
+<li>Running -&gt; 현재 진행중인 작업으로 GPU 사용중</li>
+<li>Queued-&gt; 클러스터에 해당 작업에 필요한 GPU가 부족하여 진행중이지 못한 작업</li>
+</ul>
+</li>
+<li><p>GPUs (SDA Model 이 사용중인 GPU 개수)</p>
+</li>
+<li><p>MAF ver (모레 솔루션 버전)</p>
+</li>
+<li><p>Framework (사용 프레임워크 버전)</p>
+</li>
+<li><p>Request Time (작업 요청된 시간)</p>
+</li>
+<li><p>Start Time (시작 시간)</p>
+</li>
+<li><p>Running Time (진행 시간)</p>
+<ul>
+<li>시,분, 일 변화 단위로 따라가기 (사용한지 25시간 -&gt; <strong>1D 1H</strong>로 표기)</li>
+</ul>
+</li>
+<li><p>Waiting Time (대기중인 시간)</p>
+</li>
+<li><p>Interaction (상호작용 아이콘 - 우선순위 변경하기, 특정 작업 취소하기)</p>
+</li>
+<li><p>개별 Job 항목을 클릭하면 확인할 수 있는 작업 로그</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/355bd9eb-8965-466b-b31b-4fb93eeffa84/Untitled.png" alt="Untitled" /></p>
+<ul>
+<li>전체 노드 혹은 노드 별로 확인이 가능합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>사용자 Job 대기열 우선순위 설정하기</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/24e023f1-c3c5-4e1e-a83c-8df60d863cbb/Untitled-8.png" alt="Untitled-8.png">
+    <figcaption class="caption">Untitled-8.png</figcaption>
+</figure>
+</p>
+<p>리스트에서 각 작업의 우선순위 변경 아이콘을 클릭하면 모달을 통해 작업 우선순위 변경이 가능합니다.</p>
+<ul>
+<li>작업 우선순위(Priority)
+<ul>
+<li>작업 우선순위는 Job Queue에서 대기중인 Job중에서 할당받는 순서를 결정합니다.
+<ul>
+<li>우선순위 값(-99~99 사이의 정수)이 <strong>99로 갈수록 우선순위가 높으며 먼저 GPU 노드가 할당</strong>됩니다.</li>
+</ul>
+</li>
+<li>Job 목록에 사용자가 요청한 작업은 사용자의 우선순위에 해당되는 기본값을 가지고 들어오며, 만약 작업이 대기열에 들어가게 되면 해당 우선순위 값을 첫 번째 정렬 값으로 사용하여 대기열에 적용됩니다. 이렇게 정렬된 대기열(Queue)에 있는 각 작업의 우선순위를 수동으로 변경할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/73469fe5-6a72-4ea6-9dca-563001f21e69/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/00f337b3-408f-4356-a426-5ad3ea91dda4/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p><strong>History List (작업 히스토리)</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/504ba58c-1cdb-4d46-a4d1-aecf67c22968/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>History List에는 가장 최근에 종료된 작업순으로 정렬됩니다.</p>
+<p>전체적으로 작업 목록(Job List)와 동일한 값을 제공하며 상태값(Status)만 Completed(완료), Expired(HAC사용자 또는 Admin의 input 없이 모종의 에러로 종료), Canceled(HAC 사용자가 수동으로 종료) 로 제공됩니다.</p>
+<doc-anchor-target id="5-end-userhac-사용자-관리하기">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-end-userhac-사용자-관리하기">#</doc-anchor-trigger>
+        <span>5. End User(HAC 사용자) 관리하기</span>
+    </h3>
+</doc-anchor-target>
+<p>User Manage 페이지에서는 사용자 관리 페이지에서는 해당 클러스터에 포함된 모든 HAC 사용자를 관리할 수 있습니다. 상단에 있는 전체 유저 개요 정보와 하단의 User List(사용자 목록)이 제공됩니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/eebeffee-7134-4342-9cfe-ef4cd47f4ca1/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li><strong>Overview (전체 유저 개요 정보)</strong>
+<ul>
+<li>전체 유저 수</li>
+<li>사용자 그룹 수</li>
+<li>총 누적 사용량 (GPU를 사용한 시간)</li>
+<li>전체 SDA 수</li>
+</ul>
+</li>
+<li><strong>User List (사용중 - 대기중 순서로 정렬)</strong>
+<ul>
+<li>사용자 이름 (User)</li>
+<li>소속 그룹 (User Group)
+<ul>
+<li>Admin 사용자가 지정한 HAC 사용자 그룹</li>
+</ul>
+</li>
+<li>MAX SDA
+<ul>
+<li>HAC 사용자에게 허용되는 SDA 개수
+<ul>
+<li>값이 1인 경우 허용된 Multi Use 값이 제공됩니다.</li>
+<li>값이 1이 아닌경우 해당 MAX SDA 값만 제공됩니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>우선 순위 (Priority)
+<ul>
+<li>작업 우선순위는 기본 값(0)과 작업 목록에서 조정 가능한 값으로 구분됩니다.</li>
+<li>사용자가 작업을 시작하면 해당 작업에 우선순위가 부여되며, 이 우선순위는 작업 목록에서 사용자 우선순위와 별개로 조정할 수 있습니다. (기본 값 = 0)</li>
+</ul>
+</li>
+<li>최근 실행 시간 (Recent Use)</li>
+<li>누적 사용량 (Total Usage)</li>
+<li>HAC 사용자 SDA 번호
+<ul>
+<li>HAC 사용자에게 제공되는 SDA의 고유 ID</li>
+</ul>
+</li>
+<li>사용중인 SDA Model</li>
+<li>현재 상태
+<ul>
+<li>GPU 사용중</li>
+<li>GPU 사용 안하는중</li>
+<li>GPU 작업 대기중</li>
+</ul>
+</li>
+<li>상호작용 아이콘
+<ul>
+<li>사용자 정보 편집</li>
+<li>사용자 삭제</li>
+<li>SDA 추가하기</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>HAC 사용자 추가하기</strong></p>
+<p>User List에 새로운 HAC 사용자를 추가하려면 우측 상단에 **[+ Add User]**버튼을 클릭 후 아래 모달에서 다음 정보를 입력합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/bab32d7d-ceb1-4016-872a-601e25ce5f96/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<ul>
+<li>사용자 이름 (필수 입력 사항)</li>
+<li>사용자 우선순위
+<ul>
+<li>-99~99사이의 숫자 (default=0)
+<ul>
+<li>99로 갈수록 우선순위가 높으며 먼저 GPU 노드가 할당됩니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Max SDA 수 (필수 입력사항)
+<ul>
+<li>(default = not selected)</li>
+<li><code v-pre>Max SDA = 1</code>인 경우 Max Multi Use 활성화</li>
+<li><code v-pre>Max SDA &gt; 1</code>인 경우 Max Multi Use 비활성화</li>
+</ul>
+</li>
+<li>Max Multi Use: 1개의 SDA로 <em>n</em>번 GPU를 할당할 때 <em>n</em>의 최대값
+<ul>
+<li><code v-pre>Max SDA = 1</code>인 경우에만 사용 가능합니다.</li>
+</ul>
+</li>
+<li>사용자 환경변수 설정
+<ul>
+<li>Key-Value 쌍으로 입력합니다.</li>
+</ul>
+</li>
+</ul>
+<p><strong>HAC 사용자 정보 삭제하기</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/6fc8a830-1893-4bd4-b50c-c6a1c69363f3/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>좌측 휴지통 모양 아이콘을 클릭해서 사용자 정보를 삭제할 수 있으며 삭제 후에는 기본 정보를 불러올 수 없습니다.</p>
+<p><strong>사용자 계정 정보 변경하기</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/0e39d2f3-53c2-4525-a35a-656a1b10e88b/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>User List 에서 특정 HAC 사용자에 해당하는 첫번째 Interaction 아이콘을 클릭하면 사용자 정보를 수정할 수 있습니다. 아래와 같은 ****모달이 뜨면 다음 정보를 입력합니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/af374c89-9991-4b6c-8e26-40b781a166a5/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>사용자 정보 변경시 아래 정보를 입력합니다.</p>
+<ul>
+<li>User Name</li>
+<li>MAX SDA 수
+<ul>
+<li>default value = 1</li>
+<li>하단의 SDA Model 선택은 한 개만 가능하고 추가 버튼 비활성화</li>
+</ul>
+</li>
+<li>SDA Model * N
+<ul>
+<li>하단의 드롭다운 버튼을 클릭해서 max SDA에서 설정한 N개의 SDA Model 추가 가능</li>
+</ul>
+</li>
+<li>사용자 우선순위
+<ul>
+<li>-99~99 사이의 숫자로 설정</li>
+<li>default value = 0</li>
+</ul>
+</li>
+</ul>
+<p><strong>사용자 환경변수 설정하기</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/3dcdfefa-e5a3-461b-beef-bba6ec2cc38f/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p>User List 에서 특정 HAC 사용자에 해당하는 첫번째 Interaction 아이콘을 클릭하면 사용자 환경변수를 설정할 수 있습니다. 아래와 같은 ****모달이 뜨면 Key 와 Value 값을 입력합니다.</p>
+<p>여러 Key-Value 쌍을 추가할 수 있으며 한 번 입력한 환경변수를 삭제할 수 있습니다.</p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/ab1ca279-424a-452f-aae6-043c1b195042/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+<p><strong>사용자 그룹 설정하기</strong></p>
+<p><figure class="content-center">
+    <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/225b5024-c3be-431b-9140-5a3566eec327/800446f3-20da-450b-b6c8-bd4f1429777d/Untitled.png" alt="Untitled">
+    <figcaption class="caption">Untitled</figcaption>
+</figure>
+</p>
+
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../../tags/guide/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>guide</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/moreh-dev/moreh-2024docs/blob/main/products/Moreh Web Console/Components.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../products/moreh-web-console/overview/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Overview</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../products/platform-cloud-service/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Platform Cloud Service</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Web Console Components", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

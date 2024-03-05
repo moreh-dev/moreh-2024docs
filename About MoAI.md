@@ -10,7 +10,7 @@ order: 200
 
 MoAI(Moreh AI appliance for AI accelerators) Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능한 AI 플랫폼으로, 수천 대 이상의 서로 다른 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있습니다.
 
-![](./img/01.svg)
+![](./img/overview_01.png)
 
 ## MoAI Platform 핵심 기술
 
@@ -32,7 +32,9 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 # MoAI Platform 특장점
 
 ## **1. 다양한 가속기, 다중 GPU 지원**
-![](./img/02.svg)
+
+-[](./img/overview_02.png)
+
 - MoAI 플랫폼은 다양한 AI 가속기를 지원하며, GPU의 종류에 관계없이 학습과 추론 작업을 실행할 수 있습니다.
     - LLM 대형 언어 모델(Llama2, GPT-3) 학습 및 추론
     - 생성형 AI 모델 학습 (LaMDA, PaLM, GPT, Text-to-Video 등)
@@ -40,7 +42,7 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 
 
 ## **2. GPU 가상화**
-![](./img/03.svg)
+-![](./img/02.svg)
 - MoAI 플랫폼의 가상화 기능은 수천 개의 GPU를 하나의 GPU처럼 작동할 수 있게 합니다.
 - 모델링 및 최적화 프로세스를 간소화하여 AI 엔지니어에게 원활하고 효율적인 경험을 제공합니다.
     - 필요에 따라 GPU 자원을 확장하거나 축소할 수 있어 서비스의 확장성을 높일 수 있습니다.
@@ -49,7 +51,7 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 
 
 ## **3. 동적 GPU 할당**
-![](./img/board.svg)
+-![](./img/board.png)
 
 - MoAI 플랫폼에서는 AI 엔지니어가 필요한 만큼의 GPU 자원으로만 딥러닝 학습 및 추론을 시작할 수 있습니다.
     - GPU 리소스는 연산 실행 중에만 할당되어 GPU 리소스를 효율적으로 활용할 수 있습니다. 이로 인해 소프트웨어 및 인프라 개발 비용을 줄이는 데 도움이 되며, 개발 및 배포 시간을 단축할 수 있습니다.

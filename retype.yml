@@ -11,8 +11,10 @@ branding:
   label: Docs
 
 links:
-  - link: About Moreh
-    text: https://docs.moreh.io
+  - link: https://moreh.io
+    text: About Moreh
+
+    
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
 

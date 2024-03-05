@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1254.8 462.8" style="enable-background:new 0 0 1254.8 462.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C9CACA;stroke-width:0.3;stroke-miterlimit:10;}
+	.st1{fill:#3E3A39;}
+	.st2{font-family:'Gilroy-Bold';}
+	.st3{font-size:24.2749px;}
+	.st4{font-family:'Gilroy-Regular';}
+	.st5{font-size:21.8474px;}
+	.st6{font-family:'Gilroy-SemiBold';}
+	.st7{fill:#C9CACA;}
+	.st8{fill:none;stroke:url(#SVGID_1_);stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+	.st9{fill:url(#SVGID_00000088824465447740000470000010714441581726539667_);}
+	.st10{fill:#EA5404;}
+	.st11{font-size:33.9848px;}
+	.st12{fill:#F7F8F8;}
+	.st13{fill:none;stroke:#EFEFEF;stroke-miterlimit:10;}
+	.st14{fill:#FFFFFF;stroke:#DCDDDD;stroke-width:0.3;stroke-miterlimit:10;}
+	.st15{fill:#595757;}
+	.st16{fill:#FFFFFF;stroke:#595757;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st17{fill:#B3B3B4;}
+	.st18{fill:#FFFFFF;stroke:#DCDDDD;stroke-miterlimit:10;}
+	.st19{fill:none;stroke:#DCDDDD;stroke-width:0.3;stroke-miterlimit:10;}
+	.st20{fill:none;stroke:#595757;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.3333;}
+	.st21{fill:none;}
+	.st22{fill:none;stroke:#595757;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.3333;}
+	.st23{fill:#FFFFFF;stroke:#EA5404;stroke-miterlimit:10;}
+	.st24{fill:#FFFFFF;}
+	.st25{fill:#DCDDDD;}
+	.st26{fill:#FFFFFF;stroke:#EA5404;stroke-width:0.3;stroke-miterlimit:10;}
+	.st27{fill:none;stroke:#EA5404;stroke-width:0.3;stroke-miterlimit:10;}
+	.st28{fill:none;stroke:#9FA0A0;stroke-width:0.2835;stroke-miterlimit:10;}
+	.st29{fill:#FFFFFF;stroke:#C9CACA;stroke-width:0.2835;stroke-miterlimit:10;}
+	.st30{fill:#F7F8F8;stroke:#C9CACA;stroke-width:0.2835;stroke-miterlimit:10;}
+	.st31{fill:none;stroke:#595757;stroke-width:0.5;stroke-miterlimit:10;}
+	.st32{fill:#EA5404;stroke:#EA5404;stroke-width:0.283;stroke-miterlimit:10;}
+	.st33{fill:#FFFFFF;stroke:#C9CACA;stroke-width:0.283;stroke-miterlimit:10;}
+	.st34{fill:#FEF7F4;stroke:#F1946C;stroke-width:0.3;stroke-miterlimit:10;}
+	.st35{fill:#9FA0A0;}
+	.st36{fill:none;stroke:#F1946C;stroke-width:0.3;stroke-miterlimit:10;}
+</style>
+<g>
+	<polyline class="st0" points="1252.3,379.2 144.4,379.2 144.4,17.4 	"/>
+	<text transform="matrix(0 -1 1 0 21.355 280.0861)"><tspan x="0" y="0" class="st1 st2 st3">GPU utilization</tspan><tspan x="-60.2" y="24.3" class="st1 st4 st5">(Used # GPUs / total # GPUs)</tspan></text>
+	<g>
+		<text transform="matrix(1 0 0 1 89.8882 373.422)" class="st1 st4 st3">0%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 77.1441 305.6779)" class="st1 st4 st3">20%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 75.8091 237.9298)" class="st1 st4 st3">40%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 77.0225 170.1857)" class="st1 st4 st3">60%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 76.586 102.4376)" class="st1 st4 st3">80%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 66.3423 34.6915)" class="st1 st4 st3">100%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 452.9068 193.1271)" class="st1 st6 st3">41.9%</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 881.1939 35.1271)" class="st1 st6 st3">90.0%</text>
+	</g>
+	<path class="st7" d="M552,379.2H414.4V222.3c0-0.9,0.8-1.7,1.7-1.7h134.2c0.9,0,1.7,0.8,1.7,1.7V379.2z"/>
+	<path class="st7" d="M984.1,379.5H846.5V64.4c0-0.9,0.8-1.7,1.7-1.7h134.2c0.9,0,1.7,0.8,1.7,1.7V379.5z"/>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 388.1158 427.4142)"><tspan x="0" y="0" class="st1 st2 st3">Legacy GPU laaS</tspan><tspan x="3" y="29.1" class="st1 st4 st5">(GPU passthrough)</tspan></text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 821.7921 427.4142)"><tspan x="0" y="0" class="st1 st2 st3">MoAI based laaS</tspan><tspan x="22.5" y="29.1" class="st1 st4 st5">(virtual device)</tspan></text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="562.5223" y1="102.557" x2="825.8594" y2="102.557">
+				<stop  offset="0" style="stop-color:#EA5404;stop-opacity:0.1"/>
+				<stop  offset="0.8694" style="stop-color:#EA5404"/>
+			</linearGradient>
+			<path class="st8" d="M822.2,7.3c-7.9,20.5-38.2,88.5-108.3,139C642.5,197.8,564,197.8,564,197.8"/>
+			<g>
+				
+					<linearGradient id="SVGID_00000063621249259898908660000006899296866034801048_" gradientUnits="userSpaceOnUse" x1="562.5223" y1="5.6753" x2="825.8594" y2="5.6753">
+					<stop  offset="0" style="stop-color:#EA5404;stop-opacity:0.1"/>
+					<stop  offset="0.8694" style="stop-color:#EA5404"/>
+				</linearGradient>
+				<polygon style="fill:url(#SVGID_00000063621249259898908660000006899296866034801048_);" points="817.4,6.9 824.4,1.2 
+					825.8,10.1 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 656.2457 78.3849)" class="st10 st6 st11">2.2x</text>
+	</g>
+</g>
+</svg>

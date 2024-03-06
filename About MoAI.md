@@ -12,7 +12,8 @@ MoAI(Moreh AI appliance for AI accelerators) Platform은 대규모 딥러닝 모
 
 ## MoAI Platform 핵심 기술
 
-![](./img/overview_011.png)
+![](./img/overview_0111.png)
+
 
 
 딥러닝 모델이 진화함에 따라 파라미터가 수십억~수백억 단위로 확장되는 등 점점 복잡해지면서 AI 인프라에는 상당히 큰 규모의 컴퓨팅 리소스가 필요합니다. 대규모 모델을 개발시 수동 병렬 처리와 GPU 및 노드 관리를 동반하여 수많은 연산들을 최적화하는 과정이 필요하며 개발자들의 많은 노력과 시간이 많이 소요됩니다.

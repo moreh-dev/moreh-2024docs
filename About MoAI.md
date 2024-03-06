@@ -71,4 +71,4 @@ MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 앞서 언�
 
 
 
-Copyright © 2022 Moreh Corporation
+Copyright © 2024 Moreh Corporation

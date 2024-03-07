@@ -1,4 +1,5 @@
 ---
+visibility: hidden
 icon: note
 tags: [guide]
 ---

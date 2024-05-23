@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769776292027">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769776397580">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Mistral Fine-tuning</title>
     <meta name="title" content="Mistral Fine-tuning">
-    <meta name="description" content="This tutorial guides you on fine-tuning the open-source Mistral 7B model on the MoAI Platform.">
+    <meta name="description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Mistral 7B 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/tutorials/mistral_tutorial/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/tutorials/mistral_tutorial/">
     <meta property="og:title" content="Mistral Fine-tuning">
-    <meta property="og:description" content="This tutorial guides you on fine-tuning the open-source Mistral 7B model on the MoAI Platform.">
+    <meta property="og:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Mistral 7B 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/tutorials/mistral_tutorial/">
     <meta property="twitter:title" content="Mistral Fine-tuning">
-    <meta property="twitter:description" content="This tutorial guides you on fine-tuning the open-source Mistral 7B model on the MoAI Platform.">
+    <meta property="twitter:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Mistral 7B 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769776292027" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769776397580" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769776292027" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769776397580" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769776292027" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769776292027" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769776397580" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769776397580" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -69,7 +69,7 @@
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../overview/">EN</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko/">KO</a>
                             </li>
         
                         </ul>
@@ -149,7 +149,7 @@
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../overview/">EN</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko/">KO</a>
                                     </li>
             
                                 </ul>
@@ -172,32 +172,6 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                                <nav class="breadcrumb" aria-label="Breadcrumb">
-                                    <ol role="list">
-                                        <li class="pr-4">
-                                            <a href="../../" class="pr-4">
-                                                Mo​AI Platform Documents
-                                            </a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <a href="../../tutorials/" class="pr-4">
-                                                Fine-​tuning Tutorials
-                                            </a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <a href="../../tutorials/mistral_tutorial/" class="pr-4">
-                                                Mistral Fine-​tuning
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </nav>
-                
                                 <!-- Page content  -->
 <doc-anchor-target id="mistral-fine-tuning" class="break-words">
     <h1>
@@ -205,36 +179,33 @@
         <span>Mistral Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>This tutorial guides you on fine-tuning the open-source <a href="https://mistral.ai/news/announcing-mistral-7b/" class="outbound" target="_blank"><span>Mistral 7B</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> model on the MoAI Platform. You&#x27;ll learn to utilize an AMD GPU cluster using the MoAI Platform and experience the improved performance and the benefits of automatic parallelization.</p>
-<doc-anchor-target id="overview">
+<p>이 튜토리얼은 MoAI Platform에서 오픈 소스 <a href="https://mistral.ai/news/announcing-mistral-7b/">Mistral 7B</a> 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.</p>
+<doc-anchor-target id="개요">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
-        <span>Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#개요">#</doc-anchor-trigger>
+        <span>개요</span>
     </h2>
 </doc-anchor-target>
-<p>The Mistral model, released by <a href="https://mistral.ai/" class="outbound" target="_blank"><span>Mistral AI</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> in 2023, is a giant language model. It has gained attention for outperforming larger models in complex tasks like code generation, question answering, and solving mathematical problems.</p>
-<p>The Mistral 7B model uses only the Transformer&#x27;s decoder, applying techniques like Sliding Window Attention to efficiently process the length of input tokens and introducing Rolling Buffer Cache to optimize memory usage.</p>
-<p>In this tutorial, we&#x27;ll fine-tune the Mistral 7B model using the <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca" class="outbound" target="_blank"><span>python_code_instructions_18k-alpaca</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> dataset for the code generation task on the MoAI Platform.</p>
-<doc-anchor-target id="before-you-start">
+<p>Mistral 모델은 2023년 <a href="https://mistral.ai/">Mistral AI</a>사에서 공개한 거대 언어 모델입니다. 코드 생성, 질의 응답, 수학 문제 풀기와 같은 복잡한 태스크에서 더 큰 크기의 모델보다 더 좋은 성능을 기록해 주목 받기도 했습니다.</p>
+<p>Mistral 7B 모델은 Transformer의 decoder만을 사용한 Decoder-only 모델입니다. Sliding Window Attention 기법을 적용해 한 번에 처리할 수 있는 입력 토큰의 길이를 크게 늘렸고, Rolling Buffer Cache를 도입해 메모리 사용량을 효율적으로 최적화했습니다.</p>
+<p>이 튜토리얼에서는 MoAI Platform에서 코드 생성 태스크에 대해 <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca">python_code_instructions_18k-alpaca</a> 데이터셋을 활용하여 Mistral 7B 모델을 fine-tuning 해보겠습니다.</p>
+<doc-anchor-target id="시작하기-전에">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#before-you-start">#</doc-anchor-trigger>
-        <span>Before You Start</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#시작하기-전에">#</doc-anchor-trigger>
+        <span>시작하기 전에</span>
     </h2>
 </doc-anchor-target>
-<p>Be sure to acquire a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. For example, you can sign up for the following public cloud service built on the MoAI Platform:</p>
-<ul>
-<li>KT Cloud’s Hyperscale AI Computing (<a href="https://cloud.kt.com/solution/hyperscaleAiComputing/" class="outbound" target="_blank"><span>https://cloud.kt.com/solution/hyperscaleAiComputing/</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>)</li>
-</ul>
-<p>If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh(<a href="mailto:support@moreh.io">support@moreh.io</a>).</p>
-<p>After connecting via SSH, run the <strong><code v-pre>moreh-smi</code></strong> command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system.</p>
-<doc-anchor-target id="check-moai-accelerator">
+<p>MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급 받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다.
+혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh(<a href="mailto:support@moreh.io">support@moreh.io</a>)에 문의하시기 바랍니다.</p>
+<p>SSH로 접속한 다음 <code v-pre>moreh-smi</code> 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.</p>
+<doc-anchor-target id="moai-accelerator-확인">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#check-moai-accelerator">#</doc-anchor-trigger>
-        <span>Check MoAI Accelerator</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator-확인">#</doc-anchor-trigger>
+        <span>MoAI Accelerator 확인</span>
     </h3>
 </doc-anchor-target>
-<p>To train models like the Llama2 model outlined in this tutorial, you need to select an appropriate size MoAI Accelerator. Start by using the <strong><code v-pre>moreh-smi</code></strong> command to check the currently used MoAI Accelerator.</p>
-<p>Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in <a href="3_fine_tuning/">3. Model fine-tuning</a>.</p>
+<p>이 튜토리얼에서 안내할 Mistral 7B 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 <code v-pre>moreh-smi</code> 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.</p>
+<p>수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 <a href="3_%ED%95%99%EC%8A%B5_%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/">3. 학습 실행하기</a> 에서 제공하겠습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 11:40:36 April 16, 2024
@@ -268,20 +239,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/llama38b_tutorial/6_conclusion/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/llama3_8b_tutorial/6_마무리/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">6. Conclusion</span>
+                                                <span class="block mt-1">6. 마무리</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/mistral_tutorial/1_prepare_fine-tuning/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/mistral_tutorial/1_fine-tuning_준비하기/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">1. Prepare Fine-​tuning</span>
+                                                <span class="block mt-1">1. Fine-​tuning 준비하기</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

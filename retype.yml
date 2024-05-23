@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 start:
   pro: true
+=======
+poweredByRetype: false
+
+>>>>>>> parent of 13ede67 (Update retype.yml)
 
 input: ./
 output: .retype

@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [tutorial, qwen]
+tags: [guide]
 order: 40
 ---
 

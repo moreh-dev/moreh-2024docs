@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [ap]
+tags: [guide]
 order: 50
 ---
 

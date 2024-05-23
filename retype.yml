@@ -1,5 +1,4 @@
-start:
-  pro: true
+poweredByRetype: false
 
 input: ./
 output: .retype
@@ -16,14 +15,24 @@ exclude:
   - "fr"
   - "ko"
 edit:
-  repo: 
+  repo: #https://github.com/retypeapp/two-lang-demo
 links: 
 - text: EN
   link: /
 - text: KO
-  link: https://docs.moreh.io/ko
-  
+  link: https://moreh-dev.github.io/moreh-2024docs-test/ko
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
-poweredByRetype: false
+
+branding:
+  title: Moreh Documents              # Your custom website title; keep it short
+  logo: /img/logo-white.png           # Path to a logo file
+  logoDark: /logo-dark.png    # Path to a logo file to use in dark mode
+  logoAlign: right            # Align the logo to the right or the left
+  label: Moreh Documents                 # Optional label
+  colors:
+    label:                    # Label colors
+      text: "#ff5700"         # Custom color for the label text
+      background: "#ff5700"   # Custom color for the label background
+

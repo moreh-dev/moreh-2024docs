@@ -1,0 +1,29 @@
+start:
+  pro: true
+
+input: ./
+output: .retype
+url: docs.moreh.io
+branding:
+  logo: /img/logo.png 
+  logoAlign: left     
+  label: EN
+  colors:
+  label: "#ff5700"                 # Label colors
+  text:  "#ff5700"      # Custom color for the label text
+  background: "#ff5700"   # Custom color for the label background
+exclude:
+  - "fr"
+  - "ko"
+edit:
+  repo: 
+links: 
+- text: EN
+  link: /
+- text: KO
+  link: https://docs.moreh.io/ko
+  
+footer:
+  copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
+
+poweredByRetype: false

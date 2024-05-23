@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [tutorial, mistral]
+tags: [guide]
 order: 40
 ---
 

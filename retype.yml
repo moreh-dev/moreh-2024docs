@@ -3,10 +3,9 @@ start:
 
 poweredByRetype: false
 
-
 input: ./
 output: .retype
-url: docs.moreh.io
+url: 
 branding:
   logo: /img/logo.png 
   logoAlign: left     

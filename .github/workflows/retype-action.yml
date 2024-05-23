@@ -26,7 +26,19 @@ jobs:
         with:
           update-branch: true
 
-      - uses: retypeapp/action-build@latest
+
+      - uses: retypeapp/action-build@multi
+        with:
+          config: fr/retype.yml
+          subdir: fr
+
+      - uses: retypeapp/action-build@multi
         with:
             config: ko/retype.yml
             subdir: ko
+
+      - uses: retypeapp/action-build@multi
+
+      - uses: retypeapp/action-github-pages@latest
+        with:
+              update-branch: true

@@ -21,6 +21,12 @@ jobs:
         with:
           license: ${{ secrets.RETYPE_SECRET }}
 
+      - uses: retypeapp/action-build@multi
+        with:
+          config: ko/retype.yml
+          subdir: ko
+  
       - uses: retypeapp/action-github-pages@latest
         with:
           update-branch: true
+

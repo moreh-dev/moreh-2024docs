@@ -2,7 +2,7 @@
 icon: note
 tags: [guide]
 order: 5
-visibility: hidden
+visibility: private
 ---
 
 # MoAI Platform 병렬화

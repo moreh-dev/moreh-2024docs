@@ -1,3 +1,15 @@
+start:
+  pro: true
+
+
+poweredByRetype: false
+
+
+outbound:
+  enabled: true
+  icon: link-external
+
+
 input: ./
 output: .retype/ko
 locale: ko

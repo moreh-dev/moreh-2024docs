@@ -6,7 +6,7 @@ url: docs.moreh.io
 branding:
   logo: /img/logo.png 
   logoAlign: left     
-  label: EN
+  label: KO
   colors:
   label: "#ff5700"                 # Label colors
   text:  "#ff5700"      # Custom color for the label text

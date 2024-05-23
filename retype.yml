@@ -1,4 +1,7 @@
-poweredByRetype: false
+start:
+  pro: true
+  
+  poweredByRetype: false
 
 input: ./
 output: .retype

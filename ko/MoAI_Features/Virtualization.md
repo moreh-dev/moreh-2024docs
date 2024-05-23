@@ -2,7 +2,7 @@
 icon: cpu
 tags: [guide]
 order: 10
-visibility: hidden
+visibility: private
 ---
 
 # GPU 가상화

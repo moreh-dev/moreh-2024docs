@@ -36,7 +36,8 @@ MoAI Platform supports various accelerators capable of executing various types o
 - This compatibility allows for flexible development and training of deep learning models, accommodating multiple and diverse types of GPUs.\
 \
 &nbsp;
-------
+
+
 ## 2. GPU Virtualization
 
 -![](img_ov/v_3.png)
@@ -55,8 +56,6 @@ The MoAI Platform is designed with a fully usage-based billing model, where char
 \
 &nbsp;
 
-
-------
 
 ## 3. Dynamic GPU Allocation
 
@@ -83,4 +82,3 @@ Currently, common AI frameworks used with NVIDIA require AI engineers to manuall
 
 - The MoAI Platform provides Advanced Parallelization through the Moreh AI compiler, which optimally utilizes GPU resources based on the specific AI model and GPU cluster size.
 - With MoAI Platform’s Advanced Parallelization, the setup and deployment time for AI models, typically weeks long, can be  dramatically reduced to approximately 2-3 days.
-

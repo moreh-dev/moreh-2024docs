@@ -1,9 +1,7 @@
 start:
   pro: true
 
-
 poweredByRetype: false
-
 
 outbound:
   enabled: true
@@ -13,7 +11,7 @@ outbound:
 input: ./
 output: .retype/ko
 locale: ko
-url: /two-lang-demo/ko
+url: docs.moreh.io
 branding:
   label: KO
   logo: /img/logo.png

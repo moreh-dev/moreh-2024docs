@@ -3,7 +3,6 @@ poweredByRetype: false
 start:
   pro: true
 
-  
 input: ./
 output: .retype
 url: docs.moreh.io
@@ -28,6 +27,8 @@ links:
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
+outbound:
+  enabled: true
 
 branding:
   title: Moreh Documents              # Your custom website title; keep it short

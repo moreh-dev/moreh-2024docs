@@ -29,6 +29,10 @@ jobs:
             config: ko/retype.yml
             subdir: ko
 
+      - uses: retypeapp/action-build@multi
+        with:
+            config: retype.yml
+
       - uses: retypeapp/action-github-pages@latest
         with:
           update-branch: true

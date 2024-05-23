@@ -2,7 +2,6 @@
 icon: note
 tags: [features]
 order: 100
-expanded: true
 visibility: hidden
 ---
 

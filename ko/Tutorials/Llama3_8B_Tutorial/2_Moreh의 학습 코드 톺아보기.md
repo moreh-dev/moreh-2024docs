@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [guide]
+tags: [tutorial, llama3]
 order: 40
 ---
 # 2. Moreh의 학습 코드 톺아보기

@@ -1,6 +1,6 @@
 ---
 icon: tools
-tags: [guide]
+tags: [guide, moreh_toolkit]
 order: 110
 ---
 

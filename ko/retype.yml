@@ -13,7 +13,7 @@ outbound:
 input: ./
 output: .retype/ko
 locale: ko
-url: docs.moreh.io/ko
+url: /two-lang-demo/ko
 branding:
   label: KO
   logo: /img/logo.png
@@ -27,8 +27,14 @@ edit:
   base: ko
 links:
 - text: EN
+<<<<<<< HEAD
   link: ../
 - text: KO
   link: /
+=======
+  link: https://moreh-dev.github.io/moreh-2024docs-test/
+- text: KO
+  link: https://moreh-dev.github.io/moreh-2024docs-test/ko/
+>>>>>>> parent of 1f07f13 (l)
 footer:
   copyright: "&copy; Copyright Moreh {{ year }}. All rights reserved."

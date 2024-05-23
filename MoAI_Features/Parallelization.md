@@ -2,6 +2,7 @@
 icon: note
 tags: [features]
 order: 5
+visibility: hidden
 ---
 
 # Automatic Parallelization

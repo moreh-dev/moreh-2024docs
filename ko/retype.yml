@@ -27,8 +27,8 @@ edit:
   base: ko
 links:
 - text: EN
-  link: docs.moreh.io/
+  link: ../
 - text: KO
-  link: docs.moreh.io/ko
+  link: /
 footer:
   copyright: "&copy; Copyright Moreh {{ year }}. All rights reserved."

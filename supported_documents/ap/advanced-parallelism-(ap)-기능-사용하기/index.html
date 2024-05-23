@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769776397580">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769776580583">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Advanced Parallelism (AP) 기능 사용하기</title>
-    <meta name="title" content="Advanced Parallelism (AP) 기능 사용하기">
-    <meta name="description" content="기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다.">
+    <title>Advanced Parallelism(AP)</title>
+    <meta name="title" content="Advanced Parallelism(AP)">
+    <meta name="description" content="By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/">
-    <meta property="og:title" content="Advanced Parallelism (AP) 기능 사용하기">
-    <meta property="og:description" content="기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다.">
+    <meta property="og:title" content="Advanced Parallelism(AP)">
+    <meta property="og:description" content="By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/">
-    <meta property="twitter:title" content="Advanced Parallelism (AP) 기능 사용하기">
-    <meta property="twitter:description" content="기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다.">
+    <meta property="twitter:title" content="Advanced Parallelism(AP)">
+    <meta property="twitter:description" content="By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769776397580" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769776580583" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769776397580" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769776580583" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769776397580" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769776397580" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769776580583" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769776580583" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -69,7 +69,7 @@
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../overview/">EN</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko/">KO</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                             </li>
         
                         </ul>
@@ -149,7 +149,7 @@
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../../overview/">EN</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko/">KO</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                                     </li>
             
                                 </ul>
@@ -173,33 +173,31 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="advanced-parallelism-ap-기능-사용하기" class="break-words">
+<doc-anchor-target id="advanced-parallelismap" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-parallelism-ap-기능-사용하기">#</doc-anchor-trigger>
-        <span>Advanced Parallelism (AP) 기능 사용하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-parallelismap">#</doc-anchor-trigger>
+        <span>Advanced Parallelism(AP)</span>
     </h1>
 </doc-anchor-target>
-<p>기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다. 가속기 사이즈에 대한 세부 정보는 <a href="https://www.notion.so/KT-Hyperscale-AI-Computing-HAC-ee3383b7a8bb4943af82cba81b8321cd?pvs=21">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</a> 참고해주시기 바랍니다.</p>
-<doc-anchor-target id="ap-기능-적용-방법">
+<p>By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP. Before proceeding with the AP feature, please review your current accelerator information using the guide below. For detailed information on accelerator sizes, refer to the <a href="../../kt_hac_models_info/">KT Hyperscale AI Computing (HAC) Service Accelerator Model Information</a>.</p>
+<doc-anchor-target id="how-to-apply-ap">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ap-기능-적용-방법">#</doc-anchor-trigger>
-        <span>AP 기능 적용 방법</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-apply-ap">#</doc-anchor-trigger>
+        <span>How to Apply AP</span>
     </h3>
 </doc-anchor-target>
-<p>AP 기능은 두가지 방식으로 적용할 수 있습니다.</p>
+<p>There are two ways to apply the AP feature:</p>
 <ol>
-<li><p>코드 한줄 추가하기</p>
-<p>실행 코드에 다음 한줄을 추가하여 AP 기능을 킬 수 있습니다. (이를 주석처리하면 끌 수 있습니다.)</p>
-</li>
+<li>Add a single line of code.</li>
 </ol>
+<p>실행 코드에 다음 한줄을 추가하여 AP 기능을 킬 수 있습니다. (이를 주석처리하면 끌 수 있습니다.)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">torch.moreh.option.enable_advanced_parallelization()</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><p>환경 변수로 입력하기</p>
-<p>다음과 같이 터미널 세션의 환경변수로 AP 기능을 킬 수 있습니다. ( 0으로 설정하면 끌 수 있습니다.)</p>
-</li>
+<li>환경 변수로 입력하기</li>
 </ol>
+<p>다음과 같이 터미널 세션의 환경변수로 AP 기능을 킬 수 있습니다. ( 0으로 설정하면 끌 수 있습니다.)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">~/quickstart/ap-example$ MOREH_ENABLE_ADVANCED_PARALLELIZATION=1 python text_summarization_for_ap.py</code></pre>
 </doc-codeblock></div>
@@ -545,8 +543,8 @@ error dump: 63 55 16 11 22 5 3 1 37 8 8 11 7 5 16 11 22 94 94 39 11 9 20 17 16 1
                                         <a href="../../../tags/">
                                             <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
                                         </a>
-                                        <span class="mr-2"><a href="../../../tags/ap/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
-                                    <span>ap</span>
+                                        <span class="mr-2"><a href="../../../tags/guide/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>guide</span>
                                 </a></span>
                                     </span>
                                 </div>
@@ -562,7 +560,7 @@ error dump: 63 55 16 11 22 5 3 1 37 8 8 11 7 5 16 11 22 94 94 39 11 9 20 17 16 1
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Advanced Parallelization (AP)</span>
+                                                <span class="block mt-1">Advanced Parallelization(AP)</span>
                                             </span>
                                         </a>
                                     </div>
@@ -571,7 +569,7 @@ error dump: 63 55 16 11 22 5 3 1 37 8 8 11 7 5 16 11 22 94 94 39 11 9 20 17 16 1
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../supported_documents/llm_param_guide/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">LLM Fine-​tuning parameter guide</span>
+                                                <span class="block mt-1">LLM Fine-​tuning Parameter guide</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -615,6 +613,6 @@ error dump: 63 55 16 11 22 5 3 1 37 8 8 11 7 5 16 11 22 94 94 39 11 9 20 17 16 1
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Advanced Parallelism (AP) 기능 사용하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Advanced Parallelism(AP)", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

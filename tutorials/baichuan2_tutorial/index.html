@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769776397580">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769776580583">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Baichuan2 Fine-tuning</title>
     <meta name="title" content="Baichuan2 Fine-tuning">
-    <meta name="description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Baichuan2 13B 모델을 fine-tuning하는 예시를 소개합니다.">
+    <meta name="description" content="The following tutorial will take you through the steps required to fine-tune Baichuan2 13B model with an example dataset, using the MoAI Platform.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/tutorials/baichuan2_tutorial/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/tutorials/baichuan2_tutorial/">
     <meta property="og:title" content="Baichuan2 Fine-tuning">
-    <meta property="og:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Baichuan2 13B 모델을 fine-tuning하는 예시를 소개합니다.">
+    <meta property="og:description" content="The following tutorial will take you through the steps required to fine-tune Baichuan2 13B model with an example dataset, using the MoAI Platform.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/tutorials/baichuan2_tutorial/">
     <meta property="twitter:title" content="Baichuan2 Fine-tuning">
-    <meta property="twitter:description" content="이 튜토리얼은 MoAI Platform에서 오픈 소스 Baichuan2 13B 모델을 fine-tuning하는 예시를 소개합니다.">
+    <meta property="twitter:description" content="The following tutorial will take you through the steps required to fine-tune Baichuan2 13B model with an example dataset, using the MoAI Platform.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769776397580" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769776580583" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769776397580" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769776580583" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769776397580" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769776397580" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769776580583" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769776580583" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -69,7 +69,7 @@
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../overview/">EN</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko/">KO</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                             </li>
         
                         </ul>
@@ -149,7 +149,7 @@
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../overview/">EN</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko/">KO</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://docs.moreh.io/ko">KO</a>
                                     </li>
             
                                 </ul>
@@ -179,32 +179,35 @@
         <span>Baichuan2 Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>이 튜토리얼은 MoAI Platform에서 오픈 소스 <a href="https://huggingface.co/baichuan-inc/Baichuan2-13B-Base">Baichuan2 13B</a> 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.</p>
-<doc-anchor-target id="개요">
+<p>The following tutorial will take you through the steps required to fine-tune <a href="https://huggingface.co/baichuan-inc/Baichuan2-13B-Base">Baichuan2 13B</a> model with an example dataset, using the MoAI Platform. Through the tutorial, you&#x27;ll learn how to utilize an AMD GPU cluster with MoAI Platform and discover the benefits of improved performance and automatic parallelization.</p>
+<doc-anchor-target id="overview">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#개요">#</doc-anchor-trigger>
-        <span>개요</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
     </h2>
 </doc-anchor-target>
-<p>Baichuan2는 <a href="https://github.com/baichuan-inc">Baichuan Intelligent Technology</a>가 개발한 오픈 소스, 대규모 다국어 언어 모델입니다. 이 모델은 2조 6천억 개의 토큰으로 구성된 방대한 데이터 세트에서 훈련된 70억 및 130억 매개 변수로 사용할 수 있는 구성을 가지고 있습니다.</p>
-<p>이 튜토리얼에서는 MoAI Platform에서 text-generation e-commerce 데이터셋인 <a href="https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset">Bitext-customer-support-llm-chatbot-training-dataset</a>을 활용해  Baichuan2 13B 모델을 fine-tuning 해보겠습니다.</p>
-<doc-anchor-target id="시작하기-전에">
+<p>Baichuan2 is a large-scale multilingual language model developed by <a href="https://github.com/baichuan-inc">Baichuan Intelligent Technology</a>. This model offers configurations with 70 billion and 130 billion parameters trained on vast datasets consisting of 2.6 trillion tokens.</p>
+<p>In this tutorial, we&#x27;ll fine-tune the Baichuan2 13B model using the MoAI Platform with the <a href="https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset">Bitext-customer-support-llm-chatbot-training-dataset</a>, a text-generation e-commerce dataset.</p>
+<doc-anchor-target id="before-you-start">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#시작하기-전에">#</doc-anchor-trigger>
-        <span>시작하기 전에</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#before-you-start">#</doc-anchor-trigger>
+        <span>Before You Start</span>
     </h2>
 </doc-anchor-target>
-<p>MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다.
-혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh(<a href="mailto:support@moreh.io">support@moreh.io</a>)에 문의하시기 바랍니다.</p>
-<p>SSH로 접속한 다음 <code v-pre>moreh-smi</code> 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.</p>
-<doc-anchor-target id="moai-accelerator-확인">
+<p>Be sure to acquire a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. For example, you can sign up for the following public cloud service built on the MoAI Platform:</p>
+<ul>
+<li>KT Cloud’s Hyperscale AI Computing (<a href="https://cloud.kt.com/solution/hyperscaleAiComputing/">https://cloud.kt.com/solution/hyperscaleAiComputing/</a>)</li>
+</ul>
+<p>If you wish to temporarily allocate trial containers and GPU resources, please contact Moreh(<a href="mailto:support@moreh.io">support@moreh.io</a>).</p>
+<p>After connecting via SSH, run the <code v-pre>moreh-smi</code> command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system.</p>
+<doc-anchor-target id="check-moai-accelerator">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator-확인">#</doc-anchor-trigger>
-        <span>MoAI Accelerator 확인</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#check-moai-accelerator">#</doc-anchor-trigger>
+        <span>Check MoAI Accelerator</span>
     </h3>
 </doc-anchor-target>
-<p>이 튜토리얼에서 안내할 Mistral 7B 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 <code v-pre>moreh-smi</code> 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.</p>
-<p>수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 <a href="3_%ED%95%99%EC%8A%B5_%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/">3. 학습 실행하기</a> 에서 제공하겠습니다.</p>
+<p>To train models like the Llama2 model outlined in this tutorial, you need to select an appropriate size MoAI Accelerator. Start by using the <code v-pre>moreh-smi</code> command to check the currently used MoAI Accelerator.</p>
+<p>Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in <a href="3_finetuning/"><strong>3. Model fine-tuning</strong></a>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 11:40:36 April 16, 2024
@@ -225,8 +228,8 @@
                                         <span class="mr-2"><a href="../../tags/tutorial/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
                                     <span>tutorial</span>
                                 </a></span>
-                                        <span class="mr-2"><a href="../../tags/baichuan2/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
-                                    <span>baichuan2</span>
+                                        <span class="mr-2"><a href="../../tags/baichuan/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>baichuan</span>
                                 </a></span>
                                     </span>
                                 </div>
@@ -238,20 +241,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/qwen_tutorial/6_마무리/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/qwen_tutorial/6_conclusion/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">6. 마무리</span>
+                                                <span class="block mt-1">6. Conclusion</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/baichuan2_tutorial/1_fine-tuning_준비하기/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/baichuan2_tutorial/1_prepare_finetuning/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">1. Fine-​tuning 준비하기</span>
+                                                <span class="block mt-1">1. Prepare Fine-​tuning</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

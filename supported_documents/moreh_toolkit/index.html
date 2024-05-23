@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769769960347">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769770113677">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769769960347" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769770113677" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769769960347" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769770113677" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769769960347" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769769960347" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769770113677" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769770113677" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -219,28 +219,29 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="monitoring-moai-accelerators-moreh-smi">
+<doc-anchor-target id="1-moai-accelerator-monitoring-moreh-smi">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#monitoring-moai-accelerators-moreh-smi">#</doc-anchor-trigger>
-        <span>Monitoring MoAI Accelerators: <code v-pre>moreh-smi</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-moai-accelerator-monitoring-moreh-smi">#</doc-anchor-trigger>
+        <span>1. MoAI Accelerator Monitoring: <code v-pre>moreh-smi</code></span>
     </h2>
 </doc-anchor-target>
-<p>The <strong><code v-pre>moreh-smi</code></strong> command allows users to manage and monitor MoAI Accelerators. You can run it in a conda environment where MoAI Platform PyTorch is installed.</p>
+<p><code v-pre>moreh-smi</code> is a command-line tool that allows users to manage and monitor the MoAI Accelerator. You can run it in a conda environment where MoAI Platform PyTorch is installed.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
-15:51:25 April 29, 2024 
+
 +----------------------------------------------------------------------------------------------+
-|                                                   Current Version:   Latest Version: 24.5.0  |
+|                                             Current Version: 24.5.0  Latest Version: 24.5.0  |
 +----------------------------------------------------------------------------------------------+
 |  Device  |        Name         |   Model   |  Memory Usage  |  Total Memory  |  Utilization  |
 +==============================================================================================+
 |  * 0     |  MoAI Accelerator   |  4xlarge  |  -             |  -             |  -            |
-+----------------------------------------------------------------------------------------------+</code></pre>
++----------------------------------------------------------------------------------------------+
+</code></pre>
 </doc-codeblock></div>
-<p>If you are currently running training using the MoAI Accelerator, executing <strong><code v-pre>moreh-smi</code></strong> in a separate terminal session will display information about the running processes. Additionally, by using <strong><code v-pre>moreh-smi</code></strong>, you can quickly identify your Job ID. If you encounter any issues during training or inference on the MoAI Platform, providing your Job ID when contacting customer support will facilitate a faster response.</p>
+<p>If you are currently running a training session using the MoAI Accelerator, running <code v-pre>moreh-smi</code> in another terminal session will display the running process information as follows. You can also use <code v-pre>moreh-smi</code> to quickly identify your Job ID, allowing for faster support response from MoAI Platform in case of training or inference issues. In the example below, the Job ID is 976356.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
-17:58:15 April 29, 2024 
+
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -253,27 +254,27 @@ Processes:
 +-----------------------------------------------------------------------------------+
 |  Device  |  Job ID  |    PID    |             Process            |  Memory Usage  |
 +===================================================================================+
-|       0  |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
-+-----------------------------------------------------------------------------------+</code></pre>
+|    0     |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
++-----------------------------------------------------------------------------------+
+</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="utilizing-multi-accelerator-feature">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-multi-accelerator-feature">#</doc-anchor-trigger>
-        <span>Utilizing Multi-Accelerator Feature</span>
-    </h4>
+<doc-anchor-target id="utilizing-moai-accelerators-multi-accelerator-feature">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-moai-accelerators-multi-accelerator-feature">#</doc-anchor-trigger>
+        <span>Utilizing MoAI Accelerator&#x27;s Multi Accelerator Feature</span>
+    </h3>
 </doc-anchor-target>
-<p>By default, if users do not make any additional settings, there will be only one MoAI Accelerator in a single SSH environment. Typically, with one MoAI Accelerator, only one process can be executed at a time, allowing for only one process to run in a single SSH environment.</p>
-<p>However, there may be scenarios where users want to leverage multiple MoAI Accelerators within the same SSH environment to run multiple processes simultaneously (e.g., running multiple training experiments concurrently with the same source code but different hyperparameters). In such cases, using <strong><code v-pre>moreh-smi</code></strong> to create multiple MoAI Accelerators within a single token enables running multiple processes concurrently.</p>
-<p>Let&#x27;s go through an example of adding, changing, and removing AI accelerators.</p>
-<doc-anchor-target id="adding-ai-accelerators">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-ai-accelerators">#</doc-anchor-trigger>
-        <span>Adding AI Accelerators</span>
-    </h4>
+<p>By default, if users do not configure anything, there will only be one MoAI Accelerator in a VM or container environment. With one MoAI Accelerator, only one process can run. However, there may be cases where you want to run multiple processes concurrently in the same environment, even with a single MoAI Accelerator. For example, you may want to run multiple training experiments concurrently by changing the same source code or hyperparameters. In such cases, you can create multiple MoAI Accelerators within a single token using <code v-pre>moreh-smi</code>, enabling multiple processes to run concurrently.</p>
+<p>Let&#x27;s explore adding, modifying, and removing MoAI Accelerators with the following examples.</p>
+<doc-anchor-target id="adding-moai-accelerators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-moai-accelerators">#</doc-anchor-trigger>
+        <span>Adding MoAI Accelerators</span>
+    </h3>
 </doc-anchor-target>
-<p>First, let&#x27;s add an AI accelerator. To use two or more AI accelerators, you can enter the <strong><code v-pre>moreh-smi device --add</code></strong> command, which will display the following interface.</p>
+<p>First, let&#x27;s add a MoAI Accelerator. When you enter the <code v-pre>moreh-smi device --add</code> command to use two or more MoAI Accelerators, you will see the following interface.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi device --add
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --add
 1. Small.64GB
 2. Medium.128GB
 3. Large.256GB
@@ -290,190 +291,86 @@ Processes:
 
 Selection (1-13, q, Q):</code></pre>
 </doc-codeblock></div>
-<p>Enter an integer corresponding to the model you want to use from 1 to 13, and a message &quot;Create device success.&quot; will appear, indicating that the AI accelerator corresponding to the entered device number has been created. Up to 5 AI accelerators can be created within a single VM.</p>
-<p>In the example below, let&#x27;s add the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xLarge.4096GB</span>
-</span> AI accelerator with model number 10.</p>
+<p>When you input the integer corresponding to the model you want to use from 1 to 13, a MoAI Accelerator corresponding to the entered device number will be created with the message &quot;Create device success.&quot; Within one environment, you can create a maximum of 5 AI accelerators. If you need to create more MoAI Accelerators, please contact your infrastructure administrator.</p>
+<p>In the example below, let&#x27;s add the 10th <strong><code v-pre>8xLarge.4096GB</code></strong> MoAI Accelerator:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 10
-+---------------------------------------------------+
-|  Device  |        Name         |       Model      |
-+===================================================+
-|  * 0     |  AI Accelerator  |  Large.256GB        |
-|    1     |  AI Accelerator  |  8xLarge.4096GB     |
-+---------------------------------------------------+
-Create device success.
-1. Small.64GB
-2. Medium.128GB
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="changing-default-ai-accelerator">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-default-ai-accelerator">#</doc-anchor-trigger>
-        <span>Changing Default AI Accelerator</span>
-    </h4>
-</doc-anchor-target>
-<p>The <strong><code v-pre>moreh-smi device --switch {Device_ID}</code></strong> command allows you to change the default MoAI Accelerator.</p>
-<p>Here&#x27;s how to use it:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi device --switch 1
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --add 10
 
-+---------------------------------------------------+
-|  Device  |        Name         |       Model      |
-+===================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |
-|    4     |  KT AI Accelerator  |  Small.64GB      |
-+---------------------------------------------------+
-Switch Current Device success.</code></pre>
-</doc-codeblock></div>
-<p>You can see that the default MoAI Accelerator has been changed to accelerator #1 in the example above.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">Selection (0-4, q, Q): q
-
-(moreh) ubuntu@vm:~$ moreh-smi
-10:49:12 May 07, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
-|    4     |  KT AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="changing-ai-accelerators-with-moreh-switch-model">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-ai-accelerators-with-moreh-switch-model">#</doc-anchor-trigger>
-        <span>Changing AI Accelerators with <code v-pre>moreh-switch-model</code></span>
-    </h2>
-</doc-anchor-target>
-<p><strong><code v-pre>moreh-switch-model</code></strong> is a tool that allows you to change the flavor (specification) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.</p>
-<p>Here&#x27;s how to use it:</p>
-<p>For example, if the result of the <strong><code v-pre>moreh-smi</code></strong> command is as follows, it means &quot;The currently configured MoAI Accelerator is accelerator 0, and the type of this MoAI Accelerator is the <strong><code v-pre>Small.64GB</code></strong> model.&quot;</p>
-<p>Here&#x27;s how to use it:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">+-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|    0     |   MoAI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|  * 1     |   MoAI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<p>When you use the <strong><code v-pre>moreh-switch-model</code></strong> command, an input prompt will appear like below:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-switch-model
-Current AI Accelerator: Medium.128GB
-
-1. Small.64GB  *
-2. Medium.128GB  
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q):
-</code></pre>
-</doc-codeblock></div>
-<p model_id="">Enter an integer (device number) corresponding to the model you want to use from 1 to 13, and the MoAI Accelerator will be switched to the MoAI Accelerator corresponding to the entered device number with the message &quot;The MoAI Platform AI Accelerator model is successfully switched to .&quot;</p>
-<p>Let&#x27;s change the MoAI Accelerator to the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>Large.256GB</span>
-</span> model with device number 3.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 3
-The AI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.
-
-1. Small.64GB  
-2. Medium.128GB
-3. Large.256GB *
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q):
-</code></pre>
-</doc-codeblock></div>
-<p>You can continue the change or exit the MoAI Accelerator change by entering <strong><code v-pre>q</code></strong> or <strong><code v-pre>Q</code></strong>.</p>
-<p>After the change is complete, when you use <strong><code v-pre>moreh-smi</code></strong> again to check, the result will be as follows:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">+-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+</code></pre>
-</doc-codeblock></div>
-<p>You can see that the MoAI Accelerator type has been changed from the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>Small.64GB</span>
-</span> model to the <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>Large.256GB</span>
-</span> model.</p>
-<doc-anchor-target id="removing-ai-accelerators">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#removing-ai-accelerators">#</doc-anchor-trigger>
-        <span>Removing AI Accelerators</span>
-    </h4>
+<hr>
+<doc-anchor-target id="changing-the-default-moai-accelerator-moreh-smi-device---switch">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-the-default-moai-accelerator-moreh-smi-device---switch">#</doc-anchor-trigger>
+        <span>Changing the Default MoAI Accelerator: <code v-pre>moreh-smi device --switch</code></span>
+    </h3>
 </doc-anchor-target>
-<p>Next, let&#x27;s try deleting the accelerator corresponding to a specific device ID using the command <strong><code v-pre>moreh-smi device --rm {Device_ID}</code></strong>.</p>
+<p><code v-pre>moreh-smi device --switch {Device_ID}</code> is a command that allows you to change the default MoAI Accelerator.</p>
+<p>It can be used as follows:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi --rm 1
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --switch 1
+
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
-|  * 0     |  AI Accelerator  |    Large.256GB     |
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |
+|    4     |   MoAI Accelerator  |  Small.64GB      |
++---------------------------------------------------+
+Switch Current Device success.</code></pre>
+</doc-codeblock></div>
+<p>This means that the current default MoAI Accelerator has been changed to Accelerator 1.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">Selection (0-4, q, Q): q
+
+$ moreh-smi
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
+|    4     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="removing-moai-accelerators-moreh-smi-device---rm">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#removing-moai-accelerators-moreh-smi-device---rm">#</doc-anchor-trigger>
+        <span>Removing MoAI Accelerators: <code v-pre>moreh-smi device --rm</code></span>
+    </h3>
+</doc-anchor-target>
+<p>This time, let&#x27;s try to remove a specific accelerator corresponding to the specified device ID with the command <code v-pre>moreh-smi device --rm {Device_ID}</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi --rm 1
++---------------------------------------------------+
+|  Device  |        Name         |       Model      |
++===================================================+
+|  * 0     |   MoAI Accelerator  |    Large.256GB   |
 +---------------------------------------------------+
 Remove device success.</code></pre>
 </doc-codeblock></div>
-<p>By entering the command above, the AI accelerator <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xLarge.4096GB</span>
-</span> with Device ID 1 has been deleted. To confirm, run <strong><code v-pre>moreh-smi</code></strong> again to see that the device has been removed.</p>
-<doc-anchor-target id="utilizing-various-other-options">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#utilizing-various-other-options">#</doc-anchor-trigger>
-        <span>Utilizing Various Other Options</span>
-    </h4>
+<p>The MoAI Accelerator with Device ID 1, <code v-pre>8xLarge.4096GB</code>, has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.</p>
+<doc-anchor-target id="other-various-options-utilization">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#other-various-options-utilization">#</doc-anchor-trigger>
+        <span>Other Various Options Utilization</span>
+    </h3>
 </doc-anchor-target>
-<p>Besides, <strong><code v-pre>moreh-smi</code></strong> provides various other options. By using the <strong><code v-pre>--help</code></strong> option, you can see what options are available:</p>
+<p><code v-pre>moreh-smi</code> provides various other options. You can use the <code v-pre>--help</code> option to see what options are available.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi --help
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi --help
 
 Usage: moreh-smi [-h | --help] [-r | --reset] [-s | --server-version] [-v | --version] [-t | --token] [-i | --idx]
                  [device {--add [model_id] | --rm [device_id] | --switch [device_id]}]
@@ -501,45 +398,154 @@ Device Example:
   moreh-smi device --switch 1
   moreh-smi -i 2</code></pre>
 </doc-codeblock></div>
-<ol>
-<li><strong><code v-pre>moreh-smi -p</code></strong> - Monitor detailed hardware status of MoAI Accelerators.</li>
-<li><strong><code v-pre>moreh-smi -t</code></strong> - Check MoAI Accelerator token information.</li>
-<li><strong><code v-pre>moreh-smi --reset</code></strong> - Terminate MoAI Accelerator processes.</li>
-</ol>
-<doc-anchor-target id="updating-moai-platform-with-update-moreh">
+<ul>
+<li><code v-pre>moreh-smi -p</code> - Monitor detailed hardware status of MoAI Accelerators.</li>
+<li><code v-pre>moreh-smi -t</code> - Check MoAI Accelerator token information.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>If you encounter issues during training, such as tangled processes or difficulty terminating, causing messages like &quot;Process Running,&quot; use the <code v-pre>moreh-smi --reset</code> command.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="changing-moai-accelerators-moreh-switch-model">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#updating-moai-platform-with-update-moreh">#</doc-anchor-trigger>
-        <span>Updating MoAI Platform with <code v-pre>update-moreh</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-moai-accelerators-moreh-switch-model">#</doc-anchor-trigger>
+        <span>Changing MoAI Accelerators: <code v-pre>moreh-switch-model</code></span>
     </h2>
 </doc-anchor-target>
-<p><strong><code v-pre>update-moreh</code></strong> is a command that allows you to create a new conda environment and install Moreh solutions on it or update the version of Moreh solutions already installed in the conda environment. You can use <strong><code v-pre>update-moreh</code></strong> in the following situations:</p>
+<p><code v-pre>moreh-switch-model</code> is a tool that allows you to change the flavor (specifications) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.</p>
+<p>It can be used as follows:</p>
+<p>For example, if the result of the <code v-pre>moreh-smi</code> command is as follows, it means that the &quot;MoAI Platform AI Accelerator model currently set as the default is Accelerator 0, and this MoAI Accelerator is of type <code v-pre>Small.64GB</code> model.&quot;</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">+-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
+|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+</code></pre>
+</doc-codeblock></div>
+<p>The <code v-pre>moreh-switch-model</code> command displays the following prompt:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model
+Current MoAI Accelerator: Medium.128GB
+
+1. Small.64GB  *
+2. Medium.128GB  
+3. Large.256GB
+4. xLarge.512GB
+5. 1.5xLarge.768GB
+6. 2xLarge.1024GB
+7. 3xLarge.1536GB
+8. 4xLarge.2048GB
+9. 6xLarge.3072GB
+10. 8xLarge.4096GB
+11. 12xLarge.6144GB
+12. 24xLarge.12288GB
+13. 48xLarge.24576GB
+
+Selection (1-13, q, Q):
+</code></pre>
+</doc-codeblock></div>
+<p>If you enter an integer corresponding to the model to be used from 1 to 13 (device number), the message &quot;<code v-pre>The MoAI Platform AI Accelerator model is successfully switched to {model_id}.&quot;</code> will be displayed, and the MoAI Accelerator corresponding to the entered device number will be changed.</p>
+<p>Let&#x27;s change the MoAI Accelerator to <code v-pre>Large.256GB</code> as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 3
+The MoAI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.
+
+1. Small.64GB  
+2. Medium.128GB
+3. Large.256GB *
+4. xLarge.512GB
+5. 1.5xLarge.768GB
+6. 2xLarge.1024GB
+7. 3xLarge.1536GB
+8. 4xLarge.2048GB
+9. 6xLarge.3072GB
+10. 8xLarge.4096GB
+11. 12xLarge.6144GB
+12. 24xLarge.12288GB
+13. 48xLarge.24576GB
+
+Selection (1-13, q, Q):
+</code></pre>
+</doc-codeblock></div>
+<p>You can continue with the change or exit the MoAI Accelerator change by typing <code v-pre>q</code> or <code v-pre>Q</code>.</p>
+<p>After the change is complete, when you run <code v-pre>moreh-smi</code> again to confirm, you will see the following result:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">+-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
+|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
+|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+</code></pre>
+</doc-codeblock></div>
+<p>The MoAI Accelerator previously set as the <code v-pre>Small.64GB</code> model has been changed to the <code v-pre>Large.256GB</code> model.</p>
+<doc-anchor-target id="updating-moai-platform-update-moreh">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updating-moai-platform-update-moreh">#</doc-anchor-trigger>
+        <span>Updating MoAI Platform: <code v-pre>update-moreh</code></span>
+    </h2>
+</doc-anchor-target>
+<p><code v-pre>update-moreh</code> is a command that allows you to create a new conda environment and install MoAI Platform on it, or update the version of MoAI Platform already installed in the conda environment. You can use <code v-pre>update-moreh</code> in the following situations:</p>
 <ul>
-<li>When you create a new conda environment, you need to install the required Python packages for Moreh solutions. In this case, you can easily install the latest version of Moreh solutions using the <strong><code v-pre>update-moreh</code></strong> command.</li>
+<li><p>If you have created a new conda environment and MoAI Platform Python packages need to be installed, you can easily install the latest version of MoAI Platform using the <code v-pre>update-moreh</code> command.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ conda create --name my_env python=3.8
+$ update-moreh # Install MoAI Platform 
+
+Do you want to proceed? (y/n, default:n)
+y
+Moreh Framework installation start...
+Moreh Framework installation successful.</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>If you want to use the latest version of MoAI Platform even in an existing conda environment where MoAI Platform is already installed, you can update the currently used MoAI Platform to the latest version using the <code v-pre>update-moreh</code> command alone.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh # Update to the Latest Version
+Currently installed: 
+Possible upgrading version: 24.5.0
+
+Do you want to upgrade? (y/n, default:n)
+y
+Moreh Framework installation start...
+Moreh Framework installation successful.
+$ update-moreh
+Already installed : 24.5.0
+In some cases, you may need to install a specific version of MoAI Platform. In this case, you can specify the specific version of MoAI Platform you want to install using the </code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>There may be cases where you need to install a specific version of the MoAI Platform. In such cases, you can use the <strong><code v-pre>--target</code></strong> option to specify the specific version you want to install.</p>
+</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ conda create --name my_env python=3.8
-$ update-moreh</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">update-moreh --target 24.5.0 # Install 24.5.0 version</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>If you want to use the latest version of Moreh solutions in an already installed conda environment, you can update the currently installed Moreh solutions to the latest version using the <strong><code v-pre>update-moreh</code></strong> command alone.</li>
+<li>If the MoAI Platform is not functioning properly due to issues such as dependency conflicts between other packages in the conda environment, you may need to reconstruct the conda environment. In such cases, you can use <strong><code v-pre>update-moreh</code></strong> to restore the MoAI Platform within the conda environment. In the latter case, you can use the <strong><code v-pre>--force</code></strong> option to reconstruct the environment. (Can be used with the <strong><code v-pre>—-target</code></strong> option)</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh #update to latest version</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">update-moreh --force --target 24.5.0</code></pre>
 </doc-codeblock></div>
-<ul>
-<li>Sometimes, you may need to install a specific version of Moreh solutions. In this case, you can use the <code v-pre>--target</code> option to specify the specific version you want to install.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">update-moreh --target 24.5.301 # Install version 24.5.301 
-update-moreh --target 24.5.302 # Install version 24.5.302</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use <strong><code v-pre>update-moreh</code></strong> to restore the Moreh solutions in the conda environment. In the latter case, you can use the <code v-pre>--force</code> option to rebuild the environment. (Can be used with the <code v-pre>--target</code> option as well)</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">update-moreh --force --target 24.5.301</code></pre>
-</doc-codeblock></div>
-<hr>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>

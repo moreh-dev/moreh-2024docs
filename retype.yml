@@ -1,3 +1,6 @@
+poweredByRetype: false
+
+
 input: ./
 output: .retype
 url: docs.moreh.io
@@ -34,4 +37,3 @@ branding:
       text: "#ff5700"         # Custom color for the label text
       background: "#ff5700"   # Custom color for the label background
 
-poweredByRetype: false

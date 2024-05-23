@@ -39,7 +39,7 @@ MoAI Platform supports various accelerators capable of executing various types o
 ------
 ## 2. GPU Virtualization
 
--![](img_ov/virt.png)
+-![](img_ov/v_3.png)
 The MoAI Platform’s virtualization feature enables the use of thousands of GPUs as if they were a single GPU. This simplifies the modeling and optimization processes, providing AI engineers with a smooth and efficient experience.
 
 - **Flexible Scalability**: You can scale GPU resources up or down as needed, enhancing the scalability of your services.

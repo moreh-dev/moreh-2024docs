@@ -16,9 +16,9 @@ edit:
   repo: #https://github.com/retypeapp/two-lang-demo
 links: 
 - text: EN
-  link: /
+  link: /../../../
 - text: KO
-  link: https://moreh-dev.github.io/moreh-2024docs-test/ko
+  link: ../../ko/tutorials/mistral_tutorial/
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 

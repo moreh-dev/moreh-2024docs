@@ -16,9 +16,9 @@ edit:
   repo: #https://github.com/retypeapp/two-lang-demo
 links: 
 - text: EN
-  link: /
+  link: ../../moai_features/
 - text: KO
-  link: https://moreh-dev.github.io/moreh-2024docs-test/ko
+  link: /
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 

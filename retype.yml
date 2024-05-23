@@ -5,7 +5,7 @@ poweredByRetype: false
 
 input: ./
 output: .retype
-url: 
+url: docs.moreh.io
 branding:
   logo: /img/logo.png 
   logoAlign: left     

@@ -1,6 +1,9 @@
 poweredByRetype: false
 
+start:
+  pro: true
 
+  
 input: ./
 output: .retype
 url: docs.moreh.io

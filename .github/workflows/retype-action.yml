@@ -29,9 +29,10 @@ jobs:
             config: ko/retype.yml
             subdir: ko
 
-      - uses: retypeapp/action-build@multi
+      - uses: retypeapp/action-build@latest
         with:
-            config: retype.yml
+            config: eng/retype.yml
+            subdir: eng
 
       - uses: retypeapp/action-github-pages@latest
         with:

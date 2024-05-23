@@ -20,7 +20,7 @@ links:
 - text: EN
   link: /
 - text: KO
-  link: https://moreh-dev.github.io/moreh-2024docs-test/ko
+  link: https://docs.moreh.io/ko
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 

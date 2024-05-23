@@ -19,28 +19,28 @@ The main features of the Moreh Toolkit are as follows:
 3. **Updating and Rolling Back MoAI Platform:**
     - Use the **`update-moreh`** command to update Moreh solutions to the latest version or roll back to a previous version if needed.
 
+## 1. MoAI Accelerator Monitoring: `moreh-smi`
 
-## Monitoring MoAI Accelerators: `moreh-smi`
-
-The **`moreh-smi`** command allows users to manage and monitor MoAI Accelerators. You can run it in a conda environment where MoAI Platform PyTorch is installed.
+`moreh-smi` is a command-line tool that allows users to manage and monitor the MoAI Accelerator. You can run it in a conda environment where MoAI Platform PyTorch is installed.
 
 ```jsx
 $ moreh-smi
-15:51:25 April 29, 2024 
+
 +----------------------------------------------------------------------------------------------+
-|                                                   Current Version:   Latest Version: 24.5.0  |
+|                                             Current Version: 24.5.0  Latest Version: 24.5.0  |
 +----------------------------------------------------------------------------------------------+
 |  Device  |        Name         |   Model   |  Memory Usage  |  Total Memory  |  Utilization  |
 +==============================================================================================+
 |  * 0     |  MoAI Accelerator   |  4xlarge  |  -             |  -             |  -            |
 +----------------------------------------------------------------------------------------------+
+
 ```
 
-If you are currently running training using the MoAI Accelerator, executing **`moreh-smi`** in a separate terminal session will display information about the running processes. Additionally, by using **`moreh-smi`**, you can quickly identify your Job ID. If you encounter any issues during training or inference on the MoAI Platform, providing your Job ID when contacting customer support will facilitate a faster response.
+If you are currently running a training session using the MoAI Accelerator, running `moreh-smi` in another terminal session will display the running process information as follows. You can also use `moreh-smi` to quickly identify your Job ID, allowing for faster support response from MoAI Platform in case of training or inference issues. In the example below, the Job ID is 976356.
 
 ```jsx
 $ moreh-smi
-17:58:15 April 29, 2024 
+
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -53,25 +53,23 @@ Processes:
 +-----------------------------------------------------------------------------------+
 |  Device  |  Job ID  |    PID    |             Process            |  Memory Usage  |
 +===================================================================================+
-|       0  |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
+|    0     |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
 +-----------------------------------------------------------------------------------+
+
 ```
 
-#### Utilizing Multi-Accelerator Feature
+### Utilizing MoAI Accelerator's Multi Accelerator Feature
 
-By default, if users do not make any additional settings, there will be only one MoAI Accelerator in a single SSH environment. Typically, with one MoAI Accelerator, only one process can be executed at a time, allowing for only one process to run in a single SSH environment.
+By default, if users do not configure anything, there will only be one MoAI Accelerator in a VM or container environment. With one MoAI Accelerator, only one process can run. However, there may be cases where you want to run multiple processes concurrently in the same environment, even with a single MoAI Accelerator. For example, you may want to run multiple training experiments concurrently by changing the same source code or hyperparameters. In such cases, you can create multiple MoAI Accelerators within a single token using `moreh-smi`, enabling multiple processes to run concurrently.
 
-However, there may be scenarios where users want to leverage multiple MoAI Accelerators within the same SSH environment to run multiple processes simultaneously (e.g., running multiple training experiments concurrently with the same source code but different hyperparameters). In such cases, using **`moreh-smi`** to create multiple MoAI Accelerators within a single token enables running multiple processes concurrently.
+Let's explore adding, modifying, and removing MoAI Accelerators with the following examples.
 
-Let's go through an example of adding, changing, and removing AI accelerators.
+### Adding MoAI Accelerators
 
-#### Adding AI Accelerators
-
-
-First, let's add an AI accelerator. To use two or more AI accelerators, you can enter the **`moreh-smi device --add`** command, which will display the following interface.
+First, let's add a MoAI Accelerator. When you enter the `moreh-smi device --add` command to use two or more MoAI Accelerators, you will see the following interface.
 
 ```bash
-(moreh) ubuntu@vm:~$ moreh-smi device --add
+$ moreh-smi device --add
 1. Small.64GB
 2. Medium.128GB
 3. Large.256GB
@@ -89,191 +87,86 @@ First, let's add an AI accelerator. To use two or more AI accelerators, you can 
 Selection (1-13, q, Q):
 ```
 
-Enter an integer corresponding to the model you want to use from 1 to 13, and a message "Create device success." will appear, indicating that the AI accelerator corresponding to the entered device number has been created. Up to 5 AI accelerators can be created within a single VM.
+When you input the integer corresponding to the model you want to use from 1 to 13, a MoAI Accelerator corresponding to the entered device number will be created with the message "Create device success." Within one environment, you can create a maximum of 5 AI accelerators. If you need to create more MoAI Accelerators, please contact your infrastructure administrator.
 
-In the example below, let's add the [!badge variant="secondary" text=8xLarge.4096GB] AI accelerator with model number 10.
-
-```bash
-Selection (1-13, q, Q): 10
-+---------------------------------------------------+
-|  Device  |        Name         |       Model      |
-+===================================================+
-|  * 0     |  AI Accelerator  |  Large.256GB        |
-|    1     |  AI Accelerator  |  8xLarge.4096GB     |
-+---------------------------------------------------+
-Create device success.
-1. Small.64GB
-2. Medium.128GB
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-```
-
-#### Changing Default AI Accelerator
-
-The **`moreh-smi device --switch {Device_ID}`** command allows you to change the default MoAI Accelerator.
-
-Here's how to use it:
+In the example below, let's add the 10th **`8xLarge.4096GB`** MoAI Accelerator:
 
 ```bash
-(moreh) ubuntu@vm:~$ moreh-smi device --switch 1
+$ moreh-smi device --add 10
 
-+---------------------------------------------------+
-|  Device  |        Name         |       Model      |
-+===================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |
-|    4     |  KT AI Accelerator  |  Small.64GB      |
-+---------------------------------------------------+
-Switch Current Device success.
-```
-
-You can see that the default MoAI Accelerator has been changed to accelerator #1 in the example above.
-
-
-```bash
-Selection (0-4, q, Q): q
-
-(moreh) ubuntu@vm:~$ moreh-smi
-10:49:12 May 07, 2024
-+-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
-|    4     |  KT AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+
-```
-
-## Changing AI Accelerators with `moreh-switch-model`
-
-**`moreh-switch-model`** is a tool that allows you to change the flavor (specification) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.
-
-Here's how to use it:
-
-For example, if the result of the **`moreh-smi`** command is as follows, it means "The currently configured MoAI Accelerator is accelerator 0, and the type of this MoAI Accelerator is the **`Small.64GB`** model."
-
-Here's how to use it:
-
-```jsx
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|    0     |   MoAI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|  * 1     |   MoAI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-When you use the **`moreh-switch-model`** command, an input prompt will appear like below:
+---
+
+### Changing the Default MoAI Accelerator: `moreh-smi device --switch`
+
+`moreh-smi device --switch {Device_ID}` is a command that allows you to change the default MoAI Accelerator.
+
+It can be used as follows:
 
 ```bash
-(moreh) ubuntu@vm:~$ moreh-switch-model
-Current AI Accelerator: Medium.128GB
+$ moreh-smi device --switch 1
 
-1. Small.64GB  *
-2. Medium.128GB  
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q):
-
-```
-
-Enter an integer (device number) corresponding to the model you want to use from 1 to 13, and the MoAI Accelerator will be switched to the MoAI Accelerator corresponding to the entered device number with the message "The MoAI Platform AI Accelerator model is successfully switched to {model_id}."
-
-Let's change the MoAI Accelerator to the [!badge variant="secondary" text=Large.256GB] model with device number 3.
-
-```bash
-Selection (1-13, q, Q): 3
-The AI Accelerator model is successfully switched to  "Large.256GB".
-
-1. Small.64GB  
-2. Medium.128GB
-3. Large.256GB *
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q):
-
-```
-
-You can continue the change or exit the MoAI Accelerator change by entering **`q`** or **`Q`**.
-
-After the change is complete, when you use **`moreh-smi`** again to check, the result will be as follows:
-
-
-```jsx
-+-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-----------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
-+=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------+
-```
-
-You can see that the MoAI Accelerator type has been changed from the [!badge variant="secondary" text=Small.64GB] model to the [!badge variant="secondary" text=Large.256GB] model.
-
-#### Removing AI Accelerators
-
-Next, let's try deleting the accelerator corresponding to a specific device ID using the command **`moreh-smi device --rm {Device_ID}`**.
-
-```bash
-(moreh) ubuntu@vm:~$ moreh-smi --rm 1
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
-|  * 0     |  AI Accelerator  |    Large.256GB     |
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |
+|    4     |   MoAI Accelerator  |  Small.64GB      |
++---------------------------------------------------+
+Switch Current Device success.
+```
+
+This means that the current default MoAI Accelerator has been changed to Accelerator 1.
+
+```bash
+Selection (0-4, q, Q): q
+
+$ moreh-smi
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
+|    4     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+
+```
+
+### Removing MoAI Accelerators: `moreh-smi device --rm`
+
+This time, let's try to remove a specific accelerator corresponding to the specified device ID with the command `moreh-smi device --rm {Device_ID}`.
+
+```bash
+$ moreh-smi --rm 1
++---------------------------------------------------+
+|  Device  |        Name         |       Model      |
++===================================================+
+|  * 0     |   MoAI Accelerator  |    Large.256GB   |
 +---------------------------------------------------+
 Remove device success.
 ```
 
-By entering the command above, the AI accelerator [!badge variant="secondary" text=8xLarge.4096GB] with Device ID 1 has been deleted. To confirm, run **`moreh-smi`** again to see that the device has been removed.
+The MoAI Accelerator with Device ID 1, `8xLarge.4096GB`, has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.
 
-#### Utilizing Various Other Options
+### Other Various Options Utilization
 
-Besides, **`moreh-smi`** provides various other options. By using the **`--help`** option, you can see what options are available:
+`moreh-smi` provides various other options. You can use the `--help` option to see what options are available.
 
-```jsx
+```bash
 $ moreh-smi --help
 
 Usage: moreh-smi [-h | --help] [-r | --reset] [-s | --server-version] [-v | --version] [-t | --token] [-i | --idx]
@@ -303,38 +196,144 @@ Device Example:
   moreh-smi -i 2
 ```
 
-1. **`moreh-smi -p`** - Monitor detailed hardware status of MoAI Accelerators.
-2. **`moreh-smi -t`** - Check MoAI Accelerator token information.
-3. **`moreh-smi --reset`** - Terminate MoAI Accelerator processes.
+- `moreh-smi -p` - Monitor detailed hardware status of MoAI Accelerators.
+- `moreh-smi -t` - Check MoAI Accelerator token information.
 
-## Updating MoAI Platform with `update-moreh`
+!!!info 
+If you encounter issues during training, such as tangled processes or difficulty terminating, causing messages like "Process Running," use the `moreh-smi --reset` command.
+!!!
 
-**`update-moreh`** is a command that allows you to create a new conda environment and install Moreh solutions on it or update the version of Moreh solutions already installed in the conda environment. You can use **`update-moreh`** in the following situations:
 
-- When you create a new conda environment, you need to install the required Python packages for Moreh solutions. In this case, you can easily install the latest version of Moreh solutions using the **`update-moreh`** command.
+## Changing MoAI Accelerators: `moreh-switch-model`
 
-```jsx
-$ conda create --name my_env python=3.8
-$ update-moreh
-```
+`moreh-switch-model` is a tool that allows you to change the flavor (specifications) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.
 
-- If you want to use the latest version of Moreh solutions in an already installed conda environment, you can update the currently installed Moreh solutions to the latest version using the **`update-moreh`** command alone.
+It can be used as follows:
 
-```bash
-$ update-moreh #update to latest version
-```
-
-- Sometimes, you may need to install a specific version of Moreh solutions. In this case, you can use the `--target` option to specify the specific version you want to install.
+For example, if the result of the `moreh-smi` command is as follows, it means that the "MoAI Platform AI Accelerator model currently set as the default is Accelerator 0, and this MoAI Accelerator is of type `Small.64GB` model."
 
 ```bash
-update-moreh --target 24.5.301 # Install version 24.5.301 
-update-moreh --target 24.5.302 # Install version 24.5.302
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
+|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+
 ```
 
-- If MoAI Platform does not work properly due to dependency conflicts between different packages in the conda environment, you might have to reinstall the conda environment. In such cases, you can use **`update-moreh`** to restore the Moreh solutions in the conda environment. In the latter case, you can use the `--force` option to rebuild the environment. (Can be used with the `--target` option as well)
+The `moreh-switch-model` command displays the following prompt:
 
 ```bash
-update-moreh --force --target 24.5.301
+$ moreh-switch-model
+Current MoAI Accelerator: Medium.128GB
+
+1. Small.64GB  *
+2. Medium.128GB  
+3. Large.256GB
+4. xLarge.512GB
+5. 1.5xLarge.768GB
+6. 2xLarge.1024GB
+7. 3xLarge.1536GB
+8. 4xLarge.2048GB
+9. 6xLarge.3072GB
+10. 8xLarge.4096GB
+11. 12xLarge.6144GB
+12. 24xLarge.12288GB
+13. 48xLarge.24576GB
+
+Selection (1-13, q, Q):
+
 ```
 
----
+If you enter an integer corresponding to the model to be used from 1 to 13 (device number), the message "`The MoAI Platform AI Accelerator model is successfully switched to {model_id}."` will be displayed, and the MoAI Accelerator corresponding to the entered device number will be changed.
+
+Let's change the MoAI Accelerator to `Large.256GB` as follows:
+
+```bash
+Selection (1-13, q, Q): 3
+The MoAI Accelerator model is successfully switched to  "Large.256GB".
+
+1. Small.64GB  
+2. Medium.128GB
+3. Large.256GB *
+4. xLarge.512GB
+5. 1.5xLarge.768GB
+6. 2xLarge.1024GB
+7. 3xLarge.1536GB
+8. 4xLarge.2048GB
+9. 6xLarge.3072GB
+10. 8xLarge.4096GB
+11. 12xLarge.6144GB
+12. 24xLarge.12288GB
+13. 48xLarge.24576GB
+
+Selection (1-13, q, Q):
+
+```
+
+You can continue with the change or exit the MoAI Accelerator change by typing `q` or `Q`.
+
+After the change is complete, when you run `moreh-smi` again to confirm, you will see the following result:
+
+```bash
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
+|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
+|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+
+```
+
+The MoAI Accelerator previously set as the `Small.64GB` model has been changed to the `Large.256GB` model.
+
+## Updating MoAI Platform: `update-moreh`
+
+`update-moreh` is a command that allows you to create a new conda environment and install MoAI Platform on it, or update the version of MoAI Platform already installed in the conda environment. You can use `update-moreh` in the following situations:
+
+- If you have created a new conda environment and MoAI Platform Python packages need to be installed, you can easily install the latest version of MoAI Platform using the `update-moreh` command.
+    
+    ```bash
+    $ conda create --name my_env python=3.8
+    $ update-moreh # Install MoAI Platform 
+    
+    Do you want to proceed? (y/n, default:n)
+    y
+    Moreh Framework installation start...
+    Moreh Framework installation successful.
+    ```
+    
+- If you want to use the latest version of MoAI Platform even in an existing conda environment where MoAI Platform is already installed, you can update the currently used MoAI Platform to the latest version using the `update-moreh` command alone.
+    
+    ```bash
+    $ update-moreh # Update to the Latest Version
+    Currently installed: 
+    Possible upgrading version: 24.5.0
+    
+    Do you want to upgrade? (y/n, default:n)
+    y
+    Moreh Framework installation start...
+    Moreh Framework installation successful.
+    $ update-moreh
+    Already installed : 24.5.0
+    In some cases, you may need to install a specific version of MoAI Platform. In this case, you can specify the specific version of MoAI Platform you want to install using the 
+    ```
+    
+- There may be cases where you need to install a specific version of the MoAI Platform. In such cases, you can use the **`--target`** option to specify the specific version you want to install.
+
+```bash
+update-moreh --target 24.5.0 # Install 24.5.0 version
+```
+
+- If the MoAI Platform is not functioning properly due to issues such as dependency conflicts between other packages in the conda environment, you may need to reconstruct the conda environment. In such cases, you can use **`update-moreh`** to restore the MoAI Platform within the conda environment. In the latter case, you can use the **`--force`** option to reconstruct the environment. (Can be used with the **`—-target`** option)
+
+```bash
+update-moreh --force --target 24.5.0
+```

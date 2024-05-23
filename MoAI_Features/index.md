@@ -2,7 +2,7 @@
 icon: note
 tags: [features]
 order: 100
-expanded: true
+visibility: hidden
 ---
 
 # MoAI Platform Features

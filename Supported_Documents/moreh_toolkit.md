@@ -196,8 +196,8 @@ Device Example:
   moreh-smi -i 2
 ```
 
-1. `moreh-smi -p` - Monitor detailed hardware status of MoAI Accelerators.
-2. `moreh-smi -t` - Check MoAI Accelerator token information.
+- `moreh-smi -p` - Monitor detailed hardware status of MoAI Accelerators.
+- `moreh-smi -t` - Check MoAI Accelerator token information.
 
 !!!info 
 If you encounter issues during training, such as tangled processes or difficulty terminating, causing messages like "Process Running," use the `moreh-smi --reset` command.

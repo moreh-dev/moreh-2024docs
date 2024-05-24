@@ -9,11 +9,45 @@ expanded: false
 
 ### What is Advanced Parallelization?
 
-Advanced Parallelization (AP) is an optimized automated distributed parallel processing feature provided by the MoAI Platform. Typically, ML engineers go through numerous trial-and-error processes to optimize model parallelization when training large models. This involves considering the memory size of the GPUs being used, directly applying various parallelization techniques, and measuring the performance of different combinations of options within each technique to determine the optimal configuration.
+Advanced Parallelization (AP) is the automatic model optimization and distributed parallel processing feature provided by the MoAI Platform. Typically, ML engineers undergo numerous trial and error processes to optimize model parallelization during training of large-scale models. They experiment with various parallelization techniques, considering the memory size of the GPU in use, measure performance for different option combinations available in each technique, and determine optimized environment variables. This is a very laborious task that can take skilled machine learning developers from weeks to months.
 
-However, with the AP feature offered by the MoAI Platform, you can easily apply optimized parallelization techniques, significantly reducing the time and effort required before starting the training process.
+With the AP feature of the MoAI Platform, complex parallel processing and model optimization tasks can be automatically performed with just a single line of code, dramatically reducing the time and effort involved in training.
 
 
-![](overview_05.png)
+![Normalized model training throughput: experienced developer optimizations over one moth vs. using the AP feature on the MoAI Platform](overview_05.png)
 
-Moreh의 AP 기능은 기존 최적화 과정을 **자동화**함으로써, 최적의 병렬화 환경 변수 조합을 신속하게 결정합니다. 따라서 대규모 모델 훈련시 적용하는 효율적인 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경 변수 조합을 간단히 얻을 수 있습니다.
+### 💡 Why is Parallelization crucial?
+
+As a simple example, let's calculate how much GPU memory is required to train the Llama2 13B model.
+
+The Llama2 13B model contains approximately 13 billion parameters.  The memory size required to load the model, depending on the FP16 data format, is approximately 25GB. 
+A minimum of 100-150GB of memory is required for training components such as the Optimizer and gradients. 
+Therefore, training is impossible with just the memory capacity of a typical single GPU (80128GB). This is why GPU parallel processing is essential for model training.
+
+For example, when using NVIDIA's FSDP (Fully Sharded Data Parallel) or DeepSpeed, developers must  manually adjust various parallelization settings. In this case, the following parameters must be carefully adjusted:
+
+**Parameter Sharding**: FSDP requires specifying how to shard model parameters across GPUs. Incorrect settings can result in suboptimal performance or memory overflow errors.
+**Optimizer Stat Sharding**: Both FSDP and DeepSpeed require sharding the optimizer state for efficient memory usage and communication overhead, which entails complex configurations.
+**Activation Checkpoint**: Activation checkpointing may need to be activated to save memory, balancing additional computation overhead for saving memory and recalculating activations during backpropagation.
+
+Using the MoAI Platform's AP function allows users to save time and effort on complex parallelization tasks.
+
+With a single line of code below, the  platform automatically handles the complexities of parallelization operations to assure optimal performance.
+
+
+```python
+import torch
+...
+torch.moreh.option.enable_advanced_parallelization()
+
+model = AutoModelForCausalLM(...) 
+```
+
+As a result, while training big models, users can easily obtain optimal parameters and environment variable combinations for parallelization techniques such as Data Parallelism or Pipeline Parallelism.
+
+Users can focus on the goal of model training instead of dealing with the tedious task of configuring parallelization settings.
+
+
+
+
+

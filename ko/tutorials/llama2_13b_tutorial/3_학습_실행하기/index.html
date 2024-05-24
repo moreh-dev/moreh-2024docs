@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769846227056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769847019297">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>5. GPU 개수 변경하기</title>
-    <meta name="title" content="5. GPU 개수 변경하기">
-    <meta name="description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
+    <title>3. 학습 실행하기</title>
+    <meta name="title" content="3. 학습 실행하기">
+    <meta name="description" content="이제 실제로 fine tuning을 실행해 보겠습니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/tutorials/llama2_tutorial/5_gpu-개수-변경하기/">
+    <link rel="canonical" href="https://docs.moreh.io/tutorials/llama2_13b_tutorial/3_학습_실행하기/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/tutorials/llama2_tutorial/5_gpu-개수-변경하기/">
-    <meta property="og:title" content="5. GPU 개수 변경하기">
-    <meta property="og:description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
+    <meta property="og:url" content="https://docs.moreh.io/tutorials/llama2_13b_tutorial/3_학습_실행하기/">
+    <meta property="og:title" content="3. 학습 실행하기">
+    <meta property="og:description" content="이제 실제로 fine tuning을 실행해 보겠습니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/tutorials/llama2_tutorial/5_gpu-개수-변경하기/">
-    <meta property="twitter:title" content="5. GPU 개수 변경하기">
-    <meta property="twitter:description" content="앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다.">
+    <meta property="twitter:url" content="https://docs.moreh.io/tutorials/llama2_13b_tutorial/3_학습_실행하기/">
+    <meta property="twitter:title" content="3. 학습 실행하기">
+    <meta property="twitter:description" content="이제 실제로 fine tuning을 실행해 보겠습니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769846227056" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769847019297" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769846227056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769847019297" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769846227056" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769846227056" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769847019297" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769847019297" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -180,7 +180,7 @@
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../../tutorials/llama2_tutorial/" class="pr-4">
+                                            <a href="../../../tutorials/llama2_13b_tutorial/" class="pr-4">
                                                 Llama​2 Fine-​tuning
                                             </a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
@@ -188,98 +188,204 @@
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../../tutorials/llama2_tutorial/5_gpu-개수-변경하기/" class="pr-4">
-                                                5. GPU 개수 변경하기
+                                            <a href="../../../tutorials/llama2_13b_tutorial/3_학습_실행하기/" class="pr-4">
+                                                3. 학습 실행하기
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="5-gpu-개수-변경하기" class="break-words">
+<doc-anchor-target id="3-학습-실행하기" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-gpu-개수-변경하기">#</doc-anchor-trigger>
-        <span>5. GPU 개수 변경하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-학습-실행하기">#</doc-anchor-trigger>
+        <span>3. 학습 실행하기</span>
     </h1>
 </doc-anchor-target>
-<p>앞과 동일한 fine-tuning 작업을 GPU 개수를 바꾸어 다시 실행해 보겠습니다. MoAI Platform은 GPU 자원을 단일 가속기로 추상화하여 제공하며 자동으로 병렬 처리를 수행합니다. 따라서 GPU 개수를 변경하더라도 PyTorch 스크립트를 수정할 필요가 전혀 없습니다.</p>
-<doc-anchor-target id="가속기-flavor-변경">
+<p>이제 실제로 fine tuning을 실행해 보겠습니다.</p>
+<doc-anchor-target id="가속기-flavor-설정">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#가속기-flavor-변경">#</doc-anchor-trigger>
-        <span>가속기 Flavor 변경</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#가속기-flavor-설정">#</doc-anchor-trigger>
+        <span>가속기 Flavor 설정</span>
     </h2>
 </doc-anchor-target>
-<p><code v-pre>moreh-switch-model</code> 툴을 사용하여 가속기 flavor를 전환합니다. 가속기 변경 방법은 <a href="../3_%ED%95%99%EC%8A%B5_%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/">3. 학습 실행하기</a> 문서를 한번 더 참고해주시기 바랍니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model</code></pre>
-</doc-codeblock></div>
+<p>MoAI Platform에서는 사용자에게 물리 GPU가 노출되지 않습니다. 대신에, PyTorch에서 사용할 수 있는 가상의 MoAI Accelerator를 MoAI Accelerator가 제공됩니다. 가속기의 Flavor를 설정함으로써 실제 물리 GPU를 얼마나 활용할지를 결정할 수 있습니다. 선택한 가속기 Flavor에 따라 총 학습 시간과 GPU 사용 비용이 달라지므로 사용자는 학습 상황을 고려하여 결정해야 합니다. 사용자의 학습 목표에 맞는 가속기 Flavor를 선택하기 위해 다음 문서를 참고하세요.</p>
 <ul>
-<li>AMD MI250 GPU 32개 사용
+<li><strong><a href="../../../supported_documents/kt_hac_models_info/">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</a></strong></li>
+<li><strong><a href="../../../supported_documents/llm_param_guide/">LLM Fine-tuning 파라미터 가이드</a></strong></li>
+</ul>
+<p>튜토리얼을 계속 진행하기 위해 인프라 제공자에게 각 flavor에 대응되는 GPU 종류 및 개수를 문의하십시오. 다음 중 하나에 해당하는 Flavor를 선택하여 계속 진행할 수 있습니다.</p>
+<ul>
+<li>AMD MI250 GPU 16개 사용
 <ul>
 <li>Moreh의 체험판 컨테이너 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xlarge</span>
+    <span>4xlarge</span>
 </span> 선택</li>
 <li>KT Cloud의 Hyperscale AI Computing 사용 시: <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>8xLarge.4096GB</span>
+    <span>4xLarge.2048GB</span>
 </span> 선택</li>
 </ul>
 </li>
-<li>AMD MI210 GPU 64개 사용</li>
-<li>AMD MI300X GPU 16개 사용</li>
+<li>AMD MI210 GPU 32개 사용</li>
+<li>AMD MI300X GPU 8개 사용</li>
 </ul>
+<p>앞서 <a href="../">Llama2 Fine-tuning</a> 문서에서 MoAI Accelerator를 확인했던 것을 기억하시나요? 이제 본격적인 학습 실행을 위해 필요한 가속기를 설정해보겠습니다.</p>
+<p>먼저  <code v-pre>moreh-smi</code> 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
+11:40:36 April 16, 2024
++-------------------------------------------------------------------------------------------------+
+|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
++-------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
++=================================================================================================+
+|  * 0     |   MoAI Accelerator  |  xLarge.512GB  |  -             |  -             |  -            |
++-------------------------------------------------------------------------------------------------+</code></pre>
+</doc-codeblock></div>
+<p>현재 사용중인 MoAI Accelerator의 메모리 크기는 512GB입니다.</p>
+<p><code v-pre>moreh-switch-model</code>툴을 사용하여 현재 시스템에서 사용 가능한 가속기 flavor 리스트를 확인할 수 있습니다. 원활한 모델 학습을 위해 <code v-pre>moreh-switch-model</code> 명령어를 이용해 더 큰 메모리의 MoAI Accelerator로 변경할 수 있습니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model
+Current MoAI Accelerator: xLarge.512GB
+
+1. Small.64GB
+2. Medium.128GB
+3. Large.256GB
+4. xLarge.512GB  *
+5. 1.5xLarge.768GB
+6. 2xLarge.1024GB
+7. 3xLarge.1536GB
+8. 4xLarge.2048GB
+9. 6xLarge.3072GB
+10. 8xLarge.4096GB
+11. 12xLarge.6144GB
+12. 24xLarge.12288GB
+13. 48xLarge.24576GB</code></pre>
+</doc-codeblock></div>
+<p>여기서 번호를 입력하여 다른 flavor로 전환할 수 있습니다.</p>
+<p>이번 튜토리얼에서는 2048GB 크기의 MoAI Accelerator를 이용하겠습니다.</p>
+<p>따라서 처음 설정되어 있던 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>xLarge.512GB</span>
+</span> flavor를 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span>로 전환한 다음 <code v-pre>moreh-smi</code> 명령을 사용하여 정상적으로 반영되었는지 확인하겠습니다.</p>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span> 사용을 위해 8을 입력합니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 8
+The MoAI Accelerator model is successfully switched to  &quot;4xLarge.2048GB&quot;.
+
+1. Small.64GB
+2. Medium.128GB
+3. Large.256GB
+4. xLarge.512GB
+5. 1.5xLarge.768GB
+6. 2xLarge.1024GB
+7. 3xLarge.1536GB
+8. 4xLarge.2048GB  *
+9. 6xLarge.3072GB
+10. 8xLarge.4096GB
+11. 12xLarge.6144GB
+12. 24xLarge.12288GB
+13. 48xLarge.24576GB
+
+Selection (1-13, q, Q): q </code></pre>
+</doc-codeblock></div>
+<p><code v-pre>q</code> 를 입력해 변경을 완료합니다.</p>
+<p>변경 사항이 잘 반영되었는지 확인하기 위해 다시 <code v-pre>moreh-smi</code> 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
+23:56:17 April 18, 2024
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+</code></pre>
+</doc-codeblock></div>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span>로 잘 변경된 것을 확인할 수 있습니다.</p>
 <doc-anchor-target id="학습-실행">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#학습-실행">#</doc-anchor-trigger>
         <span>학습 실행</span>
     </h2>
 </doc-anchor-target>
-<p>다시 <code v-pre>train_llama2.py</code> 스크립트를 실행합니다.</p>
+<p>주어진 <code v-pre>train_llama2.py</code> 스크립트를 실행합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/train_llama2.py --batch-size 512</code></pre>
+<pre class="language-none"><code v-pre class="language-none">$ cd ~/quickstart
+~/quickstart$ python tutorial/train_llama2.py</code></pre>
 </doc-codeblock></div>
-<p>사용 가능한 GPU 메모리가 <strong>2배</strong> 늘었기 때문에, 배치 사이즈 또한 기존 <code v-pre>256</code> 에서 <code v-pre>512</code>로 변경하여 실행시켜 보겠습니다.</p>
-<p>학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다.</p>
+<p>학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다. 이 로그를 통해 Advanced Parallelism 기능이 올바르게 동작하며 최적의 병렬화 설정이 적용되었음을 확인할 수 있습니다.
+이전에 살펴본 PyTorch 스크립트 상에서는  AP 코드 한 줄을 제외한 부분에서 GPU 여러 개를 동시에 사용하기 위한 처리가 전혀 없었음을 참고하십시오.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">...
-[2024-04-25 15:56:09.831] [info] Requesting resources for KT AI Accelerator from the server...
-[2024-04-25 15:56:09.841] [info] Initializing the worker daemon for KT AI Accelerator
-[2024-04-25 15:56:15.130] [info] [1/8] Connecting to resources on the server (192.168.110.1:24166)...
-[2024-04-25 15:56:15.143] [info] [2/8] Connecting to resources on the server (192.168.110.24:24166)...
-[2024-04-25 15:56:15.150] [info] [3/8] Connecting to resources on the server (192.168.110.25:24166)...
-[2024-04-25 15:56:15.156] [info] [4/8] Connecting to resources on the server (192.168.110.26:24166)...
-[2024-04-25 15:56:15.164] [info] [5/8] Connecting to resources on the server (192.168.110.51:24166)...
-[2024-04-25 15:56:15.170] [info] [6/8] Connecting to resources on the server (192.168.110.79:24166)...
-[2024-04-25 15:56:15.177] [info] [7/8] Connecting to resources on the server (192.168.110.80:24166)...
-[2024-04-25 15:56:15.184] [info] [8/8] Connecting to resources on the server (192.168.110.99:24166)...
-[2024-04-25 15:56:15.191] [info] Establishing links to the resources...
-[2024-04-25 15:56:16.061] [info] KT AI Accelerator is ready to use.
-[2024-04-25 15:56:16.521] [info] The number of candidates is 24.
-[2024-04-25 15:56:16.521] [info] Parallel Graph Compile start...
-[2024-04-25 15:57:14.441] [info] Elapsed Time to compile all candidates = 57920 [ms]
-[2024-04-25 15:57:14.441] [info] Parallel Graph Compile finished.
-[2024-04-25 15:57:14.441] [info] The number of possible candidates is 3.
-[2024-04-25 15:57:14.441] [info] SelectBestGraphFromCandidates start...
-[2024-04-25 15:57:16.562] [info] Elapsed Time to compute cost for survived candidates = 2120 [ms]
-[2024-04-25 15:57:16.562] [info] SelectBestGraphFromCandidates finished.
-[2024-04-25 15:57:16.562] [info] Configuration for parallelism is selected.
-[2024-04-25 15:57:16.562] [info] num_stages : 2, num_micro_batches : 16, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
-[2024-04-25 15:57:16.562] [info] train: true
+<pre class="language-bash"><code v-pre class="language-bash">2024-04-24 13:51:32,884 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpypapv6uq
+2024-04-24 13:51:32,886 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpypapv6uq/_remote_module_non_scriptable.py
+2024-04-24 13:51:50,046 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+...
+Loading checkpoint shards: 100%|██████████| 11/11 [00:11&lt;00:00,  1.02s/it]
+[2024-04-24 13:52:20.806] [info] Got DBs from backend for auto config.
+[2024-04-24 13:52:25.469] [info] Requesting resources for MoAI Accelerator from the server...
+[2024-04-24 13:52:25.481] [info] Initializing the worker daemon for MoAI Accelerator
+[2024-04-24 13:52:30.967] [info] [1/4] Connecting to resources on the server (192.168.110.1:24159)...
+[2024-04-24 13:52:30.982] [info] [2/4] Connecting to resources on the server (192.168.110.21:24159)...
+[2024-04-24 13:52:30.989] [info] [3/4] Connecting to resources on the server (192.168.110.22:24159)...
+[2024-04-24 13:52:30.995] [info] [4/4] Connecting to resources on the server (192.168.110.44:24159)...
+[2024-04-24 13:52:31.035] [info] Establishing links to the resources...
+[2024-04-24 13:52:31.906] [info] MoAI Accelerator is ready to use.
+[2024-04-24 13:52:32.407] [info] The number of candidates is 22.
+[2024-04-24 13:52:32.407] [info] Parallel Graph Compile start...
+[2024-04-24 13:53:05.235] [info] Elapsed Time to compile all candidates = 32827 [ms]
+[2024-04-24 13:53:05.235] [info] Parallel Graph Compile finished.
+[2024-04-24 13:53:05.235] [info] The number of possible candidates is 4.
+[2024-04-24 13:53:05.235] [info] SelectBestGraphFromCandidates start...
+[2024-04-24 13:53:06.328] [info] Elapsed Time to compute cost for survived candidates = 1093 [ms]
+[2024-04-24 13:53:06.328] [info] SelectBestGraphFromCandidates finished.
+[2024-04-24 13:53:06.328] [info] Configuration for parallelism is selected.
+[2024-04-24 13:53:06.328] [info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
+[2024-04-24 13:53:06.328] [info] train: true
 
-2024-04-25 15:59:00.492 | INFO     | __main__:main:136 - [Step 2/560] | Loss: 1.6953125 | Duration: 15.12 | Throughput: 69337.98 tokens/sec
-2024-04-25 16:00:05.283 | INFO     | __main__:main:136 - [Step 4/560] | Loss: 1.6875 | Duration: 15.93 | Throughput: 65842.99 tokens/sec
-2024-04-25 16:01:12.262 | INFO     | __main__:main:136 - [Step 6/560] | Loss: 1.703125 | Duration: 15.73 | Throughput: 66656.28 tokens/sec
-2024-04-25 16:02:19.591 | INFO     | __main__:main:136 - [Step 8/560] | Loss: 1.6328125 | Duration: 15.36 | Throughput: 68263.53 tokens/sec
-2024-04-25 16:03:24.498 | INFO     | __main__:main:136 - [Step 10/560] | Loss: 1.5859375 | Duration: 12.78 | Throughput: 82040.81 tokens/sec
-2024-04-25 16:04:28.820 | INFO     | __main__:main:136 - [Step 12/560] | Loss: 1.59375 | Duration: 13.00 | Throughput: 80657.85 tokens/sec
-2024-04-25 16:05:32.933 | INFO     | __main__:main:136 - [Step 14/560] | Loss: 1.6328125 | Duration: 12.65 | Throughput: 82906.48 tokens/sec
-2024-04-25 16:06:37.614 | INFO     | __main__:main:136 - [Step 16/560] | Loss: 1.6796875 | Duration: 14.94 | Throughput: 70195.58 tokens/sec
-2024-04-25 16:07:44.641 | INFO     | __main__:main:136 - [Step 18/560] | Loss: 1.6875 | Duration: 13.01 | Throughput: 80607.34 tokens/sec
-...</code></pre>
+2024-04-23 11:29:22.533 | INFO     | __main__:main:131 - [Step 2/1121] | Loss: 1.78125 | Duration: 16.31 | Throughput: 32150.92 tokens/sec
+2024-04-23 11:30:29.368 | INFO     | __main__:main:131 - [Step 4/1121] | Loss: 1.7109375 | Duration: 15.65 | Throughput: 33494.69 tokens/sec
+2024-04-23 11:31:36.496 | INFO     | __main__:main:131 - [Step 6/1121] | Loss: 1.75 | Duration: 15.68 | Throughput: 33444.54 tokens/sec
+2024-04-23 11:32:40.688 | INFO     | __main__:main:131 - [Step 8/1121] | Loss: 1.609375 | Duration: 13.80 | Throughput: 37988.52 tokens/sec
+2024-04-23 11:33:44.980 | INFO     | __main__:main:131 - [Step 10/1121] | Loss: 1.640625 | Duration: 16.25 | Throughput: 32272.10 tokens/sec
+2024-04-23 11:34:52.182 | INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
+...
+
+Training Done
+Saving Model...
+Model saved in ./llama2_summarization</code></pre>
 </doc-codeblock></div>
-<p>앞서 GPU 개수가 절반이었을 때 실행한 결과와 비교해 동일하게 학습이 이루어지며 throughput이 향상되었음을 확인할 수 있습니다.</p>
+<p>훈련 로그를 확인해 보면 학습이 정상적으로 이루어지는 것을 확인할 수 있습니다.</p>
+<p>학습 도중에 출력되는 throughput은 해당 PyTorch 스크립트를 통해 초당 몇 개의 token을 학습하고 있는지를 의미합니다.</p>
 <ul>
-<li>AMD MI250 GPU 16 → 32개 사용 시: 약 35,000 tokens/sec → 74,000 tokens/sec</li>
+<li>AMD MI250 GPU 16개 사용 시: 약 35,000 tokens/sec</li>
 </ul>
+<p>GPU 종류 및 개수에 따른 대략적인 학습 소요 시간은 다음과 같습니다.</p>
+<ul>
+<li>AMD MI250 GPU 16개 사용 시: 약 10시간</li>
+</ul>
+<doc-anchor-target id="학습-중에-가속기-상태-확인">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-중에-가속기-상태-확인">#</doc-anchor-trigger>
+        <span>학습 중에 가속기 상태 확인</span>
+    </h2>
+</doc-anchor-target>
+<p>학습 도중에 터미널을 하나 더 띄워서 컨테이너에 접속한 후 <code v-pre>moreh-smi</code> 명령을 실행하시면 다음과 같이 MoAI Accelerator의 메모리를 점유하며 학습 스크립트가 실행되는 것을 확인하실 수 있습니다. 실행 로그상에서 초기화 과정이 끝나고 Loss가 출력되는 도중에 확인해 보시기 바랍니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    100%        |
++-----------------------------------------------------------------------------------------------------+</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -302,20 +408,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/llama2_tutorial/4_학습-결과-확인하기/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/llama2_13b_tutorial/2_moreh학습코드_톺아보기/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">4. 학습 결과 확인하기</span>
+                                                <span class="block mt-1">2. Moreh의 학습 코드 톺아보기</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/llama2_tutorial/6_마무리/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../tutorials/llama2_13b_tutorial/4_학습결과확인하기/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">6. 마무리</span>
+                                                <span class="block mt-1">4. 학습 결과 확인하기</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -359,6 +465,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "5. GPU 개수 변경하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "3. 학습 실행하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

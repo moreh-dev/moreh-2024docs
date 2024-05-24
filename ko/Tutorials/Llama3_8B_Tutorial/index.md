@@ -4,7 +4,7 @@ tags: [tutorial, llama3]
 order: 1000
 ---
 
-# Llama3 Fine-tuning
+# Llama3 8B Fine-tuning
 
 이 튜토리얼은 MoAI Platform에서 오픈 소스 [Llama3-8b](https://huggingface.co/meta-llama/Meta-Llama-3-8B) 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
 

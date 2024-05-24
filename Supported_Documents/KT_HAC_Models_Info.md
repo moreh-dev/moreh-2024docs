@@ -1,6 +1,7 @@
 ---
 icon: server
 order: 10
+visibility: private
 ---
 
 # KT Hyperscale AI Computing (HAC) AI Accelerator Information

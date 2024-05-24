@@ -1,3 +1,9 @@
+start:
+  pro: true
+  
+poweredByRetype: false
+
+
 outbound:
   enabled: true
 

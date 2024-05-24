@@ -4,7 +4,7 @@ tags: [guide, moreh_toolkit]
 order: 110
 ---
 
-# Moreh toolkit 사용하기
+# Moreh Toolkit 가이드
 
 Moreh Toolkit은 MoAI Platform 상에서 [MoAI Accelerator](https://www.notion.so/MoAI-Features-GPU-1-20f6aa77b3cc41e7a403b4d82f785def?pvs=21)를 관리하거나 모니터링할 때 유용한 command line 도구입니다.  이 도구는 사용자에게 세 가지 명령어 (`moreh-smi`, `moreh-switch-model`, `update-moreh`)를 제공하여 MoAI Accelerator를 효율적으로 관리하고, 설치된 MoAI Platform을 손쉽게 업데이트할 수 있도록 합니다.
 

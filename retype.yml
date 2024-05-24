@@ -3,6 +3,9 @@ start:
   
   poweredByRetype: false
 
+outbound:
+  enabled: true
+
 input: ./
 output: .retype
 url: docs.moreh.io

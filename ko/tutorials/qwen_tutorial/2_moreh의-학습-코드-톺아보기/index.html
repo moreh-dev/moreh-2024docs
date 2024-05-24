@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769843623788">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769846227056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769843623788" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769846227056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769843623788" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769846227056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769843623788" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769843623788" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769846227056" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769846227056" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -302,8 +302,8 @@ torchrun --standalone --nnodes=1 --nproc_per_node=8 train.py
 # multi node 실행
 torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:29400 train.py</code></pre>
 </doc-codeblock></div>
-<p>이러한 기본적인 설정 외에도, 사용자는 학습 스크립트 작성 과정에서 Python 코드가 multi processing 환경에서 어떻게 작동하는지 이해해야 합니다. 특히 multi node 세팅에서는 학습에 사용되는 각 노드의 환경 구성 작업이 추가로 필요합니다. 또한, 모델의 종류, 크기, 데이터셋 등을 고려하여 최적의 병렬화 방법을 찾는 작업은 상당한 시간이 소요됩니다.</p>
-<p><strong>반면 MoAI Platform을 사용하면 이러한 복잡한 병렬화 기법을 직접 구현할 필요 없이 학습 스크립트에 한 줄의 코드를 추가하는 것만으로도 최적화된 병렬화 학습을 진행할 수 있습니다.</strong></p>
+<p>DDP는 비교적 쉽게 적용할 수 있지만, <a href="https://pytorch.org/docs/stable/pipeline.html" class="outbound" target="_blank"><span>파이프라인 병렬 처리</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>나 <a href="https://pytorch.org/tutorials/intermediate/TP_tutorial.html" class="outbound" target="_blank"><span>텐서 병렬 처리</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>를 적용하려면 상당히 복잡한 코드 수정이 필요합니다. 최적화된 병렬화 처리를 적용하려면 학습 스크립트 작성 과정에서 Python 코드가 다중 처리 환경에서 어떻게 동작하는지 이해해야 하며, 특히 다중 노드 설정에서는 학습에 사용되는 각 노드의 환경을 구성해야 합니다. 또한, 모델 종류, 크기, 데이터셋 등을 고려해 최적의 병렬화 방법을 찾기 위해서는 상당히 많은 시간이 필요합니다.</p>
+<p>반면, MoAI Platform의 AP 기능을 통해 사용자는 별도의 병렬화 기법을 적용할 필요 없이, 학습 스크립트에 단 한 줄의 코드를 추가하는 것으로도 최적화된 병렬화 학습을 진행할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">import torch
 ...
@@ -313,7 +313,7 @@ model = AutoModelForCausalLM.from_pretrained(&quot;Qwen/Qwen1.5-7B&quot;)
 tokenizer = AutoTokenizer.from_pretrained(&quot;Qwen/Qwen1.5-7B&quot;)
 ...</code></pre>
 </doc-codeblock></div>
-<p>이렇듯 다른 프레임워크에서는 경험할 수 없는 병렬화의 최적화 및 자동화 기능인 MoAI Platform만의 Advanced Parallelization(AP)을 통해 <strong>최적의 분산 병렬처리</strong>를 경험해보시기 바랍니다. AP기능을 이용하면 일반적으로 대규모 모델 훈련시 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수 조합을 <strong>아주 간단한 코드 한 줄</strong>을 통해 확보할 수 있습니다.</p>
+<p>다른 프레임워크에서는 경험할 수 없는 MoAI Platform만의 Advanced Parallelization(AP) 기능을 통해 <strong>최적의 자동화된 분산 병렬처리</strong>를 경험해보세요. AP기능을 이용하면 대규모 모델 훈련시 일반적으로 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수를 <strong>아주 간단한 코드 한 줄로 설정할 수 있습니다.</strong></p>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>

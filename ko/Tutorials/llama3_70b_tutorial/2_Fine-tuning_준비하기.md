@@ -4,7 +4,7 @@ tags: [tutorial, llama3_70b]
 order: 40
 ---
 
-# 1. Fine-tuning 준비하기
+# 2. Fine-tuning 준비하기
 
 MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
 

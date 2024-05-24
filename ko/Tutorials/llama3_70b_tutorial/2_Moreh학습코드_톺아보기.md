@@ -3,7 +3,7 @@ icon: terminal
 tags: [tutorial, llama2]
 order: 40
 ---
-# 2. Moreh의 학습 코드 톺아보기
+# 3. Moreh의 학습 코드 톺아보기
 
 학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_llama2.py` 스크립트의 내용에 대해 살펴보겠습니다. 이 스크립트는 통상적인 PyTorch 코드로서 Hugging Face Transformers 라이브러리에 있는 Llama2 13B 모델 구현을 기반으로 fine-tuning 작업을 실행합니다.
 

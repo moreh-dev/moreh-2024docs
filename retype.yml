@@ -1,7 +1,7 @@
 start:
   pro: true
   
-  poweredByRetype: false
+poweredByRetype: false
 
 outbound:
   enabled: true

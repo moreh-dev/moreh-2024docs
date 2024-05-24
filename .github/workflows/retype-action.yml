@@ -26,8 +26,9 @@ jobs:
       
       - uses: retypeapp/action-build@multi
         with:
-            config: ko/retype.yml
-            subdir: ko
+          license: ${{ secrets.RETYPE_SECRET }}
+          config: ko/retype.yml
+          subdir: ko
 
       - uses: retypeapp/action-build@multi
         with:

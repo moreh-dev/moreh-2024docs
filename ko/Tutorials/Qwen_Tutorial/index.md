@@ -14,10 +14,14 @@ Qwen1.5 7B 모델은 중국의 [Tongyi Qianwen(通义千问)](https://www.alibab
 
 ## 시작하기 전에
 
-MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다.
-혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh(support@moreh.io)에 문의하시기 바랍니다.
+MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform의 체험판 컨테이너 또는 MoAI Platform 기반으로 운영되는 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
 
-SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다. 
+[!ref target="blank" text="MoAI Platform 체험판 컨테이너 사용 문의"](support@moreh.io)
+
+[!ref target="blank" text="KT Cloud Hyperscale AI Computing"](https://cloud.kt.com/solution/hyperscaleAiComputing/)
+
+SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.
+
 ### MoAI Accelerator 확인
 
 이 튜토리얼에서 안내할 Qwen 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 `moreh-smi` 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다. 

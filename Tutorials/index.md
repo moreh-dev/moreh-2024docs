@@ -25,7 +25,6 @@ A pre-trained model has a large number of parameters designed for general-purpos
 With the MoAI Platform, you can easily apply optimized parallelization techniques that consider the GPU's memory size, significantly reducing the time and effort needed before starting training.
 
 
-
 #### What you will learn here:
 
 1. Loading datasets, models, and tokenizers

@@ -8,7 +8,7 @@ order: 1000
 
 이 튜토리얼은 MoAI Platform에서 오픈 소스 [Llama3-8b](https://huggingface.co/meta-llama/Meta-Llama-3-8B) 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
 
-# 개요
+## 개요
 
 Llama3 모델은 2024년 4월에 [Meta](https://about.meta.com/)가 공개한 Decoder-only Transformer 기반 오픈 소스 모델입니다. 기존 Llama 모델의 구조를 따르지만 7배 더 많은 데이터(15T)로 학습시켜 더 다양하고 복잡한 정보를 이해할 수 있습니다.
 
@@ -17,10 +17,13 @@ Llama3는 특히 언어 이해 및 생성 작업에 있어서 뛰어난 성능�
 이 튜토리얼에서는 MoAI Platform에서 요약(summarize) 태스크에 대해 [CNN Daily Mail](https://huggingface.co/datasets/cnn_dailymail) 데이터셋을 활용해 Llama3 모델을 fine-tuning 해보겠습니다.
 
 
-# 시작하기 전에
+## 시작하기 전에
 
-MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다.
-혹은 일시적으로 체험판 컨테이너 및 GPU 자원을 할당 받기를 원하시는 분은 Moreh(support@moreh.io)에 문의하시기 바랍니다.
+MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform의 체험판 컨테이너 또는 MoAI Platform 기반으로 운영되는 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
+
+[!ref target="blank" text="MoAI Platform 체험판 컨테이너 사용 문의"](support@moreh.io)
+
+[!ref target="blank" text="KT Cloud Hyperscale AI Computing"](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
 SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.
 

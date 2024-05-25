@@ -4,7 +4,7 @@ tags: [guide]
 order: 90
 ---
 
-# Prepare Fine-tuning on MoAI Platform
+# MoAI Platform에서 Fine-tuning 준비하기
 
 MoAI Platform은 다양한 GPU로 구성될 수 있지만, 동일한 인터페이스(CLI)를 통해 사용자에게 일관된 경험을 제공합니다. 모든 사용자가 같은 방식으로 시스템에 접근하여 플랫폼을 사용할 수 있기 때문에 보다 효율적이며 직관적입니다.
 

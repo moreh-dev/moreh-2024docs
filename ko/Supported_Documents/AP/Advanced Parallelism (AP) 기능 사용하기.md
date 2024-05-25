@@ -5,7 +5,7 @@ order: 100
 expanded: false
 ---
 
-# Advanced Parallelism (AP) 기능 사용하기
+# AP 기능 사용하기
 
 기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다. 가속기 사이즈에 대한 세부 정보는 [KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/ko/Supported_Documents/KT_HAC_Models_Info.md) 참고해주시기 바랍니다. 
 

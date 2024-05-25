@@ -34,8 +34,7 @@ MoAI Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능
 
 MoAI Platform의 GPU 가상화 기능과 자동 병렬화 기능은 이러한 한계와 어려움을 다음 기능으로 해결하여 대규모 AI 시대에 효율적인 인프라를 제공합니다.
 
-1. **[다양한 가속기, 다중 GPU 지원](https://moreh-dev.github.io/moreh-2024docs-test/ko/overview/#1-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%86%8D%EA%B8%B0-%EB%8B%A4%EC%A4%91-gpu-%EC%A7%80%EC%9B%90)**
-2. **[GPU 가상화](https://moreh-dev.github.io/moreh-2024docs-test/ko/overview/#2-gpu-%EA%B0%80%EC%83%81%ED%99%94)**
-3. **[동적 GPU 할당](https://moreh-dev.github.io/moreh-2024docs-test/ko/overview/#3-%EB%8F%99%EC%A0%81-gpu-%ED%95%A0%EB%8B%B9)**
-4. **[AI Compiler 자동 병렬화](https://moreh-dev.github.io/moreh-2024docs-test/ko/overview/#4-ai-compiler-%EC%9E%90%EB%8F%99-%EB%B3%91%EB%A0%AC%ED%99%94)**
-
+1. **[다양한 가속기, 다중 GPU 지원](https://docs.moreh.io/ko/overview/#1-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%86%8D%EA%B8%B0-%EB%8B%A4%EC%A4%91-gpu-%EC%A7%80%EC%9B%90)**
+2. **[GPU 가상화](https://docs.moreh.io/ko/overview/#2-gpu-%EA%B0%80%EC%83%81%ED%99%94)**
+3. **[동적 GPU 할당](https://docs.moreh.io/ko/overview/#3-%EB%8F%99%EC%A0%81-gpu-%ED%95%A0%EB%8B%B9)**
+4. **[AI Compiler 자동 병렬화](https://docs.moreh.io/ko/overview/#4-ai-compiler-%EC%9E%90%EB%8F%99-%EB%B3%91%EB%A0%AC%ED%99%94)**

@@ -18,10 +18,10 @@ As deep learning models evolve, they become more complex, comprising numerous la
 
 To address these challenges, the MoAI Platform offers the following features to support efficient infrastructure in the era of large-scale AI:
 
-1. **[Various Accelerators, Multi-GPU Support](https://moreh-dev.github.io/moreh-2024docs-test/overview/#1-various-accelerators-multi-gpu-support)**
-2. **[GPU Virtualization](https://moreh-dev.github.io/moreh-2024docs-test/overview/#2-gpu-virtualization)**
-3. **[Dynamic GPU Allocation](https://moreh-dev.github.io/moreh-2024docs-test/overview/#3-dynamic-gpu-allocation)**
-4. **[AI Compiler Automatic Parallelization](https://moreh-dev.github.io/moreh-2024docs-test/overview/#4-ai-compiler-automatic-parallelization)**
+1. **[Various Accelerators, Multi-GPU Support](https://docs.moreh.io/overview/#1-various-accelerators-multi-gpu-support)**
+2. **[GPU Virtualization](https://docs.moreh.io/overview/#2-gpu-virtualization)**
+3. **[Dynamic GPU Allocation](https://docs.moreh.io/overview/#3-dynamic-gpu-allocation)**
+4. **[AI Compiler Automatic Parallelization](https://docs.moreh.io/overview/#4-ai-compiler-automatic-parallelization)**
 
 
 ---

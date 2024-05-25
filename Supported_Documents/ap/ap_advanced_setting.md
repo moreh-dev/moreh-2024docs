@@ -1,4 +1,11 @@
-## Advanced Settings for AP
+---
+icon: terminal
+tags: [guide]
+order: 90
+expanded: false
+---
+
+# Advanced Settings for AP
 
 Adding just one line of ``torch.moreh.option.enable_advanced_parallelization()`` enables basic AP functionality, but with MoAI Platform, users can easily leverage parallelization features in the way they want using various variables provided.
 

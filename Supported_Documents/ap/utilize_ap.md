@@ -1,11 +1,11 @@
 ---
 icon: terminal
 tags: [guide]
-order: 50
+order: 100
 expanded: false
 ---
 
-# Advanced Parallelism(AP)
+# How to use AP
 
 By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP. Before proceeding with the AP feature, please review your current accelerator information using the guide below. For detailed information on accelerator sizes, refer to the [KT Hyperscale AI Computing (HAC) Service Accelerator Model Information](/Supported_Documents/KT_HAC_Models_Info.md).
 
@@ -23,7 +23,7 @@ There are two ways to apply the AP feature:
 torch.moreh.option.enable_advanced_parallelization()
 ```
 
-1. 환경 변수로 입력하기
+2. 환경 변수로 입력하기
     
   다음과 같이 터미널 세션의 환경변수로 AP 기능을 킬 수 있습니다. ( 0으로 설정하면 끌 수 있습니다.)
     

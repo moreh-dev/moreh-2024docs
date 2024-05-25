@@ -1,3 +1,10 @@
+---
+icon: terminal
+tags: [ap]
+order: 90
+expanded: false
+---
+
 # AP 기능 고급 설정
 
 `torch.moreh.option.enable_advanced_parallelization()` 한 줄을 추가하는 것만으로도 기본적인 AP 기능을 사용하실 수 있지만, MoAI Platform에서 제공하는 다양한 변수를 활용해 사용자가 원하는 방식으로 손쉽게 병렬화 기능을 이용하실 수 있습니다.

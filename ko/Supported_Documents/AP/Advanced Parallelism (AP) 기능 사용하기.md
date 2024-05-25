@@ -6,7 +6,7 @@ order: 50
 
 # Advanced Parallelism (AP) 기능 사용하기
 
-기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다. 가속기 사이즈에 대한 세부 정보는 [KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](https://www.notion.so/KT-Hyperscale-AI-Computing-HAC-ee3383b7a8bb4943af82cba81b8321cd?pvs=21) 참고해주시기 바랍니다. 
+기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다. 가속기 사이즈에 대한 세부 정보는 [KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보](/ko/Supported_Documents/KT_HAC_Models_Info.md) 참고해주시기 바랍니다. 
 
 ### AP 기능 적용 방법
 
@@ -32,9 +32,9 @@ torch.moreh.option.enable_advanced_parallelization()
 
 ### 사용 예시 살펴보기
 
-사용자가 2대 이상의 노드를 사용하는 환경이 준비 되었다면 이제 AP 기능을 사용하기 위한 학습 코드를 만들어 보겠습니다. 이 가이드에서는 Llama2 모델을 활용하여 코드를 세팅합니다. 참고로, Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. [1. Fine-tuning 준비하기](https://www.notion.so/1-Fine-tuning-052d303ba7f34b5f89692af10bb53fd7?pvs=21) 를 참고하여 학습 코드를 준비해주세요. 
+사용자가 2대 이상의 노드를 사용하는 환경이 준비 되었다면 이제 AP 기능을 사용하기 위한 학습 코드를 만들어 보겠습니다. 이 가이드에서는 Llama2 모델을 활용하여 코드를 세팅합니다. 참고로, Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. [1. Fine-tuning 준비하기](/ko/Tutorials/llama2_13b_tutorial/1_Fine-tuning_준비하기.md) 를 참고하여 학습 코드를 준비해주세요. 
 
-학습 코드가 준비되었다면, MoAI Platform에서 학습을 실행하기 전 아래와 같이 pytorch 환경을 설정합니다. 아래 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다. 자세한 설명은 [1. Fine-tuning 준비하기](https://www.notion.so/1-Fine-tuning-052d303ba7f34b5f89692af10bb53fd7?pvs=21) 튜토리얼을 참고해주시기 바랍니다.
+학습 코드가 준비되었다면, MoAI Platform에서 학습을 실행하기 전 아래와 같이 pytorch 환경을 설정합니다. 아래 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다. 자세한 설명은 [1. Fine-tuning 준비하기](/ko/Tutorials/llama2_13b_tutorial/1_Fine-tuning_준비하기.md) 튜토리얼을 참고해주시기 바랍니다.
 
 ```bash
 $ conda list torch

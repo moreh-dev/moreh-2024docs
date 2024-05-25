@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769938104856">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769938178597">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Advanced Parallelism (AP) 기능 사용하기</title>
-    <meta name="title" content="Advanced Parallelism (AP) 기능 사용하기">
+    <title>AP 기능 사용하기</title>
+    <meta name="title" content="AP 기능 사용하기">
     <meta name="description" content="기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다.">
 
     <!-- Canonical -->
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/">
-    <meta property="og:title" content="Advanced Parallelism (AP) 기능 사용하기">
+    <meta property="og:title" content="AP 기능 사용하기">
     <meta property="og:description" content="기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/">
-    <meta property="twitter:title" content="Advanced Parallelism (AP) 기능 사용하기">
+    <meta property="twitter:title" content="AP 기능 사용하기">
     <meta property="twitter:description" content="기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769938104856" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769938178597" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769938104856" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769938178597" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769938104856" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769938104856" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769938178597" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769938178597" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -189,17 +189,17 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../../supported_documents/ap/advanced-parallelism-(ap)-기능-사용하기/" class="pr-4">
-                                                Advanced Parallelism (AP) 기능 사용하기
+                                                AP 기능 사용하기
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="advanced-parallelism-ap-기능-사용하기" class="break-words">
+<doc-anchor-target id="ap-기능-사용하기" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-parallelism-ap-기능-사용하기">#</doc-anchor-trigger>
-        <span>Advanced Parallelism (AP) 기능 사용하기</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ap-기능-사용하기">#</doc-anchor-trigger>
+        <span>AP 기능 사용하기</span>
     </h1>
 </doc-anchor-target>
 <p>기본적으로 AP는 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 multi gpu 환경이어야 합니다. 아래 가이드를 따라 AP 기능을 사용하기에 앞서 사용자가 현재 사용하는 가속기 정보를 한번 더 점검해주시기 바랍니다. 가속기 사이즈에 대한 세부 정보는 <a href="/ko/supported_documents/kt_hac_models_info.md">KT Hyperscale AI Computing (HAC) 서비스 가속기 모델 정보</a> 참고해주시기 바랍니다.</p>
@@ -638,6 +638,6 @@ error dump: 63 55 16 11 22 5 3 1 37 8 8 11 7 5 16 11 22 94 94 39 11 9 20 17 16 1
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Advanced Parallelism (AP) 기능 사용하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "AP 기능 사용하기", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

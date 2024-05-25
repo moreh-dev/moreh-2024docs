@@ -16,9 +16,9 @@ Qwen1.5 7B 모델은 중국의 [Tongyi Qianwen(通义千问)](https://www.alibab
 
 MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform의 체험판 컨테이너 또는 MoAI Platform 기반으로 운영되는 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
 
-[!ref target="blank" text="MoAI Platform 체험판 컨테이너 사용 문의"](support@moreh.io)
+- [MoAI Platform 체험판 컨테이너 사용 문의](support@moreh.io)
 
-[!ref target="blank" text="KT Cloud Hyperscale AI Computing"](https://cloud.kt.com/solution/hyperscaleAiComputing/)
+- [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
 SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.
 

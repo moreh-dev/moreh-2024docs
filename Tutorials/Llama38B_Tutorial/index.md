@@ -20,9 +20,9 @@ In this tutorial, we will fine-tune the Llama3 model on the MoAI Platform for a 
 
 Be sure to obtain a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. You can either request and use a trial container of the MoAI Platform or sign up for the public cloud service running on the MoAI Platform.
 
-[!ref target="blank" text="Inquiries for MoAI Platform Trial Container"](support@moreh.io)
+* [Inquiries for MoAI Platform Trial Container](support@moreh.io)
 
-[!ref target="blank" text="KT Cloud Hyperscale AI Computing"](https://cloud.kt.com/solution/hyperscaleAiComputing/)
+* [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
 After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system. 
 

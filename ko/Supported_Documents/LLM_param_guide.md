@@ -1,7 +1,7 @@
 ---
 icon: book
 tags: [guide]
-order: 50
+order: 10
 ---
 
 # LLM Fine-tuning 파라미터 가이드

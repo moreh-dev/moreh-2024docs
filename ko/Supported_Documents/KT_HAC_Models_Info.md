@@ -1,7 +1,7 @@
 ---
 icon: info
 tags: [guide]
-order: 30
+order: 5
 ---
 
 # KT Hyperscale AI Computing (HAC) 서비스 AI 가속기 정보

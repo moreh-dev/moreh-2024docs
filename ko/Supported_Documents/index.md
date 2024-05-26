@@ -7,7 +7,7 @@ expanded: true
 
 - [Moreh Toolkit 가이드](moreh_toolkit.md)
 
-- [Prepare Fine-tuning on MoAI Platform](Prepare_Fine_tuning_MoAI.md)
+- [MoAI Platform에서 Fine-tuning 준비하기](Prepare_Fine_tuning_MoAI.md)
 
 - [Advanced Parallelization (AP)](/ap/index.md)
 

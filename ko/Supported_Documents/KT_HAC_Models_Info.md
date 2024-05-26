@@ -6,8 +6,8 @@ order: 5
 
 # KT Hyperscale AI Computing (HAC) 서비스 AI 가속기 정보
 
-- KT Cloud 공식 매뉴얼 바로가기
-    - https://manual.cloud.kt.com/kt/hyperscale-ai-computing-howtouse-cj
+[!ref KT Cloud 공식 매뉴얼](https://manual.cloud.kt.com/kt/hyperscale-ai-computing-howtouse-cj)
+
 - 현재 HAC 서비스는 AMD MI250 GPU를 사용해 구동되고 있습니다. 모델/애플리케이션에 따라 성능이 달라질 수 있지만 기본적으로 AMD MI250 하나와 NVIDIA A100 하나에서 동등한 성능이 나온다고 예상하시면 됩니다.
 
 | Model | 실제 물리 GPU | 노드 수 |

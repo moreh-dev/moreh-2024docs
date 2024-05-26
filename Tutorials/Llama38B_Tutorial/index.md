@@ -30,7 +30,7 @@ After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoA
 
 To train sLLMs like the Llama3 model described in this tutorial, you need to select an appropriately sized MoAI Accelerator. First, use the **`moreh-smi`** command to check the current MoAI Accelerator in use.
 
-Detailed instructions on configuring the MoAI Accelerator for your specific training needs will be provided in section ["3. Model fine-tuning"](3_fine_tuning.md)
+Detailed instructions on configuring the MoAI Accelerator for your specific training needs will be provided in section [3. Model fine-tuning](3_fine_tuning.md)
 
 ```bash
 $ moreh-smi

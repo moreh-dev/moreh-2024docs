@@ -2,7 +2,6 @@
 icon: cpu
 tags: [guide]
 order: 10
-visibility: private
 ---
 
 # GPU 가상화 및 동적할당

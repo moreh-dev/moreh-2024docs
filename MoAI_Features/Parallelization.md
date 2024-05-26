@@ -4,47 +4,48 @@ tags: [features]
 order: 5
 ---
 
-# Automatic Parallelization
+# Automatic Parallelization: AP
 
-MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 **다수의 GPU를 어떠한 방식으로 사용하게 될까요?**
+Automatic Parallelization
+On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU. This means users can write code assuming the use of a single GPU without needing to worry about parallelization. But how does the MoAI Platform handle multiple GPUs?
 
-사용자가 다수의 GPU를 사용하는 flavor를 선택하게 된다면 MoAI Platform은 자동화된 데이터 병렬화를 제공합니다. 예를 들어 사용자가 8 device를 포함하는 flavor를 선택한다면, 전체 batch size를 8등분하여 모든 device에 나누고, 이를 동시에 처리하여 훨씬 빠른 학습 속도를 보일 수 있습니다.
+**The MoAI Platform automatically optimizes and parallelizes based on the number of GPUs in use.**
 
-예시를 들어서 만약 사용자가 llama3-8b 모델을 fine-tuning할 때, gpu 4개 사용하는 flavor를 선택하고, batch size를 16로 설정한다면 각 gpu당 4개로 아래와 같은 throughput이 나올 것입니다.
-
-![](img/moreh_virtual_device.gif)
-
-
+For instance, if you start training with an accelerator flavor that uses 8 GPUs, the MoAI Platform automatically divides the total batch size into 8 parts, distributing them across each GPU. Let's take an example of fine-tuning the Llama3-8b model. If you select an accelerator flavor with 4 GPUs and set a batch size of 16, the platform automatically assigns 4 batches per GPU, processing approximately 125,000 tokens per second.
 
 ```bash
-# Llama3-8b-base fine-tuning, batch-size 16, gpu 4
+# Llama3-8b-base fine-tuning, batch-size 16, GPU 4
 [Step 4/17944] | Loss: 2.03125 | Duration: 1.27 | Throughput: 12882.87 tokens/sec
 [Step 6/17944] | Loss: 2.03125 | Duration: 1.22 | Throughput: 13393.38 tokens/sec
 [Step 8/17944] | Loss: 2.109375 | Duration: 1.31 | Throughput: 12492.66 tokens/sec
 [Step 10/17944] | Loss: 2.015625 | Duration: 1.24 | Throughput: 13201.98 tokens/sec
 ```
 
-그리고 만약 사용자가 gpu 16개를 사용하는 flavor를 선택하고 batchsize를 64로 설정한다면, 각 gpu당 동일하게 4개로 자동으로 병렬처리가 되어 throughput은 아래와 같이 gpu 4개에 비해 약 4배가 될 것 입니다.
+For faster and more efficient training, you can select an accelerator flavor with more GPUs and increase the batch size. If you choose an accelerator flavor with 16 GPUs and set the batch size to 64, the number of tokens processed per second can increase fourfold compared to the previous setup.
+
 
 ```bash
-# Llama3-8b-base fine-tuning, batch-size 64, gpu 16
+# Llama3-8b-base fine-tuning, batch-size 64, GPU 16
 [Step 4/4486] | Loss: 2.125 | Duration: 1.42 | Throughput: 46148.86 tokens/sec
 [Step 6/4486] | Loss: 2.078125 | Duration: 1.33 | Throughput: 49221.88 tokens/sec
 [Step 8/4486] | Loss: 2.03125 | Duration: 1.33 | Throughput: 49392.99 tokens/sec
 [Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec
 ```
 
-사용자가 다수의 **GPU를 사용하는 목적이 큰 메모리를 사용하기 때문일 경우**는 어떨까요? MoAI Platform은 모델 병렬화와 최적화를 자동으로 지원합니다.
 
-사용자가 Llama3-8b 모델을 GPU 16개로 batch size 512를 설정하여 돌린다면, 모델 병렬화와 데이터 병렬화가 동시에 이루어져 학습이 진행됩니다.
+But what if you want to use an even larger batch size? Without additional code modifications, a typical GPU cluster might run into Out of Memory (OOM) errors. However, the MoAI Platform can automatically parallelize the model to continue training.
+
+When you choose an accelerator flavor with 16 GPUs and set the batch size to 512, the platform applies model parallelization and data parallelization simultaneously. This allows training with a larger batch size using the same number of GPUs.
 
 ```bash
-## This snippet is fake
+
 # Llama3-8b-base fine-tuning, batch-size 512, gpu 16
-[Step 4/4486] | Loss: 2.125 | Duration: 1.42 | Throughput: 46148.86 tokens/sec
-[Step 6/4486] | Loss: 2.078125 | Duration: 1.33 | Throughput: 49221.88 tokens/sec
-[Step 8/4486] | Loss: 2.03125 | Duration: 1.33 | Throughput: 49392.99 tokens/sec
-[Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec
+[Step 4/560] | Loss: 1.953125 | Duration: 24.00 | Throughput: 21844.08 tokens/sec
+[Step 6/560] | Loss: 1.8671875 | Duration: 24.63 | Throughput: 21283.67 tokens/sec
+[Step 8/560] | Loss: 2.0 | Duration: 24.41 | Throughput: 21475.45 tokens/sec
+[Step 10/560] | Loss: 1.9609375 | Duration: 24.26 | Throughput: 21609.36 tokens/sec
+[Step 12/560] | Loss: 1.90625 | Duration: 24.43 | Throughput: 21463.95 tokens/sec
 ```
 
- 그 외에도 70B처럼 큰 모델 또한 자동으로 병렬화가 이루어져 간단하게 학습이 이루어집니다. 이처럼 MoAI Platform은 사용자가 사용하는 모델, 배치 크기 등에 따라 자동적으로 **최적화와 병렬화를 제공**함으로써, 다중 GPU를 편리하고 효율적으로 사용할 수 있도록 합니다.
+
+Additionally, even large models like the 70B model can be automatically parallelized without any extra work, making training straightforward. The MoAI Platform provides automatic optimization and parallelization based on the model and batch size, **enabling convenient and efficient use of multiple GPUs.**

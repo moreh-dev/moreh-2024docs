@@ -1,7 +1,7 @@
 ---
 icon: tools
 tags: [guide]
-order: 110
+order: 90
 ---
 
 # Moreh Toolkit Guide

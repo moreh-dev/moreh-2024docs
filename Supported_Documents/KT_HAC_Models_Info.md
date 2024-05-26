@@ -1,7 +1,6 @@
 ---
 icon: server
-order: 10
-
+order: 40
 ---
 
 # KT Hyperscale AI Computing (HAC) AI Accelerator Information

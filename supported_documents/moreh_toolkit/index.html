@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770055038488">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770055350431">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770055038488" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770055350431" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770055038488" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770055350431" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770055038488" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770055038488" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770055350431" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770055350431" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -292,7 +292,9 @@ Processes:
 Selection (1-13, q, Q):</code></pre>
 </doc-codeblock></div>
 <p>When you input the integer corresponding to the model you want to use from 1 to 13, a MoAI Accelerator corresponding to the entered device number will be created with the message &quot;Create device success.&quot; Within one environment, you can create a maximum of 5 AI accelerators. If you need to create more MoAI Accelerators, please contact your infrastructure administrator.</p>
-<p>In the example below, let&#x27;s add the 10th <strong><code v-pre>8xLarge.4096GB</code></strong> MoAI Accelerator:</p>
+<p>In the example below, let&#x27;s add the 10th <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span> MoAI Accelerator:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --add 10
 
@@ -361,7 +363,9 @@ $ moreh-smi
 +---------------------------------------------------+
 Remove device success.</code></pre>
 </doc-codeblock></div>
-<p>The MoAI Accelerator with Device ID 1, <code v-pre>8xLarge.4096GB</code>, has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.</p>
+<p>The MoAI Accelerator with Device ID 1, <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span>, has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.</p>
 <doc-anchor-target id="other-various-options-utilization">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-various-options-utilization">#</doc-anchor-trigger>
@@ -427,7 +431,9 @@ Device Example:
 </doc-anchor-target>
 <p><code v-pre>moreh-switch-model</code> is a tool that allows you to change the flavor (specifications) of the currently configured MoAI Accelerator. By changing the flavor of the MoAI Accelerator, you determine how much GPU memory to use.</p>
 <p>It can be used as follows:</p>
-<p>For example, if the result of the <code v-pre>moreh-smi</code> command is as follows, it means that the &quot;MoAI Platform AI Accelerator model currently set as the default is Accelerator 0, and this MoAI Accelerator is of type <code v-pre>Small.64GB</code> model.&quot;</p>
+<p>For example, if the result of the <code v-pre>moreh-smi</code> command is as follows, it means that the &quot;MoAI Platform AI Accelerator model currently set as the default is Accelerator 0, and this MoAI Accelerator is of type <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Small.64GB</span>
+</span> model.&quot;</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">+-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
@@ -463,7 +469,9 @@ Selection (1-13, q, Q):
 </code></pre>
 </doc-codeblock></div>
 <p>If you enter an integer corresponding to the model to be used from 1 to 13 (device number), the message &quot;<code v-pre>The MoAI Platform AI Accelerator model is successfully switched to {model_id}.&quot;</code> will be displayed, and the MoAI Accelerator corresponding to the entered device number will be changed.</p>
-<p>Let&#x27;s change the MoAI Accelerator to <code v-pre>Large.256GB</code> as follows:</p>
+<p>Let&#x27;s change the MoAI Accelerator to <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Large.256GB</span>
+</span> as follows:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 3
 The MoAI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.

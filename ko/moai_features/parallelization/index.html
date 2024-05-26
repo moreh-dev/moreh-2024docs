@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770054256628">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770055043026">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>MoAI Platform 병렬화</title>
-    <meta name="title" content="MoAI Platform 병렬화">
-    <meta name="description" content="MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 어떻게 여러 개의 GPU를 사용할 수 있을까요?">
+    <title>자동 병렬화</title>
+    <meta name="title" content="자동 병렬화">
+    <meta name="description" content="MoAI Platform에서 사용자는 가상화된 하나의 GPU인 MoAI Accelerator를 사용하게 됩니다. 따라서 MoAI Platform 상에서 사용자는 별도 병렬화 작업없이 하나의 GPU를 사용하는 것을 가정하고 코드를 작성하게 됩니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/moai_features/parallelization/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/moai_features/parallelization/">
-    <meta property="og:title" content="MoAI Platform 병렬화">
-    <meta property="og:description" content="MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 어떻게 여러 개의 GPU를 사용할 수 있을까요?">
+    <meta property="og:title" content="자동 병렬화">
+    <meta property="og:description" content="MoAI Platform에서 사용자는 가상화된 하나의 GPU인 MoAI Accelerator를 사용하게 됩니다. 따라서 MoAI Platform 상에서 사용자는 별도 병렬화 작업없이 하나의 GPU를 사용하는 것을 가정하고 코드를 작성하게 됩니다.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/moai_features/parallelization/">
-    <meta property="twitter:title" content="MoAI Platform 병렬화">
-    <meta property="twitter:description" content="MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 어떻게 여러 개의 GPU를 사용할 수 있을까요?">
+    <meta property="twitter:title" content="자동 병렬화">
+    <meta property="twitter:description" content="MoAI Platform에서 사용자는 가상화된 하나의 GPU인 MoAI Accelerator를 사용하게 됩니다. 따라서 MoAI Platform 상에서 사용자는 별도 병렬화 작업없이 하나의 GPU를 사용하는 것을 가정하고 코드를 작성하게 됩니다.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770054256628" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770055043026" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770054256628" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770055043026" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770054256628" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770054256628" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770055043026" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770055043026" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,22 +181,22 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../moai_features/parallelization/" class="pr-4">
-                                                Mo​AI Platform 병렬화
+                                                자동 병렬화
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="moai-platform-병렬화" class="break-words">
+<doc-anchor-target id="자동-병렬화" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-platform-병렬화">#</doc-anchor-trigger>
-        <span>MoAI Platform 병렬화</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#자동-병렬화">#</doc-anchor-trigger>
+        <span>자동 병렬화</span>
     </h1>
 </doc-anchor-target>
-<p>MoAI Platform에서 사용자는 가상의 하나의 GPU만 사용하게 됩니다. 따라서 사용자는 하나의 GPU를 사용하는 코드를 작성하게 됩니다. 그렇다면 <strong>어떻게 여러 개의 GPU를 사용할 수 있을까요?</strong></p>
-<p>사용자가 여러 GPU를 사용하는 flavor를 선택하면, MoAI Platform은 자동으로 데이터 병렬화를 수행합니다. 예를 들어, 사용자가 8개의 device를 포함한 flavor를 선택하면, 전체 배치 크기(batch size)를 8등분하여 각 device에 나눠 처리하고, 이를 통해 학습 속도가 크게 향상됩니다.</p>
-<p>예를 들어, 사용자가 llama3-8b 모델을 fine-tuning할 때 4개의 GPU를 사용하는 flavor를 선택하고, batch size를 16로 설정한다면 각 GPU당 4개로 아래와 같은 throughput이 나올 것입니다.</p>
+<p>MoAI Platform에서 사용자는 가상화된 하나의 GPU인 MoAI Accelerator를 사용하게 됩니다. 따라서 MoAI Platform 상에서 사용자는 별도 병렬화 작업없이 하나의 GPU를 사용하는 것을 가정하고 코드를 작성하게 됩니다. 그렇다면 MoAI Platform에서는 어떻게 여러 개의 GPU를 사용할 수 있을까요?</p>
+<p><strong>MoAI Platform은 사용하는 GPU 수에 따라 자동으로 가장 좋은 최적화 및 병렬화를 수행합니다.</strong></p>
+<p>예를 들어, 사용자가 8개의 GPU를 사용하는 가속기 flavor를 선택하여 학습을 시작하면 MoAI Platform은 자동으로 전체 배치 크기를 8등분하여 각 GPU에 분배하여 처리합니다. 더 자세한 설명을 위해 Llama3-8b 모델을 fine-tuning하는 상황을 가정해보겠습니다. 사용자가 4개의 GPU를 사용하는 가속기 flavor를 선택하고 배치 크기를 16으로 설정한다면, 각 GPU당 4개의 배치가 자동으로 분배되어 대략 1초에 12만 5천 개의 토큰을 처리하는 것을 확인할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 16, gpu 4
 [Step 4/17944] | Loss: 2.03125 | Duration: 1.27 | Throughput: 12882.87 tokens/sec
@@ -204,7 +204,7 @@
 [Step 8/17944] | Loss: 2.109375 | Duration: 1.31 | Throughput: 12492.66 tokens/sec
 [Step 10/17944] | Loss: 2.015625 | Duration: 1.24 | Throughput: 13201.98 tokens/sec</code></pre>
 </doc-codeblock></div>
-<p>또한, 사용자가 16개의 GPU를 사용하는 flavor를 선택하고 batch size를 64로 설정하면, 각 GPU당 동일하게 4개로 자동으로 병렬처리가 되어 throughput은 4개의 GPU를 사용할 때보다 약 4배가 될 것 입니다.</p>
+<p>더 빠르고 효율적인 학습을 위해 더 많은 GPU를 사용하는 가속기 flavor를 선택하고 배치 크기를 키울 수도 있습니다. 사용자가 16개의 GPU를 사용하는 가속기 flavor를 선택하고 배치 크기를 64로 설정한 후 학습을 시작하면, 1초에 처리되는 토큰 수를 기존 대비 4배로 키울 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 64, gpu 16
 [Step 4/4486] | Loss: 2.125 | Duration: 1.42 | Throughput: 46148.86 tokens/sec
@@ -212,18 +212,18 @@
 [Step 8/4486] | Loss: 2.03125 | Duration: 1.33 | Throughput: 49392.99 tokens/sec
 [Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec</code></pre>
 </doc-codeblock></div>
-<p>만약 사용자가 <strong>더 큰 메모리를 사용하기 위해 여러 GPU를 사용하려는 경우</strong>는 어떨까요?</p>
-<p>MoAI Platform은 모델 병렬화와 최적화를 자동으로 지원합니다.</p>
-<p>사용자가 Llama3-8b 모델을  16개의 GPU로, batch size를 512로 설정하여 돌린다면, 모델 병렬화와 데이터 병렬화가 동시에 이루어져 학습이 진행됩니다.</p>
+<p>그런데 만약 사용자가 보다 더 <strong>큰 배치 크기를 사용하려는 경우</strong>는 어떨까요? 추가적인 코드 수정이 없다면, 일반적인 GPU 클러스터에서는 Out of Memory(OOM) 에러가 발생할 가능성이 큽니다. 하지만 MoAI Platform은 자동으로 모델을 병렬화하여 학습을 진행시킬 수 있습니다.</p>
+<p>사용자가 16개의 GPU를 사용하는 가속기 flavor를 선택하고, 배치 크기를 512로 설정하여 학습하면 자동으로 모델 병렬화와 데이터 병렬화가 동시에 적용돼 같은 개수의 GPU를 사용하더라도 더 큰 배치 크기로 학습할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">## This snippet is fake
+<pre class="language-bash"><code v-pre class="language-bash">
 # Llama3-8b-base fine-tuning, batch-size 512, gpu 16
-[Step 4/4486] | Loss: 2.125 | Duration: 1.42 | Throughput: 46148.86 tokens/sec
-[Step 6/4486] | Loss: 2.078125 | Duration: 1.33 | Throughput: 49221.88 tokens/sec
-[Step 8/4486] | Loss: 2.03125 | Duration: 1.33 | Throughput: 49392.99 tokens/sec
-[Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec</code></pre>
+[Step 4/560] | Loss: 1.953125 | Duration: 24.00 | Throughput: 21844.08 tokens/sec
+[Step 6/560] | Loss: 1.8671875 | Duration: 24.63 | Throughput: 21283.67 tokens/sec
+[Step 8/560] | Loss: 2.0 | Duration: 24.41 | Throughput: 21475.45 tokens/sec
+[Step 10/560] | Loss: 1.9609375 | Duration: 24.26 | Throughput: 21609.36 tokens/sec
+[Step 12/560] | Loss: 1.90625 | Duration: 24.43 | Throughput: 21463.95 tokens/sec</code></pre>
 </doc-codeblock></div>
-<p>그 외에도  70B와 같은 대형 모델도 자동으로 병렬화되어 간편하게 학습할 수 있습니다. 이처럼 MoAI Platform은 사용자가 사용하는 모델과 배치 크기 등에 따라 자동으로 <strong>최적화와 병렬화를 제공하여, 다중 GPU를 편리하고 효율적으로 사용할 수 있도록 합니다.</strong></p>
+<p>이 외에도 70B와 같은 대형 모델도 별도의 추가 작업없이 자동으로 병렬화되기 때문에 간편하게 학습할 수 있습니다. 이처럼 MoAI Platform은 사용자가 사용하는 모델과 배치 크기 등에 따라 자동으로 <strong>최적화와 병렬화를 제공하여, 다중 GPU를 편리하고 효율적으로 사용할 수 있도록 합니다.</strong></p>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -247,7 +247,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">GPU 가상화 및 동적할당</span>
+                                                <span class="block mt-1">GPU 가상화: Mo​AI Accelerator</span>
                                             </span>
                                         </a>
                                     </div>
@@ -300,6 +300,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "MoAI Platform 병렬화", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "자동 병렬화", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

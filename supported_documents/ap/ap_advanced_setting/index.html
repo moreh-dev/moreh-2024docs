@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769976189355">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770053094988">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Advanced Settings for AP</title>
     <meta name="title" content="Advanced Settings for AP">
-    <meta name="description" content="Adding just one line of torch.moreh.option.enable_advanced_parallelization() enables basic AP functionality, but with MoAI Platform, users can easily...">
+    <meta name="description" content="While simply adding torch.moreh.option.enable_advanced_parallelization() allows you to use the basic AP functionality, you can easily customize the...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/supported_documents/ap/ap_advanced_setting/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/supported_documents/ap/ap_advanced_setting/">
     <meta property="og:title" content="Advanced Settings for AP">
-    <meta property="og:description" content="Adding just one line of torch.moreh.option.enable_advanced_parallelization() enables basic AP functionality, but with MoAI Platform, users can easily...">
+    <meta property="og:description" content="While simply adding torch.moreh.option.enable_advanced_parallelization() allows you to use the basic AP functionality, you can easily customize the...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/supported_documents/ap/ap_advanced_setting/">
     <meta property="twitter:title" content="Advanced Settings for AP">
-    <meta property="twitter:description" content="Adding just one line of torch.moreh.option.enable_advanced_parallelization() enables basic AP functionality, but with MoAI Platform, users can easily...">
+    <meta property="twitter:description" content="While simply adding torch.moreh.option.enable_advanced_parallelization() allows you to use the basic AP functionality, you can easily customize the...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769976189355" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770053094988" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769976189355" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770053094988" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769976189355" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769976189355" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770053094988" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770053094988" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -202,12 +202,16 @@
         <span>Advanced Settings for AP</span>
     </h1>
 </doc-anchor-target>
-<p>Adding just one line of <code v-pre>torch.moreh.option.enable_advanced_parallelization()</code> enables basic AP functionality, but with MoAI Platform, users can easily leverage parallelization features in the way they want using various variables provided.</p>
-<p>Customizing AP Configuration
-When using the AP feature as an API in a Python program, you can set additional arguments to restrict specific configurations.</p>
+<p>While simply adding <strong><code v-pre>torch.moreh.option.enable_advanced_parallelization()</code></strong> allows you to use the basic AP functionality, you can easily customize the parallelization feature according to your preferences using various variables provided by the MoAI Platform.</p>
+<doc-anchor-target id="customizing-ap-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#customizing-ap-configuration">#</doc-anchor-trigger>
+        <span><strong>Customizing AP Configuration</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>When using the AP feature as an API in a Python program, you can set additional arguments to restrict specific configurations.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">Copy code
-def main(args):
+<pre class="language-python"><code v-pre class="language-python">def main(args):
 
     # Apply Advanced Parallelization
     torch.moreh.option.enable_advanced_parallelization( 
@@ -217,41 +221,61 @@ def main(args):
 				distribute_parameter=True,
 		)</code></pre>
 </doc-codeblock></div>
-<p>Below are the config variables that can be input into the API. With these arguments, users can optimize distributed parallelization according to their preferences.</p>
-<p>아래는 API에 입력할 수 있는 config 변수들입니다.  다음 인자들을 활용해 사용자가 원하는 방식으로 분산 병렬화를 최적화할 수 있습니다.</p>
+<p>Below are the configurable variables that can be inputted into the API, allowing users to optimize distributed parallelization according to their needs.</p>
 <ul>
-<li><strong><code v-pre>pipeline_parallel</code></strong> (<em>bool</em>, Default: <em>true</em>) - Pipeline Parallel(<a href="https://blog.research.google/2019/03/introducing-gpipe-open-source-library.html" class="outbound" target="_blank"><span>Gpipe</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>) 사용 여부</li>
-<li><strong><code v-pre>num_stages</code></strong> (<em>str, int</em>,*** default: <em>‘auto’</em>) - Pipeline Parallel에서 최대 stage 수</li>
-<li><strong><code v-pre>num_micro_batches</code></strong>(<em>str, int</em>, Default: <em>‘auto’</em>): pipeline parallel의 micro batch 수</li>
-<li><strong><code v-pre>activation_recomputation</code></strong> (<em>str</em>, <em>bool</em>, Default: <em>‘auto’</em>) activation recomputation 사용 여부</li>
-<li><strong><code v-pre>distribute_parameter</code></strong>(<em>str</em>, <em>bool</em>, Default: <em>‘auto’</em>): param, grad를 GPU 분배하는 기능 사용 여부</li>
-<li><strong><code v-pre>mixed_precision</code></strong> (<em>bool</em>, Default: <em>true</em>) - bfloat16 사용 여부</li>
+<li><strong><code v-pre>pipeline_parallel</code></strong> (<em>bool</em>, Default: <em>true</em>): Whether Pipeline Parallel(<a href="https://blog.research.google/2019/03/introducing-gpipe-open-source-library.html" class="outbound" target="_blank"><span>Gpipe</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>) is applied</li>
+<li><strong><code v-pre>num_stages</code></strong> (<em>str, int</em>,*** default: <em>‘auto’</em>): Maximum number of stages in Pipeline Parallelism.</li>
+<li><strong><code v-pre>num_micro_batches</code></strong>(<em>str, int</em>, Default: <em>‘auto’</em>):  Number of micro-batches in Pipeline Parallelism.</li>
+<li><strong><code v-pre>activation_recomputation</code></strong> (<em>str</em>, <em>bool</em>, Default: <em>‘auto’</em>): Whether activation recomputation is applied</li>
+<li><strong><code v-pre>distribute_parameter</code></strong>(<em>str</em>, <em>bool</em>, Default: <em>‘auto’</em>): Whether the feature of distributing param and grad to GPU is applied</li>
+<li><strong><code v-pre>mixed_precision</code></strong> (<em>bool</em>, Default: <em>true</em>): Whether bfloat16 is applied</li>
 </ul>
-<doc-anchor-target id="ap의-성능-및-로그-정보를-변경할-수-있는-환경-변수">
+<doc-anchor-target id="environment-variables-for-performance-and-log-information-of-ap">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ap의-성능-및-로그-정보를-변경할-수-있는-환경-변수">#</doc-anchor-trigger>
-        <span>AP의 성능 및 로그 정보를 변경할 수 있는 환경 변수</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#environment-variables-for-performance-and-log-information-of-ap">#</doc-anchor-trigger>
+        <span><strong>Environment Variables for Performance and Log Information of AP</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Environment Variables for Changing AP Performance and Log Information
-AP generates multiple candidate configurations and calculates costs based on them. This process and the available configurations depend on the hardware resources used by the user, leading to varying execution speeds and available configurations.</p>
-<p>MOREH_ADVANCED_PARALLELIZATION_MAX_PARALLEL_COMPILE_THREADS
-value type = int
-default = 16
-Number of threads used by the compiler during compilation.
-It is recommended to increase this value if compilation time is long.
-However, compilation time may vary depending on CPU usage and number of CPU cores.
-Therefore, increasing this value may not necessarily improve compilation speed.
-MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG
-default = 0
-Provides additional information during Advanced Parallelization compilation.
-If MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=1, it will be output to the console.
-If MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=2, it will be saved in the form of autoconfig_log.dump.
-MOREH_ADVANCED_PARALLELIZATION_MEMORY_USAGE_CORRECTION_RATIO
-default = 80
-The amount of GPU memory used during compilation in Advanced Parallelization.
-For example, the default setting limits the available memory to 80% of the actual GPU memory.
-These environment variables can be set in the terminal as follows.</p>
+<p>AP generates multiple candidate configurations and calculates costs based on them. The speed of this process and the available configurations may vary depending on the hardware resources used by the user.</p>
+<ul>
+<li><strong><code v-pre>MOREH_ADVANCED_PARALLELIZATION_MAX_PARALLEL_COMPILE_THREADS</code></strong>
+<ul>
+<li>value type = int</li>
+<li>default = 16</li>
+<li>Specifies the number of threads used by the compiler during compilation.</li>
+<li>If the waiting time during compilation is long, it is recommended to increase this value and retry.
+<ul>
+<li>However, compile time may vary depending on the CPU usage and number of CPU cores.</li>
+<li>Therefore, increasing this value may not necessarily improve compilation speed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code v-pre>MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG</code></strong>
+<ul>
+<li>default = 0</li>
+<li>Provides additional information during Advanced Parallelization compilation.
+<ul>
+<li>If <strong><code v-pre>MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=1</code></strong>, it will be printed to the console.</li>
+<li>If <strong><code v-pre>MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=2</code></strong>, it will be saved in the autoconfig_log.dump format.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code v-pre>MOREH_ADVANCED_PARALLELIZATION_MEMORY_USAGE_CORRECTION_RATIO</code></strong>
+<ul>
+<li>default = 80</li>
+<li>Represents the available memory of the GPU used during compilation in Advanced Parallelization.</li>
+<li>For example, the default setting limits the available memory to 80% of the actual GPU memory.</li>
+</ul>
+</li>
+</ul>
+<p>These environment variables can be configured as follows.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">export MOREH_ADVANCED_PARALLELIZATION_MAX_PARALLEL_COMPILE_THREADS=16
+export MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=1
+export MOREH_ADVANCED_PARALLELIZATION_MEMORY_USAGE_CORRECTION_RATIO=80</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -271,23 +295,16 @@ These environment variables can be set in the terminal as follows.</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../supported_documents/ap/utilize_ap/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../supported_documents/ap/ap_learn_more/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">How to use AP</span>
+                                                <span class="block mt-1">Learn More About Advanced Parallelization (AP)</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../supported_documents/prepare_fine_tuning_moai/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Prepare Fine-​tuning on Mo​AI Platform</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>

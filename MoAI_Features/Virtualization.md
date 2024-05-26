@@ -1,7 +1,7 @@
 ---
 icon: cpu
 tags: [guide]
-order: 10
+order: 109
 ---
 
 # GPU Virtualization: MoAI Accelerator

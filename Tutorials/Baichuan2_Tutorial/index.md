@@ -19,7 +19,7 @@ In this tutorial, we'll fine-tune the Baichuan2 13B model using the MoAI Platfor
 
 Be sure to obtain a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. You can either request and use a trial container of the MoAI Platform or sign up for the public cloud service running on the MoAI Platform.
 
-* [Inquiries for MoAI Platform Trial Container](support@moreh.io)
+* Inquiries for MoAI Platform Trial Container: [support@moreh.io](support@moreh.io)
 
 * [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 

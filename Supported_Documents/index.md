@@ -1,7 +1,7 @@
 ---
 icon: book
 tags: [guide]
-order: 100
+order: 80
 expanded: true
 ---
 

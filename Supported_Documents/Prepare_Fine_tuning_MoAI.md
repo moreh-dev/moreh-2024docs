@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [guide]
-order: 100
+order: 40
 ---
 
 # Prepare Fine-tuning on MoAI Platform

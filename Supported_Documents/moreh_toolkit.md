@@ -89,7 +89,8 @@ Selection (1-13, q, Q):
 
 When you input the integer corresponding to the model you want to use from 1 to 13, a MoAI Accelerator corresponding to the entered device number will be created with the message "Create device success." Within one environment, you can create a maximum of 5 AI accelerators. If you need to create more MoAI Accelerators, please contact your infrastructure administrator.
 
-In the example below, let's add the 10th **`8xLarge.4096GB`** MoAI Accelerator:
+
+In the example below, let's add the 10th [!badge variant="secondary" text=8xLarge.4096GB] MoAI Accelerator:
 
 ```bash
 $ moreh-smi device --add 10
@@ -160,7 +161,8 @@ $ moreh-smi --rm 1
 Remove device success.
 ```
 
-The MoAI Accelerator with Device ID 1, `8xLarge.4096GB`, has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.
+
+The MoAI Accelerator with Device ID 1, [!badge variant="secondary" text=8xLarge.4096GB], has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.
 
 ### Other Various Options Utilization
 
@@ -210,7 +212,7 @@ If you encounter issues during training, such as tangled processes or difficulty
 
 It can be used as follows:
 
-For example, if the result of the `moreh-smi` command is as follows, it means that the "MoAI Platform AI Accelerator model currently set as the default is Accelerator 0, and this MoAI Accelerator is of type `Small.64GB` model."
+For example, if the result of the `moreh-smi` command is as follows, it means that the "MoAI Platform AI Accelerator model currently set as the default is Accelerator 0, and this MoAI Accelerator is of type [!badge variant="secondary" text=Small.64GB] model."
 
 ```bash
 +-----------------------------------------------------------------------------------------------------+
@@ -251,7 +253,8 @@ Selection (1-13, q, Q):
 
 If you enter an integer corresponding to the model to be used from 1 to 13 (device number), the message "`The MoAI Platform AI Accelerator model is successfully switched to {model_id}."` will be displayed, and the MoAI Accelerator corresponding to the entered device number will be changed.
 
-Let's change the MoAI Accelerator to `Large.256GB` as follows:
+
+Let's change the MoAI Accelerator to [!badge variant="secondary" text=Large.256GB] as follows:
 
 ```bash
 Selection (1-13, q, Q): 3

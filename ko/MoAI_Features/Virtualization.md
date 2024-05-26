@@ -62,7 +62,8 @@ $ moreh-smi
 +---------------------------------------------------------------------------------------------------+
 ```
 
-현재 사용자가 사용중인 MoAI Accelerator의 flavor는 **`xLarge.512GB`** 인 것을 확인할 수 있습니다. 더 큰 규모의 모델을 학습해야 하거나 학습 속도를 향상시키기 위해 더 많은 GPU를 사용하고 싶다면 간단하게  **`moreh-switch-model`** 명령어를 입력해 변경할 수 있습니다.
+
+현재 사용자가 사용중인 MoAI Accelerator의 flavor는 [!badge variant="secondary" text=xLarge.512GB] 인 것을 확인할 수 있습니다. 더 큰 규모의 모델을 학습해야 하거나 학습 속도를 향상시키기 위해 더 많은 GPU를 사용하고 싶다면 간단하게  **`moreh-switch-model`** 명령어를 입력해 변경할 수 있습니다.
 
 ```bash
 $ moreh-switch-model
@@ -103,7 +104,9 @@ Selection (1-13, q, Q):
 q
 ```
 
-다시 **`moreh-smi`** 명령어를 입력해 사용중인 MoAI Accelerator의 flavor를 확인해보면 **`4xLarge.2048GB`** 로 잘 변경된 것을 확인할 수 있습니다.
+
+
+다시 **`moreh-smi`** 명령어를 입력해 사용중인 MoAI Accelerator의 flavor를 확인해보면 [!badge variant="secondary" text=4xLarge.2048GB] 로 잘 변경된 것을 확인할 수 있습니다.
 
 ```bash
 $ moreh-smi

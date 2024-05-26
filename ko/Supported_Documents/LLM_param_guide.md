@@ -4,7 +4,7 @@ tags: [guide]
 order: 50
 ---
 
-# LLM Fine-tuning parameter guide
+# LLM Fine-tuning 파라미터 가이드
 
 
 !!!primary 

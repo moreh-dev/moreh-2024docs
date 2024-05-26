@@ -11,7 +11,7 @@ expanded: true
 
 - [Advanced Parallelization (AP)](/ap/index.md)
 
-- [LLM Fine-tuning Parameter 가이드](LLM_param_guide.md)
+- [LLM Fine-tuning 파라미터 가이드](LLM_param_guide.md)
 
 - [KT Hyperscale AI Computing (HAC) AI 가속기 정보](KT_HAC_Models_Info.md)
 

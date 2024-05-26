@@ -61,7 +61,7 @@ $ moreh-smi
 +---------------------------------------------------------------------------------------------------+
 ```
 
-You can see that the current flavor of the MoAI Accelerator being used is xLarge.512GB. If you need to train a larger model or want to use more GPUs to speed up training, you can easily switch the flavor by entering the **`moreh-switch-model`** command.
+You can see that the current flavor of the MoAI Accelerator being used is [!badge variant="secondary" text=xLarge.512GB]. If you need to train a larger model or want to use more GPUs to speed up training, you can easily switch the flavor by entering the **`moreh-switch-model`** command.
 
 ```bash
 $ moreh-switch-model
@@ -102,7 +102,7 @@ Selection (1-13, q, Q):
 q
 ```
 
-After entering the **`moreh-smi`** command again to check the current MoAI Accelerator flavor, you can see it has been successfully changed to 4xLarge.2048GB.
+After entering the **`moreh-smi`** command again to check the current MoAI Accelerator flavor, you can see it has been successfully changed to [!badge variant="secondary" text=4xLarge.2048GB].
 
 
 ```bash

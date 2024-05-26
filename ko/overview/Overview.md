@@ -4,7 +4,7 @@ tags: [guide]
 order: 800
 ---
 
-# MoAI Platform 개요
+# 개요
 
 ## MoAI Platform이란?
 MoAI Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능한 AI 플랫폼으로, 수천 대로 이루어진 GPU 클러스터를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있습니다.

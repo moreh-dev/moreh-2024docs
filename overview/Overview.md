@@ -4,7 +4,7 @@ tags: [guide]
 order: 600
 ---
 
-# MoAI Platform Overview
+# Overview
 
 ## What is MoAI Platform?
 

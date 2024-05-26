@@ -4,7 +4,7 @@ order: 2000
 expanded: true
 ---
 
-# MoAI Platform 문서
+# MoAI 문서
 
 **MoAI(Moreh AI appliance for AI accelerators)** 은 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.
 

@@ -4,7 +4,7 @@ order: 2000
 expanded: true
 ---
 
-# MoAI Platform Documents
+# MoAI Documentation
 
 **MoAI(Moreh AI appliance for AI accelerators)** Platform is a scalable AI platform that enables easy control of thousands of Graphics Processing Units(GPUs) essential for developing large-scale deep learning models.
 

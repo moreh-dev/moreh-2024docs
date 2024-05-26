@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [guide]
-order: 100
+order: 5
 expanded: false
 ---
 
@@ -9,7 +9,7 @@ expanded: false
 
 ### What is Advanced Parallelization?
 
-Advanced Parallelization (AP) is the automatic model optimization and distributed parallel processing feature provided by the MoAI Platform. Typically, ML engineers undergo numerous trial and error processes to optimize model parallelization during training of large-scale models. They experiment with various parallelization techniques, considering the memory size of the GPU in use, measure performance for different option combinations available in each technique, and determine optimized environment variables. This is a very laborious task that can take skilled machine learning developers from weeks to months.
+The MoAI Platform's Advanced Parallelization (AP) is the automatic model optimization and distributed parallel processing feature. Typically, ML engineers go through numerous trial and error processes to optimize model parallelization during training of large-scale models. They experiment with various parallelization techniques, considering the memory size of the GPU in use, measure performance for different option combinations available in each technique, and determine optimized environment variables. This is a very laborious task that can take skilled machine learning developers from weeks to months.
 
 With the AP feature of the MoAI Platform, complex parallel processing and model optimization tasks can be automatically performed with just a single line of code, dramatically reducing the time and effort involved in training.
 
@@ -43,10 +43,9 @@ torch.moreh.option.enable_advanced_parallelization()
 model = AutoModelForCausalLM(...) 
 ```
 
-As a result, while training big models, users can easily obtain optimal parameters and environment variable combinations for parallelization techniques such as Data Parallelism or Pipeline Parallelism.
+As a result, when training large models, users can easily obtain optimal parameters and environment variable combinations for parallelization techniques such as Data Parallelism or Pipeline Parallelism.
 
-Users can focus on the goal of model training instead of dealing with the tedious task of configuring parallelization settings.
-
+Users can focus on the goal of model training rather than the time-consuming procedure of configuring parallelization settings.
 
 
 

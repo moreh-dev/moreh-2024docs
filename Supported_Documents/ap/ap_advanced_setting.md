@@ -1,19 +1,19 @@
 ---
 icon: terminal
 tags: [guide]
-order: 90
+order: 1
 expanded: false
 ---
 
 # Advanced Settings for AP
 
-Adding just one line of ``torch.moreh.option.enable_advanced_parallelization()`` enables basic AP functionality, but with MoAI Platform, users can easily leverage parallelization features in the way they want using various variables provided.
+While simply adding **`torch.moreh.option.enable_advanced_parallelization()`** allows you to use the basic AP functionality, you can easily customize the parallelization feature according to your preferences using various variables provided by the MoAI Platform.
 
-Customizing AP Configuration
+## **Customizing AP Configuration**
+
 When using the AP feature as an API in a Python program, you can set additional arguments to restrict specific configurations.
 
 ```python
-Copy code
 def main(args):
 
     # Apply Advanced Parallelization
@@ -24,36 +24,41 @@ def main(args):
 				distribute_parameter=True,
 		)
 ```
-Below are the config variables that can be input into the API. With these arguments, users can optimize distributed parallelization according to their preferences.
 
-아래는 API에 입력할 수 있는 config 변수들입니다.  다음 인자들을 활용해 사용자가 원하는 방식으로 분산 병렬화를 최적화할 수 있습니다. 
+Below are the configurable variables that can be inputted into the API, allowing users to optimize distributed parallelization according to their needs.
 
-- **`pipeline_parallel`** (*bool*, Default: *true*) - Pipeline Parallel([Gpipe](https://blog.research.google/2019/03/introducing-gpipe-open-source-library.html)) 사용 여부
-- **`num_stages`** (*str, int*,*** default: *‘auto’*) - Pipeline Parallel에서 최대 stage 수
-- **`num_micro_batches`**(*str, int*, Default: *‘auto’*): pipeline parallel의 micro batch 수
-- **`activation_recomputation`** (*str*, *bool*, Default: *‘auto’*) activation recomputation 사용 여부
-- **`distribute_parameter`**(*str*, *bool*, Default: *‘auto’*): param, grad를 GPU 분배하는 기능 사용 여부
-- **`mixed_precision`** (*bool*, Default: *true*) - bfloat16 사용 여부
+- **`pipeline_parallel`** (*bool*, Default: *true*): Whether Pipeline Parallel([Gpipe](https://blog.research.google/2019/03/introducing-gpipe-open-source-library.html)) is applied
+- **`num_stages`** (*str, int*,*** default: *‘auto’*): Maximum number of stages in Pipeline Parallelism.
+- **`num_micro_batches`**(*str, int*, Default: *‘auto’*):  Number of micro-batches in Pipeline Parallelism.
+- **`activation_recomputation`** (*str*, *bool*, Default: *‘auto’*): Whether activation recomputation is applied
+- **`distribute_parameter`**(*str*, *bool*, Default: *‘auto’*): Whether the feature of distributing param and grad to GPU is applied
+- **`mixed_precision`** (*bool*, Default: *true*): Whether bfloat16 is applied
 
-## AP의 성능 및 로그 정보를 변경할 수 있는 환경 변수
+## **Environment Variables for Performance and Log Information of AP**
 
-Environment Variables for Changing AP Performance and Log Information
-AP generates multiple candidate configurations and calculates costs based on them. This process and the available configurations depend on the hardware resources used by the user, leading to varying execution speeds and available configurations.
+AP generates multiple candidate configurations and calculates costs based on them. The speed of this process and the available configurations may vary depending on the hardware resources used by the user.
 
-MOREH_ADVANCED_PARALLELIZATION_MAX_PARALLEL_COMPILE_THREADS
-value type = int
-default = 16
-Number of threads used by the compiler during compilation.
-It is recommended to increase this value if compilation time is long.
-However, compilation time may vary depending on CPU usage and number of CPU cores.
-Therefore, increasing this value may not necessarily improve compilation speed.
-MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG
-default = 0
-Provides additional information during Advanced Parallelization compilation.
-If MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=1, it will be output to the console.
-If MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=2, it will be saved in the form of autoconfig_log.dump.
-MOREH_ADVANCED_PARALLELIZATION_MEMORY_USAGE_CORRECTION_RATIO
-default = 80
-The amount of GPU memory used during compilation in Advanced Parallelization.
-For example, the default setting limits the available memory to 80% of the actual GPU memory.
-These environment variables can be set in the terminal as follows.
+- **`MOREH_ADVANCED_PARALLELIZATION_MAX_PARALLEL_COMPILE_THREADS`**
+    - value type = int
+    - default = 16
+    - Specifies the number of threads used by the compiler during compilation.
+    - If the waiting time during compilation is long, it is recommended to increase this value and retry.
+        - However, compile time may vary depending on the CPU usage and number of CPU cores.
+        - Therefore, increasing this value may not necessarily improve compilation speed.
+- **`MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG`**
+    - default = 0
+    - Provides additional information during Advanced Parallelization compilation.
+        - If **`MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=1`**, it will be printed to the console.
+        - If **`MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=2`**, it will be saved in the autoconfig_log.dump format.
+- **`MOREH_ADVANCED_PARALLELIZATION_MEMORY_USAGE_CORRECTION_RATIO`**
+    - default = 80
+    - Represents the available memory of the GPU used during compilation in Advanced Parallelization.
+    - For example, the default setting limits the available memory to 80% of the actual GPU memory.
+
+These environment variables can be configured as follows.
+
+```bash
+export MOREH_ADVANCED_PARALLELIZATION_MAX_PARALLEL_COMPILE_THREADS=16
+export MOREH_ADVANCED_PARALLELIZATION_DETAILED_LOG=1
+export MOREH_ADVANCED_PARALLELIZATION_MEMORY_USAGE_CORRECTION_RATIO=80
+```

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770112798150">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770112865617">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770112798150" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770112865617" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770112798150" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770112865617" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770112798150" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770112798150" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770112798150" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770112865617" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770112865617" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770112865617" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -312,7 +312,6 @@ Selection (1-13, q, Q): q </code></pre>
 <p>To confirm that the changes have been successfully applied, use the <strong><code v-pre>moreh-smi</code></strong> command again to check the currently used MoAI Accelerator.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-23:56:17 April 18, 2024
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -337,36 +336,37 @@ Selection (1-13, q, Q): q </code></pre>
 </doc-codeblock></div>
 <p>If the training is running correctly, you will see logs similar to the following. These logs indicate that the Advanced Parallelism feature, which finds the optimal parallelization settings, is functioning correctly. Note that in the PyTorch script we reviewed earlier, no additional handling for using multiple GPUs simultaneously was necessary apart from the single AP code line.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"> [2024-05-22 18:06:58.035] [info] Got DBs from backend for auto config.
-[2024-05-22 18:07:24.154] [info] Requesting resources for KT AI Accelerator from the server...
-[2024-05-22 18:07:24.165] [info] Initializing the worker daemon for KT AI Accelerator
-[2024-05-22 18:07:29.044] [info] [1/8] Connecting to resources on the server (192.168.110.17:24169)...
-[2024-05-22 18:07:29.058] [info] [2/8] Connecting to resources on the server (192.168.110.18:24169)...
-[2024-05-22 18:07:29.065] [info] [3/8] Connecting to resources on the server (192.168.110.21:24169)...
-[2024-05-22 18:07:29.072] [info] [4/8] Connecting to resources on the server (192.168.110.52:24169)...
-[2024-05-22 18:07:29.079] [info] [5/8] Connecting to resources on the server (192.168.110.53:24169)...
-[2024-05-22 18:07:29.085] [info] [6/8] Connecting to resources on the server (192.168.110.55:24169)...
-[2024-05-22 18:07:29.095] [info] [7/8] Connecting to resources on the server (192.168.110.85:24169)...
-[2024-05-22 18:07:29.104] [info] [8/8] Connecting to resources on the server (192.168.110.87:24169)...
-[2024-05-22 18:07:29.112] [info] Establishing links to the resources...
-[2024-05-22 18:07:29.883] [info] KT AI Accelerator is ready to use.
-[2024-05-22 18:07:29.883] [info] Moreh Version: 24.5.0
-[2024-05-22 18:07:29.883] [info] Moreh Job ID: 977399
-[2024-05-22 18:07:30.572] [info] The number of candidates is 78.
-[2024-05-22 18:07:30.572] [info] Parallel Graph Compile start...
-[2024-05-22 18:13:54.539] [info] Elapsed Time to compile all candidates = 383967 [ms]
-[2024-05-22 18:13:54.539] [info] Parallel Graph Compile finished.
-[2024-05-22 18:13:54.539] [info] The number of possible candidates is 13.
-[2024-05-22 18:13:54.539] [info] SelectBestGraphFromCandidates start...
-[2024-05-22 18:15:12.452] [info] Elapsed Time to compute cost for survived candidates = 77913 [ms]
-[2024-05-22 18:15:12.452] [info] SelectBestGraphFromCandidates finished.
-[2024-05-22 18:15:12.452] [info] Configuration for parallelism is selected.
-[2024-05-22 18:15:12.452] [info] num_stages : 8, num_micro_batches : 64, batch_per_device : 1, No TP, recomputation : full(2), distribute_param : true, distribute_low_prec_param : false
-[2024-05-22 18:15:12.453] [info] train: true
-2024-05-22 18:56:47.999 | INFO     | __main__:main:154 - [Step 10/560] | Loss: 1.8515625 | Duration: 129.06 | Throughput: 4062.49 tokens/sec
-2024-05-22 19:22:08.334 | INFO     | __main__:main:154 - [Step 20/560] | Loss: 1.7890625 | Duration: 129.51 | Throughput: 4048.18 tokens/sec
-2024-05-22 19:52:43.248 | INFO     | __main__:main:154 - [Step 30/560] | Loss: 1.5716357 | Duration: 129.79 | Throughput: 4096.08 tokens/sec
-2024-05-22 20:27:09.742 | INFO     | __main__:main:154 - [Step 40/560] | Loss: 1.6547084 | Duration: 128.72 | Throughput: 4124.73 tokens/sec
+<pre class="language-bash"><code v-pre class="language-bash">...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/8] Connecting to resources on the server (192.168.110.17:24169)...
+[info] [2/8] Connecting to resources on the server (192.168.110.18:24169)...
+[info] [3/8] Connecting to resources on the server (192.168.110.21:24169)...
+[info] [4/8] Connecting to resources on the server (192.168.110.52:24169)...
+[info] [5/8] Connecting to resources on the server (192.168.110.53:24169)...
+[info] [6/8] Connecting to resources on the server (192.168.110.55:24169)...
+[info] [7/8] Connecting to resources on the server (192.168.110.85:24169)...
+[info] [8/8] Connecting to resources on the server (192.168.110.87:24169)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977399
+[info] The number of candidates is 78.
+info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 383967 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 13.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 77913 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 8, num_micro_batches : 64, batch_per_device : 1, No TP, recomputation : full(2), distribute_param : true, distribute_low_prec_param : false
+[info] train: true
+| INFO     | __main__:main:154 - [Step 10/560] | Loss: 1.8515625 | Duration: 129.06 | Throughput: 4062.49 tokens/sec
+| INFO     | __main__:main:154 - [Step 20/560] | Loss: 1.7890625 | Duration: 129.51 | Throughput: 4048.18 tokens/sec
+| INFO     | __main__:main:154 - [Step 30/560] | Loss: 1.5716357 | Duration: 129.79 | Throughput: 4096.08 tokens/sec
+| INFO     | __main__:main:154 - [Step 40/560] | Loss: 1.6547084 | Duration: 128.72 | Throughput: 4124.73 tokens/sec
 ...
 Training Done
 Saving Model...
@@ -390,12 +390,13 @@ Model saved in ./llama3_70b_summarization</code></pre>
 <p>During training, you can open another terminal and connect to the container. Then, run the <strong><code v-pre>moreh-smi</code></strong> command to see the MoAI Accelerator’s memory being utilized by the training script, as shown below.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
+$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  8xLarge.2048GB  |  3516969 MiB   |  4193280 MiB   |    100%        |
+|  * 0     |  MoAI Accelerator   |  8xLarge.2048GB  |  3516969 MiB   |  4193280 MiB   |    100%       |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 

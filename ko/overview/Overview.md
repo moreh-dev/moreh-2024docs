@@ -2,6 +2,7 @@
 icon: note
 tags: [guide]
 order: 800
+locale: ko
 ---
 
 # 개요

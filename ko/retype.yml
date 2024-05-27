@@ -30,6 +30,12 @@ links:
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
 
+search:
+  preload: true
+
+locale: ko
+
+
 
 branding:
   title: Moreh Documents              # Your custom website title; keep it short

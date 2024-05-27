@@ -6,6 +6,9 @@ poweredByRetype: false
 outbound:
   enabled: true
 
+search:
+  preload: true
+  
 input: ./
 output: .retype
 url: docs.moreh.io

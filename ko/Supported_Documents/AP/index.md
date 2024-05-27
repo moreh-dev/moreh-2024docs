@@ -4,7 +4,9 @@ tags: [ap]
 order: 20
 ---
 
-## Advanced Parallelization이란?
+# Advanced Parallelization(AP)
+
+### Advanced Parallelization이란?
 
 ***Advanced Parallelization***(**AP**)은 MoAI Platform에서 제공하는 자동 모델 최적화 및 분산 병렬처리 기능입니다. 일반적으로 ML 엔지니어는 거대 모델 학습 시 모델 병렬화를 최적화하기 위해 수많은 시행착오를 겪습니다. 사용 중인 GPU의 메모리 크기를 고려해 여러 병렬화 기법을 직접 적용해 보고, 각 기법에서 활용할 수 있는 옵션 조합들에 대해 성능을 측정해 최적화된 환경 변수를 결정해야 합니다. 이는 숙련된 머신러닝 개발자가 작업하더라도 몇 주에서 몇 달까지 걸릴 수 있는 매우 고된 작업입니다.
 

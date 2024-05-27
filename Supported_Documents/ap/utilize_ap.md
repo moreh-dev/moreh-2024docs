@@ -5,7 +5,7 @@ order: 69
 expanded: false
 ---
 
-##  Utilizing AP
+#  Utilizing AP
 
 The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP. Before using the AP feature, please check the information on the accelerators you are using.
 

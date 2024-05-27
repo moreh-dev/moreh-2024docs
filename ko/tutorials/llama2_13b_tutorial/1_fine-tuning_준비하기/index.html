@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770110601797">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770110658958">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770110601797" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770110658958" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770110601797" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770110658958" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770110601797" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770110601797" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770110601797" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770110658958" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770110658958" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770110658958" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -240,7 +240,7 @@ y</code></pre>
 <p>다음과 같이 실행하여 torch 패키지가 정상적으로 import 되고 MoAI Accelerator가 인식되는지 확인합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ python
-Python 3.8.18 (default, Sep 11 2023, 13:40:15)
+Python 3.8.18 (default)
 [GCC 11.2.0] :: Anaconda, Inc. on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; import torch
@@ -248,23 +248,13 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 &gt;&gt;&gt; torch.cuda.device_count()
 1
 &gt;&gt;&gt; torch.cuda.get_device_name()
-[2024-04-16 19:17:45.714] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-16 19:17:45.752] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-16 19:17:47.409] [info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
-[2024-04-16 19:17:47.452] [info] Establishing links to the resources...
-[2024-04-16 19:17:47.636] [info] MoAI Accelerator is ready to use.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
 'MoAI Accelerator'
 &gt;&gt;&gt; quit()</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="필요-python-패키지-설치">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#필요-python-패키지-설치">#</doc-anchor-trigger>
-        <span>필요 Python 패키지 설치</span>
-    </h2>
-</doc-anchor-target>
-<p>다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ pip install transformers==4.36.2 datasets==2.19.0 loguru==0.7.2 sentencepiece==0.2.0</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="학습-스크립트-다운로드">
     <h2>
@@ -280,15 +270,15 @@ $ cd quickstart
 ~/quickstart$ ls tutorial
 ...  train_llama2.py  ...</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="필요-python-패키지-설치-1">
+<doc-anchor-target id="필요-python-패키지-설치">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#필요-python-패키지-설치-1">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#필요-python-패키지-설치">#</doc-anchor-trigger>
         <span>필요 Python 패키지 설치</span>
     </h2>
 </doc-anchor-target>
 <p>다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_baichuan.txt</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_llama2.txt</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="학습-모델-및-토크나이저-다운로드">
     <h2>
@@ -335,9 +325,9 @@ model-00007-of-00011.safetensors  tokenizer.model</code></pre>
 ...  prepare_llama2_dataset.py ...
 
 ~/quickstart$ python dataset/prepare_llama2_dataset.py
-2024-04-19 03:27:05,865 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-2024-04-19 03:27:05,866 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-2024-04-19 03:27:24,010 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
+torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
 Loading Tokenizer...
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 Downloading dataset...

@@ -73,4 +73,4 @@ If the training proceeds normally, the following log will be output.
 
 Compared to the previous execution results when the number of GPUs was half, you can see that the learning is the same and the throughput has improved. 
 
-- When using AMD MI250 GPU 16 → 32 : approximately 6800 tokens/sec → 13000 tokens/sec
+- When using AMD MI250 GPU 16 → 32 : approximately 6,800 tokens/sec → 13,000 tokens/sec

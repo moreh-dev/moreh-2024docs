@@ -32,14 +32,13 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 
 ```bash
 $ moreh-smi
-11:40:36 April 16, 2024
-+-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+=================================================================================================+
++---------------------------------------------------------------------------------------------------+
+|                                                  Current Version: 24.2.0  Latest Version: 24.2.0  |
++---------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
++===================================================================================================+
 |  * 0     |   MoAI Accelerator  |  xLarge.512GB  |  -             |  -             |  -            |
-+-------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
 ```
 
 The current MoAI Accelerator in use has a memory size of 512GB.
@@ -101,7 +100,6 @@ To confirm that the changes have been successfully applied, use the **`moreh-smi
 
 ```bash
 $ moreh-smi
-23:56:17 April 18, 2024
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -125,38 +123,34 @@ $ cd ~/quickstart
 If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It's worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.
 
 ```bash
-2024-04-24 13:51:32,884 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpypapv6uq
-2024-04-24 13:51:32,886 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpypapv6uq/_remote_module_non_scriptable.py
-2024-04-24 13:51:50,046 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
 ...
-Loading checkpoint shards: 100%|██████████| 11/11 [00:11<00:00,  1.02s/it]
-[2024-04-24 13:52:20.806] [info] Got DBs from backend for auto config.
-[2024-04-24 13:52:25.469] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-24 13:52:25.481] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-24 13:52:30.967] [info] [1/4] Connecting to resources on the server (192.168.110.1:24159)...
-[2024-04-24 13:52:30.982] [info] [2/4] Connecting to resources on the server (192.168.110.21:24159)...
-[2024-04-24 13:52:30.989] [info] [3/4] Connecting to resources on the server (192.168.110.22:24159)...
-[2024-04-24 13:52:30.995] [info] [4/4] Connecting to resources on the server (192.168.110.44:24159)...
-[2024-04-24 13:52:31.035] [info] Establishing links to the resources...
-[2024-04-24 13:52:31.906] [info] MoAI Accelerator is ready to use.
-[2024-04-24 13:52:32.407] [info] The number of candidates is 22.
-[2024-04-24 13:52:32.407] [info] Parallel Graph Compile start...
-[2024-04-24 13:53:05.235] [info] Elapsed Time to compile all candidates = 32827 [ms]
-[2024-04-24 13:53:05.235] [info] Parallel Graph Compile finished.
-[2024-04-24 13:53:05.235] [info] The number of possible candidates is 4.
-[2024-04-24 13:53:05.235] [info] SelectBestGraphFromCandidates start...
-[2024-04-24 13:53:06.328] [info] Elapsed Time to compute cost for survived candidates = 1093 [ms]
-[2024-04-24 13:53:06.328] [info] SelectBestGraphFromCandidates finished.
-[2024-04-24 13:53:06.328] [info] Configuration for parallelism is selected.
-[2024-04-24 13:53:06.328] [info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
-[2024-04-24 13:53:06.328] [info] train: true
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/4] Connecting to resources on the server (192.168.110.1:24159)...
+[info] [2/4] Connecting to resources on the server (192.168.110.21:24159)...
+[info] [3/4] Connecting to resources on the server (192.168.110.22:24159)...
+[info] [4/4] Connecting to resources on the server (192.168.110.44:24159)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] The number of candidates is 22.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 32827 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 4.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 1093 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
+[info] train: true
 
-2024-04-23 11:29:22.533 | INFO     | __main__:main:131 - [Step 2/1121] | Loss: 1.78125 | Duration: 16.31 | Throughput: 32150.92 tokens/sec
-2024-04-23 11:30:29.368 | INFO     | __main__:main:131 - [Step 4/1121] | Loss: 1.7109375 | Duration: 15.65 | Throughput: 33494.69 tokens/sec
-2024-04-23 11:31:36.496 | INFO     | __main__:main:131 - [Step 6/1121] | Loss: 1.75 | Duration: 15.68 | Throughput: 33444.54 tokens/sec
-2024-04-23 11:32:40.688 | INFO     | __main__:main:131 - [Step 8/1121] | Loss: 1.609375 | Duration: 13.80 | Throughput: 37988.52 tokens/sec
-2024-04-23 11:33:44.980 | INFO     | __main__:main:131 - [Step 10/1121] | Loss: 1.640625 | Duration: 16.25 | Throughput: 32272.10 tokens/sec
-2024-04-23 11:34:52.182 | INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
+| INFO     | __main__:main:131 - [Step 2/1121] | Loss: 1.78125 | Duration: 16.31 | Throughput: 32150.92 tokens/sec
+| INFO     | __main__:main:131 - [Step 4/1121] | Loss: 1.7109375 | Duration: 15.65 | Throughput: 33494.69 tokens/sec
+| INFO     | __main__:main:131 - [Step 6/1121] | Loss: 1.75 | Duration: 15.68 | Throughput: 33444.54 tokens/sec
+| INFO     | __main__:main:131 - [Step 8/1121] | Loss: 1.609375 | Duration: 13.80 | Throughput: 37988.52 tokens/sec
+| INFO     | __main__:main:131 - [Step 10/1121] | Loss: 1.640625 | Duration: 16.25 | Throughput: 32272.10 tokens/sec
+| INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
 ...
 
 Training Done

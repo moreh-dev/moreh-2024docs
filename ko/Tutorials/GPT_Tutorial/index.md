@@ -6,22 +6,24 @@ order: 800
 
 # GPT Fine-tuning
 
-이 튜토리얼은 MoAI Platform에서 [Hugging Face](https://huggingface.co)에 오픈소스로 공개된 GPT 기반의 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 성능 및 자동 병렬화의 이점을 확인할 수 있습니다.
+이 튜토리얼은 MoAI Platform에서 [Hugging Face](https://huggingface.co)에 오픈소스로 공개된 GPT 기반의 모델을 fine-tuning하는 예시를 소개합니다. 튜토리얼을 통해 아래와 같은 MoAI Platform이 제공하는 여러 기능을 체험하며, AMD GPU 클러스터를 사용하는 방법을 익힐 수 있습니다.
+
+- 사용자는 수십 개의 GPU를 MoAI Accelerator라는 하나의 가속기처럼 사용할 수 있어 복잡한 병렬화 작업이나 클러스터 환경 설정 없이도 쉽게 학습을 실행할 수 있습니다. 사용자는 리소스 관리에 신경쓰지 않고 학습에만 집중할 수 있습니다.
+- 자동 병렬화 기능 덕분에 코드 작성과 개발이 간소화되며, 모델 학습 속도가 크게 향상됩니다. 이는 효율적인 자원 활용을 가능하게 하여 사용자가 더 빠르고 효과적으로 작업할 수 있도록 돕습니다.
 
 ## 개요
 
-GPT는 Transformer decoder 구조만을 사용한 언어 모델 아키텍처로써, 2018년 [OpenAI](https://openai.com/)에서 GPT-1을 통해 처음 공개하였습니다. 이후 OpenAI에서는 사전학습에 사용되는 데이터셋 크기와 모델 파라미터를 늘려가며 GPT-2를 거쳐 GPT-3, GPT-4 모델을 개발했으며 이 중 오픈소스로 공개된 모델은 GPT-1, GPT-2 입니다.  
+MoAI Platform은 수천 대의 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있는 확장 가능한 AI 플랫폼입니다. MoAI Platform의 특징은 모델을 fine-tuning할 때 가상화와 병렬화를 통해 매우 간단한 학습 방법을 제공한다는 점입니다.
 
-GPT의 기본적인 아키텍처는 오픈소스로 공개되어 있기 때문에 Huggingface에서는 OpenAI에서 개발한 모델 이외에도 다양한 GPT 기반의 모델을 찾아볼 수 있습니다. 
+MoAI Platform은 여러개의 GPU를 가상화하여 하나의 가속기인 [MoAI Accelerator](https://docs.moreh.io/ko/moai_features/virtualization/#gpu-%EA%B0%80%EC%83%81%ED%99%94-moai-accelerator)로 제공합니다. 따라서 다중 GPU 사용을 위해 필요한 사전 준비나 코드 수정이 필요하지 않습니다.
 
-이 튜토리얼에서는 코드 생성 태스크에 대해 MoAI Platform을 활용해 [Cerebras-GPT-13B](https://huggingface.co/cerebras/Cerebras-GPT-13B) 모델을 fine-tuning 해보겠습니다.  
+MoAI Platform은 고객이 가상화된 MoAI Accelerator를 사용할 때 내부적으로 자동 최적화된 병렬화를 제공합니다. 모델 크기, 데이터 크기에 대해서 다양한 병렬화 방법을 고려해 최적의 병렬화 환경을 제공하며, 사용자는 별도의 작업이 없이 간단한 코드로 고성능 학습을 경험할 수 있습니다.
 
 ## 시작하기 전에
 
 MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform의 체험판 컨테이너 또는 MoAI Platform 기반으로 운영되는 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
 
 - MoAI Platform 체험판 컨테이너 사용 문의: [support@moreh.io](mailto:support@moreh.io)
-
 - [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
 SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.
@@ -34,7 +36,6 @@ SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 �
 
 ```bash
 $ moreh-smi
-11:40:36 April 16, 2024
 +-------------------------------------------------------------------------------------------------+
 |                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
 +-------------------------------------------------------------------------------------------------+

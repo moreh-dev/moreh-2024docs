@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770090932764">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770091017467">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770090932764" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770091017467" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770090932764" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770091017467" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770090932764" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770090932764" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770090932764" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770091017467" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770091017467" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770091017467" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -241,42 +241,38 @@
 </doc-codeblock></div>
 <p>학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">2024-04-22 02:23:38,069 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpomm9oi6e
-2024-04-22 02:23:38,069 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpomm9oi6e/_remote_module_non_scriptable.py
-Downloading shards: 100%|██████████| 2/2 [00:00&lt;00:00, 11586.48it/s]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05&lt;00:00,  2.73s/it]
-[2024-04-22 02:24:13.852] [info] Got DBs from backend for auto config.
-[2024-04-22 02:24:16.623] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-22 02:24:16.635] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-22 02:24:22.012] [info] [1/8] Connecting to resources on the server (192.168.110.10:24174)...
-[2024-04-22 02:24:22.025] [info] [2/8] Connecting to resources on the server (192.168.110.33:24174)...
-[2024-04-22 02:24:22.032] [info] [3/8] Connecting to resources on the server (192.168.110.34:24174)...
-[2024-04-22 02:24:22.039] [info] [4/8] Connecting to resources on the server (192.168.110.52:24174)...
-[2024-04-22 02:24:22.045] [info] [5/8] Connecting to resources on the server (192.168.110.53:24174)...
-[2024-04-22 02:24:22.054] [info] [6/8] Connecting to resources on the server (192.168.110.79:24174)...
-[2024-04-22 02:24:22.063] [info] [7/8] Connecting to resources on the server (192.168.110.80:24174)...
-[2024-04-22 02:24:22.073] [info] [8/8] Connecting to resources on the server (192.168.110.98:24174)...
-[2024-04-22 02:24:22.081] [info] Establishing links to the resources...
-[2024-04-22 02:24:22.940] [info] MoAI Accelerator is ready to use.
-[2024-04-22 02:24:23.307] [info] The number of candidates is 22.
-[2024-04-22 02:24:23.307] [info] Parallel Graph Compile start...
-[2024-04-22 02:24:51.810] [info] Elapsed Time to compile all candidates = 28502 [ms]
-[2024-04-22 02:24:51.810] [info] Parallel Graph Compile finished.
-[2024-04-22 02:24:51.810] [info] The number of possible candidates is 4.
-[2024-04-22 02:24:51.810] [info] SelectBestGraphFromCandidates start...
-[2024-04-22 02:24:52.800] [info] Elapsed Time to compute cost for survived candidates = 990 [ms]
-[2024-04-22 02:24:52.800] [info] SelectBestGraphFromCandidates finished.
-[2024-04-22 02:24:52.800] [info] Configuration for parallelism is selected.
-[2024-04-22 02:24:52.800] [info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
-[2024-04-22 02:24:52.803] [info] train: true
+<pre class="language-bash"><code v-pre class="language-bash">...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/8] Connecting to resources on the server (192.168.110.10:24174)...
+[info] [2/8] Connecting to resources on the server (192.168.110.33:24174)...
+[info] [3/8] Connecting to resources on the server (192.168.110.34:24174)...
+[info] [4/8] Connecting to resources on the server (192.168.110.52:24174)...
+[info] [5/8] Connecting to resources on the server (192.168.110.53:24174)...
+[info] [6/8] Connecting to resources on the server (192.168.110.79:24174)...
+[info] [7/8] Connecting to resources on the server (192.168.110.80:24174)...
+[info] [8/8] Connecting to resources on the server (192.168.110.98:24174)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] The number of candidates is 22.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 28502 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 4.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 990 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
+[info] train: true
 
-2024-04-22 02:25:47.612 | INFO     | __main__:main:137 - [Step 1/144] | Loss: 1.1953125 | Duration: 41.70 | Throughput: 12572.33 tokens/sec
-2024-04-22 02:26:00.323 | INFO     | __main__:main:137 - [Step 2/144] | Loss: 0.85546875 | Duration: 4.68 | Throughput: 111965.54 tokens/sec
-2024-04-22 02:26:13.809 | INFO     | __main__:main:137 - [Step 3/144] | Loss: 0.796875 | Duration: 5.81 | Throughput: 90209.43 tokens/sec
-2024-04-22 02:26:27.255 | INFO     | __main__:main:137 - [Step 4/144] | Loss: 0.75390625 | Duration: 5.80 | Throughput: 90425.87 tokens/sec
-2024-04-22 02:26:39.413 | INFO     | __main__:main:137 - [Step 5/144] | Loss: 0.64453125 | Duration: 4.38 | Throughput: 119712.50 tokens/sec
-...
-</code></pre>
+| INFO     | __main__:main:137 - [Step 1/144] | Loss: 1.1953125 | Duration: 41.70 | Throughput: 12572.33 tokens/sec
+| INFO     | __main__:main:137 - [Step 2/144] | Loss: 0.85546875 | Duration: 4.68 | Throughput: 111965.54 tokens/sec
+| INFO     | __main__:main:137 - [Step 3/144] | Loss: 0.796875 | Duration: 5.81 | Throughput: 90209.43 tokens/sec
+| INFO     | __main__:main:137 - [Step 4/144] | Loss: 0.75390625 | Duration: 5.80 | Throughput: 90425.87 tokens/sec
+| INFO     | __main__:main:137 - [Step 5/144] | Loss: 0.64453125 | Duration: 4.38 | Throughput: 119712.50 tokens/sec
+...</code></pre>
 </doc-codeblock></div>
 <p>앞서 GPU 개수가 절반이었을 때 실행한 결과와 비교해 동일하게 학습이 이루어지며 throughput이 향상되었음을 확인할 수 있습니다.</p>
 <ul>

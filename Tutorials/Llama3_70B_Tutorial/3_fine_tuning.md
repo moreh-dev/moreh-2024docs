@@ -5,7 +5,7 @@ order: 40
 ---
 
 
-# 3. Model Fine-tuning
+# 4. Model Fine-tuning
 Now, we will actually execute the fine-tuning process.
 
 ## Setting Accelerator Flavor

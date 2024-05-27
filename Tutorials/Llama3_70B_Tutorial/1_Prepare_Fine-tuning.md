@@ -4,7 +4,7 @@ tags:  [tutorial, llama3_70b]
 order: 40
 ---
 
-# 1. Preparing for Fine-tuning
+# 2. Preparing for Fine-tuning
 
 ## Getting Started
 

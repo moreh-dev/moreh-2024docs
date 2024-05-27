@@ -10,7 +10,7 @@ The MoAI Platform can be configured with various GPUs, yet it provides a consist
 
 The MoAI Platform supports Python-based programming, similar to typical AI training environments. This document focuses on setting up and using a conda virtual environment as the standard configuration for AI training.
 
-# **Setting up a Conda Environment**
+# Setting up a Conda Environment
 
 1. To begin training, first create a conda environment:
     

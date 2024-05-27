@@ -10,7 +10,8 @@ order: 40
 
 To start, you'll need to obtain a container or virtual machine on the MoAI Platform from your infrastructure provider. You can use public cloud services based on the MoAI Platform, such as:
 
-- Inquiries for MoAI Platform Trial Container: [support@moreh.io](https://www.notion.so/moreh/support@moreh.io)
+- MoAI Platform Trial Container (Inquiries: [support@moreh.io](mailto:support@moreh.io))
+
 - [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
 After accessing the platform via SSH, run the **`moreh-smi`** command to ensure the MoAI Accelerator is properly recognized. Note that device names may vary depending on the system.

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770135695352">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770135797897">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770135695352" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770135797897" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770135695352" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770135797897" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770135695352" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770135695352" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770135695352" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770135797897" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770135797897" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770135797897" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -195,40 +195,42 @@
         <span>Baichuan2 Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>The following tutorial will take you through the steps required to fine-tune <a href="https://huggingface.co/baichuan-inc/Baichuan2-13B-Base" class="outbound" target="_blank"><span>Baichuan2 13B</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> model with an example dataset, using the MoAI Platform. Through the tutorial, you&#x27;ll learn how to utilize an AMD GPU cluster with MoAI Platform and discover the benefits of improved performance and automatic parallelization.</p>
+<p>The following tutorial will take you through the steps required to fine-tune <a href="https://huggingface.co/baichuan-inc/Baichuan2-13B-Base" class="outbound" target="_blank"><span>Baichuan2 13B</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> model with an example dataset, using the MoAI Platform. Through this tutorial, users can experience various features provided by the MoAI Platform and learn how to use an AMD GPU cluster.</p>
+<ul>
+<li>Users can easily run training without complex parallelization tasks or cluster environment setups, as they can treat dozens of GPUs as a single accelerator called MoAI Accelerator. This allows users to focus solely on training without worrying about resource management.</li>
+<li>Thanks to the automatic parallelization feature, code writing and development are simplified, and model training speed is significantly improved. This enables efficient resource utilization, allowing users to work faster and more effectively.</li>
+</ul>
 <doc-anchor-target id="overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
         <span>Overview</span>
     </h2>
 </doc-anchor-target>
-<p>Baichuan2 is a large-scale multilingual language model developed by <a href="https://github.com/baichuan-inc" class="outbound" target="_blank"><span>Baichuan Intelligent Technology</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. This model offers configurations with 70 billion and 130 billion parameters trained on vast datasets consisting of 2.6 trillion tokens.</p>
-<p>In this tutorial, we&#x27;ll fine-tune the Baichuan2 13B model using the MoAI Platform with the <a href="https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset" class="outbound" target="_blank"><span>Bitext-customer-support-llm-chatbot-training-dataset</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>, a text-generation e-commerce dataset.</p>
-<doc-anchor-target id="before-you-start">
+<p>The MoAI Platform is a scalable AI platform that enables easy control of thousands of GPUs for training and inference of AI models. One of its key features is providing a very simple training method through virtualization and parallelization when fine-tuning models.</p>
+<p>The MoAI Platform provides multiple GPUs virtualized into a single accelerator called <a href="https://docs.moreh.io/moai_features/virtualization/#gpu-virtualization-moai-accelerator" class="outbound" target="_blank"><span>MoAI Accelerator</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. Therefore, there is no need for preprations or code modifications for using multiple GPUs.</p>
+<p>The MoAI Platform automatically provides optimized parallelization when users use the virtualized MoAI Accelerator. It considers various parallelization methods based on model and data sizes to offer the optimal parallelization environment. As a result, users can experience high-performance training with simple code without any additional tasks.</p>
+<doc-anchor-target id="getting-started">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#before-you-start">#</doc-anchor-trigger>
-        <span>Before You Start</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
+        <span>Getting Started</span>
     </h2>
 </doc-anchor-target>
-<p>Be sure to obtain a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. You can either request and use a trial container of the MoAI Platform or sign up for the public cloud service running on the MoAI Platform.</p>
+<p>Please obtain a container or virtual machine on the MoAI Platform from your infrastructure provider and follow the instructions to connect via SSH. For example, you can apply for a trial container on the MoAI Platform or use public cloud services based on the MoAI Platform.</p>
 <ul>
-<li><p>MoAI Platform Trial Container (Inquiries: <a href="mailto:support@moreh.io">support@moreh.io</a>)</p>
-</li>
-<li><p><a href="https://cloud.kt.com/solution/hyperscaleAiComputing/" class="outbound" target="_blank"><span>KT Cloud Hyperscale AI Computing</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></p>
-</li>
+<li>MoAI Platform Trial Container (Inquiries: <a href="mailto:support@moreh.io">support@moreh.io</a>)</li>
+<li>KT Cloud&#x27;s Hyperscale AI Computing (<a href="https://cloud.kt.com/solution/hyperscaleAiComputing/" class="outbound" target="_blank"><span>https://cloud.kt.com/solution/hyperscaleAiComputing/</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>)</li>
 </ul>
-<p>After connecting via SSH, run the <strong><code v-pre>moreh-smi</code></strong> command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system.</p>
-<doc-anchor-target id="check-moai-accelerator">
+<p>After connecting via SSH, execute the <strong><code v-pre>moreh-smi</code></strong> command to verify that the MoAI Accelerator is properly detected. The device name may vary depending on the system.</p>
+<doc-anchor-target id="verifying-moai-accelerator">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#check-moai-accelerator">#</doc-anchor-trigger>
-        <span>Check MoAI Accelerator</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#verifying-moai-accelerator">#</doc-anchor-trigger>
+        <span><strong>Verifying MoAI Accelerator</strong></span>
     </h3>
 </doc-anchor-target>
-<p>To train models like the Llama2 model outlined in this tutorial, you need to select an appropriate size MoAI Accelerator. Start by using the <code v-pre>moreh-smi</code> command to check the currently used MoAI Accelerator.</p>
-<p>Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in <a href="3_finetuning/"><strong>3. Model fine-tuning</strong></a>.</p>
+<p>To train models like the sLLM introduced in this tutorial, it&#x27;s important to select an appropriate size of the MoAI Accelerator. First, use the <strong><code v-pre>moreh-smi</code></strong> command to check the currently used MoAI Accelerator.</p>
+<p>Detailed instructions for setting up the MoAI Accelerator specific to your training needs will be provided in the section <a href="3_finetuning/"><strong>3. Model fine-tuning</strong></a>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-11:40:36 April 16, 2024
 +-------------------------------------------------------------------------------------------------+
 |                                                Current Version: 24.3.0  Latest Version: 24.3.0  |
 +-------------------------------------------------------------------------------------------------+

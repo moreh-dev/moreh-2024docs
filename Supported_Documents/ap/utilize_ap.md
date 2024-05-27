@@ -23,9 +23,9 @@ torch.moreh.option.enable_advanced_parallelization()
 
 ### **Example Usage**
 
-If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we'll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to [Llama2 Tutorial 1. Preparing for fine-tuning](https://docs.moreh.io/ko/tutorials/llama2_13b_tutorial/1_fine-tuning_%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0/) to prepare the training code.
+If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we'll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to [Llama2 Tutorial 1. Preparing for fine-tuning](https://docs.moreh.io/tutorials/llama2_tutorial/1_prepare_fine-tuning/) to prepare the training code.
 
-Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0. For detailed instructions, refer to the [Llama2 Tutorial 1. Preparing for fine-tuning](https://docs.moreh.io/ko/tutorials/llama2_13b_tutorial/1_fine-tuning_%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0/) tutorial.
+Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0.
 
 ```bash
 bashCopy code

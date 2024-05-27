@@ -29,7 +29,7 @@ To address these challenges, the MoAI Platform offers the following features to 
 
 ## 1. Various Accelerators, Multi-GPU Support
 
--![](img_ov/m_4.png)
+![](img_ov/m_4.png)
 
 MoAI Platform supports various AI accelerators, allowing users to execute diverse model training and inference tasks regardless of accelerator type. Users can seamlessly utilize accelerators other than AMD, Intel, and NVIDIA without the need to modify existing training and inference code written in Python.
 \
@@ -38,7 +38,7 @@ MoAI Platform supports various AI accelerators, allowing users to execute divers
 
 ## 2. GPU Virtualization
 
--![](img_ov/v_3.png)
+![](img_ov/v_3.png)
 
 The virtualization feature of the MoAI Platform enables thousands of GPUs to be utilized as a single GPU (Single Virtual Device). This allows AI engineers to easily and quickly execute deep learning training and inference without the need for optimization processes like multi-GPU and multi-node parallelization. By assuming only one GPU and structuring Python code accordingly, users can perform these tasks effortlessly.
 

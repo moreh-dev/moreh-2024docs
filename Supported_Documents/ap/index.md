@@ -14,7 +14,7 @@ The MoAI Platform's Advanced Parallelization (AP) is the automatic model optimiz
 With the AP feature of the MoAI Platform, complex parallel processing and model optimization tasks can be automatically performed with just a single line of code, dramatically reducing the time and effort involved in training.
 
 
-![Normalized model training throughput: experienced developer optimizations over one moth vs. using the AP feature on the MoAI Platform](overview_05.png)
+![Model training throughput: experienced developer optimizations over one month vs. using the AP feature on the MoAI Platform](overview_05.png)
 
 ### 💡 Why is Parallelization crucial?
 

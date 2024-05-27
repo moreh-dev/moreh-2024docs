@@ -10,7 +10,8 @@ order: 20
 
 MoAI Platform의 AP 기능을 이용하면, 단 한 줄의 코드 추가만으로 복잡한 병렬 처리 및 모델 최적화 작업을 자동으로 수행해 학습에 소요되는 시간과 노력을 획기적으로 줄일 수 있습니다.
 
-![Normalized model training throughput: experienced developer optimizations over one moth vs. using the AP feature on the MoAI Platform](/overview/img_ov/ap.png)
+
+![Model training throughput: experienced developer optimizations over one month vs. using the AP feature on the MoAI Platform](/overview/img_ov/ap_1.png)
 
 ### 병렬화가 반드시 필요한 이유는 무엇일까요?
 

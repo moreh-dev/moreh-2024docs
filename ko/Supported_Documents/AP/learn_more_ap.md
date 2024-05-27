@@ -70,3 +70,4 @@ num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputatio
 ```
 
 이처럼 **MoAI Platform에서는 단 한 줄의 프로그램 추가로 수 개의 병렬화 후보를 계산하여 최적의 병렬화 방법을 자동으로 선택할 수 있습니다.**
+

@@ -9,12 +9,12 @@ order: 80
 
 이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델 6종을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.
 
-- [Llama3 8B](Tutorials//llama3_8b_tutorial/index.md)
+- [Llama3 8B](https://docs.moreh.io/ko/tutorials/llama3_8b_tutorial/)
 - [Llama3 70B](/Tutorials/llama3_70b_tutorial/index.md)
-- [Mistral](/ko/Tutorials/mistral_tutorial/index.md)
-- [GPT](/gpt_tutorial/index.md)
-- [Qwen](/gpt_tutorial/index.md)
-- [Baichuan2](/baichuan2_tutorial/index.md)
+- [Mistral](https://docs.moreh.io/ko/tutorials/mistral_tutorial/)
+- [GPT](https://docs.moreh.io/ko/tutorials/gpt_tutorial/)
+- [Qwen](https://docs.moreh.io/ko/tutorials/qwen_tutorial/)
+- [Baichuan2](https://docs.moreh.io/ko/tutorials/baichuan2_tutorial/)
 
 머신러닝에서 미세 조정(fine-tuning)이란 사전 학습된 모델의 매개변수를 새로운 데이터로 조정하여 특정 작업의 성능을 향상시키는 것을 의미합니다. 즉, 기존 모델을 새로운 작업에 적용하고자 할 때, 새로운 데이터셋으로 모델을 최적화하여 특정 요구와 도메인에 맞게 커스터마이징하는 과정입니다.
 

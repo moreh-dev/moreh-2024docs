@@ -10,15 +10,15 @@ outbound:
 
 ## What is MoAI Platform?
 
-The MoAI Platform is an AI platform designed for developing large-scale deep learning models, allowing users to easily control thousands of GPU clusters for training or inference of AI models.
+The MoAI Platform is an AI platform for the development of large-scale deep learning models, simplifying the management of thousands of GPU clusters necessary for training and inference of AI models.
 
 ## Core Technologies of MoAI Platform
 
 ![](img_ov/ov_1.png)
 
-As deep learning models evolve, they become more complex, comprising numerous layers with a multitude of parameters. Consequently, large-scale computing resources have become essential components of AI infrastructure. To develop models using such resources, optimizing the training process, including parallelizing the model and manually configuring the cluster environment, is crucial. Managing GPU and node resources for optimal training requires significant time and effort from developers.
+As deep learning models advance, they become increasingly intricate, comprising numerous layers with a vast number of parameters. Consequently, large-scale computing resources have become essential elements of AI infrastructure. Utilizing these resources to develop models entails optimizing the training process, including parallelizing the model and manually configuring the cluster environment. Effectively managing GPU and node resources for optimal training demands considerable time and effort from developers.
 
-To address these challenges, the MoAI Platform offers the following features to support efficient infrastructure in the era of large-scale AI:
+To address these challenges, the MoAI Platform offers the following features to facilitate efficient infrastructure in the era of large-scale AI:
 
 - [1. Various Accelerators, Multi-GPU Support](#1-various-accelerators-multi-gpu-support)
 - [2. GPU Virtualization](#2-gpu-virtualization)
@@ -40,7 +40,8 @@ MoAI Platform supports various AI accelerators, allowing users to execute divers
 
 ![](img_ov/v_3.png)
 
-The virtualization feature of the MoAI Platform enables thousands of GPUs to be utilized as a single GPU (Single Virtual Device). This allows AI engineers to easily and quickly execute deep learning training and inference without the need for optimization processes like multi-GPU and multi-node parallelization. By assuming only one GPU and structuring Python code accordingly, users can perform these tasks effortlessly.
+The virtualization feature of the MoAI Platform enables thousands of GPUs to be utilized as a singular unit, known as a Single Virtual Device. This allows AI engineers to easily and quickly conduct deep learning training and inference tasks without the complexities associated with multi-GPU and multi-node parallelization. 
+By assuming only one GPU and structuring Python code accordingly, users can perform these tasks effortlessly.
 
 Users can expand or shrink GPU resources as needed, increasing the scalability of the service. With a simple one-line command in the MoAI Platform, GPU resources virtualized into a single virtual device can be easily expanded or contracted.
 
@@ -65,8 +66,9 @@ Deep learning models consist of multiple layers, each containing various operati
 ![](img_ov/ap_1.png)
 
 
-In the era of artificial intelligence, significant GPU clusters and effective GPU parallelization are required for training and inference of large-scale models such as Large Language Models(LLMs) and Large Multimodal Models(LMMs).
+In the era of artificial intelligence, training and inference of large-scale models such as Large Language Models (LLMs) and Large Multimodal Models (LMMs) require substantial GPU clusters and effective GPU parallelization.
 
-Common AI frameworks used with NVIDIA currently require AI engineers to manually adjust parallelization based on model size, complexity, and available GPU or cluster sizes. This process is time-consuming and often takes several weeks.
+Current mainstream AI frameworks, often used alongside NVIDIA, require AI engineers to manually adjust parallelization based on the size and complexity of the model, as well as the available GPU size or cluster. This process is time-consuming and can often take several weeks.
 
-The MoAI Platform provides automatic parallelization through the Moreh AI compiler, optimizing GPU resources based on the size of specific AI models and GPU clusters. Through automatic parallelization, model training, which typically takes weeks in an NVIDIA environment, can be dramatically shortened to approximately 2-3 days.
+- The MoAI platform offers automatic parallelization through the Moreh AI compiler, which optimizes GPU resources based on the size of a specific AI model and GPU cluster.
+- Automatic parallelization can drastically reduce the training time for models that typically take weeks in NVIDIA environments (platforms) to approximately 2-3 days.

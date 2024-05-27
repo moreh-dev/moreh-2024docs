@@ -15,7 +15,7 @@ This tutorial introduces an example of fine-tuning the open-source [Llama3-8B](h
 
 The MoAI Platform is a scalable AI platform that enables easy control of thousands of GPUs for training and inference of AI models. One of its key features is providing a very simple training method through virtualization and parallelization when fine-tuning models.
 
-The MoAI Platform provides multiple GPUs virtualized into a single accelerator called [MoAI Accelerator](https://www.notion.so/20f6aa77b3cc41e7a403b4d82f785def?pvs=21). Therefore, there is no need for preprations or code modifications for using multiple GPUs.
+The MoAI Platform provides multiple GPUs virtualized into a single accelerator called [MoAI Accelerator](https://docs.moreh.io/moai_features/virtualization/#gpu-virtualization-moai-accelerator). Therefore, there is no need for preprations or code modifications for using multiple GPUs.
 
 The MoAI Platform automatically provides optimized parallelization when users use the virtualized MoAI Accelerator. It considers various parallelization methods based on model and data sizes to offer the optimal parallelization environment. As a result, users can experience high-performance training with simple code without any additional tasks.
 

@@ -35,7 +35,6 @@ Detailed instructions for selecting the MoAI Accelerator size required for the t
 
 ```bash
 $ moreh-smi
-23:44:25 April 18, 2024
 +---------------------------------------------------------------------------------------------------+
 |                                                  Current Version: 24.2.0  Latest Version: 24.3.0  |
 +---------------------------------------------------------------------------------------------------+

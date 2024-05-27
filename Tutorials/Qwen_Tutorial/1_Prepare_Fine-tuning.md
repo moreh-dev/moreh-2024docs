@@ -30,7 +30,7 @@ Run the following command to ensure that the torch package is imported correctly
 
 ```bash
 $ python
-Python 3.8.19 (default, Sep 11 2023, 13:40:15)
+Python 3.8.18 (default)
 [GCC 11.2.0] :: Anaconda, Inc. on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch
@@ -38,21 +38,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> torch.cuda.device_count()
 1
 >>> torch.cuda.get_device_name()
-[2024-04-16 19:17:45.714] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-16 19:17:45.752] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-16 19:17:47.409] [info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
-[2024-04-16 19:17:47.452] [info] Establishing links to the resources...
-[2024-04-16 19:17:47.636] [info] MoAI Accelerator is ready to use.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
 'MoAI Accelerator'
 >>> quit()
-```
-
-## Install Required Python Packages
-
-Execute the following command to install third-party Python packages required for script execution:
-
-```bash
-$ pip install transformers==4.40.1 datasets==2.18.0 loguru==0.7.2 tiktoken==0.6.0
 ```
 
 ## Download the Training Script
@@ -67,6 +59,14 @@ $ cd quickstart
 ...  train_qwen.py  ...
 ```
 
+## Install Required Python Packages
+
+Run the following command to install the third-party Python packages required to execute the script.
+
+```bash
+$ pip install -r requirements/requirements_qwen.txt
+```
+
 ## Download Training Data
 
 To download the training data, we'll use the `prepare_qwen_dataset.py` script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as `qwen_dataset.pt` file.
@@ -76,9 +76,9 @@ To download the training data, we'll use the `prepare_qwen_dataset.py` script lo
 ...  prepare_qwen_dataset.py ...
 
 ~/quickstart$ python dataset/prepare_qwen_dataset.py
-2024-04-19 03:27:05,865 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-2024-04-19 03:27:05,866 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-2024-04-19 03:27:24,010 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
+torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
 Loading Tokenizer...
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 Downloading dataset...

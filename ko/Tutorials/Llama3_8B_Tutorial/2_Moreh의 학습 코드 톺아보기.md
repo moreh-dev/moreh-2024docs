@@ -17,14 +17,14 @@ order: 40
 먼저, `transformers` 라이브러리에서 필요한 모듈을 불러옵니다.
 
 ```python
-from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
+from transformers import AdamW, LlamaForCausalLM, AutoTokenizer
 ```
 
  앞서 다운로드 받았던 모델 체크포인트와 토크나이저를 불러옵니다.
 
 ```python
-model = AutoModelForCausalLM.from_pretrained("./llama3-8b")
-tokenizer = LlamaTokenizer.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("./llama3-8b")
+tokenizer = AutoTokenizer.from_pretrained("./llama3-8b")
 ```
 
 [1. Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
@@ -44,18 +44,6 @@ tokenizer = LlamaTokenizer.from_pretrained("./llama3-8b")
 이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
 
 ```python
-    # Compose pad token mask
-    def create_mask(input_ids, tokenizer):
-		    pad_token_ids = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
-			  return (input_ids != pad_token_ids).long() 
-			   
-    # Mask pad tokens for training
-    def mask_pads(inputs, tokenizer, ignore_index = -100):
-        idx_mask = create_mask(inputs, tokenizer)
-        labels = copy.deepcopy(inputs)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
-
     # Define AdamW optimizer
     optim = AdamW(model.parameters(), lr=args.lr)
 

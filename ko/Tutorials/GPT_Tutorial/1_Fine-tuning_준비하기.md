@@ -30,7 +30,7 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 
 ```bash
 $ python
-Python 3.8.18 (default, Sep 11 2023, 13:40:15)
+Python 3.8.18 (default)
 [GCC 11.2.0] :: Anaconda, Inc. on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch
@@ -38,11 +38,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> torch.cuda.device_count()
 1
 >>> torch.cuda.get_device_name()
-[2024-04-16 19:17:45.714] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-16 19:17:45.752] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-16 19:17:47.409] [info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
-[2024-04-16 19:17:47.452] [info] Establishing links to the resources...
-[2024-04-16 19:17:47.636] [info] MoAI Accelerator is ready to use.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
 'MoAI Accelerator'
 >>> quit()
 ```

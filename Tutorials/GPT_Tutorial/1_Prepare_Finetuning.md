@@ -31,7 +31,7 @@ Run the following command to ensure that the torch package is imported correctly
 
 ```bash
 $ python
-Python 3.8.18 (default, Sep 11 2023, 13:40:15)
+Python 3.8.18 (default)
 [GCC 11.2.0] :: Anaconda, Inc. on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch
@@ -39,21 +39,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> torch.cuda.device_count()
 1
 >>> torch.cuda.get_device_name()
-[2024-04-16 19:17:45.714] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-16 19:17:45.752] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-16 19:17:47.409] [info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
-[2024-04-16 19:17:47.452] [info] Establishing links to the resources...
-[2024-04-16 19:17:47.636] [info] MoAI Accelerator is ready to use.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/1] Connecting to resources on the server (192.168.110.00:24158)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
 'MoAI Accelerator'
 >>> quit()
-```
-
-## Install Required Python Packages
-
-Execute the following command to pre-install third-party Python packages required for script execution:
-
-```bash
-$ pip install transformers==4.34.0 datasets==2.14.5 loguru==0.7.2
 ```
 
 ## Downloading Training Script
@@ -66,6 +58,14 @@ $ git clone https://github.com/moreh-dev/quickstart.git
 $ cd quickstart
 ~/quickstart$ ls tutorial
 ...  train_gpt.py  ...
+```
+
+## Install Required Python Packages
+
+Run the following command to install the third-party Python packages required to execute the script.
+
+```bash
+$ pip install -r requirements/requirements_gpt.txt
 ```
 
 ## Downloading Training Data

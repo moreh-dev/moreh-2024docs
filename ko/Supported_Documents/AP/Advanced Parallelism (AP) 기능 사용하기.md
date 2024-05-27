@@ -147,7 +147,7 @@ Traceback (most recent call last):
   File "/home/ubuntu/.conda/envs/pytorch/lib/python3.8/site-packages/torch/_M/driver/common/frontend.py", line 641, in _register_operation_internal
     output_tickets = moreh_ir.create_operation(op_name, op.SerializeToString(),
 RuntimeError: **Error Code 4: OUT_OF_MEMORY**
-Moreh solution has detected that the application requires more memory than what is currently available in at least one physical device of KT AI Accelerator.
+Moreh solution has detected that the application requires more memory than what is currently available in at least one physical device of MoAI Accelerator.
 >> Memory requested : 75051597828 bytes
 >> Memory available : 68702699520 bytes
 To address this issue, we recommend considering the following steps:

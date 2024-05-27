@@ -17,10 +17,10 @@ MoAI Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능
 딥러닝 모델이 발전하면서 수십억, 수백억 개의 파라미터를 포함하는 복잡한 구조가 되었고, 이에 따라 대규모 컴퓨팅 자원이 AI  인프라의 중요한 부분이 되었습니다. 대규모 컴퓨팅 자원을 사용하여 모델을 개발하려면 모델의 병렬 처리와 클러스터 환경의 수동 설정과 같이 학습 프로세스를 최적화하는 과정이 필수적입니다. 특히, GPU 및 노드 관리를 통한 학습 최적화는 개발자들에게 많은 시간과 노력을 요구합니다.
 MoAI Platform은 이러한 문제를 해결하기 위해 다음과 같은 기능을 제공하여 대규모 AI 시대에 효율적인 인프라를 지원합니다.
 
-1. **[다양한 가속기, 다중 GPU 지원](https://docs.moreh.io/ko/overview/#1-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%86%8D%EA%B8%B0-%EB%8B%A4%EC%A4%91-gpu-%EC%A7%80%EC%9B%90)**
-2. **[GPU 가상화](https://docs.moreh.io/ko/overview/#2-gpu-%EA%B0%80%EC%83%81%ED%99%94)**
-3. **[동적 GPU 할당](https://docs.moreh.io/ko/overview/#3-%EB%8F%99%EC%A0%81-gpu-%ED%95%A0%EB%8B%B9)**
-4. **[AI Compiler 자동 병렬화](https://docs.moreh.io/ko/overview/#4-ai-compiler-%EC%9E%90%EB%8F%99-%EB%B3%91%EB%A0%AC%ED%99%94)**
+1. **[다양한 가속기, 다중 GPU 지원](#1-다양한-가속기-다중-gpu-지원)**
+2. **[GPU 가상화](#2-gpu-가상화)**
+3. **[동적 GPU 할당](#3-동적-gpu-할당)**
+4. **[AI Compiler 자동 병렬화](#4-ai-compiler-자동-병렬화)**
 
 ---
 

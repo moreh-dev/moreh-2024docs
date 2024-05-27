@@ -16,7 +16,8 @@ order: 1000
 
 MoAI Platform은 수천 대의 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있는 확장 가능한 AI 플랫폼입니다. MoAI Platform의 특징은 모델을 fine-tuning할 때 가상화와 병렬화를 통해 매우 간단한 학습 방법을 제공한다는 점입니다.
 
-MoAI Platform은 여러개의 GPU를 가상화하여 하나의 가속기인 [MoAI Accelerator](/ko/MoAI_Features/Virtualization.md)로 제공합니다. 따라서 다중 GPU 사용을 위해 필요한 사전 준비나 코드 수정이 필요하지 않습니다.
+
+MoAI Platform은 여러개의 GPU를 가상화하여 하나의 가속기인 [MoAI Accelerator](https://docs.moreh.io/ko/moai_features/virtualization/#gpu-%EA%B0%80%EC%83%81%ED%99%94-moai-accelerator)로 제공합니다. 따라서 다중 GPU 사용을 위해 필요한 사전 준비나 코드 수정이 필요하지 않습니다.
 
 MoAI Platform은 고객이 가상화된 MoAI Accelerator를 사용할 때 내부적으로 자동 최적화된 병렬화를 제공합니다. 모델 크기, 데이터 크기에 대해서 다양한 병렬화 방법을 고려해 최적의 병렬화 환경을 제공하며, 사용자는 별도의 작업이 없이 간단한 코드로 고성능 학습을 경험할 수 있습니다.
 

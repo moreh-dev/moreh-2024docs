@@ -2,6 +2,8 @@
 icon: note
 tags: [guide]
 order: 600
+outbound:
+  enabled: false
 ---
 
 # Overview

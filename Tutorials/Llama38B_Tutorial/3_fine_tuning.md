@@ -30,13 +30,13 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 ```bash
 $ moreh-smi
 11:40:36 April 16, 2024
-+-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+=================================================================================================+
++---------------------------------------------------------------------------------------------------+
+|                                                  Current Version: 24.2.0  Latest Version: 24.2.0  |
++---------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
++===================================================================================================+
 |  * 0     |   MoAI Accelerator  |  xLarge.512GB  |  -             |  -             |  -            |
-+-------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
 ```
 
 The current MoAI Accelerator in use has a memory size of 512GB.
@@ -123,14 +123,14 @@ If the training proceeds smoothly, you should see the following logs. By going t
 
 ```bash
 [2024-05-13 17:52:41.897] [info] Got DBs from backend for auto config.
-[2024-05-13 17:52:44.235] [info] Requesting resources for KT AI Accelerator from the server...
-[2024-05-13 17:52:44.248] [info] Initializing the worker daemon for KT AI Accelerator
+[2024-05-13 17:52:44.235] [info] Requesting resources for MoAI Accelerator from the server...
+[2024-05-13 17:52:44.248] [info] Initializing the worker daemon for MoAI Accelerator
 [2024-05-13 17:52:48.927] [info] [1/4] Connecting to resources on the server (192.168.110.39:24158)...
 [2024-05-13 17:52:48.941] [info] [2/4] Connecting to resources on the server (192.168.110.40:24158)...
 [2024-05-13 17:52:48.949] [info] [3/4] Connecting to resources on the server (192.168.110.80:24158)...
 [2024-05-13 17:52:48.956] [info] [4/4] Connecting to resources on the server (192.168.110.81:24158)...
 [2024-05-13 17:52:48.963] [info] Establishing links to the resources...
-[2024-05-13 17:52:49.393] [info] KT AI Accelerator is ready to use.
+[2024-05-13 17:52:49.393] [info] MoAI Accelerator is ready to use.
 [2024-05-13 17:52:49.393] [info] Moreh Version: 24.5.0
 [2024-05-13 17:52:49.393] [info] Moreh Job ID: 976905
 [2024-05-13 17:52:49.617] [warning] Various batch size detected : 256, 1
@@ -178,6 +178,6 @@ $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    100%        |
+|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |     100%      |
 +-----------------------------------------------------------------------------------------------------+
 ```

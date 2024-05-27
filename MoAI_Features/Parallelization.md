@@ -4,9 +4,8 @@ tags: [features]
 order: 108
 ---
 
-# Automatic Parallelization: AP
+# Automatic Parallelization: 
 
-Automatic Parallelization
 On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU. This means users can write code assuming the use of a single GPU without needing to worry about parallelization. But how does the MoAI Platform handle multiple GPUs?
 
 **The MoAI Platform automatically optimizes and parallelizes based on the number of GPUs in use.**

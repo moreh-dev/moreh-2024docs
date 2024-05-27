@@ -84,7 +84,7 @@ Current MoAI Accelerator: xLarge.512GB
 13. 48xLarge.24576GB
 
 Selection (1-13, q, Q): 8
-The KT AI Accelerator model is successfully switched to  "4xLarge.2048GB".
+The AI Accelerator model is successfully switched to  "4xLarge.2048GB".
 
 1. Small.64GB
 2. Medium.128GB

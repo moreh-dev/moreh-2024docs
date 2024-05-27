@@ -5,38 +5,25 @@ order: 69
 expanded: false
 ---
 
-# How to use AP
+The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP. Before using the AP feature, please check the information on the accelerators you are using.
 
-By default, AP(Advanced Parallelism) operates on a node-by-node basis. Therefore, a multi-GPU environment is required to use AP. Before proceeding with the AP feature, please review your current accelerator information using the guide below. For detailed information on accelerator sizes, refer to the [KT Hyperscale AI Computing (HAC) Service Accelerator Model Information](/Supported_Documents/KT_HAC_Models_Info.md).
+### **How to Apply the AP Feature**
 
-
-### How to Apply AP
-
-There are two ways to apply the AP feature:
-
-1. Add a single line of code.
-    
-  실행 코드에 다음 한줄을 추가하여 AP 기능을 킬 수 있습니다. (이를 주석처리하면 끌 수 있습니다.)
-    
+The AP feature can be applied by adding a single line of code after **`import torch`**:
 
 ```python
+pythonCopy code
+import torch
+
 torch.moreh.option.enable_advanced_parallelization()
-```
-
-2. 환경 변수로 입력하기
-    
-  다음과 같이 터미널 세션의 환경변수로 AP 기능을 킬 수 있습니다. ( 0으로 설정하면 끌 수 있습니다.)
-    
-
-```bash
-~/quickstart/ap-example$ MOREH_ENABLE_ADVANCED_PARALLELIZATION=1 python text_summarization_for_ap.py
+...
 ```
 
 ### **Example Usage**
 
-If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we'll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to [1. Fine-tuning Preparation](/Tutorials/Llama2_Tutorial/1_Prepare_Fine-tuning.md) to prepare the training code.
+If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we'll set up code using the Llama3 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to [1. Fine-tuning Preparation](/Tutorials/Llama38B_Tutorial/1_Prepare_Fine-tuning.md) to prepare the training code.
 
-Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0. For detailed instructions, refer to the [1. Fine-tuning Preparation](/Tutorials/Llama2_Tutorial/1_Prepare_Fine-tuning.md) tutorial.
+Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0. For detailed instructions, refer to the [1. Fine-tuning Preparation](/Tutorials/Llama38B_Tutorial/1_Prepare_Fine-tuning.md) tutorial.
 
 ```bash
 bashCopy code
@@ -66,12 +53,7 @@ The training configuration for testing is as follows. We will proceed with testi
 - Sequence Length: **`1024`**
 - MoAI Accelerator: **`4xLarge`**
 
-
-----
-
-### Enabling the AP Feature (AP Feature ON)
-
-프로그램의 main 함수 시작 지점에 AP 기능을 켜는 line이 있습니다. 다음과 같이 AP를 적용한 후 학습을 실행합니다.
+### **Enabling the AP Feature**
 
 At the beginning of the program's main function, there's a line to enable the AP feature. Apply AP and then run the training as shown below.
 
@@ -91,7 +73,6 @@ bashCopy code
 When the training starts, you will see logs like the following:
 
 ```bash
-bashCopy code
 ...
 [info] Establishing links to the resources...
 [info] MoAI Accelerator is ready to use.
@@ -109,12 +90,11 @@ info] Configuration for parallelism is selected.
 |INFO     | __main__:main:151 - [Step 2/15] Loss: 1.6484375
 |INFO     | __main__:main:151 - [Step 4/15] Loss: 1.828125
 ...
-
 ```
 
 As shown, by adding just one line to enable the AP feature, complex distributed parallel processing is executed, and training progresses. Next, we'll explain the scenario users might encounter if they do not use the AP feature.
 
-### Disabling the AP Feature (AP Feature OFF)
+### **Disabling the AP Feature**
 
 Let's examine the situation when the AP feature is not used. To verify this, comment out the line that enables the AP feature at the beginning of the Python program's main function.
 
@@ -137,26 +117,13 @@ bashCopy code
 After the training completes, you will see logs as the following.
 
 ```bash
-2024-04-15 11:53:54,595 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpb4kvyiki
-2024-04-15 11:53:54,595 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpb4kvyiki/_remote_module_non_scriptable.py
-Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08<00:00,  4.31s/it]
-Downloading data files: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 8744.21it/s]
-Extracting data files: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 1592.17it/s]
-Generating train split: 100%|███████████████████████████████████████████████████████████████████████| 287113/287113 [00:04<00:00, 66267.80 examples/s]
-Generating validation split: 100%|████████████████████████████████████████████████████████████████████| 13368/13368 [00:00<00:00, 76079.51 examples/s]
-Generating test split: 100%|██████████████████████████████████████████████████████████████████████████| 11490/11490 [00:00<00:00, 74515.54 examples/s]
-Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:05<00:00, 196.41 examples/s]
-Map: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 300/300 [00:01<00:00, 211.83 examples/s]
-Map: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 300/300 [00:01<00:00, 214.27 examples/s]
-[2024-04-15 11:55:37.773] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-15 11:55:37.784] [warning] A newer version of Moreh AI Framework is available. You can update the software to the latest version by running "update-moreh".
-[2024-04-15 11:55:37.784] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-15 11:55:42.446] [info] [1/4] Connecting to resources on the server (192.168.110.10:24163)...
-[2024-04-15 11:55:42.456] [info] [2/4] Connecting to resources on the server (192.168.110.34:24163)...
-[2024-04-15 11:55:42.463] [info] [3/4] Connecting to resources on the server (192.168.110.62:24163)...
-[2024-04-15 11:55:42.470] [info] [4/4] Connecting to resources on the server (192.168.110.87:24163)...
-[2024-04-15 11:55:42.478] [info] Establishing links to the resources...
-[2024-04-15 11:55:42.907] [info] MoAI Accelerator is ready to use.
+...
+[info] [1/4] Connecting to resources on the server (192.168.110.10:24163)...
+[info] [2/4] Connecting to resources on the server (192.168.110.34:24163)...
+[info] [3/4] Connecting to resources on the server (192.168.110.62:24163)...
+[info] [4/4] Connecting to resources on the server (192.168.110.87:24163)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
 Traceback (most recent call last):
   File "text_summarization_for_ap.py", line 183, in <module>
     main(args)
@@ -187,7 +154,7 @@ Moreh solution has detected that the application requires more memory than what 
 >> Memory requested : 75051597828 bytes
 >> Memory available : 68702699520 bytes
 To address this issue, we recommend considering the following steps:
- 1. Increase Device Size: If feasible, try increasing the size of the device, KT AI Accelerator, to accommodate the required memory.This can be done by using the `moreh-switch-model` command.
+ 1. Increase Device Size: If feasible, try increasing the size of the device, MoAI Accelerator, to accommodate the required memory.This can be done by using the `moreh-switch-model` command.
  2. Decrease Batch Size: Alternatively, you can decrease the batch size used in the application. By reducing the batch size by -b {new batch size} command, you can effectively manage the memory usage and ensure it fits within the available resources.
 If the problem persists and you are unable to resolve it, please reach out to our technical support team for further assistance:
 ```

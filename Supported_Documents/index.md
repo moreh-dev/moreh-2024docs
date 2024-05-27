@@ -14,5 +14,3 @@ expanded: true
 
 - [LLM Fine-tuning Parameter guide](LLM_param_guide.md)
 
-- [KT Hyperscale AI Computing (HAC) AI Accelerator Information](KT_HAC_Models_Info.md)
-

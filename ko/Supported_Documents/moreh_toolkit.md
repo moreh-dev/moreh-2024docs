@@ -119,11 +119,11 @@ $ moreh-smi device --add 10
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |
-|    4     |  KT AI Accelerator  |  Small.64GB      |
+|    0     |     AI Accelerator  |  2xLarge.1024GB  |
+|  * 1     |     AI Accelerator  |  xLarge.512GB    |
+|    2     |     AI Accelerator  |  2xLarge.1024GB  |
+|    3     |     AI Accelerator  |  8xLarge.4096GB  |
+|    4     |     AI Accelerator  |  Small.64GB      |
 +---------------------------------------------------+
 Switch Current Device success.
 ```
@@ -140,11 +140,11 @@ Selection (0-4, q, Q): q
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
-|    4     |  KT AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    0     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|  * 1     |     AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|    2     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|    3     |     AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
+|    4     |     AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 ```
 
@@ -165,7 +165,8 @@ $ moreh-smi --rm 1
 Remove device success.
 ```
 
-위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 8xLarge.4096GB 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
+
+위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 [!badge variant="secondary" text="8xLarge.4096GB"] 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
 
 ### 그 외의 다양한 옵션 활용하기
 
@@ -215,7 +216,8 @@ Device Example:
 
 다음과 같이 사용할 수 있습니다 : 
 
-예를 들어, `moreh-smi` 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 `Small.64GB` 모델”이라는 의미입니다.
+
+예를 들어, `moreh-smi` 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 [!badge variant="secondary" text=Small.64GB] 모델”이라는 의미입니다.
 
 
 ```bash
@@ -258,7 +260,7 @@ Selection (1-13, q, Q):
 
 1~13 중 사용할 모델에 해당하는 정수(디바이스 번호)를 입력하면 “`The MoAI Platform AI Accelerator model is successfully switched to {model_id}.”` 메시지와 함께 입력된 디바이스 번호에 해당하는 MoAI Accelerator로 변경됩니다. 
 
-지금은 3번 `Large.256GB` 로 MoAI Accelerator를 변경해보겠습니다.
+지금은 3번 [!badge variant="secondary" text=Large.256GB]로 MoAI Accelerator를 변경해보겠습니다.
 
 ```bash
 Selection (1-13, q, Q): 3
@@ -299,7 +301,7 @@ Selection (1-13, q, Q):
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-0번 `Small.64GB` 모델 유형의 MoAI Accelerator가 `Large.256GB` 모델 유형으로 변경된 것을 확인할 수 있습니다.
+0번 [!badge variant="secondary" text=Small.64GB] 모델 유형의 MoAI Accelerator가 [!badge variant="secondary" text=Large.256GB]모델 유형으로 변경된 것을 확인할 수 있습니다.
 
 ------
 

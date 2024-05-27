@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770088278018">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770088535466">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770088278018" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770088535466" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770088278018" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770088535466" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770088278018" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770088278018" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770088535466" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770088535466" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -249,13 +249,13 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 11:40:36 April 16, 2024
-+-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+=================================================================================================+
++---------------------------------------------------------------------------------------------------+
+|                                                  Current Version: 24.2.0  Latest Version: 24.2.0  |
++---------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
++===================================================================================================+
 |  * 0     |   MoAI Accelerator  |  xLarge.512GB  |  -             |  -             |  -            |
-+-------------------------------------------------------------------------------------------------+</code></pre>
++---------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <p>The current MoAI Accelerator in use has a memory size of 512GB.</p>
 <p>You can utilize the <code v-pre>moreh-switch-model</code> command to review the available accelerator flavors on the current system. For seamless model training, consider using the <code v-pre>moreh-switch-model</code>command to switch to a MoAI Accelerator with larger memory capacity.</p>
@@ -337,14 +337,14 @@ Selection (1-13, q, Q): q </code></pre>
 <p>If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It&#x27;s worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">[2024-05-13 17:52:41.897] [info] Got DBs from backend for auto config.
-[2024-05-13 17:52:44.235] [info] Requesting resources for KT AI Accelerator from the server...
-[2024-05-13 17:52:44.248] [info] Initializing the worker daemon for KT AI Accelerator
+[2024-05-13 17:52:44.235] [info] Requesting resources for MoAI Accelerator from the server...
+[2024-05-13 17:52:44.248] [info] Initializing the worker daemon for MoAI Accelerator
 [2024-05-13 17:52:48.927] [info] [1/4] Connecting to resources on the server (192.168.110.39:24158)...
 [2024-05-13 17:52:48.941] [info] [2/4] Connecting to resources on the server (192.168.110.40:24158)...
 [2024-05-13 17:52:48.949] [info] [3/4] Connecting to resources on the server (192.168.110.80:24158)...
 [2024-05-13 17:52:48.956] [info] [4/4] Connecting to resources on the server (192.168.110.81:24158)...
 [2024-05-13 17:52:48.963] [info] Establishing links to the resources...
-[2024-05-13 17:52:49.393] [info] KT AI Accelerator is ready to use.
+[2024-05-13 17:52:49.393] [info] MoAI Accelerator is ready to use.
 [2024-05-13 17:52:49.393] [info] Moreh Version: 24.5.0
 [2024-05-13 17:52:49.393] [info] Moreh Job ID: 976905
 [2024-05-13 17:52:49.617] [warning] Various batch size detected : 256, 1

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770056436828">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770087806288">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Automatic Parallelization: AP</title>
-    <meta name="title" content="Automatic Parallelization: AP">
-    <meta name="description" content="Automatic Parallelization On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
+    <title>Automatic Parallelization:</title>
+    <meta name="title" content="Automatic Parallelization:">
+    <meta name="description" content="On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/moai_features/parallelization/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/moai_features/parallelization/">
-    <meta property="og:title" content="Automatic Parallelization: AP">
-    <meta property="og:description" content="Automatic Parallelization On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
+    <meta property="og:title" content="Automatic Parallelization:">
+    <meta property="og:description" content="On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/moai_features/parallelization/">
-    <meta property="twitter:title" content="Automatic Parallelization: AP">
-    <meta property="twitter:description" content="Automatic Parallelization On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
+    <meta property="twitter:title" content="Automatic Parallelization:">
+    <meta property="twitter:description" content="On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770056436828" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770087806288" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770056436828" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770087806288" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770056436828" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770056436828" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770087806288" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770087806288" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,21 +181,20 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../moai_features/parallelization/" class="pr-4">
-                                                Automatic Parallelization: AP
+                                                Automatic Parallelization:
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="automatic-parallelization-ap" class="break-words">
+<doc-anchor-target id="automatic-parallelization" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-parallelization-ap">#</doc-anchor-trigger>
-        <span>Automatic Parallelization: AP</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-parallelization">#</doc-anchor-trigger>
+        <span>Automatic Parallelization:</span>
     </h1>
 </doc-anchor-target>
-<p>Automatic Parallelization
-On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU. This means users can write code assuming the use of a single GPU without needing to worry about parallelization. But how does the MoAI Platform handle multiple GPUs?</p>
+<p>On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU. This means users can write code assuming the use of a single GPU without needing to worry about parallelization. But how does the MoAI Platform handle multiple GPUs?</p>
 <p><strong>The MoAI Platform automatically optimizes and parallelizes based on the number of GPUs in use.</strong></p>
 <p>For instance, if you start training with an accelerator flavor that uses 8 GPUs, the MoAI Platform automatically divides the total batch size into 8 parts, distributing them across each GPU. Let&#x27;s take an example of fine-tuning the Llama3-8b model. If you select an accelerator flavor with 4 GPUs and set a batch size of 16, the platform automatically assigns 4 batches per GPU, processing approximately 125,000 tokens per second.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -301,6 +300,6 @@ On the MoAI Platform, users interact with the MoAI Accelerator, which is present
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Automatic Parallelization: AP", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Automatic Parallelization:", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

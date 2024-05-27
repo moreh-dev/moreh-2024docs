@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770056441720">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770087811039">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770056441720" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770087811039" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770056441720" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770087811039" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770056441720" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770056441720" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770087811039" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770087811039" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -319,11 +319,11 @@ Selection (1-13, q, Q):</code></pre>
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |
-|    4     |  KT AI Accelerator  |  Small.64GB      |
+|    0     |     AI Accelerator  |  2xLarge.1024GB  |
+|  * 1     |     AI Accelerator  |  xLarge.512GB    |
+|    2     |     AI Accelerator  |  2xLarge.1024GB  |
+|    3     |     AI Accelerator  |  8xLarge.4096GB  |
+|    4     |     AI Accelerator  |  Small.64GB      |
 +---------------------------------------------------+
 Switch Current Device success.</code></pre>
 </doc-codeblock></div>
@@ -338,11 +338,11 @@ Switch Current Device success.</code></pre>
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|    0     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|  * 1     |  KT AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
-|    2     |  KT AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|    3     |  KT AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
-|    4     |  KT AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    0     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|  * 1     |     AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|    2     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|    3     |     AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
+|    4     |     AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="moai-accelerator-삭제하기-moreh-smi-device---rm">
@@ -362,7 +362,9 @@ Switch Current Device success.</code></pre>
 +---------------------------------------------------+
 Remove device success.</code></pre>
 </doc-codeblock></div>
-<p>위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 8xLarge.4096GB 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.</p>
+<p>위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>8xLarge.4096GB</span>
+</span> 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.</p>
 <doc-anchor-target id="그-외의-다양한-옵션-활용하기">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#그-외의-다양한-옵션-활용하기">#</doc-anchor-trigger>
@@ -429,7 +431,9 @@ Device Example:
 </doc-anchor-target>
 <p><code v-pre>moreh-switch-model</code> 는 현재 설정된 MoAI Accelerator의 flavor(가속기 사양)를 변경할 수 있는 툴입니다. MoAI Accelerator의 flavor를 변경함으로써 GPU 메모리를 얼만큼 사용할 것인지 결정합니다.</p>
 <p>다음과 같이 사용할 수 있습니다 :</p>
-<p>예를 들어, <code v-pre>moreh-smi</code> 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 <code v-pre>Small.64GB</code> 모델”이라는 의미입니다.</p>
+<p>예를 들어, <code v-pre>moreh-smi</code> 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Small.64GB</span>
+</span> 모델”이라는 의미입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">+-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
@@ -466,7 +470,9 @@ Selection (1-13, q, Q):
 </code></pre>
 </doc-codeblock></div>
 <p>1~13 중 사용할 모델에 해당하는 정수(디바이스 번호)를 입력하면 “<code v-pre>The MoAI Platform AI Accelerator model is successfully switched to {model_id}.”</code> 메시지와 함께 입력된 디바이스 번호에 해당하는 MoAI Accelerator로 변경됩니다.</p>
-<p>지금은 3번 <code v-pre>Large.256GB</code> 로 MoAI Accelerator를 변경해보겠습니다.</p>
+<p>지금은 3번 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Large.256GB</span>
+</span>로 MoAI Accelerator를 변경해보겠습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 3
 The MoAI Accelerator model is successfully switched to  &quot;Large.256GB&quot;.
@@ -502,7 +508,11 @@ Selection (1-13, q, Q):
 |    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
-<p>0번 <code v-pre>Small.64GB</code> 모델 유형의 MoAI Accelerator가 <code v-pre>Large.256GB</code> 모델 유형으로 변경된 것을 확인할 수 있습니다.</p>
+<p>0번 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Small.64GB</span>
+</span> 모델 유형의 MoAI Accelerator가 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Large.256GB</span>
+</span>모델 유형으로 변경된 것을 확인할 수 있습니다.</p>
 <hr>
 <doc-anchor-target id="moai-platform-업데이트-하기-update-moreh">
     <h2>

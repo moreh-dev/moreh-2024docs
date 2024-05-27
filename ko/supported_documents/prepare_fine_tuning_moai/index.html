@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770056441720">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770087811039">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770056441720" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770087811039" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770056441720" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770087811039" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770056441720" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770056441720" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770087811039" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770087811039" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -214,20 +214,18 @@
 <pre class="language-bash"><code v-pre class="language-bash">$ conda activate &lt;my-env&gt;</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Fine-tuning에 필요한 library와 package를 설치합니다.</p>
+<li><p>MoAI Platform은 다양한 PyTorch 버전을 제공하고 있으므로 사용자가 필요한 환경에 맞는 버전을 선택해 설치할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ pip install torch==1.13.1+cu116.moreh24.3.0
-$ pip install transformers==4.34.0
-$ pip install datasets==2.14.5
-$ pip install loguru==0.7.2</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">$ pip install torch==1.13.1+cu116.moreh24.2.0</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p><code v-pre>moreh-smi</code> 명령어를 입력해 설치된 Moreh 솔루션의 버전과 사용중인 MoAI Accelerator 정보를 확인할 수 있습니다. 현재 사용중인 MoAI Accelerator는 <code v-pre>4xLarge.2048GB</code>입니다. MoAI Accelerator에 대한 자세한 정보는 MoAI Accelerator 사양을 참고해주세요.</p>
+<li><p><code v-pre>moreh-smi</code> 명령어를 입력해 설치된 MoAI Platform의 버전과 사용중인 <a href="../../moai_features/virtualization/">MoAI Accelerator</a> 정보를 확인할 수 있습니다. 현재 사용중인 MoAI Accelerator는 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>4xLarge.2048GB</span>
+</span> 입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-11:07:03 April 01, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.3.0  Latest Version: 24.3.0  |
+|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -236,80 +234,6 @@ $ pip install loguru==0.7.2</code></pre>
 </doc-codeblock></div>
 </li>
 </ol>
-<doc-anchor-target id="moai-accelerator-선택-변경하기">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator-선택-변경하기">#</doc-anchor-trigger>
-        <span>MoAI Accelerator 선택, 변경하기</span>
-    </h1>
-</doc-anchor-target>
-<p>sLLM 파인튜닝시 학습 데이터 배치 사이즈에 따른 적절한 MoAI Accelerator 모델을 moreh toolkit을 사용하여 선택, 변경할 수 있습니다. 참고로, sLLM(약 7B~13B 모델)을 fine-tuning 하기 위해 일반적으로 사용되는 데이터셋의 크기는 약 40GB의 텍스트 데이터셋입니다.</p>
-<p>먼저, <code v-pre>moreh-smi</code> 를 사용하여 현재 사용하고 있는 MoAI Accelerator 모델을 확인해 보겠습니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-12:01:30 April 12, 2024
-+------------------------------------------------------------------------------------------------+
-|                                                     Current Version:   Latest Version: 24.2.0  |
-+------------------------------------------------------------------------------------------------+
-|  Device  |    Name            |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+================================================================================================+
-|  * 0     |  MoAI Accelerator  |  Small.64GB  |  -             |  -             |  -            |
-+------------------------------------------------------------------------------------------------+</code></pre>
-</doc-codeblock></div>
-<p>현재  사용하고 있는 MoAI Accelerator 모델에서 제공되는 메모리는 64GB입니다.  <code v-pre>moreh-switch-model</code> 을 사용하여 더 큰 메모리를 제공하는 MoAI Accelerator 모델로 변경해 보겠습니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-switch-model
-Current MoAI Accelerator: Small.64GB
-
-1. Small.64GB  *
-2. Medium.128GB
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q):</code></pre>
-</doc-codeblock></div>
-<p><code v-pre>4xLarge.2048GB</code> 모델로 변경하기 위해 <code v-pre>8</code>을 입력합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">Selection (1-13, q, Q): 8
-The MoAI Accelerator model is successfully switched to  &quot;4xLarge.2048GB&quot;.
-
-1. Small.64GB
-2. Medium.128GB
-3. Large.256GB
-4. xLarge.512GB
-5. 1.5xLarge.768GB
-6. 2xLarge.1024GB
-7. 3xLarge.1536GB
-8. 4xLarge.2048GB  *
-9. 6xLarge.3072GB
-10. 8xLarge.4096GB
-11. 12xLarge.6144GB
-12. 24xLarge.12288GB
-13. 48xLarge.24576GB
-
-Selection (1-13, q, Q): q</code></pre>
-</doc-codeblock></div>
-<p><code v-pre>q</code> 를 입력하여 변경을 완료합니다.</p>
-<p>다시 <code v-pre>moreh-smi</code> 를 사용하여 변경된 상태를 확인하면 사용하고 있는 MoAI Accelerator 모델이 <code v-pre>4xLarge.2048GB</code> 모델로 변경된 것을 확인할 수 있습니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-12:02:19 April 12, 2024
-+----------------------------------------------------------------------------------------------------+
-|                                                         Current Version:   Latest Version: 24.2.0  |
-+----------------------------------------------------------------------------------------------------+
-|  Device  |    Name            |     Model        |  Memory Usage  |  Total Memory  |  Utilization  |
-+====================================================================================================+
-|  * 0     |  MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
-+----------------------------------------------------------------------------------------------------+</code></pre>
-</doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -323,7 +247,7 @@ Selection (1-13, q, Q): q</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>각 모델별로 MoAI Platform에서 권장하는 Fine-tuning 시 최적의 파라미터는 <a href="llm20fine-tuning20%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B020%EA%B0%80%EC%9D%B4%EB%93%9C.md">LLM Fine-tuning 파라미터 가이드</a> 를 참고하시기 바랍니다.</p>
+<p>각 모델별로 MoAI Platform에서 권장하는 Fine-tuning 시 최적의 파라미터는 <a href="/ko/supported_documents/llm_param_guide.md">LLM Fine-tuning 파라미터 가이드</a> 를 참고하시기 바랍니다.</p>
         </div>
     </div>
 </div>
@@ -340,7 +264,7 @@ Selection (1-13, q, Q): q</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><code v-pre>moreh-smi</code> , <code v-pre>moreh-switch-model</code> 를 비롯한 moreh toolkit의 구체적인 사용 방법에 대해서는 <a href="//" class="outbound" target="_blank"><span>MoAI Platform의 toolkit 사용하기</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 를 참고하시기 바랍니다.</p>
+<p><code v-pre>moreh-smi</code> , <code v-pre>moreh-switch-model</code> 를 비롯한 moreh toolkit의 구체적인 사용 방법에 대해서는 <a href="/ko/supported_documents/moreh_toolkit.md">MoAI Platform의 toolkit 사용하기</a> 를 참고하시기 바랍니다.</p>
         </div>
     </div>
 </div>

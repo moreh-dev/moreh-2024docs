@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770097520075">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770097605137">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770097520075" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770097605137" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770097520075" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770097605137" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770097520075" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770097520075" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770097520075" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770097605137" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770097605137" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770097605137" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -315,7 +315,6 @@ Selection (1-13, q, Q): q</code></pre>
 <p>To confirm that the changes have been successfully applied, use the <strong><code v-pre>moreh-smi</code></strong> command again to check the currently used MoAI Accelerator.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
-11:50:29 April 16, 2024
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -340,37 +339,35 @@ Selection (1-13, q, Q): q</code></pre>
 </doc-codeblock></div>
 <p>If the training proceeds smoothly, you should see the following log. Take note of the sections highlighted in blue, as they indicate that the Advanced Parallelism feature is functioning correctly. It&#x27;s worth noting that in the PyTorch script we examined earlier, there was no handling for using multiple GPUs simultaneously.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">2024-04-22 00:49:47,350 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmp467j9vtp
-2024-04-22 00:49:47,350 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmp467j9vtp/_remote_module_non_scriptable.py
-Downloading shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00&lt;00:00, 7345.54it/s]Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:08&lt;00:00,  4.17s/it]total_step: 144
-[2024-04-22 00:50:28.749] [info] Got DBs from backend for auto config.
-[2024-04-22 00:50:31.097] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-22 00:50:31.106] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-22 00:50:36.389] [info] [1/4] Connecting to resources on the server (192.168.110.19:24155)...
-[2024-04-22 00:50:36.402] [info] [2/4] Connecting to resources on the server (192.168.110.44:24155)...
-[2024-04-22 00:50:36.411] [info] [3/4] Connecting to resources on the server (192.168.110.75:24155)...
-[2024-04-22 00:50:36.420] [info] [4/4] Connecting to resources on the server (192.168.110.96:24155)...
-[2024-04-22 00:50:36.430] [info] Establishing links to the resources...
-[2024-04-22 00:50:36.870] [info] MoAI Accelerator is ready to use.
-[2024-04-22 00:50:37.303] [info] The number of candidates is 16.
-[2024-04-22 00:50:37.303] [info] Parallel Graph Compile start...
-[2024-04-22 00:51:26.537] [info] Elapsed Time to compile all candidates = 49233 [ms]
-[2024-04-22 00:51:26.537] [info] Parallel Graph Compile finished.
-[2024-04-22 00:51:26.537] [info] The number of possible candidates is 3.
-[2024-04-22 00:51:26.537] [info] SelectBestGraphFromCandidates start...
-[2024-04-22 00:51:28.447] [info] Elapsed Time to compute cost for survived candidates = 1909 [ms]
-[2024-04-22 00:51:28.447] [info] SelectBestGraphFromCandidates finished.
-[2024-04-22 00:51:28.447] [info] Configuration for parallelism is selected.
-[2024-04-22 00:51:28.447] [info] num_stages : 2, num_micro_batches : 16, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
-[2024-04-22 00:51:28.449] [info] train: true
-2024-04-22 00:52:30.848 | INFO     | __main__:main:149 - [Step 1/144] | Loss: 1.2421875 | Duration: 66.07 | Throughput: 7935.39 tokens/sec
-2024-04-22 00:52:54.759 | INFO     | __main__:main:149 - [Step 2/144] | Loss: 0.83203125 | Duration: 10.72 | Throughput: 48896.53 tokens/sec
-2024-04-22 00:53:18.615 | INFO     | __main__:main:149 - [Step 3/144] | Loss: 0.9375 | Duration: 10.89 | Throughput: 48125.31 tokens/sec
-2024-04-22 00:53:39.372 | INFO     | __main__:main:149 - [Step 4/144] | Loss: 0.8359375 | Duration: 7.54 | Throughput: 69569.39 tokens/sec
-2024-04-22 00:54:00.123 | INFO     | __main__:main:149 - [Step 5/144] | Loss: 0.5546875 | Duration: 7.94 | Throughput: 65990.17 tokens/sec
-2024-04-22 00:54:21.020 | INFO     | __main__:main:149 - [Step 6/144] | Loss: 0.60546875 | Duration: 7.62 | Throughput: 68839.33 tokens/sec
-2024-04-22 00:54:41.816 | INFO     | __main__:main:149 - [Step 7/144] | Loss: 0.5625 | Duration: 7.58 | Throughput: 69184.80 tokens/sec
-2024-04-22 00:55:05.847 | INFO     | __main__:main:149 - [Step 8/144] | Loss: 0.5625 | Duration: 11.13 | Throughput: 47089.87 tokens/sec
+<pre class="language-bash"><code v-pre class="language-bash">...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/4] Connecting to resources on the server (192.168.110.19:24155)...
+[info] [2/4] Connecting to resources on the server (192.168.110.44:24155)...
+[info] [3/4] Connecting to resources on the server (192.168.110.75:24155)...
+[info] [4/4] Connecting to resources on the server (192.168.110.96:24155)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] The number of candidates is 16.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 49233 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 3.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 1909 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 2, num_micro_batches : 16, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
+[info] train: true
+| INFO     | __main__:main:149 - [Step 1/144] | Loss: 1.2421875 | Duration: 66.07 | Throughput: 7935.39 tokens/sec
+| INFO     | __main__:main:149 - [Step 2/144] | Loss: 0.83203125 | Duration: 10.72 | Throughput: 48896.53 tokens/sec
+| INFO     | __main__:main:149 - [Step 3/144] | Loss: 0.9375 | Duration: 10.89 | Throughput: 48125.31 tokens/sec
+| INFO     | __main__:main:149 - [Step 4/144] | Loss: 0.8359375 | Duration: 7.54 | Throughput: 69569.39 tokens/sec
+| INFO     | __main__:main:149 - [Step 5/144] | Loss: 0.5546875 | Duration: 7.94 | Throughput: 65990.17 tokens/sec
+| INFO     | __main__:main:149 - [Step 6/144] | Loss: 0.60546875 | Duration: 7.62 | Throughput: 68839.33 tokens/sec
+| INFO     | __main__:main:149 - [Step 7/144] | Loss: 0.5625 | Duration: 7.58 | Throughput: 69184.80 tokens/sec
+| INFO     | __main__:main:149 - [Step 8/144] | Loss: 0.5625 | Duration: 11.13 | Throughput: 47089.87 tokens/sec
 ...
 Training Done
 Saving Model...
@@ -399,7 +396,6 @@ Model saved in ./mistral_code_generation</code></pre>
 <p>During training, open another terminal and connect to the container. You can execute the <code v-pre>moreh-smi</code> command to observe the MoAI Accelerator occupying memory while the training script is running. Please check the memory occupancy of MoAI accelerator when the training loss appears in the execution log after the initialization process.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ moreh-smi
-01:06:31 April 22, 2024
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
 +-----------------------------------------------------------------------------------------------------+

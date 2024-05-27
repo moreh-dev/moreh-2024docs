@@ -15,7 +15,7 @@ To start, you'll need to obtain a container or virtual machine on the MoAI Platf
 
 After accessing the platform via SSH, run the **`moreh-smi`** command to ensure the MoAI Accelerator is properly recognized. Note that device names may vary depending on the system.
 
-### **Verifying the MoAI Accelerator**
+### Verifying the MoAI Accelerator
 
 For this tutorial, which involves training a large-scale language model (LLM) like Llama3, selecting the appropriate size of MoAI Accelerator is crucial. First, use the **`moreh-smi`** command to check the current MoAI Accelerator in use.
 
@@ -35,7 +35,7 @@ $ moreh-smi
 
 Setting up the PyTorch script execution environment on the MoAI Platform is similar to working on a standard GPU server.
 
-## **Checking PyTorch Installation**
+## Checking PyTorch Installation
 
 Once you’ve accessed the container via SSH, check if PyTorch is installed in the current conda environment by running:
 

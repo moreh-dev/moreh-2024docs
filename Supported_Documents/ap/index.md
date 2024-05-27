@@ -7,7 +7,7 @@ expanded: false
 
 # Advanced Parallelization(AP)
 
-### What is Advanced Parallelization?
+## What is Advanced Parallelization?
 
 The MoAI Platform's Advanced Parallelization (AP) is the automatic model optimization and distributed parallel processing feature. Typically, ML engineers go through numerous trial and error processes to optimize model parallelization during training of large-scale models. They experiment with various parallelization techniques, considering the memory size of the GPU in use, measure performance for different option combinations available in each technique, and determine optimized environment variables. This is a very laborious task that can take skilled machine learning developers from weeks to months.
 
@@ -16,7 +16,7 @@ With the AP feature of the MoAI Platform, complex parallel processing and model 
 
 ![Training throughput: experienced developer optimizations over one month vs. using the AP feature on the MoAI Platform](/overview/img_ov/ap_1.png)
 
-### 💡 Why is Parallelization crucial?
+## 💡 Why is Parallelization crucial?
 
 As a simple example, let's calculate how much GPU memory is required to train the Llama2 13B model.
 

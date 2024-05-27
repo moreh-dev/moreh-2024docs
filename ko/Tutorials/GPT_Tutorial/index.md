@@ -20,7 +20,7 @@ GPT의 기본적인 아키텍처는 오픈소스로 공개되어 있기 때문�
 
 MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform의 체험판 컨테이너 또는 MoAI Platform 기반으로 운영되는 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
 
-- [MoAI Platform 체험판 컨테이너 사용 문의](support@moreh.io)
+- MoAI Platform 체험판 컨테이너 사용 문의: [support@moreh.io](support@moreh.io)
 
 - [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
 

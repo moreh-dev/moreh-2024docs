@@ -47,7 +47,6 @@ Users can expand or shrink GPU resources as needed, increasing the scalability o
 \
 &nbsp;
 
-
 ## 3. Dynamic GPU Allocation
 
 

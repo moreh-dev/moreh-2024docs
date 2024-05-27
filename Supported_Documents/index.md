@@ -10,7 +10,7 @@ expanded: true
 
 - [Prepare Fine-tuning on MoAI Platform](Prepare_Fine_tuning_MoAI.md)
 
-- [Advanced Parallelization (AP)](/ap/index.md)
+- [Advanced Parallelization (AP)](https://docs.moreh.io/supported_documents/ap/)
 
 - [LLM Fine-tuning Parameter guide](LLM_param_guide.md)
 

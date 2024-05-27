@@ -20,7 +20,7 @@ outbound:
 
    | 
 ---    | ---
- [ **Fine-tuning 시작하기**](/Tutorials/index.md) <br> MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [ **AP(Advanced Parallelization)**](/Supported_Documents/AP/index.md) <br> Advanced Parallelization (AP) 기능 사용 안내 
+ [Fine-tuning 시작하기](/Tutorials/index.md) <br> MoAI Platform을 처음 사용하는 사용자에게 필요한 정보 안내 | [ **AP(Advanced Parallelization)**](/Supported_Documents/AP/index.md) <br> Advanced Parallelization (AP) 기능 사용 안내 
 [ **Moreh Toolkit**](/Supported_Documents/moreh_toolkit.md) <br> command line 사용방법 |[ **MoAI Platform Features**](/MoAI_Features/index.md) <br> MoAI Platform의 가상화와 병렬화 기능
 
 ## MoAI Platform이란?

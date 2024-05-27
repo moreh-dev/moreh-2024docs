@@ -26,7 +26,7 @@ expanded: true
 
 As deep learning models progress, they become increasingly complex and demanding significant computational resources as their parameters expanding from billions to trillions. Developing large-scale models involves handling and processing an enormous volume of parameters, a task that's both daunting and time-consuming.
 
-The MoAI Platform's automatic parallelization addresses these hurdles by simultaneously processing multiple tasks, determining the optimal computation methods for large models. This empowers users to concentrate solely on their core AI endeavors, regardless of the scale of their applications or the type of processors they use. Moreover, it efficiently utilizes GPU computational resources at a reasonable cost by allocating them only during calculation execution.
+The MoAI Platform's automatic parallelization addresses these hurdles by simultaneously processing multiple tasks, determining the optimal computation methods for large models. This empowers AI engineers to concentrate solely on their core AI endeavors, regardless of the scale of their applications or the type of processors they use. Moreover, it efficiently utilizes GPU computational resources at a reasonable cost by allocating them only during calculation execution.
 
 1. **[Various Accelerators, Multi-GPU Support](https://docs.moreh.io/overview/#1-various-accelerators-multi-gpu-support)**
 2. **[GPU Virtualization](https://docs.moreh.io/overview/#2-gpu-virtualization)**

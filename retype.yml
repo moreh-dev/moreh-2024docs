@@ -8,7 +8,7 @@ outbound:
 
 search:
   preload: true
-  
+
 input: ./
 output: .retype
 url: docs.moreh.io
@@ -24,14 +24,14 @@ exclude:
   - "fr"
   - "ko"
 edit:
-  repo: #https://github.com/retypeapp/two-lang-demo
+  repo: https://github.com/moreh-dev/moreh-2024docs
 links: 
 - text: EN
   link: /
 - text: KO
   link: https://docs.moreh.io/ko
 footer:
-  copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
+  copyright: "&copy; Copyright {{ 2024 }} Moreh - All rights reserved." 
 
 
 branding:

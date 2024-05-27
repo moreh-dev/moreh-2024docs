@@ -41,7 +41,6 @@ MoAI Platform은 다양한 AI 가속기를 지원기 때문에 가속기 종류�
 -![](v.png)
 \
 &nbsp;
-&nbsp;
 
 MoAI Platform의 가상화 기능은 수천 개의 GPU를 하나의 GPU처럼 사용할 수 있게 합니다. (Single Virtual Device) 이를 통해 멀티 GPU, 멀티 노드 병렬화 작업과 같은 최적화 프로세스가 필요없이 1개의 GPU를 가정하고 Python 코드를 구성할 수 있기 때문에 AI 엔지니어가 쉽고 빠르게 딥러닝 학습 및 추론을 실행할 수 있습니다.
 

@@ -34,13 +34,13 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 ```bash
 $ moreh-smi
 11:40:36 April 16, 2024
-+-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
-+-------------------------------------------------------------------------------------------------+
-|  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
-+=================================================================================================+
++--------------------------------------------------------------------------------------------------+
+|                                                 Current Version: 24.2.0  Latest Version: 24.2.0  |
++--------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |     Model     |  Memory Usage  |  Total Memory  |  Utilization  |
++==================================================================================================+
 |  * 0     |   MoAI Accelerator  |  Large.256GB  |  -             |  -             |  -            |
-+-------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
 ```
 
 The current MoAI Accelerator in use has a memory size of 256GB.
@@ -129,37 +129,34 @@ If the training proceeds smoothly, you should see the following logs. By going t
 
 
 ```bash
-2024-04-19 18:12:02,209 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpbfjomsh3
-2024-04-19 18:12:02,210 - torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpbfjomsh3/_remote_module_non_scriptable.py
-Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████| 2/2 [01:00<00:00, 30.41s/it]
-2024-04-19 18:13:39,352 - numexpr.utils - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-2024-04-19 18:13:39,352 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
-2024-04-19 18:13:39,607 - datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
-2024-04-19 18:13:39,608 - datasets - INFO - Apache Beam version 2.46.0 available.
-[2024-04-19 18:13:40.277] [info] Got DBs from backend for auto config.
-[2024-04-19 18:13:43.764] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-04-19 18:13:43.777] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-04-19 18:13:48.960] [info] [1/4] Connecting to resources on the server (192.168.110.7:24166)...
-[2024-04-19 18:13:48.973] [info] [2/4] Connecting to resources on the server (192.168.110.10:24166)...
-[2024-04-19 18:13:48.982] [info] [3/4] Connecting to resources on the server (192.168.110.34:24166)...
-[2024-04-19 18:13:48.989] [info] [4/4] Connecting to resources on the server (192.168.110.83:24166)...
-[2024-04-19 18:13:48.997] [info] Establishing links to the resources...
-[2024-04-19 18:13:49.448] [info] MoAI Accelerator is ready to use.
-[2024-04-19 18:13:49.750] [info] The number of candidates is 6.
-[2024-04-19 18:13:49.750] [info] Parallel Graph Compile start...
-[2024-04-19 18:13:54.152] [info] Elapsed Time to compile all candidates = 4401 [ms]
-[2024-04-19 18:13:54.152] [info] Parallel Graph Compile finished.
-[2024-04-19 18:13:54.152] [info] The number of possible candidates is 2.
-[2024-04-19 18:13:54.152] [info] SelectBestGraphFromCandidates start...
-[2024-04-19 18:13:54.655] [info] Elapsed Time to compute cost for survived candidates = 502 [ms]
-[2024-04-19 18:13:54.655] [info] SelectBestGraphFromCandidates finished.
-[2024-04-19 18:13:54.655] [info] Configuration for parallelism is selected.
-[2024-04-19 18:13:54.655] [info] num_stages : 4, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
-[2024-04-19 18:13:54.657] [info] train: true
-2024-04-19 18:15:58.157 | INFO     | __main__:main:81 - [Step 1/3320] Loss: 0.83984375 Throughput: 4007.04 tokens/sec
-2024-04-19 18:16:06.354 | INFO     | __main__:main:81 - [Step 2/3320] Loss: 0.8984375 Throughput: 16871.67 tokens/sec
-2024-04-19 18:16:15.819 | INFO     | __main__:main:81 - [Step 3/3320] Loss: 0.80078125 Throughput: 17141.09 tokens/sec
-2024-04-19 18:16:24.512 | INFO     | __main__:main:81 - [Step 4/3320] Loss: 0.63671875 Throughput: 17170.67 tokens/sec
+...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/4] Connecting to resources on the server (192.168.110.22:24166)...
+[info] [2/4] Connecting to resources on the server (192.168.110.24:24166)...
+[info] [3/4] Connecting to resources on the server (192.168.110.62:24166)...
+[info] [4/4] Connecting to resources on the server (192.168.110.89:24166)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] The number of candidates is 2.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 1521 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 1.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 231 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 4, num_micro_batches : 2, batch_per_device : 1, No TP, recomputation : false, distribute_param : true
+[info] train: true
+| INFO     | __main__:train:82 - [Step 0/6644] Loss: 0.96484375 Throughput: 1134.75 tokens/sec
+| INFO     | __main__:train:82 - [Step 10/6644] Loss: 0.65625 Throughput: 7088.29 tokens/sec
+| INFO     | __main__:train:82 - [Step 20/6644] Loss: 0.8125 Throughput: 6683.68 tokens/sec
+| INFO     | __main__:train:82 - [Step 30/6644] Loss: 0.78125 Throughput: 6928.45 tokens/sec
+| INFO     | __main__:train:82 - [Step 40/6644] Loss: 0.6328125 Throughput: 6836.38 tokens/sec
+| INFO     | __main__:train:82 - [Step 50/6644] Loss: 0.609375 Throughput: 6757.83 tokens/sec
+...
 ```
 
 The training loss decreases as follows, confirming normal training progress.
@@ -168,7 +165,7 @@ The training loss decreases as follows, confirming normal training progress.
 
 The throughput displayed during training indicates how many tokens per second are being processed through the PyTorch script.
 
-- When using 16 AMD MI250 GPUs: approximately 6800 tokens/sec
+- When using 16 AMD MI250 GPUs: approximately 6,800 tokens/sec
 
 Approximate training times based on GPU type and quantity are as follows:
 

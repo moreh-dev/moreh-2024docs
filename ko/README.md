@@ -2,6 +2,8 @@
 icon: book
 order: 2000
 expanded: true
+outbound:
+  enabled: false
 ---
 
 # MoAI 문서

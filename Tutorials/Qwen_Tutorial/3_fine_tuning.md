@@ -113,18 +113,18 @@ $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-[!badge variant="secondary" text=4xLarge.2048GB] 로 잘 변경된 것을 확인할 수 있습니다.
+Now you can see that it has been successfully changed to [!badge variant="secondary" text=4xLarge.2048GB].
 
-## 학습 실행
+## Training Execution
 
-주어진 `train_qwen.py` 스크립트를 실행합니다.
+Execute the **`train_qwen.py`** script below.
 
 ```bash
 $ cd ~/quickstart
 ~/quickstart$ python tutorial/train_qwen.py
 ```
 
-학습이 정상적으로 진행된다면 다음과 같은 로그가 출력될 것입니다. 중간에 파란색으로 표시된 부분을 보시면 Advanced Parallelism 기능이 정상 동작하는 것을 확인할 수 있습니다. 앞서 살펴본 PyTorch 스크립트에서는 AP 코드 한 줄을 제외한 다른 부분에서 GPU 여러 개를 동시에 사용하기 위한 처리가 전혀 없었음을 참고하십시오.
+If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It's worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.
 
 ```bash
 2024-04-19 01:42:05,158 - torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmp5m113wue

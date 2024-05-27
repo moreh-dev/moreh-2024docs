@@ -29,9 +29,8 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 
 ```bash
 $ moreh-smi
-11:40:36 April 16, 2024
 +---------------------------------------------------------------------------------------------------+
-|                                                  Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                  Current Version: 24.5.0  Latest Version: 24.5.0  |
 +---------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
 +===================================================================================================+
@@ -98,9 +97,8 @@ To confirm that the changes have been successfully applied, use the **`moreh-smi
 
 ```bash
 $ moreh-smi
-23:56:17 April 18, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -122,34 +120,35 @@ $ cd ~/quickstart
 If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It's worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.
 
 ```bash
-[2024-05-13 17:52:41.897] [info] Got DBs from backend for auto config.
-[2024-05-13 17:52:44.235] [info] Requesting resources for MoAI Accelerator from the server...
-[2024-05-13 17:52:44.248] [info] Initializing the worker daemon for MoAI Accelerator
-[2024-05-13 17:52:48.927] [info] [1/4] Connecting to resources on the server (192.168.110.39:24158)...
-[2024-05-13 17:52:48.941] [info] [2/4] Connecting to resources on the server (192.168.110.40:24158)...
-[2024-05-13 17:52:48.949] [info] [3/4] Connecting to resources on the server (192.168.110.80:24158)...
-[2024-05-13 17:52:48.956] [info] [4/4] Connecting to resources on the server (192.168.110.81:24158)...
-[2024-05-13 17:52:48.963] [info] Establishing links to the resources...
-[2024-05-13 17:52:49.393] [info] MoAI Accelerator is ready to use.
-[2024-05-13 17:52:49.393] [info] Moreh Version: 24.5.0
-[2024-05-13 17:52:49.393] [info] Moreh Job ID: 976905
-[2024-05-13 17:52:49.617] [warning] Various batch size detected : 256, 1
-[2024-05-13 17:52:49.617] [info] The number of candidates is 6.
-[2024-05-13 17:52:49.617] [info] Parallel Graph Compile start...
-[2024-05-13 17:52:50.270] [info] Elapsed Time to compile all candidates = 652 [ms]
-[2024-05-13 17:52:50.270] [info] Parallel Graph Compile finished.
-[2024-05-13 17:52:50.270] [info] The number of possible candidates is 2.
-[2024-05-13 17:52:50.270] [info] SelectBestGraphFromCandidates start...
-[2024-05-13 17:52:50.450] [info] Elapsed Time to compute cost for survived candidates = 179 [ms]
-[2024-05-13 17:52:50.450] [info] SelectBestGraphFromCandidates finished.
-[2024-05-13 17:52:50.450] [info] Configuration for parallelism is selected.
-[2024-05-13 17:52:50.450] [info] No PP, No TP, recomputation : default(1), distribute_param : true, distribute_low_prec_param : false
-[2024-05-13 17:52:50.450] [info] train: true
-2024-05-13 17:57:05.878 | INFO     | __main__:main:135 - [Step 2/1121] | Loss: 2.203125 | Duration: 4.65 | Throughput: 56416.87 tokens/sec
-2024-05-13 17:57:23.075 | INFO     | __main__:main:135 - [Step 4/1121] | Loss: 2.046875 | Duration: 1.18 | Throughput: 221435.66 tokens/sec
-2024-05-13 17:57:40.310 | INFO     | __main__:main:135 - [Step 6/1121] | Loss: 2.015625 | Duration: 1.20 | Throughput: 218975.01 tokens/sec
-2024-05-13 17:57:57.427 | INFO     | __main__:main:135 - [Step 8/1121] | Loss: 2.015625 | Duration: 1.14 | Throughput: 229897.61 tokens/sec
-2024-05-13 17:58:14.628 | INFO     | __main__:main:135 - [Step 10/1121] | Loss: 2.015625 | Duration: 1.18 | Throughput: 221707.73 tokens/sec2024-04-23 11:34:52.182 | INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
+...
+[info] Got DBs from backend for auto config.
+[info] Requesting resources for MoAI Accelerator from the server...
+[info] Initializing the worker daemon for MoAI Accelerator
+[info] [1/4] Connecting to resources on the server (192.168.110.39:24158)...
+[info] [2/4] Connecting to resources on the server (192.168.110.40:24158)...
+[info] [3/4] Connecting to resources on the server (192.168.110.80:24158)...
+[info] [4/4] Connecting to resources on the server (192.168.110.81:24158)...
+[info] Establishing links to the resources...
+[info] MoAI Accelerator is ready to use.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 976905
+[warning] Various batch size detected : 256, 1
+[info] The number of candidates is 6.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 652 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 2.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 179 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] No PP, No TP, recomputation : default(1), distribute_param : true, distribute_low_prec_param : false
+[info] train: true
+| INFO     | __main__:main:135 - [Step 2/1121] | Loss: 2.203125 | Duration: 4.65 | Throughput: 56416.87 tokens/sec
+| INFO     | __main__:main:135 - [Step 4/1121] | Loss: 2.046875 | Duration: 1.18 | Throughput: 221435.66 tokens/sec
+| INFO     | __main__:main:135 - [Step 6/1121] | Loss: 2.015625 | Duration: 1.20 | Throughput: 218975.01 tokens/sec
+| INFO     | __main__:main:135 - [Step 8/1121] | Loss: 2.015625 | Duration: 1.14 | Throughput: 229897.61 tokens/sec
+| INFO     | __main__:main:135 - [Step 10/1121] | Loss: 2.015625 | Duration: 1.18 | Throughput: 221707.73 tokens/sec2024-04-23 11:34:52.182 | INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
 ...
 
 Training Done
@@ -174,10 +173,10 @@ During training, open another terminal and connect to the container. Then, execu
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |     100%      |
+|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1472925 MiB   |  2096640 MiB   |    100%       |
 +-----------------------------------------------------------------------------------------------------+
 ```

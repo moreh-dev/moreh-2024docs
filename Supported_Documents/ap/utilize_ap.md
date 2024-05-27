@@ -5,9 +5,11 @@ order: 69
 expanded: false
 ---
 
+##  Utilizing AP
+
 The AP feature enables parallelization at the node level. Therefore, it is recommended to use multi-node accelerators when using AP. Before using the AP feature, please check the information on the accelerators you are using.
 
-### **How to Apply the AP Feature**
+### How to Apply the AP Feature
 
 The AP feature can be applied by adding a single line of code after **`import torch`**:
 

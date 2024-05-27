@@ -4,7 +4,7 @@ tags: [tutorial, baichuan]
 order: 40
 ---
 
-# 3. Model fine-tuning
+# 3. Model Fine-tuning
 
 Now, we will train the model through the following process. 
 

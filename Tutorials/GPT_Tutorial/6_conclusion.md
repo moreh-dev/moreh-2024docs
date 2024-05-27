@@ -11,7 +11,7 @@ So far, we have looked at the process of fine-tuning the GPT-based model from Hu
 # Learn More
 
 - *[MoAI Platform's  Advanced Parallelization(AP)](/Supported_Documents/)*
-- [Llama2 Fine-tuning](/Tutorials/Llama2_Tutorial/index.md)
+- [Llama3 Fine-tuning](/Tutorials/Llama38B_Tutorial/index.md)
 - [Mistral Fine-tuning](/Tutorials/Mistral_Tutorial/index.md)
 - [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)
 - [Qwen Fine-tuning](/Tutorials/Qwen_Tutorial/index.md)

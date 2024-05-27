@@ -5,7 +5,7 @@ order: 54
 expanded: false
 ---
 
-# Learn More About Advanced Parallelization (AP)
+# Learn More About AP
 
 Let's take a closer look at the logs related to AP.
 

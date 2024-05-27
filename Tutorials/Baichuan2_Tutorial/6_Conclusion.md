@@ -13,8 +13,8 @@ In case if you still have any questions regarding this tutorial feel free to ask
 
 # Learn More
 
-- *[MoAI Platform's  Advanced Parallelization(AP)](/Supported_Documents/)*
-- [Llama2 Fine-tuning](/Tutorials/Llama2_Tutorial/index.md)
+- *[MoAI Platform's Advanced Parallelization(AP)](/Supported_Documents/ap/index.md)*
+- [Llama3 Fine-tuning](/Tutorials/Llama38B_Tutorial/index.md)
 - [Mistral Fine-tuning](/Tutorials/Mistral_Tutorial/index.md)
 - [GPT Fine-tuning](/Tutorials/GPT_Tutorial/index.md)
 - [Qwen Fine-tuning](/Tutorials/Qwen_Tutorial/index.md)

@@ -10,13 +10,11 @@ expanded: true
 This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.
 We will walk through the steps to finetune these large language models (LLMs) with MoAI Platform.
 
-- [Llama2](/Tutorials/Llama2_Tutorial/index.md)
 - [Llama3 8B](/Tutorials/Llama38B_Tutorial/index.md)
 - [Mistral](/Tutorials/Mistral_Tutorial/index.md)
 - [GPT](/Tutorials/GPT_Tutorial/index.md)
 - [Qwen](/Tutorials/Qwen_Tutorial/index.md)
 - [Baichuan2](/Tutorials/Baichuan2_Tutorial/index.md)
-
 
 Fine-tuning in machine learning involves adjusting a pre-trained machine learning model's weight on new data to enhance task-specific performance. Essentially, when you want to apply an AI model to a new task, you take an existing model and optimize it with new datasets. This allows you to customize the model to meet your specific needs and domain requirements.
 

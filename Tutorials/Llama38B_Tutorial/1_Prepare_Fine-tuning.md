@@ -4,7 +4,7 @@ tags:  [tutorial, llama3]
 order: 40
 ---
 
-# 1. Prepare Fine-tuning
+# 1. Preparing for Fine-tuning
 
 Setting up the PyTorch execution environment on the MoAI Platform is similar to setting it up on a typical GPU server.
 

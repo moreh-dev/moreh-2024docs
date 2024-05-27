@@ -4,7 +4,7 @@ tags: [tutorial, baichuan]
 order: 40
 ---
 
-# 1. Prepare Fine-tuning
+# 1. Preparing for Fine-tuning
 
 Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.
 

@@ -15,7 +15,7 @@ expanded: true
 - [LLM Fine-tuning Parameter guide](LLM_param_guide.md)
 
 
-For technical support questions, it is best to start a new Issue and we will investigate right away.
+For technical support questions, it is best to report issue and we will investigate right away.
 
 If you have a general inquiry, please feel free to contact us at support@moreh.io.
 

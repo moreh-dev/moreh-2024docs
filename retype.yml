@@ -13,10 +13,6 @@ branding:
   logo: /img/logo.png 
   logoAlign: left     
   label: KO
-  colors:
-  label: "#ff5700"                 # Label colors
-  text:  "#ff5700"      # Custom color for the label text
-  background: "#ff5700"   # Custom color for the label background
 exclude:
   - "fr"
   - "ko"
@@ -41,7 +37,3 @@ branding:
   logoDark: /logo-dark.png    # Path to a logo file to use in dark mode
   logoAlign: right            # Align the logo to the right or the left
   label: Moreh Documents                 # Optional label
-  colors:
-    label:                    # Label colors
-      text: "#ff5700"         # Custom color for the label text
-      background: "#ff5700"   # Custom color for the label background

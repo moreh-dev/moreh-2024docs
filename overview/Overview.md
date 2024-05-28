@@ -44,18 +44,18 @@ The virtualization feature of the MoAI Platform enables thousands of GPUs to be 
 By assuming only one GPU and structuring Python code accordingly, users can perform these tasks effortlessly.
 
 Users can expand or shrink GPU resources as needed, increasing the scalability of the service. With a simple one-line command in the MoAI Platform, GPU resources virtualized into a single virtual device can be easily expanded or contracted.
-
 \
 &nbsp;
 
 ## 3. Dynamic GPU Allocation
-
 
 ![](img_ov/d_3.png)
 
 In Public Cloud, billing starts when VM instances are created, and changing GPUs requires recreating the instances. Furthermore, once selected, it can be challenging to flexibly change the chosen virtual machine, which can hinder optimization according to the user's needs.
 
 The MoAI Platform is designed to charge fees on a per-minute basis only when AI accelerators are actually in operation, allowing for a complete pay-as-you-go system. This design enables significant cost savings compared to existing cloud services by freeing GPUs from dependency on specific virtual machines (VMs) according to user usage patterns.
+\
+&nbsp;
 
 ## 4. AI Compiler Automatic Parallelization
 

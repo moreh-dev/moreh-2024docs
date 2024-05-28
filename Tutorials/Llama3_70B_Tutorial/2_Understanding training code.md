@@ -8,7 +8,7 @@ order: 40
 
 Once you have prepared all the training data, let's take a look at the contents of the **`train_llama3.py`** script, which will carry out the actual fine-tuning process. This script executes fine-tuning based on the implementation of the Llama3 8B model in the Hugging Face Transformers library, using standard PyTorch code.
 
-**We recommend initially proceeding with the provided script as is until the end of the tutorial.** Afterwards, feel free to modify the script as desired to fine-tune the Llama3 8B model in different ways. This flexibility is possible due to MoAI Platform's complete compatibility with PyTorch. If needed, refer to the MoAI Platform Application Guide provided by Moreh ([LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md)).
+**We recommend initially proceeding with the provided script as is until the end of the tutorial.** Afterwards, feel free to modify the script as desired to fine-tune the Llama3 8B model in different ways. This flexibility is possible due to MoAI Platform's complete compatibility with PyTorch. If needed, please refer to the [LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md) to select the accelerator Flavor that aligns with your training objectives.
 
 
 ## Training Code
@@ -28,7 +28,7 @@ model = AutoModelForCausalLM.from_pretrained("./llama3-8b")
 tokenizer = LlamaTokenizer.from_pretrained("./llama3-8b")
 ```
 
-Load your preprocessed dataset, which you prepared during the [1. Prepare fine-tuning](1_Prepare_Fine-tuning.md) step, and define your data loaders.
+Load your preprocessed dataset, which you prepared during the [1. Preparing for Fine-tuning](1_Prepare_Fine-tuning.md) step, and define your data loaders.
 
 
 ```python

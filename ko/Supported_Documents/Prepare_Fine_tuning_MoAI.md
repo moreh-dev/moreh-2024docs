@@ -46,12 +46,12 @@ MoAI Platform 또한 일반적인 AI 학습 환경과 유사하게  Python 기�
 
 
 !!! 
-각 모델별로 MoAI Platform에서 권장하는 Fine-tuning 시 최적의 파라미터는 [LLM Fine-tuning 파라미터 가이드](/ko/Supported_Documents/LLM_param_guide.md) 를 참고하시기 바랍니다.
+각 모델별로 MoAI Platform에서 권장하는 Fine-tuning 시 최적의 파라미터는 [LLM Fine-tuning 파라미터 가이드](LLM_param_guide.md) 를 참고하시기 바랍니다.
 !!!
 
 
 !!! 
-`moreh-smi` , `moreh-switch-model` 를 비롯한 moreh toolkit의 구체적인 사용 방법에 대해서는 [MoAI Platform의 toolkit 사용하기](/ko/Supported_Documents/moreh_toolkit.md) 를 참고하시기 바랍니다.
+`moreh-smi` , `moreh-switch-model` 를 비롯한 moreh toolkit의 구체적인 사용 방법에 대해서는 [MoAI Platform의 toolkit 사용하기](moreh_toolkit.md) 를 참고하시기 바랍니다.
 !!!
 
 

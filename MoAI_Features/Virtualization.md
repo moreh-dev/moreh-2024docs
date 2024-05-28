@@ -82,6 +82,7 @@ Current MoAI Accelerator: xLarge.512GB
 13. 48xLarge.24576GB
 
 Selection (1-13, q, Q): 8
+
 The MoAI Accelerator model is successfully switched to  "4xLarge.2048GB".
 
 1. Small.64GB
@@ -117,7 +118,7 @@ $ moreh-smi
 ```
 
 
-### Conclusion
+## Conclusion
 
 The MoAI Platform simplifies the complexity of multi-node GPU clusters through virtualization technology known as the MoAI Accelerator. It provides users with a powerful yet flexible computing environment. By allowing users to adjust model size and the number of GPUs without complex settings and management tasks, it enables efficient resource utilization. Use the MoAI Accelerator on the MoAI Platform to design and train deep learning models quickly and efficiently.
 

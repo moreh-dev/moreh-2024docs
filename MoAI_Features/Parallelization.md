@@ -37,7 +37,6 @@ But what if you want to use an even larger batch size? Without additional code m
 When you choose an accelerator flavor with 16 GPUs and set the batch size to 512, the platform applies model parallelization and data parallelization simultaneously. This allows training with a larger batch size using the same number of GPUs.
 
 ```bash
-
 # Llama3-8b-base fine-tuning, batch-size 512, gpu 16
 [Step 4/560] | Loss: 1.953125 | Duration: 24.00 | Throughput: 21844.08 tokens/sec
 [Step 6/560] | Loss: 1.8671875 | Duration: 24.63 | Throughput: 21283.67 tokens/sec

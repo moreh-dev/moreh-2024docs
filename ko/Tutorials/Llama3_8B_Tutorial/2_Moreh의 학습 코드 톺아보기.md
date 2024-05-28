@@ -70,7 +70,7 @@ tokenizer = AutoTokenizer.from_pretrained("./llama3-8b")
 위와 같이 MoAI Platform에서는 기존 PyTorch 코드와 동일한 방식으로 작성하실 수 있습니다.
 
 
-# About Advanced Parallelism
+## About Advanced Parallelism
 
 본 튜토리얼에 사용되는 학습 스크립트에서는 아래와 같은 코드가 추가로 한 줄 존재합니다. 이는 MoAI Platform에서 제공하는 최고의 병렬화 기능을 수행하는 코드입니다.
 

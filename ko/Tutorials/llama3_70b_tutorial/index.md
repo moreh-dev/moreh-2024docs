@@ -10,7 +10,7 @@ visibility: private
 이 튜토리얼은 MoAI Platform에서 오픈 소스 [LLama3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B) 모델을 fine-tuning하는 예시를 소개합니다. 이 튜토리얼을 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 익히고 향상된 성능과 자동 병렬화의 이점을 확인할 수 있습니다.
 
 
-# 개요
+## 개요
 
 MoAI Platform은 GPU를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼으로, 수천 대의 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있습니다. 모델을 파인튜닝하는 데 있어서 MoAI Platform의 특징은 가상화와 병렬화를 통해 고객에게 매우 간단한 학습 방법을 제안한다는 점입니다.
 

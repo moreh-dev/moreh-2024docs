@@ -83,7 +83,7 @@ Subsequently, the training proceeds similarly to regular PyTorch model training.
 
 In this way, you can write code in MoAI Platform using the same approach as with standard PyTorch code.
 
-# About Advanced Parallelism
+## About Advanced Parallelism
 
 In the training script used in this tutorial, there is an additional line of code as follows, which executes the top-tier parallelization feature provided by the MoAI Platform:
 

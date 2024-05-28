@@ -8,11 +8,11 @@ order: 40
 
 Now, we will train the model through the following process. 
 
-# Setting Accelerator Flavor
+## Setting Accelerator Flavor
 
 In MoAI Platform, physical GPUs are not directly exposed to users. Instead, virtual MoAI Accelerators are provided, which are available for use in PyTorch. By setting the accelerator's flavor, you can determine how much of the physical GPU will be utilized by PyTorch. Since the total training time and GPU usage cost vary depending on the selected accelerator flavor, users should make decisions based on their training scenarios. Refer to the following document to select the accelerator Flavor that aligns with your training objectives.
 
-- **[LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md)**
+- [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md)
 
 !!!
 Please refer to the document above or reach out to your infrastructure provider to inquire about the GPU types and quantities corresponding to each flavor.
@@ -28,7 +28,7 @@ You can choose one of the following flavors to proceed:
 - AMD MI300X GPU with 8 units.
 
 
-**Do you remember checking MoAI Accelerator in the [Mistral Fine-tuning](index.md) document? Now let's set up the accelerator needed for learning.**
+Do you remember checking MoAI Accelerator in the [Mistral Fine-tuning](index.md) document? Now let's set up the accelerator needed for learning.
 
 First, we'll use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 

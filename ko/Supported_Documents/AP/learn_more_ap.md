@@ -65,7 +65,7 @@ MoAI Platform은 최적화된 병렬 처리를 위해 다양한 최적화 후보
 
 이 정보는 `advanced_parallelization_selected_config.dump`라는 파일에 기록되며 파이썬 프로그램을 실행한 위치에 생성됩니다. 이제 `advanced_parallelization_selected_config.dump`이 어떻게 생겼는지 확인해 봅시다.
 
-```
+```bash
 num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
 ```
 

@@ -82,7 +82,7 @@ Training proceeds as usual, just like with any other PyTorch model.
 
 **With MoAI Platform, you can seamlessly use your existing PyTorch scripts without any modifications.**
 
-# About Advanced Parallelism
+## About Advanced Parallelism
 
 In the training script used in this tutorial, there is an additional line of code as follows, which executes the top-tier parallelization feature provided by the MoAI Platform:
 

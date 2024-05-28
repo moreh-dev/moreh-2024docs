@@ -11,7 +11,7 @@ This tutorial introduces an example of fine-tuning the open-source [Llama3-8B](h
 - Users can easily run training without complex parallelization tasks or cluster environment setups, as they can treat dozens of GPUs as a single accelerator called MoAI Accelerator. This allows users to focus solely on training without worrying about resource management.
 - Thanks to the automatic parallelization feature, code writing and development are simplified, and model training speed is significantly improved. This enables efficient resource utilization, allowing users to work faster and more effectively.
 
-# Overview
+## Overview
 
 The MoAI Platform is a scalable AI platform that enables easy control of thousands of GPUs for training and inference of AI models. One of its key features is providing a very simple training method through virtualization and parallelization when fine-tuning models.
 
@@ -28,7 +28,7 @@ Please obtain a container or virtual machine on the MoAI Platform from your infr
 
 After connecting via SSH, execute the **`moreh-smi`** command to verify that the MoAI Accelerator is properly detected. The device name may vary depending on the system.
 
-### **Verifying MoAI Accelerator**
+### Verifying MoAI Accelerator
 
 To train models like the sLLM introduced in this tutorial, it's important to select an appropriate size of the MoAI Accelerator. First, use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 

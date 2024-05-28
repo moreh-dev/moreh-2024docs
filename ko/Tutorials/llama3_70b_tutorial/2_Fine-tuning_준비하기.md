@@ -6,7 +6,7 @@ order: 40
 
 # 2. Fine-tuning 준비하기
 
-### 시작하기 전에
+## 시작하기 전에
 
 MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로부터 발급받고, 여기에 SSH로 접속하는 방법을 안내 받으시기 바랍니다. 예를 들어 MoAI Platform 기반으로 운영되는 다음 퍼블릭 클라우드 서비스를 신청하여 사용할 수 있습니다.
 
@@ -35,7 +35,7 @@ $ moreh-smi
 
 MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
 
-## PyTorch 설치 여부 확인하기
+### PyTorch 설치 여부 확인하기
 
 SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 conda 환경에 PyTorch가 설치되어 있는지 확인합니다.
 
@@ -51,7 +51,7 @@ torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 
 만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 **[Prepare Fine-tuning on MoAI Platform](../../Supported_Documents/Prepare_Fine_tuning_MoAI.md)** 문서에 따라 conda 환경을 생성하십시오.
 
-## PyTorch 동작 여부 확인하기
+### PyTorch 동작 여부 확인하기
 
 다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다.
 
@@ -71,7 +71,7 @@ $ python
 >>> quit()
 ```
 
-## 학습 스크립트 다운로드
+### 학습 스크립트 다운로드
 
 다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_llama3.py` 스크립트를 사용할 것입니다.
 
@@ -83,7 +83,7 @@ $ cd quickstart
 ...  train_llama3.py  ...
 ```
 
-## 필요 Python 패키지 설치
+### 필요 Python 패키지 설치
 
 다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
 
@@ -91,7 +91,7 @@ $ cd quickstart
 $ pip install -r requirements/requirements_llama3.txt
 ```
 
-# 학습 모델 및 토크나이저 다운로드
+### 학습 모델 및 토크나이저 다운로드
 
 Hugging Face를 이용해 Llama3-70b 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Llama3 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama3 70B 모델의 경우 체크포인트 용량이 약 132GB이기 때문에 체크포인트를 위한 150GB 스토리지 여유가 권장됩니다.
 
@@ -123,7 +123,7 @@ generation_config.json   pytorch_model-00003-of-00015.bin  pytorch_model-00007-o
 modeling_llama.py        pytorch_model-00004-of-00015.bin  pytorch_model-00008-of-00015.bin  pytorch_model-00012-of-00015.bin  pytorch_model.bin.index.json
 ```
 
-# 학습 데이터 다운로드
+### 학습 데이터 다운로드
 
 학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_llama3_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `llama3_dataset.pt` 파일로 저장합니다.
 

@@ -12,7 +12,7 @@ If you've prepared all the training data, let's now take a look at the contents 
 **First and foremost, it's recommended to proceed with the tutorial using the provided script as is until the end.** Afterwards, you can modify the script as you wish to fine-tune the Baichuan model in different ways. If needed, refer to the [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md).
 
 
-# Training Code
+## Training Code
 
 **All the code is exactly the same as when using PyTorch conventionally.** 
 
@@ -79,7 +79,7 @@ Subsequent training proceeds just like any other model training with PyTorch.
 
 **As shown above, with MoAI Platform, you can use your existing PyTorch scripts without any modifications.**
 
-# About Advanced Parallelism
+## About Advanced Parallelism
 
 The training script used in this tutorial includes the following additional line of code, which performs automatic parallelization provided by MoAI Platform.
 

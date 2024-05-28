@@ -30,7 +30,7 @@ MoAI Platform 상의 컨테이너 혹은 가상 머신을 인프라 제공자로
 
 SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.
 
-#### MoAI Accelerator 확인
+### MoAI Accelerator 확인
 
 이 튜토리얼에서 안내할 Llama3 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 `moreh-smi` 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다. 
 

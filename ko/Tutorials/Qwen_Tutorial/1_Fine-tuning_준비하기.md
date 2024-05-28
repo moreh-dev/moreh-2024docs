@@ -59,7 +59,7 @@ $ cd quickstart
 ...  train_qwen.py  ...
 ```
 
-# 필요 Python 패키지 설치
+## 필요 Python 패키지 설치
 
 다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
 

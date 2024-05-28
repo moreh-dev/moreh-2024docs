@@ -52,7 +52,7 @@ The version should display both the PyTorch version and the MoAI version it’s 
 
 If you see a **`conda: command not found`** message, the torch package isn’t listed, or the torch package doesn’t include "moreh" in its version name, follow the instructions in the [**Prepare Fine-tuning on MoAI Platform**](/Supported_Documents/Prepare_Fine_tuning_MoAI.md) document to create the conda environment.
 
-### **Verifying PyTorch Functionality**
+### Verifying PyTorch Functionality
 
 Run the following to ensure the torch package is properly imported and that the MoAI Accelerator is recognized:
 
@@ -72,7 +72,7 @@ $ python
 >>> quit()
 ```
 
-## **Downloading the Training Script**
+## Downloading the Training Script
 
 Download the PyTorch script for training from the GitHub repository by running:
 
@@ -86,7 +86,7 @@ $ cd quickstart
 ...  train_llama3.py  ...
 ```
 
-## **Installing Required Python Packages**
+## Installing Required Python Packages
 
 Install third-party Python packages needed to run the script by executing:
 
@@ -94,7 +94,7 @@ Install third-party Python packages needed to run the script by executing:
 $ pip install -r requirements/requirements_llama3.txt
 ```
 
-## **Downloading the Model and Tokenizer**
+## Downloading the Model and Tokenizer
 
 Use Hugging Face to download the Llama3-70B model checkpoint and tokenizer. Note that using the Llama3 model requires agreeing to the community license and providing your Hugging Face token. Also, ensure you have about 150GB of storage space available, as the Llama3 70B model checkpoint is approximately 132GB.
 
@@ -123,7 +123,7 @@ configuration_llama2.py  pytorch_model-00002-of-00015.bin  pytorch_model-00006-o
 generation_config.json   pytorch_model-00003-of-00015.bin  pytorch_model-00007-of-00015.bin  pytorch_model-00011-of-00015.bin  pytorch_model-00015-of-00015.bin  tokenizer.json
 modeling_llama.py        pytorch_model-00004-of-00015.bin  pytorch_model-00008-of-00015.bin  pytorch_model-00012-of-00015.bin  pytorch_model.bin.index.json
 ```
-## **Downloading Training Data**
+## Downloading Training Data
 
 To download the training data, use the **`prepare_llama3_dataset.py`** script located in the **`dataset`** directory. Running this script will download and preprocess the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, saving it as the **`llama3_dataset.pt`** file.
 

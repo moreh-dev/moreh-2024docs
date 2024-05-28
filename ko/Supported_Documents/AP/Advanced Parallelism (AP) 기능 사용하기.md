@@ -10,7 +10,7 @@ expanded: false
 
 AP 기능은 노드 단위로 병렬화를 진행합니다. 따라서 AP를 사용하기 위해서는 멀티 노드 규모의 가속기 사용이 권장됩니다. AP 기능을 사용하기 전에 현재 사용하는 가속기 정보를 점검하시기 바랍니다.
 
-### AP 기능 적용 방법
+## AP 기능 적용 방법
 
 AP 기능은 다음과 같이 `import torch` 이후에  `torch.moreh..option.enable_advanced_parallelization()` 한 줄을 추가하여 적용할 수 있습니다.
 
@@ -21,7 +21,7 @@ torch.moreh.option.enable_advanced_parallelization()
 ...
 ```
 
-### 사용 예시 살펴보기
+## 사용 예시 살펴보기
 
 사용자가 2대 이상의 노드를 사용하는 환경이 준비 되었다면 이제 AP 기능을 사용하기 위한 학습 코드를 만들어 보겠습니다. 이 가이드에서는 Llama2 모델을 활용하여 코드를 세팅합니다. 참고로, Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. [Llama2 1. Fine-tuning 준비하기](https://docs.moreh.io/ko/tutorials/llama2_13b_tutorial/1_fine-tuning_%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0/) 를 참고하여 학습 코드를 준비해주세요. 
 
@@ -52,7 +52,7 @@ $ cd quickstart
 - Sequence Length: `1024`
 - MoAI Accelerator: `4xLarge`
 
-### AP 기능 ON
+## AP 기능 ON
 
 프로그램의 main 함수 시작 지점에 AP 기능을 켜는 line이 있습니다. 다음과 같이 AP를 적용한 후 학습을 실행합니다.
 
@@ -92,7 +92,7 @@ info] Configuration for parallelism is selected.
 
 이처럼 단 한 줄의 AP 기능 프로그램을 추가하여 복잡한 분산 병렬처리가 수행되어 학습이 진행된 것을 확인할 수 있습니다. 다음은 사용자가 AP 기능을 사용하지 않을 경우 경험하게 될 상황을 가정하여 설명하겠습니다.
 
-### AP 기능 OFF
+## AP 기능 OFF
 
 AP 기능을 사용하지 않았을 때의 상황을 살펴보겠습니다.  이를 확인하기 위해, Python 프로그램의 main 함수 시작 지점에서 AP 기능을 켜는 줄을 주석 처리하여 AP 기능을 끄겠습니다.
 

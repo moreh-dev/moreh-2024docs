@@ -39,6 +39,8 @@ locale: ko
 
 
 
+
+
 branding:
   title: Moreh Documents              # Your custom website title; keep it short
   logo: /img/logo-white.png           # Path to a logo file

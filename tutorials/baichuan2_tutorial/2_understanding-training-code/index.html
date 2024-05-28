@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770185695758">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770186406276">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770185695758" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770186406276" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770185695758" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770186406276" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770185695758" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770185695758" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770185695758" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770186406276" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770186406276" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770186406276" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -206,10 +206,10 @@
 <p>If you&#x27;ve prepared all the training data, let&#x27;s now take a look at the contents of <code v-pre>train_baichuan2_13b.py</code> script for the actual fine-tuning process. <strong>In this step, you&#x27;ll notice that MoAI Platform ensures full compatibility with PyTorch, confirming that the training code is identical to the typical PyTorch code for NVIDIA GPUs.</strong> Additionally, you&#x27;ll explore how efficiently MoAI Platform implements complex parallelization techniques beyond this.</p>
 <p><strong>First and foremost, it&#x27;s recommended to proceed with the tutorial using the provided script as is until the end.</strong> Afterwards, you can modify the script as you wish to fine-tune the Baichuan model in different ways. If needed, refer to the <a href="../../../supported_documents/llm_param_guide/"><strong>LLM Fine-tuning Parameter Guide</strong></a>.</p>
 <doc-anchor-target id="training-code">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#training-code">#</doc-anchor-trigger>
         <span>Training Code</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p><strong>All the code is exactly the same as when using PyTorch conventionally.</strong></p>
 <p>First, import the necessary modules from the transformers library.</p>
@@ -266,10 +266,10 @@ tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trus
 </doc-codeblock></div>
 <p><strong>As shown above, with MoAI Platform, you can use your existing PyTorch scripts without any modifications.</strong></p>
 <doc-anchor-target id="about-advanced-parallelism">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#about-advanced-parallelism">#</doc-anchor-trigger>
         <span>About Advanced Parallelism</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>The training script used in this tutorial includes the following additional line of code, which performs automatic parallelization provided by MoAI Platform.</p>
 <div class="codeblock-wrapper"><doc-codeblock>

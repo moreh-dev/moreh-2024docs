@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770185700734">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770186411577">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770185700734" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770186411577" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770185700734" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770186411577" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770185700734" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770185700734" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770185700734" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770186411577" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770186411577" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770186411577" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,10 +207,10 @@
 </doc-anchor-target>
 <p>이제 실제로 fine tuning을 실행해 보겠습니다.</p>
 <doc-anchor-target id="가속기-flavor-설정">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#가속기-flavor-설정">#</doc-anchor-trigger>
         <span>가속기 Flavor 설정</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>MoAI Platform에서는 사용자에게 물리 GPU가 노출되지 않습니다. 대신 PyTorch에서 사용 가능한 가상의 MoAI Accelerator가 제공됩니다. 가속기의 flavor를 설정함으로써 실제로 PyTorch에서 물리 GPU를 얼마나 활용할지를 결정할 수 있습니다. 선택한 가속기 Flavor에 따라 총 학습 시간과 GPU 사용 비용이 달라지므로 사용자의 학습 상황에 따른 판단이 필요합니다. 사용자의 학습 목표에 맞는 가속기 Flavor를 선택하기 위해 다음 문서를 참고하세요.</p>
 <ul>
@@ -307,10 +307,10 @@ Selection (1-13, q, Q): q</code></pre>
 </doc-codeblock></div>
 <p><code v-pre>4xLarge.2048GB</code> 로 잘 변경된 것을 확인할 수 있습니다.</p>
 <doc-anchor-target id="학습-실행">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#학습-실행">#</doc-anchor-trigger>
         <span>학습 실행</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>주어진 <code v-pre>train_baichuan2_13b.py</code> 스크립트를 실행합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -366,10 +366,10 @@ Selection (1-13, q, Q): q</code></pre>
 <li>AMD MI250 GPU 8개 사용 시: 약 30분</li>
 </ul>
 <doc-anchor-target id="학습-중에-가속기-상태-확인">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#학습-중에-가속기-상태-확인">#</doc-anchor-trigger>
         <span>학습 중에 가속기 상태 확인</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>학습 도중에 터미널을 하나 더 띄워서 컨테이너에 접속한 후 <code v-pre>moreh-smi</code> 명령을 실행하시면 다음과 같이 MoAI Accelerator의 메모리를 점유하며 학습 스크립트가 실행되는 것을 확인하실 수 있습니다. 실행 로그상에서 초기화 과정이 끝나고 Loss가 출력되는 도중에 확인해 보시기 바랍니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>

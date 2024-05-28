@@ -21,7 +21,7 @@ exclude:
   - "fr"
   - "ko"
 edit:
-  repo: #https://github.com/retypeapp/two-lang-demo
+  repo: https://github.com/moreh-dev/moreh-2024docs
 links: 
 - text: EN
   link: https://docs.moreh.io/
@@ -34,8 +34,6 @@ search:
   preload: true
 
 locale: ko
-
-
 
 branding:
   title: Moreh Documents              # Your custom website title; keep it short

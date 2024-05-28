@@ -8,7 +8,7 @@ outbound:
 
 # MOREH DOCS
 
-**MoAI(Moreh AI appliance for AI accelerators)** 은 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.
+**MoAI(Moreh AI appliance for AI accelerators)** 는 대규모 딥러닝 모델 개발에 필수적인 그래픽 처리 장치(GPU)를 손쉽게 제어할 수 있는 확장 가능한 AI 플랫폼입니다.
 
 - **Virtual GPU Clusters** - 가상화된 GPU 클러스터에 접근하고 이를 활용하여 컴퓨팅 자원을 원활하게 확장할 수 있습니다.
 - **Advanced Parallelization** - 모델 훈련을 최적화하기 위해 고급 병렬 처리 기술을 손쉽게 적용할 수 있습니다.

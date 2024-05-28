@@ -3,7 +3,6 @@ start:
   
 poweredByRetype: false
 
-
 outbound:
   enabled: true
 
@@ -13,10 +12,9 @@ url: docs.moreh.io
 branding:
   logo: /img/logo.png 
   logoAlign: left     
-  label: EN
-  colors:
-  label: "#ff5700"                 # Label colors
-  text:  "#ff5700"      # Custom color for the label text
+    colors: "#ff5700"
+        label: EN
+          text:  "#ff5700"      # Custom color for the label text
   background: "#ff5700"   # Custom color for the label background
 exclude:
   - "fr"

@@ -14,8 +14,8 @@ branding:
   logoAlign: left     
   label: KO
   colors:
-  label: "#ff5700"                 # Label colors
-  text:  "#ff5700"      # Custom color for the label text
+    label: "#ff5700"                 # Label colors
+      text:  "#ff5700"      # Custom color for the label text
   background: "#ff5700"   # Custom color for the label background
 exclude:
   - "fr"

@@ -2,8 +2,6 @@
 icon: terminal
 tags: [tutorial, llama3]
 order: 1000
-breadcrumb:
-  enabled: true 
 ---
 
 # Llama3 8B Fine-tuning

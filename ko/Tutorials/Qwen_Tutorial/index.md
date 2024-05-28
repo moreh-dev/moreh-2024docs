@@ -6,11 +6,18 @@ order: 700
 
 # Qwen Fine-tuning
 
-이 튜토리얼은 MoAI Platform에서 오픈 소스 [Qwen1.5 7B](https://huggingface.co/Qwen/Qwen1.5-7B) 모델을 fine-tuning 하는 예시를 소개합니다. 이를 통해 MoAI Platform으로 AMD GPU 클러스터를 사용하는 방법을 배우고 성능 및 자동 병렬화의 장점을 확인할 수 있습니다.
+이 튜토리얼은 MoAI Platform에서 오픈 소스 [Qwen1.5 7B](https://huggingface.co/Qwen/Qwen1.5-7B) 모델을 fine-tuning 하는 예시를 소개합니다. 튜토리얼을 통해 아래와 같은 MoAI Platform이 제공하는 여러 기능을 체험하며, AMD GPU 클러스터를 사용하는 방법을 익힐 수 있습니다.
+
+- 사용자는 수십 개의 GPU를 MoAI Accelerator라는 하나의 가속기처럼 사용할 수 있어 복잡한 병렬화 작업이나 클러스터 환경 설정 없이도 쉽게 학습을 실행할 수 있습니다. 사용자는 리소스 관리에 신경쓰지 않고 학습에만 집중할 수 있습니다.
+- 자동 병렬화 기능 덕분에 코드 작성과 개발이 간소화되며, 모델 학습 속도가 크게 향상됩니다. 이는 효율적인 자원 활용을 가능하게 하여 사용자가 더 빠르고 효과적으로 작업할 수 있도록 돕습니다.
 
 ## 개요
 
-Qwen1.5 7B 모델은 중국의 [Tongyi Qianwen(通义千问)](https://www.alibabacloud.com/en/solutions/generative-ai/qwen?_p_lc=1) 사에서 공개한 오픈소스 LLM입니다. 이 튜토리얼에서는 MoAI Platform에서 코드 생성(code generation) 태스크에 대해 시스템 프롬프트, 코드 생성을 위한 지시문, 입력값과 생성해야 할 코드로 구성되어 있는 [python_code_instruction_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터셋을 활용해 Qwen1.5 7B 모델을 fine-tuning 해보겠습니다. 
+MoAI Platform은 수천 대의 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있는 확장 가능한 AI 플랫폼입니다. MoAI Platform의 특징은 모델을 fine-tuning할 때 가상화와 병렬화를 통해 매우 간단한 학습 방법을 제공한다는 점입니다.
+
+MoAI Platform은 여러개의 GPU를 가상화하여 하나의 가속기인 [MoAI Accelerator](https://docs.moreh.io/ko/moai_features/virtualization/#gpu-%EA%B0%80%EC%83%81%ED%99%94-moai-accelerator)로 제공합니다. 따라서 다중 GPU 사용을 위해 필요한 사전 준비나 코드 수정이 필요하지 않습니다.
+
+MoAI Platform은 고객이 가상화된 MoAI Accelerator를 사용할 때 내부적으로 자동 최적화된 병렬화를 제공합니다. 모델 크기, 데이터 크기에 대해서 다양한 병렬화 방법을 고려해 최적의 병렬화 환경을 제공하며, 사용자는 별도의 작업이 없이 간단한 코드로 고성능 학습을 경험할 수 있습니다.
 
 ## 시작하기 전에
 

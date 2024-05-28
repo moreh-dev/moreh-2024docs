@@ -7,31 +7,33 @@ order: 1000
 # Llama2 13B Fine-tuning
 
 This tutorial introduces an example of fine-tuning the open-source [Llama2 13B model](https://huggingface.co/meta-llama/Llama-2-13b-hf) on the MoAI Platform. 
-Through this tutorial, you'll learn how to leverage the AMD GPU cluster using the MoAI Platform and explore the benefits of performance and automatic parallelization.
+Through this tutorial, users can experience various features provided by the MoAI Platform and learn how to use an AMD GPU cluster.
+
+- Users can easily run training without complex parallelization tasks or cluster environment setups, as they can treat dozens of GPUs as a single accelerator called MoAI Accelerator. This allows users to focus solely on training without worrying about resource management.
+- Thanks to the automatic parallelization feature, code writing and development are simplified, and model training speed is significantly improved. This enables efficient resource utilization, allowing users to work faster and more effectively.
 
 ### Overview
 
-The Llama2 model, released by [Meta](https://about.meta.com/) in July 2023, is an open-source model based on the Decoder-only Transformer. It follows the structure of the existing Llama model but has been trained with 40% more data to understand more diverse and complex information.
+The MoAI Platform is a scalable AI platform that enables easy control of thousands of GPUs for training and inference of AI models. One of its key features is providing a very simple training method through virtualization and parallelization when fine-tuning models.
 
-Llama2 excels particularly in language understanding and generation tasks, achieving state-of-the-art performance in various natural language processing tasks. This model supports multilingual capabilities, enabling processing of text in various languages worldwide, and is publicly accessible for research and development purposes.
+The MoAI Platform provides multiple GPUs virtualized into a single accelerator called [MoAI Accelerator](https://docs.moreh.io/moai_features/virtualization/#gpu-virtualization-moai-accelerator). Therefore, there is no need for preprations or code modifications for using multiple GPUs.
 
-In this tutorial, we will fine-tune the Llama2 model on the MoAI Platform using the [CNN Daily Mail](https://huggingface.co/datasets/cnn_dailymail) dataset focus on summarization task. Summarization is one of the natural language processing techniques, where the task is to unravel long, complex text and deliver precise summaries.
+The MoAI Platform automatically provides optimized parallelization when users use the virtualized MoAI Accelerator. It considers various parallelization methods based on model and data sizes to offer the optimal parallelization environment. As a result, users can experience high-performance training with simple code without any additional tasks.
 
-## Before You Start
+## Getting Started
 
-Be sure to obtain a container or virtual machine on the MoAI Platform from your infrastructure provider and familiarize yourself with connecting to it via SSH. You can either request and use a trial container of the MoAI Platform or sign up for the public cloud service running on the MoAI Platform.
+Please obtain a container or virtual machine on the MoAI Platform from your infrastructure provider and follow the instructions to connect via SSH. For example, you can apply for a trial container on the MoAI Platform or use public cloud services based on the MoAI Platform.
 
 - MoAI Platform Trial Container (Inquiries: [support@moreh.io](mailto:support@moreh.io))
+- KT Cloud's Hyperscale AI Computing (https://cloud.kt.com/solution/hyperscaleAiComputing/)
 
-- [KT Cloud Hyperscale AI Computing](https://cloud.kt.com/solution/hyperscaleAiComputing/)
+After connecting via SSH, execute the **`moreh-smi`** command to verify that the MoAI Accelerator is properly detected. The device name may vary depending on the system.
 
-After connecting via SSH, run the **`moreh-smi`** command to ensure that the MoAI Accelerator is displayed correctly. The device name may vary depending on the system. 
+### **Verifying MoAI Accelerator**
 
-#### Check MoAI Accelerator 
+To train models like the sLLM introduced in this tutorial, it's important to select an appropriate size of the MoAI Accelerator. First, use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 
-To train models like the Llama2 model outlined in this tutorial, you need to select an appropriate size MoAI Accelerator. Start by using the `moreh-smi` command to check the currently used MoAI Accelerator.
-
-Detailed instructions for selecting the MoAI Accelerator size required for the training will be provided in [3. Model fine-tuning](3_fine_tuning.md) 
+Detailed instructions for setting up the MoAI Accelerator specific to your training needs will be provided in the section [3. Model fine-tuning](3_fine_tuning.md) 
 
 ```bash
 $ moreh-smi

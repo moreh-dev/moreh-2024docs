@@ -10,8 +10,9 @@ We have now explored the process of fine-tuning the Llama3-70b model on the MoAI
 
 ## Learn More
 
-- *[MoAI Platform's Advanced Parallelization (AP)](/Supported_Documents/)*
+- *[MoAI Platform's Advanced Parallelization (AP)](/Supported_Documents/ap/index.md)*
+- [Llama3 8B Fine-tuning](/Tutorials/Llama38B_Tutorial/index.md)
 - [Mistral Fine-tuning](/Tutorials/Mistral_Tutorial/index.md)
 - [GPT Fine-tuning](/Tutorials/GPT_Tutorial/index.md)
-- [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)
 - [Qwen Fine-tuning](/Tutorials/Qwen_Tutorial/index.md)
+- [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)

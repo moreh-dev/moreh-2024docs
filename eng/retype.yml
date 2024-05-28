@@ -11,11 +11,7 @@ output: .retype
 url: docs.moreh.io
 branding:
   logo: /img/logo.png 
-  logoAlign: left     
-    colors: "#ff5700"
-        label: EN
-          text:  "#ff5700"      # Custom color for the label text
-  background: "#ff5700"   # Custom color for the label background
+  logoAlign: left 
 exclude:
   - "fr"
   - "ko"
@@ -28,16 +24,4 @@ links:
   link: https://docs.moreh.io/ko
 footer:
   copyright: "&copy; Copyright Moreh {{ 2024 }}. All rights reserved." 
-
-
-branding:
-  title: Moreh Documents              # Your custom website title; keep it short
-  logo: /img/logo-white.png           # Path to a logo file
-  logoDark: /logo-dark.png    # Path to a logo file to use in dark mode
-  logoAlign: right            # Align the logo to the right or the left
-  label: Moreh Documents                 # Optional label
-  colors:
-    label:                    # Label colors
-      text: "#ff5700"         # Custom color for the label text
-      background: "#ff5700"   # Custom color for the label background
 

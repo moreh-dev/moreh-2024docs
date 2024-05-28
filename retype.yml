@@ -12,7 +12,7 @@ url: docs.moreh.io
 branding:
   logo: /img/logo.png 
   logoAlign: left     
-  label: KO
+  label: ENG
 exclude:
   - "fr"
   - "ko"
@@ -29,11 +29,7 @@ footer:
 search:
   preload: true
 
-locale: ko
+locale: eng
 
-branding:
-  title: Moreh Documents              # Your custom website title; keep it short
-  logo: /img/logo-white.png           # Path to a logo file
-  logoDark: /logo-dark.png    # Path to a logo file to use in dark mode
-  logoAlign: right            # Align the logo to the right or the left
-  label: Moreh Documents                 # Optional label
+breadcrumb:
+  enabled: true 

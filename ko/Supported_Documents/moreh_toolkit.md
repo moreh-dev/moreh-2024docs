@@ -20,7 +20,7 @@ Moreh Toolkit의 주요 기능은 다음과 같습니다:
     - **`update-moreh`** 명령어를 통해 MoAI Platform을 최신 버전으로 설치 및 업데이트하거나 필요시 이전 버전으로 롤백할 수 있습니다.
 
 
-## MoAI Accelerator 모니터링: moreh-smi 
+## MoAI Accelerator 모니터링: `moreh-smi` 
 
 `moreh-smi`는 사용자가 MoAI Accelerator를 관리하고 모니터링할 수 있는 명령어 입니다. MoAI Platform Pytorch가 설치된 conda 환경에서 다음과 같이 실행할 수 있습니다.
 

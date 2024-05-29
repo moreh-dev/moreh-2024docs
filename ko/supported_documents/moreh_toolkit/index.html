@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770272009723">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770272213446">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770272009723" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770272213446" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770272009723" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770272213446" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770272009723" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770272009723" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770272009723" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770272213446" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770272213446" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770272213446" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -336,15 +336,15 @@ Switch Current Device success.</code></pre>
 (moreh) ubuntu@vm:~$ moreh-smi
 10:49:12 May 07, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|    0     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|  * 1     |     AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
-|    2     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|    3     |     AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
-|    4     |     AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
+|    4     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="moai-accelerator-삭제하기-moreh-smi-device---rm">
@@ -442,10 +442,10 @@ Device Example:
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 </code></pre>
 </doc-codeblock></div>
@@ -504,10 +504,10 @@ Selection (1-13, q, Q):
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Large.256GB     |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <p>0번 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">

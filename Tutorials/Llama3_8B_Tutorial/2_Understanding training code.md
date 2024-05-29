@@ -63,7 +63,6 @@ Subsequently, the training proceeds similarly to regular PyTorch model training.
     # Start training
     for epoch in range(args.num_train_epochs):
         for step, batch in enumerate(train_dataloader, start=1):
-            #breakpoint()
             start_time = time.perf_counter()
             input_ids = batch["input_ids"]
             inputs, labels = input_ids, mask_pads(input_ids, tokenizer)

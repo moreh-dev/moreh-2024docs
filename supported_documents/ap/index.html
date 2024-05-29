@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770277390545">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770277392674">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770277390545" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770277392674" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770277390545" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770277392674" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770277390545" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770277390545" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770277390545" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770277392674" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770277392674" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770277392674" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,8 +218,8 @@
 </doc-anchor-target>
 <p>As a simple example, let&#x27;s calculate how much GPU memory is required to train the Llama2 13B model.</p>
 <p>The Llama2 13B model contains approximately 13 billion parameters.  The memory size required to load the model, depending on the FP16 data format, is approximately 25GB.
-A minimum of 100-150GB of memory is required for training components such as the optimizer and gradients.
-Therefore, training is impossible with just the memory capacity of a typical single GPU (80-128GB). This is why GPU parallel processing is essential for model training.</p>
+A minimum of 100-150GB of memory is required for training components such as the Optimizer and gradients.
+Therefore, training is impossible with just the memory capacity of a typical single GPU (80128GB). This is why GPU parallel processing is essential for model training.</p>
 <p>For example, when using NVIDIA&#x27;s FSDP (Fully Sharded Data Parallel) or DeepSpeed, developers must  manually adjust various parallelization settings. In this case, the following parameters must be carefully adjusted:</p>
 <ul>
 <li><strong>Parameter Sharding</strong>: FSDP requires specifying how to shard model parameters across GPUs. Incorrect settings can result in suboptimal performance or memory overflow errors.</li>

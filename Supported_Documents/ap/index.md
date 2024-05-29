@@ -26,9 +26,9 @@ Therefore, training is impossible with just the memory capacity of a typical sin
 
 For example, when using NVIDIA's FSDP (Fully Sharded Data Parallel) or DeepSpeed, developers must  manually adjust various parallelization settings. In this case, the following parameters must be carefully adjusted:
 
-**Parameter Sharding**: FSDP requires specifying how to shard model parameters across GPUs. Incorrect settings can result in suboptimal performance or memory overflow errors.
-**Optimizer Stat Sharding**: Both FSDP and DeepSpeed require sharding the optimizer state for efficient memory usage and communication overhead, which entails complex configurations.
-**Activation Checkpoint**: Activation checkpointing may need to be activated to save memory, balancing additional computation overhead for saving memory and recalculating activations during backpropagation.
+- **Parameter Sharding**: FSDP requires specifying how to shard model parameters across GPUs. Incorrect settings can result in suboptimal performance or memory overflow errors.
+- **Optimizer Stat Sharding**: Both FSDP and DeepSpeed require sharding the optimizer state for efficient memory usage and communication overhead, which entails complex configurations.
+- **Activation Checkpointing**: Activation checkpointing may need to be activated to save memory, balancing additional computation overhead for saving memory and recalculating activations during backpropagation.
 
 Using the MoAI Platform's AP function allows users to save time and effort on complex parallelization tasks.
 

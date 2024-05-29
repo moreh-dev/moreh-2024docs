@@ -19,7 +19,7 @@ input_text = """Below is an instruction that describes a task. Write a response 
 Create a function to join given list of strings with space.
 
 ### Input:
-['I', 'love', 'Moreh']
+['I', 'love', 'you']
 
 ### Output:
 """
@@ -40,12 +40,12 @@ Qwen: Below is an instruction that describes a task. Write a response that appro
 Create a function to join given list of strings with space.
 
 ### Input:
-['I', 'love', 'Moreh']
+['I', 'love', 'you']
 
 ### Output:
 def join_strings(string_list):
     return ' '.join(string_list)
 
-result = join_strings(['I', 'love', 'Moreh'])
+result = join_strings(['I', 'love', 'you'])
 print(result)
 ```

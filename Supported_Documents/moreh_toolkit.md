@@ -24,9 +24,8 @@ The main features of the Moreh Toolkit are as follows:
 
 `moreh-smi` is a command-line tool that allows users to manage and monitor the MoAI Accelerator. You can run it in a conda environment where MoAI Platform PyTorch is installed.
 
-```jsx
+```bash
 $ moreh-smi
-
 +----------------------------------------------------------------------------------------------+
 |                                             Current Version: 24.5.0  Latest Version: 24.5.0  |
 +----------------------------------------------------------------------------------------------+
@@ -39,24 +38,22 @@ $ moreh-smi
 
 If you are currently running a training session using the MoAI Accelerator, running `moreh-smi` in another terminal session will display the running process information as follows. You can also use `moreh-smi` to quickly identify your Job ID, allowing for faster support response from MoAI Platform in case of training or inference issues. In the example below, the Job ID is 976356.
 
-```jsx
+```bash
 $ moreh-smi
-
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  xLarge.512GB    |  397 MiB       |  524160 MiB    |    0 %        |
+|  * 0     |  MoAI Accelerator   |  xLarge.512GB    |    397 MiB     |  524160 MiB    |      0 %      |
 +-----------------------------------------------------------------------------------------------------+
 
 Processes:
 +-----------------------------------------------------------------------------------+
 |  Device  |  Job ID  |    PID    |             Process            |  Memory Usage  |
 +===================================================================================+
-|    0     |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
+|       0  |  976356  |  1548305  |  python tutorial/train_gpt.py  |    397 MiB     |
 +-----------------------------------------------------------------------------------+
-
 ```
 
 ### Utilizing MoAI Accelerator's Multi Accelerator Feature
@@ -95,7 +92,6 @@ In the example below, let's add the 10th [!badge variant="secondary" text=8xLarg
 
 ```bash
 $ moreh-smi device --add 10
-
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -221,10 +217,10 @@ For example, if the result of the `moreh-smi` command is as follows, it means th
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 ```
 
@@ -284,15 +280,16 @@ You can continue with the change or exit the MoAI Accelerator change by typing `
 After the change is complete, when you run `moreh-smi` again to confirm, you will see the following result:
 
 ```bash
+$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Large.256GB     |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 ```
 

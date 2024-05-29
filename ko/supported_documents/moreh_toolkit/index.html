@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770272213446">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770272312374">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770272213446" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770272312374" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770272213446" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770272312374" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770272213446" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770272213446" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770272213446" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770272312374" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770272312374" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770272312374" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -229,8 +229,7 @@
 </doc-anchor-target>
 <p><code v-pre>moreh-smi</code>는 사용자가 MoAI Accelerator를 관리하고 모니터링할 수 있는 명령어 입니다. MoAI Platform Pytorch가 설치된 conda 환경에서 다음과 같이 실행할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
-
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 +----------------------------------------------------------------------------------------------+
 |                                             Current Version: 24.5.0  Latest Version: 24.5.0  |
 +----------------------------------------------------------------------------------------------+
@@ -242,8 +241,7 @@
 <p>현재 MoAI Accelerator를 사용하여 학습을 진행하고 있다면, 다른 터미널 세션을 활용하여 <code v-pre>moreh-smi</code> 을 실행할 경우 실행중인 프로세스 정보를 다음과 같은 화면을 보실 수 있습니다. 또한 <code v-pre>moreh-smi</code> 을 활용하면 현재 본인의 Job ID 를 확인할 수 있으므로, MoAI Platform 에서 학습 또는 추론에 문제가 생길 경우 해당 Job ID 와 함께 고객지원을 문의하면 더 빠르게 응답을 받으실 수 있습니다.</p>
 <p>아래 예시에서 확인할 수 있는 Job ID는 976356입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
-17:58:15 April 29, 2024 
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -276,7 +274,7 @@ Processes:
 </doc-anchor-target>
 <p>먼저 MoAI Accelerator를 추가해보겠습니다. 2개 이상의 MoAI Accelerator를 사용하기 위해서<code v-pre>moreh-smi device --add</code> 커멘드를 입력하면 아래와 같은 인터페이스가 나타납니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi device --add
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --add
 1. Small.64GB
 2. Medium.128GB
 3. Large.256GB
@@ -297,7 +295,6 @@ Selection (1-13, q, Q):</code></pre>
 <p>아래 예제에서는 10번 <code v-pre>8xLarge.4096GB</code> MoAI Accelerator를 추가해 보겠습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --add 10
-
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -316,8 +313,7 @@ Selection (1-13, q, Q):</code></pre>
 <p><code v-pre>moreh-smi device --switch {Device_ID}</code> 는 기본값으로 설정된 MoAI Accelerator를 변경할 수 있는 명령어 입니다.</p>
 <p>다음과 같이 사용할 수 있습니다 :</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">(moreh) ubuntu@vm:~$ moreh-smi device --switch 1
-
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --switch 1
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
@@ -333,8 +329,7 @@ Switch Current Device success.</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">Selection (0-4, q, Q): q
 
-(moreh) ubuntu@vm:~$ moreh-smi
-10:49:12 May 07, 2024
+$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -356,7 +351,7 @@ Switch Current Device success.</code></pre>
 <p>이번에는 생성된 디바이스를 <code v-pre>moreh-smi device --rm {Device_ID}</code>커멘드로 특정 디바이스 ID에 해당하는 가속기를 삭제해보겠습니다.</p>
 <p>다음과 같이 사용할 수 있습니다 :</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi --rm 1
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi --rm 1
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
@@ -499,7 +494,8 @@ Selection (1-13, q, Q):
 <p>변경을 계속하거나 <code v-pre>q</code> 또는 <code v-pre>Q</code>를 통해 MoAI Accelerator 변경을 종료할 수 있습니다.</p>
 <p>변경이 완료된 후 다시 <code v-pre>moreh-smi</code> 를 사용하여 확인한 결과는 다음과 같습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">+-----------------------------------------------------------------------------------------------------+
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
++-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
@@ -527,7 +523,7 @@ Selection (1-13, q, Q):
 <li>새롭게 conda 환경을 생성한 경우 아직 MoAI Platform에 필요한 Python 패키지 설치가 필요합니다. 이 경우에는 <code v-pre>update-moreh</code> 명령어를 통해서 최신 버전의 MoAI Platform을 간단하게 설치할 수 있습니다.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ conda create --name my_env python=3.8
+<pre class="language-bash"><code v-pre class="language-bash">$ conda create --name my_env python=3.8
 $ update-moreh # MoAI Platform 설치
 
 Do you want to proceed? (y/n, default:n)

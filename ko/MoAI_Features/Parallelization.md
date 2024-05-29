@@ -1,6 +1,6 @@
 ---
 icon: note
-tags: [guide]
+tags: [features]
 order: 5
 ---
 

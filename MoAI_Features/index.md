@@ -1,6 +1,5 @@
 ---
 icon: note
-tags: [features]
 order: 110
 expanded: true
 ---

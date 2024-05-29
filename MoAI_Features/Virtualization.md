@@ -1,6 +1,5 @@
 ---
 icon: cpu
-tags: [features]
 order: 109
 ---
 

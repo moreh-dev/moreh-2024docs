@@ -1,6 +1,5 @@
 ---
 icon: terminal
-tags: [features]
 order: 90
 expanded: true
 ---

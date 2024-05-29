@@ -27,7 +27,7 @@ def main(args):
 
 아래는 API에 입력할 수 있는 config 변수들입니다.  다음 인자들을 활용해 사용자가 원하는 방식으로 분산 병렬화를 최적화할 수 있습니다. 
 
-- **`pipeline_parallel`** (*bool*, Default: *true*) - Pipeline Parallel([Gpipe](https://blog.research.google/2019/03/introducing-gpipe-open-source-library.html)) 사용 여부
+- **`pipeline_parallel`** (*bool*, Default: *true*) - Pipeline Parallel 사용 여부
 - **`num_stages`** (*str, int*,*** default: *‘auto’*) - Pipeline Parallel에서 최대 stage 수
 - **`num_micro_batches`**(*str, int*, Default: *‘auto’*): pipeline parallel의 micro batch 수
 - **`activation_recomputation`** (*str*, *bool*, Default: *‘auto’*) activation recomputation 사용 여부

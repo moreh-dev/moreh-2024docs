@@ -15,6 +15,6 @@ The MoAI Platform is a scalable AI platform that allows for easy management of t
 The MoAI Platform virtualizes multiple GPUs into a single entity known as the MoAI Accelerator. This approach makes it appear as though you are using just one GPU, eliminating the need for preparatory work or code modifications typically required for multi-GPU usage.
 
 
-![](/overview/img_ov/virt.png)
+![](v_3.png)
 
 When using a virtualized MoAI Accelerator, the platform automatically optimizes parallelization internally. By considering the model size and data volume, it provides the optimal parallelization strategy, allowing users to achieve high-performance training with minimal additional effort and straightforward code.

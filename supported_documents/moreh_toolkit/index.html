@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770277243505">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770277390545">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770277243505" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770277390545" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770277243505" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770277390545" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770277243505" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770277243505" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770277243505" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770277390545" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770277390545" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770277390545" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -361,7 +361,7 @@ Remove device success.</code></pre>
 </doc-codeblock></div>
 <p>The MoAI Accelerator with Device ID 1, <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
     <span>8xLarge.4096GB</span>
-</span>, has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.</p>
+</span>, has been removed using the above command. To confirm, when you run <code v-pre>moreh-smi</code> again, you will notice that the device has been removed.</p>
 <doc-anchor-target id="other-various-options-utilization">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-various-options-utilization">#</doc-anchor-trigger>
@@ -516,6 +516,7 @@ Selection (1-13, q, Q):
 <li><p>If you have created a new conda environment and MoAI Platform Python packages need to be installed, you can easily install the latest version of MoAI Platform using the <code v-pre>update-moreh</code> command.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ conda create --name my_env python=3.8
+$ conda activate my_env
 $ update-moreh # Install MoAI Platform 
 
 Do you want to proceed? (y/n, default:n)

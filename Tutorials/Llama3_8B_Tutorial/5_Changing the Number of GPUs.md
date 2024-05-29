@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags: [tutorial, llama2]
+tags: [tutorial, llama3]
 order: 40
 ---
 
@@ -33,7 +33,7 @@ Again, run the **`train_llama3.py`** script.
 ~/quickstart$ python tutorial/train_llama3.py --batch-size 512
 ```
 
-Since the available GPU memory has doubled, let's increase the batch size from the previous 256 to 512 and run the code again.
+Since the available GPU memory has doubled, let's increase the batch size from the previous `256` to `512` and run the code again.
 
 
 

@@ -26,14 +26,13 @@ The main features of the Moreh Toolkit are as follows:
 
 ```bash
 $ moreh-smi
-+----------------------------------------------------------------------------------------------+
-|                                             Current Version: 24.5.0  Latest Version: 24.5.0  |
-+----------------------------------------------------------------------------------------------+
-|  Device  |        Name         |   Model   |  Memory Usage  |  Total Memory  |  Utilization  |
-+==============================================================================================+
-|  * 0     |  MoAI Accelerator   |  4xlarge  |  -             |  -             |  -            |
-+----------------------------------------------------------------------------------------------+
-
++-----------------------------------------------------------------------------------------------------+
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
++-----------------------------------------------------------------------------------------------------+
+|  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
++=====================================================================================================+
+|  * 0     |  MoAI Accelerator   |  4xlarge.2048GB  |  -             |  -             |  -            |
++-----------------------------------------------------------------------------------------------------+
 ```
 
 If you are currently running a training session using the MoAI Accelerator, running `moreh-smi` in another terminal session will display the running process information as follows. You can also use `moreh-smi` to quickly identify your Job ID, allowing for faster support response from MoAI Platform in case of training or inference issues. In the example below, the Job ID is 976356.

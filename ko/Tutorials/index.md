@@ -7,7 +7,7 @@ order: 80
 
 # Fine-tuning 튜토리얼
 
-이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델 6종을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.
+이 튜토리얼은 Llama2, Mistral 등의 대형 언어 모델을 fine-tuning 하고자 하는 모든 분들을 위한 것입니다. MoAI 플랫폼을 사용하여 아래 대형 언어 모델들을 미세 조정하는 과정을 안내합니다.
 
 
 - [Llama3 8B](../Tutorials/llama3_8b_tutorial/index.md)

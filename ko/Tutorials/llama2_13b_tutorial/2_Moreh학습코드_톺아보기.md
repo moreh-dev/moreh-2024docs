@@ -126,7 +126,7 @@ torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 
 DDP는 비교적 쉽게 적용할 수 있지만, [파이프라인 병렬 처리](https://pytorch.org/docs/stable/pipeline.html)나 [텐서 병렬 처리](https://pytorch.org/tutorials/intermediate/TP_tutorial.html)를 적용하려면 상당히 복잡한 코드 수정이 필요합니다. 최적화된 병렬화 처리를 적용하려면 학습 스크립트 작성 과정에서 Python 코드가 다중 처리 환경에서 어떻게 동작하는지 이해해야 하며, 특히 다중 노드 설정에서는 학습에 사용되는 각 노드의 환경을 구성해야 합니다. 또한, 모델 종류, 크기, 데이터셋 등을 고려해 최적의 병렬화 방법을 찾기 위해서는 상당히 많은 시간이 필요합니다.
 
-반면, MoAI Platform의 AP 기능을 통해 사용자는 별도의 병렬화 기법을 적용할 필요 없이, 학습 스크립트에 단 한 줄의 코드를 추가하는 것으로도 최적화된 병렬화 학습을 진행할 수 있습니다.
+**반면, MoAI Platform의 AP 기능을 통해 사용자는 별도의 병렬화 기법을 적용할 필요 없이, 학습 스크립트에 단 한 줄의 코드를 추가하는 것으로도 최적화된 병렬화 학습을 진행할 수 있습니다.**
 
 
 ```bash

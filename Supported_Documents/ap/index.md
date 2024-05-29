@@ -21,8 +21,8 @@ With the AP feature of the MoAI Platform, complex parallel processing and model 
 As a simple example, let's calculate how much GPU memory is required to train the Llama2 13B model.
 
 The Llama2 13B model contains approximately 13 billion parameters.  The memory size required to load the model, depending on the FP16 data format, is approximately 25GB. 
-A minimum of 100-150GB of memory is required for training components such as the Optimizer and gradients. 
-Therefore, training is impossible with just the memory capacity of a typical single GPU (80128GB). This is why GPU parallel processing is essential for model training.
+A minimum of 100-150GB of memory is required for training components such as the optimizer and gradients. 
+Therefore, training is impossible with just the memory capacity of a typical single GPU (80-128GB). This is why GPU parallel processing is essential for model training.
 
 For example, when using NVIDIA's FSDP (Fully Sharded Data Parallel) or DeepSpeed, developers must  manually adjust various parallelization settings. In this case, the following parameters must be carefully adjusted:
 

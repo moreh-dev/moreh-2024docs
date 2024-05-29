@@ -32,7 +32,7 @@ Run the `train_llama2.py` script again.
 ~/quickstart$ python tutorial/train_llama2.py --batch-size 512
 ```
 
-Since the GPU memory has doubled, let's increase the batch size from the previous 256 to 512 and run the code again.
+Since the GPU memory has doubled, let's increase the batch size from the previous `256` to `512` and run the code again.
 
 If the training proceeds smoothly, you'll see logs similar to the following:
 

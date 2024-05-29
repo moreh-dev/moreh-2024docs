@@ -26,10 +26,6 @@ outbound:
 MoAI Platform은 현재 개발이 계속 진행되고 있습니다. 따라서, 문서의 내용은 언제든지 변경될 수 있습니다.
 !!!
 
-
-## MoAI Platform이란?
-MoAI Platform은 대규모 딥러닝 모델을 개발하기 위한 확장 가능한 AI 플랫폼으로, 수천 대의 GPU를 쉽게 제어하여 AI 모델을 학습하거나 추론할 수 있습니다.
-
 ## MoAI Platform 핵심 기술
 
 ![](./img/overview_01.png)

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770265437773">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770265588675">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770265437773" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770265588675" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770265437773" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770265588675" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770265437773" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770265437773" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770265437773" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770265588675" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770265588675" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770265588675" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -317,7 +317,7 @@ torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained(&quot;./llama-2-13b-hf&quot;)
+model = LlamaForCausalLM.from_pretrained(&quot;./llama3-8b&quot;)
 ...</code></pre>
 </doc-codeblock></div>
 <p>다른 프레임워크에서는 경험할 수 없는 MoAI Platform만의 Advanced Parallelization(AP) 기능을 통해 최적의 자동화된 분산 병렬처리를 경험해보세요. AP기능을 이용하면 대규모 모델 훈련시 일반적으로 필요한 Pipeline Parallelism, Tensor Parallelism의 최적 매개변수와 환경변수를 <strong>아주 간단한 코드 한 줄로 설정할 수 있습니다.</strong></p>

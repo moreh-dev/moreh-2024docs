@@ -17,14 +17,14 @@ All the code used during training is exactly the same as when you're using PyTor
 Import the necessary modules from the **`transformers`** library.
 
 ```python
-from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
+from transformers import AdamW, LlamaForCausalLM, AutoTokenizer
 ```
 
 Then, load up the model checkpoint and tokenizer you downloaded earlier.
 
 ```python
-model = AutoModelForCausalLM.from_pretrained("./llama3-8b")
-tokenizer = LlamaTokenizer.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("./llama3-8b")
+tokenizer = AutoTokenizer.from_pretrained("./llama3-8b")
 ```
 
 Load your preprocessed dataset, which you prepared during the [1. Prepare fine-tuning](1_Prepare_Fine-tuning.md) step, and define your data loaders.
@@ -45,18 +45,6 @@ Load your preprocessed dataset, which you prepared during the [1. Prepare fine-t
 Subsequently, the training proceeds similarly to regular PyTorch model training.
 
 ```python
-    # Compose pad token mask
-    def create_mask(input_ids, tokenizer):
-		    pad_token_ids = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
-			  return (input_ids != pad_token_ids).long() 
-			   
-    # Mask pad tokens for training
-    def mask_pads(inputs, tokenizer, ignore_index = -100):
-        idx_mask = create_mask(inputs, tokenizer)
-        labels = copy.deepcopy(inputs)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
-
     # Define AdamW optimizer
     optim = AdamW(model.parameters(), lr=args.lr)
 

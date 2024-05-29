@@ -7,7 +7,7 @@ order: 60
 
 # Moreh Toolkit Guide
 
-The Moreh Toolkit is a command line tool designed to efficiently manage and monitor MoAI Accelerators on the MoAI Platform. With just three commands (**`moreh-smi`**, **`moreh-switch-model`**, **`update-moreh`**), users can effectively manage MoAI Accelerators and easily update MoAI Platform.
+The Moreh Toolkit is a command line tool designed to efficiently manage and monitor [MoAI Accelerator](https://docs.moreh.io/moai_features/virtualization/) on the MoAI Platform. With just three commands (**`moreh-smi`**, **`moreh-switch-model`**, **`update-moreh`**), users can effectively manage MoAI Accelerators and easily update MoAI Platform.
 
 ## Key Features
 

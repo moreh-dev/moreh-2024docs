@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770268333778">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770268432280">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770268333778" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770268432280" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770268333778" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770268432280" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770268333778" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770268333778" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770268333778" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770268432280" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770268432280" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770268432280" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -212,8 +212,7 @@
 </doc-anchor-target>
 <p>The AP feature can be applied by adding a single line of code after <strong><code v-pre>import torch</code></strong>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">pythonCopy code
-import torch
+<pre class="language-python"><code v-pre class="language-python">import torch
 
 torch.moreh.option.enable_advanced_parallelization()
 ...</code></pre>
@@ -227,8 +226,7 @@ torch.moreh.option.enable_advanced_parallelization()
 <p>If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we&#x27;ll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to <a href="https://docs.moreh.io/tutorials/llama2_tutorial/1_prepare_fine-tuning/" class="outbound" target="_blank"><span>Llama2 Tutorial 1. Preparing for fine-tuning</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> to prepare the training code.</p>
 <p>Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">bashCopy code
-$ conda list torch
+<pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
 ...
 # Name                    Version                   Build  Channel
 torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
@@ -236,8 +234,7 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 </doc-codeblock></div>
 <p>Once the PyTorch environment is set up, fetch the training code from the GitHub repository.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">bashCopy code
-$ git clone https://github.com/moreh-dev/quickstart
+<pre class="language-bash"><code v-pre class="language-bash">$ git clone https://github.com/moreh-dev/quickstart
 $ cd quickstart
 ~/quickstart$ ls ap-example
 ... text_summarization_for_ap.py ...
@@ -258,15 +255,13 @@ $ cd quickstart
 </doc-anchor-target>
 <p>At the beginning of the program&#x27;s main function, there&#x27;s a line to enable the AP feature. Apply AP and then run the training as shown below.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">pythonCopy code
-def main(args):
+<pre class="language-python"><code v-pre class="language-python">def main(args):
 
     # Apply Advanced Parallelization
     torch.moreh.option.enable_advanced_parallelization()</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">bashCopy code
-~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
 </doc-codeblock></div>
 <p>When the training starts, you will see logs like the following:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -297,8 +292,7 @@ info] Configuration for parallelism is selected.
 </doc-anchor-target>
 <p>Let&#x27;s examine the situation when the AP feature is not used. To verify this, comment out the line that enables the AP feature at the beginning of the Python program&#x27;s main function.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">pythonCopy code
-def main(args):
+<pre class="language-python"><code v-pre class="language-python">def main(args):
 
     # Apply Advanced Parallelization
     # torch.moreh.option.enable_advanced_parallelization() # Commented out
@@ -306,8 +300,7 @@ def main(args):
 </doc-codeblock></div>
 <p>Then proceed with the training.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">bashCopy code
-~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python ap-example/text_summarization_for_ap.py</code></pre>
 </doc-codeblock></div>
 <p>After the training completes, you will see logs as the following.</p>
 <div class="codeblock-wrapper"><doc-codeblock>

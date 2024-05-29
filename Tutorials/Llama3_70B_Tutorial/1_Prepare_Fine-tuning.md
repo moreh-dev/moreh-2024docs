@@ -100,7 +100,7 @@ Use Hugging Face to download the Llama3-70B model checkpoint and tokenizer. Note
 
 First, enter the necessary information and agree to the license on the Hugging Face website.
 
-[meta-llama/Llama-2-13b-hf · Hugging Face](https://huggingface.co/meta-llama/Llama-2-13b-hf)
+[meta-llama/Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
 
 Once you've submitted the agreement form, check that the status on the page has updated as follows:
 

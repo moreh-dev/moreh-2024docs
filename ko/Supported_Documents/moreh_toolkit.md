@@ -104,6 +104,8 @@ $ moreh-smi device --add 10
 +-----------------------------------------------------------------------------------------------------+
 ```
 
+---
+
 ### MoAI Accelerator 기본값 변경하기: `moreh-smi device --switch`
 
 `moreh-smi device --switch {Device_ID}` 는 기본값으로 설정된 MoAI Accelerator를 변경할 수 있는 명령어 입니다.

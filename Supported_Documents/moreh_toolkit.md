@@ -1,6 +1,6 @@
 ---
 icon: tools
-tags: [guide]
+tags: [guide, moreh_toolkit]
 order: 60
 
 ---
@@ -201,6 +201,7 @@ Device Example:
 If you encounter issues during training, such as tangled processes or difficulty terminating, causing messages like "Process Running," use the `moreh-smi --reset` command.
 !!!
 
+------
 
 ## Changing MoAI Accelerators: `moreh-switch-model`
 
@@ -293,6 +294,8 @@ $ moreh-smi
 ```
 
 The MoAI Accelerator previously set as the `Small.64GB` model has been changed to the `Large.256GB` model.
+
+------
 
 ## Updating MoAI Platform: `update-moreh`
 

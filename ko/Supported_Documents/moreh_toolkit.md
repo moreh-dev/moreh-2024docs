@@ -64,7 +64,7 @@ Processes:
 하지만 경우에 따라서는 하나의 환경에서도 여러 개 MoAI Accelerator를 활용하여 동시에 여러 개의 프로세스로 학습을 실행하고 싶은 경우도 있을 겁니다. (예: 동일한 소스코드이나 하이퍼 파라미터를 변경해서 여러 개의 학습 실험을 동시에 수행하고 싶은 경우) 이런 경우 `moreh-smi` 에서 하나의 토큰 내에 여러 개의 MoAI Accelerator를 생성하면, 동시에 여러개의 프로세스를 수행할 수 있습니다.
 다음 예제를 통해 MoAI Accelerator를 추가, 변경 삭제해보겠습니다.
 
-### MoAI Accelerator 추가하기
+### MoAI Accelerator 추가하기 `moreh-smi device --add`
 
 먼저 MoAI Accelerator를 추가해보겠습니다. 2개 이상의 MoAI Accelerator를 사용하기 위해서`moreh-smi device --add` 커멘드를 입력하면 아래와 같은 인터페이스가 나타납니다.
 
@@ -104,7 +104,7 @@ $ moreh-smi device --add 10
 +-----------------------------------------------------------------------------------------------------+
 ```
 
-### MoAI Accelerator 기본값 변경하기: moreh-smi device --switch
+### MoAI Accelerator 기본값 변경하기: `moreh-smi device --switch`
 
 `moreh-smi device --switch {Device_ID}` 는 기본값으로 설정된 MoAI Accelerator를 변경할 수 있는 명령어 입니다.
 
@@ -163,7 +163,7 @@ Remove device success.
 
 위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 [!badge variant="secondary" text="8xLarge.4096GB"] 가 삭제되었습니다. 확인을 위해 다시 `moreh-smi`를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
 
-### 그 외의 다양한 옵션 활용하기
+### 그 외의 다양한 옵션 활용하기 `--help`
 
 `moreh-smi` 는 이외에도 다양한 다양한 옵션을 제공합니다. 다음과 같이 `--help` 옵션을 활용하면 어떠한 옵션이 제공되는지 확인할 수 있습니다.
 
@@ -197,15 +197,15 @@ Device Example:
   moreh-smi -i 2
 ```
 
-1. `moreh-smi -p` -  MoAI Accelerator 상세 하드웨어 상태 모니터링하기
-2. `moreh-smi -t` -  MoAI Accelerator토큰 정보 확인하기
+- `moreh-smi -p` -  MoAI Accelerator 상세 하드웨어 상태 모니터링하기
+- `moreh-smi -t` -  MoAI Accelerator토큰 정보 확인하기
 
 !!!info 
 학습 도중에 프로세스가 꼬이거나 종료가 잘 안되어서 Process Running 과 같은 메시지가 출력된다면 `moreh-smi --reset` 명령어를 활용하세요.
 !!!
 
 -----
-## MoAI Accelerator 변경하기: **`moreh-switch-model`**
+## MoAI Accelerator 변경하기: `moreh-switch-model`
 
 `moreh-switch-model` 는 현재 설정된 MoAI Accelerator의 flavor(가속기 사양)를 변경할 수 있는 툴입니다. MoAI Accelerator의 flavor를 변경함으로써 GPU 메모리를 얼만큼 사용할 것인지 결정합니다. 
 

@@ -7,8 +7,7 @@ expanded: true
 
 # Fine-tuning Tutorials
 
-This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral, and etc for their own projects.
-We will walk through the steps to finetune these large language models (LLMs) with MoAI Platform.
+This tutorial is for anyone who wants to fine-tune powerful large language models such as Llama2, Mistral for their own projects. We will walk you through the steps to fine-tune these large language models (LLMs) with MoAI Platform.
 
 - [Llama3 8B](/Tutorials/Llama3_8B_Tutorial/index.md)
 - [Llama3 70B](/Tutorials/Llama3_70B_Tutorial/index.md)

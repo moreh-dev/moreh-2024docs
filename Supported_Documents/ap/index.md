@@ -16,7 +16,7 @@ With the AP feature of the MoAI Platform, complex parallel processing and model 
 
 ![Training throughput: experienced developer optimizations over one month vs. using the AP feature on the MoAI Platform](/overview/img_ov/ap_1.png)
 
-## 💡 Why is Parallelization crucial?
+## 💡 Why is parallelization crucial?
 
 As a simple example, let's calculate how much GPU memory is required to train the Llama2 13B model.
 

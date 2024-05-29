@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770272478920">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770272481243">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770272478920" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770272481243" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770272478920" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770272481243" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770272478920" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770272478920" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770272478920" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770272481243" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770272481243" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770272481243" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -228,8 +228,7 @@
 </doc-anchor-target>
 <p><code v-pre>moreh-smi</code> is a command-line tool that allows users to manage and monitor the MoAI Accelerator. You can run it in a conda environment where MoAI Platform PyTorch is installed.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
-
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 +----------------------------------------------------------------------------------------------+
 |                                             Current Version: 24.5.0  Latest Version: 24.5.0  |
 +----------------------------------------------------------------------------------------------+
@@ -241,23 +240,21 @@
 </doc-codeblock></div>
 <p>If you are currently running a training session using the MoAI Accelerator, running <code v-pre>moreh-smi</code> in another terminal session will display the running process information as follows. You can also use <code v-pre>moreh-smi</code> to quickly identify your Job ID, allowing for faster support response from MoAI Platform in case of training or inference issues. In the example below, the Job ID is 976356.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-jsx"><code v-pre class="language-jsx">$ moreh-smi
-
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  xLarge.512GB    |  397 MiB       |  524160 MiB    |    0 %        |
+|  * 0     |  MoAI Accelerator   |  xLarge.512GB    |    397 MiB     |  524160 MiB    |      0 %      |
 +-----------------------------------------------------------------------------------------------------+
 
 Processes:
 +-----------------------------------------------------------------------------------+
 |  Device  |  Job ID  |    PID    |             Process            |  Memory Usage  |
 +===================================================================================+
-|    0     |  976356  |  1548305  |  python tutorial/train_gpt.py  |  397 MiB       |
-+-----------------------------------------------------------------------------------+
-</code></pre>
+|       0  |  976356  |  1548305  |  python tutorial/train_gpt.py  |    397 MiB     |
++-----------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="utilizing-moai-accelerators-multi-accelerator-feature">
     <h3>
@@ -298,7 +295,6 @@ Selection (1-13, q, Q):</code></pre>
 </span> MoAI Accelerator:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi device --add 10
-
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
@@ -441,10 +437,10 @@ Device Example:
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <p>The <code v-pre>moreh-switch-model</code> command displays the following prompt:</p>
@@ -497,15 +493,16 @@ Selection (1-13, q, Q):
 <p>You can continue with the change or exit the MoAI Accelerator change by typing <code v-pre>q</code> or <code v-pre>Q</code>.</p>
 <p>After the change is complete, when you run <code v-pre>moreh-smi</code> again to confirm, you will see the following result:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">+-----------------------------------------------------------------------------------------------------+
+<pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
++-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Large.256GB     |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <p>The MoAI Accelerator previously set as the <code v-pre>Small.64GB</code> model has been changed to the <code v-pre>Large.256GB</code> model.</p>

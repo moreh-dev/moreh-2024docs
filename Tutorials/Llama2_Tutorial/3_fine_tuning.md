@@ -33,7 +33,7 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 ```bash
 $ moreh-smi
 +---------------------------------------------------------------------------------------------------+
-|                                                  Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                  Current Version: 24.2.0  Latest Version: 24.5.0  |
 +---------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
 +===================================================================================================+
@@ -101,7 +101,7 @@ To confirm that the changes have been successfully applied, use the **`moreh-smi
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -175,10 +175,10 @@ During training, open another terminal and connect to the container. Then, execu
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    100%        |
+|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    100%       |
 +-----------------------------------------------------------------------------------------------------+
 ```

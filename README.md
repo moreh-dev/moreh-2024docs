@@ -19,6 +19,10 @@ expanded: true
  **[Get started with fine-tuning](Tutorials/index.md)** <br> MoAI Platform Beginner's Guide for Finetuning| [ **AP Guide**](/Supported_Documents/ap/index.md) <br> Advanced Parallelization (AP) Feature Instructions
 [ **Moreh Toolkit Guide**](/Supported_Documents/moreh_toolkit.md) <br> Command Line Usage |[ **MoAI Platform Features**](/MoAI_Features/index.md) <br> The virtualization and parallelization features of the MoAI Platform
 
+!!!primary Note!
+MoAI Platform is currently in ongoing development. Therefore, the contents of the document may change at any time.
+!!!
+
 
 ## Core Technologies of MoAI Platform
 

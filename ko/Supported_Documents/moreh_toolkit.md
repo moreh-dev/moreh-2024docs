@@ -334,4 +334,8 @@ Already installed : 24.5.0
 update-moreh --target 24.5.0 # 24.5.0 버전으로 설치
 ```
 
-- conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 MoAI Platform이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 MoAI Platform 복구를 위하여 `update-moreh` 를 사용할 수 있습니다. 후자의 경우 `--force` 옵션을 사용하여 환경 재구성이 가능합니다. (`—-target` 옵션과 같이 사용 가능)
+- conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 MoAI Platform이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 MoAI Platform 복구를 위하여 **`update-moreh`** 를 사용할 수 있습니다. 후자의 경우 `--force` 옵션을 사용하여 환경 재구성이 가능합니다. (**`—-target`** 옵션과 같이 사용 가능)
+
+```bash
+update-moreh --force --target 24.5.0
+```

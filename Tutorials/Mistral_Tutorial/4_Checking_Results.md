@@ -32,7 +32,7 @@ Run the code below.
 
 Upon examining the output, you can confirm that the model has appropriately generated the function as per the prompt.
 
-```bash
+```
 Mistral: Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
 ### Instruction:

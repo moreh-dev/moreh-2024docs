@@ -20,7 +20,7 @@ The main features of the Moreh Toolkit are as follows:
 3. **Updating and Rolling Back MoAI Platform:**
     - Use the **`update-moreh`** command to update Moreh solutions to the latest version or roll back to a previous version if needed.
 
-## 1. MoAI Accelerator Monitoring: `moreh-smi`
+## MoAI Accelerator Monitoring: `moreh-smi`
 
 `moreh-smi` is a command-line tool that allows users to manage and monitor the MoAI Accelerator. You can run it in a conda environment where MoAI Platform PyTorch is installed.
 

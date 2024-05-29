@@ -43,7 +43,7 @@ Create a function to join given list of strings with space.
 
 ### Output:
 def join_strings(string_list):
-		return ' '.join(string_list)
+    return ' '.join(string_list)
 
 result = join_strings(['I', 'love', 'Moreh'])
 print(result)

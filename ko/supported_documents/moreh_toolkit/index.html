@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770276426206">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770276657180">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770276426206" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770276657180" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770276426206" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770276657180" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770276426206" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770276426206" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770276426206" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770276657180" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770276657180" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770276657180" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -552,8 +552,11 @@ Already installed : 24.5.0</code></pre>
 <pre class="language-bash"><code v-pre class="language-bash">update-moreh --target 24.5.0 # 24.5.0 버전으로 설치</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 MoAI Platform이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 MoAI Platform 복구를 위하여 <code v-pre>update-moreh</code> 를 사용할 수 있습니다. 후자의 경우 <code v-pre>--force</code> 옵션을 사용하여 환경 재구성이 가능합니다. (<code v-pre>—-target</code> 옵션과 같이 사용 가능)</li>
+<li>conda 환경에서 다른 패키지간의 의존성 충돌이 발생하는 문제 등으로 인해 MoAI Platform이 정상적으로 동작하지 않는 경우, conda 환경을 재구성을 해야 할 수 있습니다. 이러한 경우에도 conda 환경 내의 MoAI Platform 복구를 위하여 <strong><code v-pre>update-moreh</code></strong> 를 사용할 수 있습니다. 후자의 경우 <code v-pre>--force</code> 옵션을 사용하여 환경 재구성이 가능합니다. (<strong><code v-pre>—-target</code></strong> 옵션과 같이 사용 가능)</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">update-moreh --force --target 24.5.0</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>

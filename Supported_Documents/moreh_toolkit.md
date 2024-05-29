@@ -158,7 +158,7 @@ Remove device success.
 ```
 
 
-The MoAI Accelerator with Device ID 1, [!badge variant="secondary" text=8xLarge.4096GB], has been removed using the above command. To confirm, when you run moreh-smi again, you will notice that the device has been removed.
+The MoAI Accelerator with Device ID 1, [!badge variant="secondary" text=8xLarge.4096GB], has been removed using the above command. To confirm, when you run `moreh-smi` again, you will notice that the device has been removed.
 
 ### Other Various Options Utilization
 
@@ -302,6 +302,7 @@ The MoAI Accelerator previously set as the `Small.64GB` model has been changed t
     
     ```bash
     $ conda create --name my_env python=3.8
+    $ conda activate my_env
     $ update-moreh # Install MoAI Platform 
     
     Do you want to proceed? (y/n, default:n)

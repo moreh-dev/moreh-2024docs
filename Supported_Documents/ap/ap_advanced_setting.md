@@ -27,7 +27,7 @@ def main(args):
 
 Below are the configurable variables that can be inputted into the API, allowing users to optimize distributed parallelization according to their needs.
 
-- **`pipeline_parallel`** (*bool*, Default: *true*): Whether Pipeline Parallel([Gpipe](https://blog.research.google/2019/03/introducing-gpipe-open-source-library.html)) is applied
+- **`pipeline_parallel`** (*bool*, Default: *true*): Whether Pipeline Parallel is applied
 - **`num_stages`** (*str, int*,*** default: *‘auto’*): Maximum number of stages in Pipeline Parallelism.
 - **`num_micro_batches`**(*str, int*, Default: *‘auto’*):  Number of micro-batches in Pipeline Parallelism.
 - **`activation_recomputation`** (*str*, *bool*, Default: *‘auto’*): Whether activation recomputation is applied

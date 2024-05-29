@@ -111,7 +111,7 @@ def main(args):
 
 학습이 종료되면 다음과 같은 로그를 확인할 수 있습니다. 
 
-```json
+```
 ...
 [info] Requesting resources for MoAI Accelerator from the server...
 [info] Initializing the worker daemon for MoAI Accelerator

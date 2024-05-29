@@ -1,6 +1,6 @@
 ---
 icon: cpu
-tags: [guide]
+tags: [features]
 order: 10
 ---
 

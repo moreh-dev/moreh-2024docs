@@ -14,7 +14,6 @@ The AP feature enables parallelization at the node level. Therefore, it is recom
 The AP feature can be applied by adding a single line of code after **`import torch`**:
 
 ```python
-pythonCopy code
 import torch
 
 torch.moreh.option.enable_advanced_parallelization()
@@ -28,7 +27,6 @@ If you have an environment with two or more nodes ready, you can now create trai
 Once the training code is ready, configure the PyTorch environment before running the training on the MoAI Platform. The example below shows the PyTorch 1.13.1+cu116 version running on MoAI Platform version 24.2.0.
 
 ```bash
-bashCopy code
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
@@ -39,7 +37,6 @@ torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
 Once the PyTorch environment is set up, fetch the training code from the GitHub repository.
 
 ```bash
-bashCopy code
 $ git clone https://github.com/moreh-dev/quickstart
 $ cd quickstart
 ~/quickstart$ ls ap-example
@@ -60,7 +57,6 @@ The training configuration for testing is as follows. We will proceed with testi
 At the beginning of the program's main function, there's a line to enable the AP feature. Apply AP and then run the training as shown below.
 
 ```python
-pythonCopy code
 def main(args):
 
     # Apply Advanced Parallelization
@@ -68,7 +64,6 @@ def main(args):
 ```
 
 ```bash
-bashCopy code
 ~/quickstart$ python ap-example/text_summarization_for_ap.py
 ```
 
@@ -101,7 +96,6 @@ As shown, by adding just one line to enable the AP feature, complex distributed 
 Let's examine the situation when the AP feature is not used. To verify this, comment out the line that enables the AP feature at the beginning of the Python program's main function.
 
 ```python
-pythonCopy code
 def main(args):
 
     # Apply Advanced Parallelization
@@ -112,7 +106,6 @@ def main(args):
 Then proceed with the training.
 
 ```bash
-bashCopy code
 ~/quickstart$ python ap-example/text_summarization_for_ap.py
 ```
 

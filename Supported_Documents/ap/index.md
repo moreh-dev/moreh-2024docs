@@ -24,7 +24,7 @@ The Llama2 13B model contains approximately 13 billion parameters.  The memory s
 A minimum of 100-150GB of memory is required for training components such as the optimizer and gradients. 
 Therefore, training is impossible with just the memory capacity of a typical single GPU (80-128GB). This is why GPU parallel processing is essential for model training.
 
-For example, when using NVIDIA's FSDP (Fully Sharded Data Parallel) or DeepSpeed, developers must  manually adjust various parallelization settings. In this case, the following parameters must be carefully adjusted:
+For example, when using FSDP (Fully Sharded Data Parallel) or DeepSpeed, developers must  manually adjust various parallelization settings. In this case, the following parameters must be carefully adjusted:
 
 - **Parameter Sharding**: FSDP requires specifying how to shard model parameters across GPUs. Incorrect settings can result in suboptimal performance or memory overflow errors.
 - **Optimizer Stat Sharding**: Both FSDP and DeepSpeed require sharding the optimizer state for efficient memory usage and communication overhead, which entails complex configurations.

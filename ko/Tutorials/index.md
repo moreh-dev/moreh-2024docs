@@ -16,7 +16,7 @@ order: 80
 - [GPT](../Tutorials/gpt_tutorial/index.md)
 - [Qwen](../Tutorials/qwen_Tutorial/index.md)
 - [Baichuan2](../Tutorials/baichuan2_tutorial/index.md)
-- [Llama2 13B](../Tutorials/llama2_13b_tutorial/index.md)
+- [Llama2_13B](../Tutorials/llama2_13b_tutorial/index.md)
 
 머신러닝에서 미세 조정(fine-tuning)이란 사전 학습된 모델의 매개변수를 새로운 데이터로 조정하여 특정 작업의 성능을 향상시키는 것을 의미합니다. 즉, 기존 모델을 새로운 작업에 적용하고자 할 때, 새로운 데이터셋으로 모델을 최적화하여 특정 요구와 도메인에 맞게 커스터마이징하는 과정입니다.
 

@@ -61,7 +61,7 @@ Processes:
 
 유저가 별도의 세팅을 하지 않을 경우에는 기본적으로 하나의 VM 또는 컨테이너 환경에 하나의 MoAI Accelerator만 존재할 것입니다. 기본적으로 MoAI Accelerator 한 개로는 하나의 프로세스만 실행할 수 있기 때문에, 기본 세팅으로는 하나의 환경에서 하나의 프로세스 실행만 가능합니다.
 
-하지만 경우에 따라서는 하나의 환경에서도 여러 개 MoAI Accelerator를 활용하여 동시에 여러 개의 프로세스로 학습을 실행하고 싶은 경우도 있을 겁니다. (예: 동일한 소스코드이나 하이퍼 파라미터를 변경해서 여러 개의 학습 실험을 동시에 수행하고 싶은 경우) 이런 경우 `moreh-smi` 에서 하나의 토큰 내에 여러 개의 MoAI Accelerator을 생성하면, 동시에 여러개의 프로세스를 수행할 수 있습니다.
+하지만 경우에 따라서는 하나의 환경에서도 여러 개 MoAI Accelerator를 활용하여 동시에 여러 개의 프로세스로 학습을 실행하고 싶은 경우도 있을 겁니다. (예: 동일한 소스코드이나 하이퍼 파라미터를 변경해서 여러 개의 학습 실험을 동시에 수행하고 싶은 경우) 이런 경우 `moreh-smi` 에서 하나의 토큰 내에 여러 개의 MoAI Accelerator를 생성하면, 동시에 여러개의 프로세스를 수행할 수 있습니다.
 다음 예제를 통해 MoAI Accelerator를 추가, 변경 삭제해보겠습니다.
 
 ### MoAI Accelerator 추가하기
@@ -161,7 +161,7 @@ Remove device success.
 ```
 
 
-위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 [!badge variant="secondary" text="8xLarge.4096GB"] 가 삭제되었습니다. 확인을 위해 다시 moreh-smi를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
+위와 같은 커멘드를 입력해서 Device ID가 1인 MoAI Accelerator인 [!badge variant="secondary" text="8xLarge.4096GB"] 가 삭제되었습니다. 확인을 위해 다시 `moreh-smi`를 실행하면 해당 디바이스가 삭제된 것을 확인할 수 있습니다.
 
 ### 그 외의 다양한 옵션 활용하기
 
@@ -306,6 +306,7 @@ $ moreh-smi
 
 ```bash
 $ conda create --name my_env python=3.8
+$ conda activate my_env
 $ update-moreh # MoAI Platform 설치
 
 Do you want to proceed? (y/n, default:n)

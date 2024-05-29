@@ -121,7 +121,7 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
+model = LlamaForCausalLM.from_pretrained("./llama3-8b")
 ...
 ```
 

@@ -37,7 +37,7 @@ The MoAI Platform supports Python-based programming, similar to typical AI train
     ```bash
     $ moreh-smi
     +-----------------------------------------------------------------------------------------------------+
-    |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
+    |                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
     +-----------------------------------------------------------------------------------------------------+
     |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
     +=====================================================================================================+

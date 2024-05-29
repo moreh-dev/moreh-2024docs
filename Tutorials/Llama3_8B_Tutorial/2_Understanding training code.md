@@ -63,7 +63,6 @@ Subsequently, the training proceeds similarly to regular PyTorch model training.
     # Start training
     for epoch in range(args.num_train_epochs):
         for step, batch in enumerate(train_dataloader, start=1):
-            #breakpoint()
             start_time = time.perf_counter()
             input_ids = batch["input_ids"]
             inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
@@ -134,7 +133,7 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained("./llama-2-13b-hf")
+model = LlamaForCausalLM.from_pretrained("./llama3-8b")
 ...
 ```
 

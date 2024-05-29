@@ -18,7 +18,8 @@ input_text = """Below is an instruction that describes a task. Write a response 
 ### Instruction:
 Create a function to join given list of strings with space.
 
-### Input:\n['I', 'love', 'you']
+### Input:
+['I', 'love', 'Moreh']
 
 ### Output:
 """

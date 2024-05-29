@@ -31,7 +31,6 @@ First, we'll use the `moreh-smi` command to check the currently used MoAI Accele
 
 ```bash
 $ moreh-smi
-11:40:36 April 16, 2024
 +--------------------------------------------------------------------------------------------------+
 |                                                 Current Version: 24.3.0  Latest Version: 24.3.0  |
 +--------------------------------------------------------------------------------------------------+
@@ -177,7 +176,7 @@ During training, open another terminal and connect to the container. You can exe
 
 
 ```bash
-$ moreh-2004-vm15  pytorch | ubuntu  ~  moreh-smi
+$ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |                                                    Current Version: 24.3.0  Latest Version: 24.3.0  |
 +-----------------------------------------------------------------------------------------------------+

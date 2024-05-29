@@ -12,7 +12,6 @@ url: docs.moreh.io
 branding:
   logo: /img/logo.png 
   logoAlign: left     
-  label: KO
 exclude:
   - "fr"
   - "ko"

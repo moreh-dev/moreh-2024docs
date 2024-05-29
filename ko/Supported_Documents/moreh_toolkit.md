@@ -115,11 +115,11 @@ $ moreh-smi device --switch 1
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
 +===================================================+
-|    0     |     AI Accelerator  |  2xLarge.1024GB  |
-|  * 1     |     AI Accelerator  |  xLarge.512GB    |
-|    2     |     AI Accelerator  |  2xLarge.1024GB  |
-|    3     |     AI Accelerator  |  8xLarge.4096GB  |
-|    4     |     AI Accelerator  |  Small.64GB      |
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |
+|    4     |   MoAI Accelerator  |  Small.64GB      |
 +---------------------------------------------------+
 Switch Current Device success.
 ```
@@ -211,9 +211,7 @@ Device Example:
 
 다음과 같이 사용할 수 있습니다 : 
 
-
 예를 들어, `moreh-smi` 명령어의 결과가 다음과 같다면 이는 “현재 기본값으로 설정된 MoAI Accelerator는 0번 가속기이며 이 MoAI Accelerator의 유형은 [!badge variant="secondary" text=Small.64GB] 모델”이라는 의미입니다.
-
 
 ```bash
 +-----------------------------------------------------------------------------------------------------+
@@ -226,7 +224,6 @@ Device Example:
 |    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
 |    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
-
 ```
 
 `moreh-switch-model` 명령어를 사용하면 아래와 같은 입력창이 나타납니다.

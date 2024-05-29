@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770274253053">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770274817169">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770274253053" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770274817169" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770274253053" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770274817169" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770274253053" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770274253053" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770274253053" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770274817169" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770274817169" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770274817169" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -246,16 +246,6 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 'MoAI Accelerator'
 &gt;&gt;&gt; quit()</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="필요-python-패키지-설치">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#필요-python-패키지-설치">#</doc-anchor-trigger>
-        <span>필요 Python 패키지 설치</span>
-    </h2>
-</doc-anchor-target>
-<p>다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ pip install transformers==4.34.0 datasets==2.14.5 loguru==0.7.2</code></pre>
-</doc-codeblock></div>
 <doc-anchor-target id="학습-스크립트-다운로드">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#학습-스크립트-다운로드">#</doc-anchor-trigger>
@@ -269,6 +259,16 @@ $ git clone https://github.com/moreh-dev/quickstart.git
 $ cd quickstart
 ~/quickstart$ ls tutorial
 ...  train_gpt.py  ...</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="필요-python-패키지-설치">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#필요-python-패키지-설치">#</doc-anchor-trigger>
+        <span>필요 Python 패키지 설치</span>
+    </h2>
+</doc-anchor-target>
+<p>다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_gpt.txt</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="학습-데이터-다운로드">
     <h2>

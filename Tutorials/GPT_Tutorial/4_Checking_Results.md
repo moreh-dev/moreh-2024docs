@@ -25,7 +25,7 @@ Run the train script.
 
 Upon inspecting the output, you can confirm that the model has generated an appropriate function based on the prompt content.
 
-```python
+```
 
 def count_a(string):
     count = 0

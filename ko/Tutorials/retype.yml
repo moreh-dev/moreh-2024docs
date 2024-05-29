@@ -3,7 +3,6 @@ output: .retype/ko
 locale: ko
 url: /two-lang-demo/ko
 branding:
-  label: KO
   logo: /img/logo.png
   logoAlign: left     
   colors:

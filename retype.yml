@@ -11,8 +11,7 @@ output: .retype
 url: docs.moreh.io
 branding:
   logo: /img/logo.png 
-  logoAlign: left     
-  label: ENG
+  logoAlign: left
 exclude:
   - "fr"
   - "ko"

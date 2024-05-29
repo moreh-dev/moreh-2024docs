@@ -29,7 +29,7 @@ To address these challenges, the MoAI Platform offers the following features to 
 
 ## 1. Various Accelerators, Multi types of GPU Support
 
-![](img_ov/m_4.png)
+-![](img_ov/l14.png)
 
 MoAI Platform supports various AI accelerators, allowing users to execute diverse model training and inference tasks regardless of accelerator type. Users can seamlessly utilize accelerators other than NVIDIA without the need to modify existing training and inference code written in Python.
 \

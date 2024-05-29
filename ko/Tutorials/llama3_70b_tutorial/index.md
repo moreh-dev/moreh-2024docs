@@ -2,7 +2,6 @@
 icon: terminal
 tags: [tutorial, llama2]
 order: 1000
-visibility: private
 ---
 
 # Llama3 70B Fine-tuning 

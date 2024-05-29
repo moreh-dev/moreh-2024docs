@@ -8,7 +8,7 @@ outbound:
 
 input: ./
 output: .retype
-url: docs.moreh.io
+url: docs.moreh.io/ko
 branding:
   logo: /img/logo.png 
   logoAlign: left     

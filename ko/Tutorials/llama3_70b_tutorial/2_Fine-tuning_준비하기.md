@@ -100,7 +100,7 @@ Hugging Face를 이용해 Llama3-70b 모델의 체크포인트와 토크나이�
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 
-[meta-llama/Llama-2-13b-hf · Hugging Face](https://huggingface.co/meta-llama/Llama-2-13b-hf)
+[meta-llama/Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 

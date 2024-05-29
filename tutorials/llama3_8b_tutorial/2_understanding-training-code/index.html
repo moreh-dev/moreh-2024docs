@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770269587892">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770269699675">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,13 +30,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770269587892" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770269699675" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770269587892" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770269699675" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770269587892" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770269587892" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770269587892" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770269699675" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770269699675" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770269699675" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -214,12 +214,12 @@
 <p>All the code used during training is exactly the same as when you&#x27;re using PyTorch in general.</p>
 <p>Import the necessary modules from the <strong><code v-pre>transformers</code></strong> library.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer</code></pre>
+<pre class="language-python"><code v-pre class="language-python">from transformers import AdamW, LlamaForCausalLM, AutoTokenizer</code></pre>
 </doc-codeblock></div>
 <p>Then, load up the model checkpoint and tokenizer you downloaded earlier.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained(&quot;./llama3-8b&quot;)
-tokenizer = LlamaTokenizer.from_pretrained(&quot;./llama3-8b&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">model = LlamaForCausalLM.from_pretrained(&quot;./llama3-8b&quot;)
+tokenizer = AutoTokenizer.from_pretrained(&quot;./llama3-8b&quot;)</code></pre>
 </doc-codeblock></div>
 <p>Load your preprocessed dataset, which you prepared during the <a href="../1_prepare_fine-tuning/">1. Prepare fine-tuning</a> step, and define your data loaders.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -235,19 +235,7 @@ tokenizer = LlamaTokenizer.from_pretrained(&quot;./llama3-8b&quot;)</code></pre>
 </doc-codeblock></div>
 <p>Subsequently, the training proceeds similarly to regular PyTorch model training.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">    # Compose pad token mask
-    def create_mask(input_ids, tokenizer):
-		    pad_token_ids = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
-			  return (input_ids != pad_token_ids).long() 
-			   
-    # Mask pad tokens for training
-    def mask_pads(inputs, tokenizer, ignore_index = -100):
-        idx_mask = create_mask(inputs, tokenizer)
-        labels = copy.deepcopy(inputs)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
-
-    # Define AdamW optimizer
+<pre class="language-python"><code v-pre class="language-python">    # Define AdamW optimizer
     optim = AdamW(model.parameters(), lr=args.lr)
 
     # Start training

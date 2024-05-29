@@ -12,7 +12,7 @@ MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 �
 
 SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 conda 환경에 PyTorch가 설치되어 있는지 확인합니다.
 
-```
+```bash
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
@@ -23,6 +23,17 @@ torch                     1.13.1+cu116.moreh24.3.0          pypi_0    pypi
 버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.3.0 버전이 설치되어 있음을 의미합니다.
 
 만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 ***([MoAI Platform에서 Fine-tuning 준비하기](/Supported_Documents/Prepare_Fine_tuning_MoAI.md))*** 문서에 따라 conda 환경을 생성하십시오. 
+
+만약 해당 MoAI 버전이 24.3.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.
+
+```bash
+$ update-moreh --target 24.3.0
+Currently installed: 24.2.0
+Possible upgrading version: 24.3.0
+
+Do you want to upgrade? (y/n, default:n)
+y
+```
 
 ## PyTorch 동작 여부 확인하기
 

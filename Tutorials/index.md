@@ -16,6 +16,7 @@ We will walk through the steps to finetune these large language models (LLMs) wi
 - [GPT](/Tutorials/GPT_Tutorial/index.md)
 - [Qwen](/Tutorials/Qwen_Tutorial/index.md)
 - [Baichuan2](/Tutorials/Baichuan2_Tutorial/index.md)
+- [Llama2 13B](/Tutorials/Llama2_Tutorial/index.md)
 
 Fine-tuning in machine learning involves adjusting a pre-trained machine learning model's weight on new data to enhance task-specific performance. Essentially, when you want to apply an AI model to a new task, you take an existing model and optimize it with new datasets. This allows you to customize the model to meet your specific needs and domain requirements.
 

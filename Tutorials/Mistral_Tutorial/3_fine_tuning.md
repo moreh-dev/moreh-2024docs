@@ -34,9 +34,8 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 
 ```bash
 $ moreh-smi
-11:40:36 April 16, 2024
 +-------------------------------------------------------------------------------------------------+
-|                                                Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                Current Version: 24.2.0  Latest Version: 24.5.0  |
 +-------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |     Model    |  Memory Usage  |  Total Memory  |  Utilization  |
 +=================================================================================================+
@@ -103,7 +102,7 @@ To confirm that the changes have been successfully applied, use the **`moreh-smi
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -182,7 +181,7 @@ During training, open another terminal and connect to the container. You can exe
 ```
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.2.0  |
+|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+

@@ -136,15 +136,15 @@ Selection (0-4, q, Q): q
 (moreh) ubuntu@vm:~$ moreh-smi
 10:49:12 May 07, 2024
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|    0     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|  * 1     |     AI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
-|    2     |     AI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
-|    3     |     AI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
-|    4     |     AI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    0     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|  * 1     |   MoAI Accelerator  |  xLarge.512GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  2xLarge.1024GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  8xLarge.4096GB  |  -             |  -             |  -            |
+|    4     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 ```
 
@@ -226,10 +226,10 @@ Device Example:
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 
 ```
@@ -294,10 +294,10 @@ Selection (1-13, q, Q):
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     | MoAI Accelerator    |  Large.256GB     |  -             |  -             |  -            |
-|    1     | MoAI Accelerator    |  Medium.128GB    |  -             |  -             |  -            |
-|    2     | MoAI Accelerator    |  4xLarge.2048GB  |  -             |  -             |  -            |
-|    3     | MoAI Accelerator    |  Small.64GB      |  -             |  -             |  -            |
+|  * 0     |   MoAI Accelerator  |  Large.256GB     |  -             |  -             |  -            |
+|    1     |   MoAI Accelerator  |  Medium.128GB    |  -             |  -             |  -            |
+|    2     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
+|    3     |   MoAI Accelerator  |  Small.64GB      |  -             |  -             |  -            |
 +-----------------------------------------------------------------------------------------------------+
 ```
 

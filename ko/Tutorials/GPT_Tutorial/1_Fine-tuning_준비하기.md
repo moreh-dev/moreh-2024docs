@@ -47,14 +47,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
 ```
 
-## 필요 Python 패키지 설치
-
-다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
-
-```bash
-$ pip install transformers==4.34.0 datasets==2.14.5 loguru==0.7.2
-```
-
 ## 학습 스크립트 다운로드
 
 다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_gpt.py` 스크립트를 사용할 것입니다.
@@ -65,6 +57,14 @@ $ git clone https://github.com/moreh-dev/quickstart.git
 $ cd quickstart
 ~/quickstart$ ls tutorial
 ...  train_gpt.py  ...
+```
+
+## 필요 Python 패키지 설치
+
+다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.
+
+```bash
+$ pip install -r requirements/requirements_gpt.txt
 ```
 
 ## 학습 데이터 다운로드

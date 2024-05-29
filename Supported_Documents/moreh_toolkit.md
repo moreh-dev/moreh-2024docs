@@ -18,7 +18,7 @@ The main features of the Moreh Toolkit are as follows:
 2. **Switching AI Accelerators:**
     - Use the **`moreh-switch-model`** command to change AI accelerators and execute processes to achieve optimal performance.
 3. **Updating and Rolling Back MoAI Platform:**
-    - Use the **`update-moreh`** command to update Moreh solution to the latest version or roll back to a previous version if needed.
+    - Use the **`update-moreh`** command to update MoAI Platform to the latest version or roll back to a previous version if needed.
 
 ## MoAI Accelerator Monitoring: `moreh-smi`
 

@@ -11,7 +11,7 @@ From this tutorial, we have seen how to fine-tune the [Mistral 7B](https://mistr
 ## Learn more
 
 - *[MoAI Platform's Advanced Parallelization (AP)](/Supported_Documents/ap/index.md)*
-- [Llama3 8B Fine-tuning](/Tutorials/Llama38B_Tutorial/index.md)
+- [Llama3 8B Fine-tuning](/Tutorials/Llama3_8B_Tutorial/index.md)
 - [Llama3 70B](/Tutorials/Llama3_70B_Tutorial/index.md)
 - [GPT Fine-tuning](/Tutorials/GPT_Tutorial/index.md)
 - [Baichuan2 Fine-tuning](/Tutorials/Baichuan2_Tutorial/index.md)

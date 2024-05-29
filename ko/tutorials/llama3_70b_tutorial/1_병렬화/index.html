@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770271364923">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770271539180">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770271364923" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770271539180" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770271364923" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770271539180" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770271364923" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770271364923" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770271364923" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770271539180" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770271539180" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770271539180" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -214,49 +214,48 @@
 </doc-anchor-target>
 <p><strong>MoAI Platform의 모든 코드는 일반적인 PyTorch 사용 경험과 동일합니다.</strong> Llama3 70B를 학습하기 위해 기존 PyTorch에서 하나의 GPU를 사용하는 것처럼 스크립트를 작성할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">    torch.moreh.option.enable_advanced_parallelization()
+<pre class="language-python"><code v-pre class="language-python">torch.moreh.option.enable_advanced_parallelization()
     
-    model = AutoModelForCausalLM.from_pretrained(&quot;meta-llama/Meta-Llama-3-70B&quot;)
-		tokenizer = LlamaTokenizer.from_pretrained(&quot;meta-llama/Meta-Llama-3-70B&quot;)
+model = AutoModelForCausalLM.from_pretrained(&quot;meta-llama/Meta-Llama-3-70B&quot;)
+tokenizer = LlamaTokenizer.from_pretrained(&quot;meta-llama/Meta-Llama-3-70B&quot;)
     
-    # Compose pad token mask
-    def create_mask(input_ids, tokenizer):
-		    pad_token_ids = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
-			  return (input_ids != pad_token_ids).long() 
+# Compose pad token mask
+def create_mask(input_ids, tokenizer):
+	pad_token_ids = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
+	return (input_ids != pad_token_ids).long() 
 			   
-    # Mask pad tokens for training
-    def mask_pads(inputs, tokenizer, ignore_index = -100):
-        idx_mask = create_mask(inputs, tokenizer)
-        labels = copy.deepcopy(inputs)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(inputs, tokenizer, ignore_index = -100):
+	idx_mask = create_mask(inputs, tokenizer)
+	labels = copy.deepcopy(inputs)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.num_train_epochs):
-        for step, batch in enumerate(train_dataloader, start=1):
-            #breakpoint()
-            start_time = time.perf_counter()
-            input_ids = batch[&quot;input_ids&quot;]
-            inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
-            attn_mask = create_mask(inputs, tokenizer)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
-            loss = outputs[0]
-            loss.backward()
+# Start training
+for epoch in range(args.num_train_epochs):
+	for step, batch in enumerate(train_dataloader, start=1):
+		start_time = time.perf_counter()
+		input_ids = batch[&quot;input_ids&quot;]
+		inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
+		attn_mask = create_mask(inputs, tokenizer)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)</code></pre>
+		optim.step()
+		model.zero_grad(set_to_none=True)</code></pre>
 </doc-codeblock></div>
 <p>기존 PyTorch와 다르게 MoAI Platform에서는 다음과 같은 코드 한 줄이 추가됩니다. 이 코드는 MoAI Platform의 자동 최적화 및 병렬화를 설정하여 사용자가 간단하게 Llama3 70B를 fine-tuning할 수 있게 합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">torch.moreh.option.enable_advanced_parallelization()</code></pre>
+<pre class="language-python"><code v-pre class="language-python">torch.moreh.option.enable_advanced_parallelization()</code></pre>
 </doc-codeblock></div>
 <p>이제 MoAI Platform에서 MI250 GPU 64개를 사용한 Llama3 70B 모델 fine-tuning 튜토리얼을 시작하겠습니다. 이 튜토리얼을 통해 MoAI Platform에서 다중 GPU를 사용하는 방법이 얼마나 쉽고 효과적인지 확인할 수 있을 것입니다.</p>
 

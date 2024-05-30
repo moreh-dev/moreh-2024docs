@@ -6,7 +6,7 @@ poweredByRetype: false
 outbound:
   enabled: true
 
-favicon: static/f1.png
+favicon: static/f2.png
 
 input: ./
 output: .retype

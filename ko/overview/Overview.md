@@ -26,7 +26,7 @@ MoAI Platform은 이러한 문제를 해결하기 위해 다음과 같은 기능
 
 ## 1. 다양한 가속기, 다중 GPU 지원
 
--![](l14.png)
+-![](../../overview/img_ov/l1.png)
 
 \
 &nbsp;

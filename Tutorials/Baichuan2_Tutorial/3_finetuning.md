@@ -125,36 +125,23 @@ If the training proceeds smoothly, you should see the following logs. By going t
 
 ```bash
 ...
-[info] Requesting resources for MoAI Accelerator from the server...
-[warning] A newer version of Moreh AI Framework is available. You can update the software to the latest version by running "update-moreh".
-[info] Initializing the worker daemon for MoAI Accelerator
-[info] [1/4] Connecting to resources on the server (192.168.110.7:24170)...
-[info] [2/4] Connecting to resources on the server (192.168.110.42:24170)...
-[info] [3/4] Connecting to resources on the server (192.168.110.72:24170)...
-[info] [4/4] Connecting to resources on the server (192.168.110.93:24170)...
-[info] Establishing links to the resources...
-[info] MoAI Accelerator is ready to use.
-[info] The number of candidates is 45.
+[info] Got DBs from backend for auto config.
+[info] The number of candidates is 54.
 [info] Parallel Graph Compile start...
-[info] Elapsed Time to compile all candidates = 12043 [ms]
+[info] Elapsed Time to compile all candidates = 53680 [ms]
 [info] Parallel Graph Compile finished.
-[info] The number of possible candidates is 6.
+[info] The number of possible candidates is 37.
 [info] SelectBestGraphFromCandidates start...
-[info] Elapsed Time to compute cost for survived candidates = 1483 [ms]
+[info] Elapsed Time to compute cost for survived candidates = 81359 [ms]
 [info] SelectBestGraphFromCandidates finished.
 [info] Configuration for parallelism is selected.
-[info] No PP, No TP, recomputation : 1, distribute_param : true, distribute_low_prec_param : true
+[info] No PP, No TP, recomputation : default(1), distribute_param : true, distribute_low_prec_param : true
 [info] train: true
-
-| INFO     | __main__:main:143 - [Step 1/104] Throughput : 590.2552103757937tokens/sec
-| INFO     | __main__:main:143 - [Step 2/104] Throughput : 190923.6976217358tokens/sec
-| INFO     | __main__:main:143 - [Step 3/104] Throughput : 189160.10152018082tokens/sec
-| INFO     | __main__:main:143 - [Step 4/104] Throughput : 196763.98302926356tokens/sec
-| INFO     | __main__:main:143 - [Step 5/104] Throughput : 178552.3508130907tokens/sec
-| INFO     | __main__:main:143 - [Step 6/104] Throughput : 196590.71636327292tokens/sec
-| INFO     | __main__:main:143 - [Step 7/104] Throughput : 190912.36004700614tokens/sec
-| INFO     | __main__:main:143 - [Step 8/104] Throughput : 191986.6925165269tokens/sec
-| INFO     | __main__:main:143 - [Step 9/104] Throughput : 195401.16844504434tokens/sec
+INFO     | __main__:main:141 - [Step 10/312] Loss: 2.734375, Throughput : 295414.6139287525tokens/sec
+INFO     | __main__:main:141 - [Step 20/312] Loss: 1.59375, Throughput : 259349.18026381865tokens/sec
+INFO     | __main__:main:141 - [Step 30/312] Loss: 1.28125, Throughput : 296235.12650709203tokens/sec
+INFO     | __main__:main:141 - [Step 40/312] Loss: 1.0703125, Throughput : 303242.53099784354tokens/sec
+INFO     | __main__:main:141 - [Step 50/312] Loss: 1.0078125, Throughput : 269737.7175636772tokens/sec
 ...
 ```
 

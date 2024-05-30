@@ -16,19 +16,19 @@ After connecting to the container via SSH, run the following command to check if
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.3.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...
 ```
 
 The version name includes both the PyTorch version and the MoAI version required to execute it. In the example above, it indicates that PyTorch version 1.13.1+cu116 is running with MoAI version 24.3.0 installed.
 
 If you encounter a `conda: command not found` message, or if the torch package is not listed, or if the torch package exists but does not include "moreh" in the version name, please follow the instructions in the **[Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)** to create a conda environment.
-If the moreh version is not 24.3.0 but a different version, please execute the following code.
+If the moreh version is not 24.5.0 but a different version, please execute the following code.
 
 ```bash
-$ update-moreh --target 24.3.0
+$ update-moreh --target 24.5.0
 Currently installed: 24.2.0
-Possible upgrading version: 24.3.0
+Possible upgrading version: 24.5.0
 
 Do you want to upgrade? (y/n, default:n)
 y

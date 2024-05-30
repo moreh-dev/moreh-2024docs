@@ -6,6 +6,8 @@ poweredByRetype: false
 outbound:
   enabled: true
 
+favicon: static/f1.png
+
 input: ./
 output: .retype
 url: docs.moreh.io

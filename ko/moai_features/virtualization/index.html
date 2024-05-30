@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770368659891">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770368685493">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.770368659891" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770368685493" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770368659891" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770368685493" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770368659891" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770368659891" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770368659891" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770368685493" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770368685493" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770368685493" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -198,9 +198,9 @@
     </h1>
 </doc-anchor-target>
 <p>MoAI Platform은 수십, 수백 GPU노드의 대형 GPU 클러스터를 MoAI Accelerator라는 단일 가속기로 가상화하여 사용자에게 제공합니다. 사용자는 멀티 노드 사용에 따른 모델 병렬화, 클러스터 환경 수동 설정 등의 작업에 대한 고민없이 단일 가속기를 사용하는 방식으로 모델을 설계하고 학습할 수 있습니다.</p>
-<p><figure class="content-left">
+<p><figure class="content-center">
     <img src="/overview/img_ov/v_3.png" alt="">
-    <figcaption class="caption caption-float"></figcaption>
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>MoAI Accelerator는 터미널에 <code v-pre>moreh-smi</code> 명령어를 입력해 확인할 수 있습니다.</p>
@@ -212,7 +212,7 @@
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
 |    0     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------</code></pre>
++-----------------------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 <p>출력된 내용을 확인해 보면 사용자는 2048 GB의 메모리를 갖춘 단일 가속기를 사용하는 것처럼 보입니다. 그러나 실제로는 각각 4개의 GPU로 구성된 4개의 노드를 사용하게 됩니다.</p>
 <p>가장 많이 사용되는 딥러닝 프레임워크 중 하나인 PyTorch에서 MoAI Accelerator를 제대로 인식하는지 확인해보겠습니다. Python 인터프리터에서 <strong><code v-pre>cuda</code></strong> API를 사용해 현재 사용 가능한 가속기의 수를 출력해보면 PyTorch가 MoAI Accelerator를 하나의 가속기로 인식하고 있음을 확인할 수 있습니다.</p>

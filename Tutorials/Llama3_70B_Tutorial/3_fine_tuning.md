@@ -4,8 +4,7 @@ tags:  [tutorial, llama3_70b]
 order: 40
 ---
 
-
-# 4. Model Fine-tuning
+# 3. Model Fine-tuning
 Now, we will actually execute the fine-tuning process.
 
 ## Setting Accelerator Flavor

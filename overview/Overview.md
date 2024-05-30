@@ -20,18 +20,18 @@ As deep learning models advance, they become increasingly intricate, comprising 
 
 To address these challenges, the MoAI Platform offers the following features to facilitate efficient infrastructure in the era of large-scale AI:
 
-1. [**Various Accelerators, Multi-GPU Support**](#1-various-accelerators-multi-gpu-support)
+1. [**Multiple types of GPU Support**](#1-various-accelerators-multi-gpu-support)
 2. [**GPU Virtualization**](#2-gpu-virtualization)
 3. [**Dynamic GPU Allocation**](#3-dynamic-gpu-allocation)
 4. [**AI Compiler Automatic Parallelization**](#4-ai-compiler-automatic-parallelization)
 
 ---
 
-## 1. Various Accelerators, Multi types of GPU Support
+## 1. Multiple types of GPU Support
 
 -![](img_ov/l14.png)
 
-MoAI Platform supports various AI accelerators, allowing users to execute diverse model training and inference tasks regardless of accelerator type. Users can seamlessly utilize accelerators other than NVIDIA without the need to modify existing training and inference code written in Python.
+MoAI Platform supports various AI accelerators, allowing users to execute diverse model training and inference tasks regardless of accelerator type. Users can seamlessly utilize accelerators other than NVIDIA without the need to modify existing code written in Python.
 \
 &nbsp;
 

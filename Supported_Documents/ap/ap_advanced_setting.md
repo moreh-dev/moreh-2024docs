@@ -9,7 +9,7 @@ expanded: false
 
 While simply adding **`torch.moreh.option.enable_advanced_parallelization()`** allows you to use the basic AP functionality, you can easily customize the parallelization feature according to your preferences using various variables provided by the MoAI Platform.
 
-## **Customizing AP Configuration**
+## Customizing AP Configuration
 
 When using the AP feature as an API in a Python program, you can set additional arguments to restrict specific configurations.
 

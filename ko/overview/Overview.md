@@ -28,11 +28,11 @@ MoAI Platform은 이러한 문제를 해결하기 위해 다음과 같은 기능
 
 -![](../../overview/img_ov/l1.png)
 
-\
-&nbsp;
 
 MoAI Platform은 다양한 AI 가속기를 지원하기 때문에 가속기 종류와 상관없이 다양한 모델 학습과 추론 작업을 실행할 수 있습니다.
 사용자는 AMD, Intel 및 NVIDIA 외의 다른 AI 가속기와 함께 사용할 수 있으며, 이를 위해 기존에 활용하던 Python으로 작성된 학습 및 추론 코드를 수정할 필요가 없습니다.
+\
+&nbsp;
 
 
 ## 2. GPU 가상화
@@ -43,6 +43,7 @@ MoAI Platform은 다양한 AI 가속기를 지원하기 때문에 가속기 종�
 MoAI Platform의 가상화 기능은 수천 개의 GPU를 하나의 GPU처럼 사용할 수 있게 합니다(Single Virtual Device). 이를 통해 멀티 GPU, 멀티 노드 병렬화 작업과 같은 최적화 프로세스가 필요없이 1개의 GPU를 가정하고 Python 코드를 구성할 수 있기 때문에 AI 엔지니어가 쉽고 빠르게 딥러닝 학습 및 추론을 실행할 수 있습니다.
 
 - 필요에 따라 GPU 자원을 확장하거나 축소할 수 있어 서비스의 확장성을 높일 수 있습니다. MoAI Platform에서는 간단한 명령어 한 줄로 1개의 Single Virtual Device 로 가상화될 GPU 자원을 손쉽게 확장하고 축소할 수 있습니다.
+&nbsp;
 
 ## 3. 동적 GPU 할당
 

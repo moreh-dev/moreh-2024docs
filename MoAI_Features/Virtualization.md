@@ -7,7 +7,7 @@ order: 109
 
 The MoAI Platform virtualizes large GPU clusters, consisting of dozens or hundreds of GPU nodes, into a single accelerator called the MoAI Accelerator. This allows users to design and train models as if they are using a single GPU, without worrying about model parallelization or manually configuring cluster environments.
 
--![](/overview/img_ov/v_3.png)
+![](/overview/img_ov/v_3.png)
 
 You can check the MoAI Accelerator status by entering the `moreh-smi` command in the terminal.
 
@@ -19,7 +19,7 @@ $ moreh-smi
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
 |    0     |   MoAI Accelerator  |  4xLarge.2048GB  |  -             |  -             |  -            |
-+-----------------------------------------------------------------------------------------------------
++-----------------------------------------------------------------------------------------------------+
 ```
 
 The output shows that the user is utilizing a single accelerator with 2048 GB of memory. However, in reality, it consists of 4 nodes, each with 4 GPUs.

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770436592386">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770445538029">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,13 +34,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770436592386" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770445538029" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770436592386" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770445538029" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770436592386" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770436592386" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770436592386" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770445538029" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770445538029" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770445538029" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -220,10 +220,10 @@
 </ul>
 <p>SSH로 접속한 다음 <code v-pre>moreh-smi</code> 명령을 실행하여 MoAI Accelerator가 잘 표시되는지 확인하시기 바랍니다. 디바이스 이름은 시스템마다 다르게 설정되어 있을 수 있습니다.</p>
 <doc-anchor-target id="moai-accelerator-확인">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#moai-accelerator-확인">#</doc-anchor-trigger>
         <span>MoAI Accelerator 확인</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>이 튜토리얼에서 안내할 Llama3 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 <code v-pre>moreh-smi</code> 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다.</p>
 <p>수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 “3. 학습 실행하기”에서 제공하겠습니다.</p>
@@ -239,10 +239,10 @@
 </doc-codeblock></div>
 <p>MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.</p>
 <doc-anchor-target id="pytorch-설치-여부-확인하기">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-설치-여부-확인하기">#</doc-anchor-trigger>
         <span>PyTorch 설치 여부 확인하기</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 conda 환경에 PyTorch가 설치되어 있는지 확인합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -255,10 +255,10 @@ torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 <p>버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.5.0 버전이 설치되어 있음을 의미합니다.</p>
 <p>만약 <code v-pre>conda: command not found</code> 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 <strong><a href="../../../supported_documents/prepare_fine_tuning_moai/">MoAI Platform에서 Fine-tuning 준비하기</a></strong> 문서에 따라 conda 환경을 생성하십시오.</p>
 <doc-anchor-target id="pytorch-동작-여부-확인하기">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-동작-여부-확인하기">#</doc-anchor-trigger>
         <span>PyTorch 동작 여부 확인하기</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -277,10 +277,10 @@ torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 &gt;&gt;&gt; quit()</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="학습-스크립트-다운로드">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#학습-스크립트-다운로드">#</doc-anchor-trigger>
         <span>학습 스크립트 다운로드</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 <code v-pre>tutorial</code> 디렉토리 안에 있는 <code v-pre>train_llama3.py</code> 스크립트를 사용할 것입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -301,10 +301,10 @@ $ cd quickstart
 <pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_llama3.txt</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="학습-모델-및-토크나이저-다운로드">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#학습-모델-및-토크나이저-다운로드">#</doc-anchor-trigger>
         <span>학습 모델 및 토크나이저 다운로드</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Hugging Face를 이용해 Llama3-70b 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Llama3 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama3 70B 모델의 경우 체크포인트 용량이 약 132GB이기 때문에 체크포인트를 위한 150GB 스토리지 여유가 권장됩니다.</p>
 <p>먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.</p>

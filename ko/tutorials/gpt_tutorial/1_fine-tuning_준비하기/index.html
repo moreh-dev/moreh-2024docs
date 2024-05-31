@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770436592386">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770445538029">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>1. Fine-tuning 준비하기</title>
     <meta name="title" content="1. Fine-tuning 준비하기">
-    <meta name="description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta name="description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다. 단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/ko/tutorials/gpt_tutorial/1_fine-tuning_준비하기/">
@@ -21,24 +21,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/ko/tutorials/gpt_tutorial/1_fine-tuning_준비하기/">
     <meta property="og:title" content="1. Fine-tuning 준비하기">
-    <meta property="og:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta property="og:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다. 단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/ko/tutorials/gpt_tutorial/1_fine-tuning_준비하기/">
     <meta property="twitter:title" content="1. Fine-tuning 준비하기">
-    <meta property="twitter:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta property="twitter:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다. 단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770436592386" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770445538029" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770436592386" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770445538029" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770436592386" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770436592386" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770436592386" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770445538029" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770445538029" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770445538029" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -205,7 +205,19 @@
         <span>1. Fine-tuning 준비하기</span>
     </h1>
 </doc-anchor-target>
-<p>MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.</p>
+<p>MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.<br>
+단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다:</p>
+<ul>
+<li><p>CPU: 16 core 이상</p>
+</li>
+<li><p>memory: 256GB 이상</p>
+</li>
+<li><p>MAF 버전: 24.5.0</p>
+</li>
+<li><p>스토리지: 100GB 이상</p>
+</li>
+</ul>
+<p>원할한 튜토리얼 진행 전 실행 환경을 확인하시길 바랍니다.</p>
 <doc-anchor-target id="pytorch-설치-여부-확인하기">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-설치-여부-확인하기">#</doc-anchor-trigger>
@@ -217,11 +229,20 @@
 <pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...</code></pre>
 </doc-codeblock></div>
-<p>버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.</p>
+<p>버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.5.0 버전이 설치되어 있음을 의미합니다.</p>
 <p>만약 <code v-pre>conda: command not found</code> 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 <strong><a href="../../../supported_documents/prepare_fine_tuning_moai/">MoAI Platform에서 Fine-tuning 준비하기</a></strong> 문서에 따라 conda 환경을 생성하십시오.</p>
+<p>만약 해당 MoAI 버전이 24.5.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh --target 24.5.0
+Currently installed: 24.2.0
+Possible upgrading version: 24.5.0
+
+Do you want to upgrade? (y/n, default:n)
+y</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="pytorch-동작-여부-확인하기">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-동작-여부-확인하기">#</doc-anchor-trigger>
@@ -277,13 +298,29 @@ $ cd quickstart
         <span>학습 데이터 다운로드</span>
     </h2>
 </doc-anchor-target>
-<p>Huggingface에서는 model checkpoint뿐만 아니라 model fine-tuning에 사용할 수 있는 다양한 데이터셋이 공개되어 있습니다.</p>
-<p>이번 튜토리얼에서 저희는 <a href="https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k" class="outbound" target="_blank"><span>mlabonne/Evol-Instruct-Python-26k</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 데이터셋을 사용할 것입니다. 이 데이터셋은 주어진 질문 조건과 주어진 질문 조건에 맞게 작성된 python 코드로 이루어져 있습니다.</p>
-<p>학습 데이터를 다운로드 받기 위해 <code v-pre>dataset</code> 디렉토리 안에 있는<code v-pre>prepare_gpt_dataset.py</code> 스크립트를 통해 huggingface에 공개된 데이터셋을 다운로드하고, fine-tuning 학습에 바로 사용할 수 있도록 전처리를 진행하겠습니다.</p>
+<p>학습 데이터를 다운로드 받기 위해 <code v-pre>dataset</code> 디렉토리 안에 있는 <code v-pre>prepare_gpt_dataset.py</code> 스크립트를 사용하겠습니다. 코드를 실행하면 <a href="https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k" class="outbound" target="_blank"><span>Evol-Instruct-Python-26k</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 <code v-pre>gpt_dataset.pt</code> 파일로 저장합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python dataset/prepare_gpt_dataset.py</code></pre>
 </doc-codeblock></div>
 <p>전처리가 진행된 데이터셋은 <code v-pre>gpt_dataset.pt</code> 로 저장됩니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls dataset
+...  prepare_gpt_dataset.py ...
+
+~/quickstart$ python dataset/prepare_gpt_dataset.py
+torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
+torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
+Loading Tokenizer...
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Downloading dataset...
+Preprocessing dataset...
+Saving datset into torch format...
+Dataset saved as ./gpt_dataset.pt
+
+~/quickstart$ ls
+... gpt_dataset.pt ...</code></pre>
+</doc-codeblock></div>
 <p>저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">dataset = torch.load(&quot;gpt_dataset.pt&quot;)</code></pre>

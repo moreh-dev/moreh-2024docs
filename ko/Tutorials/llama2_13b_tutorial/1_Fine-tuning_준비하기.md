@@ -6,7 +6,18 @@ order: 40
 
 # 1. Fine-tuning 준비하기
 
-MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
+MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.<br>
+단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다:
+
+- CPU: 16 core 이상
+
+- memory: 256GB 이상
+
+- MAF 버전: 24.5.0
+
+- 스토리지: 105GB 이상
+
+원할한 튜토리얼 진행 전 실행 환경을 확인하시길 바랍니다.
 
 ## PyTorch 설치 여부 확인하기
 
@@ -16,20 +27,21 @@ SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 con
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...
 ```
 
-버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.
+버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. <br>
+위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.5.0 버전이 설치되어 있음을 의미합니다.
 
 만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 **[MoAI Platform에서 Fine-tuning 준비하기](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)** 문서에 따라 conda 환경을 생성하십시오.
 
-만약 해당 MoAI 버전이 24.2.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.
+만약 해당 MoAI 버전이 24.5.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.
 
 ```bash
-$ update-moreh --target 24.2.0
+$ update-moreh --target 24.5.0
 Currently installed: 24.3.0
-Possible upgrading version: 24.2.0
+Possible upgrading version: 24.5.0
 
 Do you want to upgrade? (y/n, default:n)
 y
@@ -60,7 +72,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 학습 스크립트 다운로드
 
-다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_llama2.py` 스크립트를 사용할 것입니다.
+다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. <br>
+본 튜토리얼에서는 `tutorial` 디렉토리 안에 있는 `train_llama2.py` 스크립트를 사용할 것입니다.
 
 ```bash
 $ sudo apt-get install git
@@ -80,7 +93,7 @@ $ pip install -r requirements/requirements_llama2.txt
 
 ## 학습 모델 및 토크나이저 다운로드
 
-Hugging Face를 이용해 Llama2-13b-hf 모델의 체크포인트와 토크나이저를 다운로드합니다. 이때 Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Llama2 13B 모델의 경우 체크포인트 용량이 약 49GB이기 때문에 체크포인트를 위한 50GB 스토리지 여유가 필수적입니다.
+Hugging Face를 이용해 Llama2-13b-hf 모델의 체크포인트와 토크나이저를 다운로드합니다. 이때 Llama2 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다.
 
 먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
 
@@ -115,7 +128,7 @@ model-00007-of-00011.safetensors  tokenizer.model
 
 ## 학습 데이터 다운로드
 
-학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_llama2_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `llama2_dataset.pt` 파일로 저장합니다.
+학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_llama2_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `llama2_dataset.pt` 파일로 저장합니다. 
 
 ```bash
 ~/quickstart$ ls dataset
@@ -124,7 +137,7 @@ model-00007-of-00011.safetensors  tokenizer.model
 ~/quickstart$ python dataset/prepare_llama2_dataset.py
 torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
 torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
 Loading Tokenizer...
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 Downloading dataset...

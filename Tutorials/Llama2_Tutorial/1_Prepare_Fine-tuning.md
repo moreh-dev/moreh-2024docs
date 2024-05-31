@@ -93,7 +93,7 @@ $ pip install -r requirements/requirements_llama2.txt
 
 ## Acquire Access to the Model
 
-To access and download the Llama2 13B model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information.
+To access and download the Llama2-13b-hf model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information.
 
 First, enter the required information and agree to the license on the following site.
 

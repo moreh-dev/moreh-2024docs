@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450074217">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457991131">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,13 +33,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450074217" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457991131" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450074217" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457991131" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -294,67 +294,24 @@ $ cd quickstart
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_llama2.txt</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="download-the-model-and-tokenizer">
+<doc-anchor-target id="acquire-access-to-the-model">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#download-the-model-and-tokenizer">#</doc-anchor-trigger>
-        <span>Download the Model and Tokenizer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#acquire-access-to-the-model">#</doc-anchor-trigger>
+        <span>Acquire Access to the Model</span>
     </h2>
 </doc-anchor-target>
-<p>Download the checkpoint and tokenizer for the Llama2-13b-hf model using Hugging Face. Please note that the Llama2 model requires community license agreement and Hugging Face token information.</p>
-<p>Begin by visiting the following website and providing the required information to proceed with the license agreement.</p>
+<p>To access and download the Llama2-13b-hf model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information.</p>
+<p>First, enter the required information and agree to the license on the following site.</p>
 <p><a href="https://huggingface.co/meta-llama/Llama-2-13b-hf" class="outbound" target="_blank"><span>meta-llama/Llama-2-13b-hf · Hugging Face</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></p>
-<p>Once you&#x27;ve submitted the agreement form, check that the status on the page has updated as follows:</p>
+<p>After submitting the agreement, confirm that the page status has changed as shown below.</p>
 <p><figure class="content-center">
     <img src="../alert.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>Once the status has changed, you can utilize the <code v-pre>download_llama2_13b.py</code> script found in the <code v-pre>tutorial</code> directory to download the model checkpoint and tokenizer into the <code v-pre>./llama-2-13b-hf directory.</code></p>
-<p>Make sure to replace <code v-pre>&lt;user-token&gt;</code> with your Hugging Face token.</p>
+<p>Now you can authenticate your Hugging Face token with the following command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/download_llama2_13b.py --token &lt;user-token&gt;</code></pre>
-</doc-codeblock></div>
-<p>Check if the model checkpoint and tokenizer have been downloaded.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls ./llama-2-13b-hf
-config.json                       model-00008-of-00011.safetensors
-generation_config.json            model-00009-of-00011.safetensors
-model-00001-of-00011.safetensors  model-00010-of-00011.safetensors
-model-00002-of-00011.safetensors  model-00011-of-00011.safetensors
-model-00003-of-00011.safetensors  model.safetensors.index.json
-model-00004-of-00011.safetensors  special_tokens_map.json
-model-00005-of-00011.safetensors  tokenizer_config.json
-model-00006-of-00011.safetensors  tokenizer.json
-model-00007-of-00011.safetensors  tokenizer.model</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="download-training-data">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#download-training-data">#</doc-anchor-trigger>
-        <span>Download Training Data</span>
-    </h2>
-</doc-anchor-target>
-<p>To download the training data, we&#x27;ll use the <strong><code v-pre>prepare_llama2_dataset.py</code></strong> script located in the <strong><code v-pre>dataset</code></strong> directory. When you run the code, it will download the <a href="https://huggingface.co/datasets/cnn_dailymail" class="outbound" target="_blank"><span>cnn_dailymail</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> dataset, preprocess it for training, and save it as <strong><code v-pre>llama2_dataset.pt</code></strong> file.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls dataset
-...  prepare_llama2_dataset.py ...
-
-~/quickstart$ python dataset/prepare_llama2_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./llama2_dataset.pt
-
-~/quickstart$ ls
-... llama2_dataset.pt ...</code></pre>
-</doc-codeblock></div>
-<p>You can then load the stored dataset in your code like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">dataset = torch.load(&quot;./llama2_dataset.pt&quot;)</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">huggingface-cli login</code></pre>
 </doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">

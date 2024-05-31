@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450079187">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457996186">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450079187" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457996186" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450079187" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457996186" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -291,36 +291,6 @@ $ cd quickstart
 <p>다음과 같이 실행하여 스크립트 실행에 필요한 서드 파티 Python 패키지들을 미리 설치합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_qwen.txt</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="학습-데이터-다운로드">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-데이터-다운로드">#</doc-anchor-trigger>
-        <span>학습 데이터 다운로드</span>
-    </h2>
-</doc-anchor-target>
-<p>학습 데이터를 다운로드하기 위해 <code v-pre>dataset</code> 디렉터리 안에 있는 <code v-pre>prepare_qwen_dataset.py</code> 스크립트를 사용하겠습니다. 코드를 실행하면 <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca" class="outbound" target="_blank"><span>python_code_instruction_18k_alpaca</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 데이터를 다운로드하고 학습에 사용할 수 있도록 전처리를 진행하여 <code v-pre>qwen_dataset.pt</code> 파일로 저장합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">~/quickstart$ ls dataset
-...  prepare_qwen_dataset.py ...
-
-~/quickstart$ python dataset/prepare_qwen_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./qwen_dataset.pt
-
-~/quickstart$ ls
-... qwen_dataset.pt ...</code></pre>
-</doc-codeblock></div>
-<p>전처리가 진행된 데이터셋은 <code v-pre>qwen_dataset.pt</code> 로 저장됩니다.</p>
-<p>저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">dataset = torch.load(&quot;./qwen_dataset.pt&quot;)</code></pre>
 </doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">

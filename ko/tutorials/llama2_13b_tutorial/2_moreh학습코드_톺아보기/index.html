@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450079187">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457996186">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450079187" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457996186" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450079187" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457996186" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -216,16 +216,18 @@
 <p><strong>모든 코드는 일반적인 pytorch 사용 경험과 완벽하게 동일합니다.</strong></p>
 <p>먼저, <code v-pre>transformers</code> 라이브러리에서 필요한 모듈을 불러옵니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer</code></pre>
+<pre class="language-python"><code v-pre class="language-python">from transformers import AdamW, AutoModelForCausalLM, AutoTokenizer</code></pre>
 </doc-codeblock></div>
-<p>앞서 다운로드 받았던 모델 체크포인트와 토크나이저를 불러옵니다.</p>
+<p>HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained(&quot;./llama-2-13b-hf&quot;)
-tokenizer = LlamaTokenizer.from_pretrained(&quot;./llama-2-13b-hf&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained(&quot;meta-llama/Llama-2-13b-hf&quot;)
+tokenizer = AutoTokenizer.from_pretrained(&quot;meta-llama/Llama-2-13b-hf&quot;)</code></pre>
 </doc-codeblock></div>
-<p><a href="../1_fine-tuning_%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0/">1. Fine tuning 준비하기</a> 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다.</p>
+<p>Hugging Face에 공개된 <a href="https://huggingface.co/datasets/abisee/cnn_dailymail" class="outbound" target="_blank"><span>학습 데이터셋</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>을 불러와 전처리하고, 데이터 로더를 정의합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">  dataset = torch.load(&quot;./llama2_dataset.pt&quot;)
+<pre class="language-python"><code v-pre class="language-python">  dataset = load_dataset(&quot;cnn_dailymail&quot;, &quot;3.0.0&quot;).with_format(&quot;torch&quot;)
+  ...
+  dataset = dataset.map(preprocess, num_proc=16)
 
   # Create a DataLoader for the training set
   train_dataloader = torch.utils.data.DataLoader(
@@ -331,7 +333,7 @@ torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained(&quot;./llama-2-13b-hf&quot;)
+model = AutoModelForCausalLM.from_pretrained(&quot;meta-llama/Llama-2-13b-hf&quot;)
 ...</code></pre>
 </doc-codeblock></div>
 <p>다른 프레임워크에서는 경험할 수 없는 MoAI Platform만의 Advanced Parallelization(AP) 기능을 통해 최적의 자동화된 분산 병렬처리를 경험해보세요.</p>

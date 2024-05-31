@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450074217">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457991131">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450074217" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457991131" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450074217" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457991131" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -217,46 +217,47 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">from transformers import AdamW, LlamaForCausalLM, AutoTokenizer</code></pre>
 </doc-codeblock></div>
-<p>Then, load up the model checkpoint and tokenizer you downloaded earlier.</p>
+<p>Load the model configuration and checkpoint publicly available on Hugging Face.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">model = LlamaForCausalLM.from_pretrained(&quot;./llama3-8b&quot;)
-tokenizer = AutoTokenizer.from_pretrained(&quot;./llama3-8b&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">model = LlamaForCausalLM.from_pretrained(&quot;meta-llama/Meta-Llama-3-8B&quot;)
+tokenizer = AutoTokenizer.from_pretrained(&quot;meta-llama/Meta-Llama-3-8B&quot;)</code></pre>
 </doc-codeblock></div>
-<p>Load your preprocessed dataset, which you prepared during the <a href="../1_prepare_fine-tuning/">1. Prepare fine-tuning</a> step, and define your data loaders.</p>
+<p>Then load the <a href="https://huggingface.co/datasets/abisee/cnn_dailymail" class="outbound" target="_blank"><span>training dataset</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> from Hugging Face Hub, preprocess loaded dataset, and define the data loader.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">  dataset = torch.load(&quot;./llama3_dataset.pt&quot;)
-
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset[&quot;train&quot;],
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )</code></pre>
+<pre class="language-python"><code v-pre class="language-python">dataset = load_dataset(&quot;cnn_dailymail&quot;, &quot;3.0.0&quot;).with_format(&quot;torch&quot;)
+...
+dataset = dataset.map(preprocess, num_proc=16)
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset[&quot;train&quot;],
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)</code></pre>
 </doc-codeblock></div>
 <p>Subsequently, the training proceeds similarly to regular PyTorch model training.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+<pre class="language-python"><code v-pre class="language-python"># Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.num_train_epochs):
-        for step, batch in enumerate(train_dataloader, start=1):
-            start_time = time.perf_counter()
-            input_ids = batch[&quot;input_ids&quot;]
-            inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
-            attn_mask = create_mask(inputs, tokenizer)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
-            loss = outputs[0]
-            loss.backward()
+# Start training
+for epoch in range(args.num_train_epochs):
+	for step, batch in enumerate(train_dataloader, start=1):
+		start_time = time.perf_counter()
+		input_ids = batch[&quot;input_ids&quot;]
+		inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
+		attn_mask = create_mask(inputs, tokenizer)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)</code></pre>
+		optim.step()
+		model.zero_grad(set_to_none=True)</code></pre>
 </doc-codeblock></div>
 <p>In this way, you can write code in MoAI Platform using the same approach as with standard PyTorch code.</p>
 <doc-anchor-target id="about-advanced-parallelism">
@@ -304,7 +305,7 @@ torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained(&quot;./llama3-8b&quot;)
+model = LlamaForCausalLM.from_pretrained(&quot;meta-llama/Meta-Llama-3-8B&quot;)
 ...</code></pre>
 </doc-codeblock></div>
 <p>MoAI Platform&#x27;s Advanced Parallelization (AP) provides optimization and automation features that are difficult to experience in other frameworks.

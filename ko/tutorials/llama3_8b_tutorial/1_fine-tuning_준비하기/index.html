@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450079187">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457996186">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -34,13 +34,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450079187" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457996186" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450079187" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457996186" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457996186" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -301,54 +301,31 @@ $ cd quickstart
         <span>학습 모델 및 토크나이저 다운로드</span>
     </h2>
 </doc-anchor-target>
-<p>Hugging Face를 이용해 Llama3-8b 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Llama3 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다.</p>
+<p>Hugging Face에 공개된 Llama3 모델 체크포인트를 사용하기 위해서는 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다.</p>
 <p>먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.</p>
-<p><a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B" class="outbound" target="_blank"><span>meta-llama/Meta-Llama-3-8B · Hugging Face</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">meta-llama/Meta-Llama-3-8B · Hugging Face</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://huggingface.co/meta-llama/Meta-Llama-3-8B</span>
+    </div>
+    <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B" class="absolute block inset-0"></a>
+</div>
+</p>
 <p>동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.</p>
 <p><figure class="content-center">
     <img src="../alert.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>상태 변경이 되었다면, 다음과 같이 <code v-pre>tutorial</code> 디렉토리 안의 <code v-pre>download_llama3_8b.py</code> 스크립트를 이용해 모델 체크포인트와 토크나이저를 <code v-pre>./llama3-8b</code> 디렉토리에 다운로드 받을 수 있습니다.</p>
-<p><code v-pre>&lt;user-token&gt;</code> 은 사용자의 Hugging Face 토큰으로 치환합니다.</p>
+<p>다음과 같은 명령어를 터미널에 입력하고 안내에 따라 Hugging Face 사용자 토큰을 입력합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/download_llama3_8b.py --token &lt;user-token&gt;</code></pre>
-</doc-codeblock></div>
-<p>모델 체크포인트와 토크나이저가 다운로드 받아졌는지 확인합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls ./llama3-8b
-config.json             model-00001-of-00004.safetensors  model-00003-of-00004.safetensors  model.safetensors.index.json  tokenizer_config.json
-generation_config.json  model-00002-of-00004.safetensors  model-00004-of-00004.safetensors  special_tokens_map.json       tokenizer.json</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="학습-데이터-다운로드">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#학습-데이터-다운로드">#</doc-anchor-trigger>
-        <span>학습 데이터 다운로드</span>
-    </h2>
-</doc-anchor-target>
-<p>학습 데이터를 다운로드 받기 위해 <code v-pre>dataset</code> 디렉토리 안에 있는 <code v-pre>prepare_llama3_dataset.py</code> 스크립트를 사용하겠습니다. 코드를 실행하면 <a href="https://huggingface.co/datasets/cnn_dailymail" class="outbound" target="_blank"><span>cnn_dailymail</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 <code v-pre>llama3_dataset.pt</code> 파일로 저장합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls dataset
-...  prepare_llama3_dataset.py ...
-
-~/quickstart$ python dataset/prepare_llama3_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./llama3_dataset.pt
-
-~/quickstart$ ls
-... llama3_dataset.pt ...</code></pre>
-</doc-codeblock></div>
-<p>저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">dataset = torch.load(&quot;./llama3_dataset.pt&quot;)</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">huggingface-cli login</code></pre>
 </doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">

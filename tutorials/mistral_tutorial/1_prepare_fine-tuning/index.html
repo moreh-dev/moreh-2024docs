@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450074217">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457991131">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,13 +33,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450074217" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457991131" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450074217" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457991131" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -294,13 +294,13 @@ $ cd quickstart
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ pip install -r requirements/requirements_mistral.txt</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="download-the-model-and-tokenizer">
+<doc-anchor-target id="acquire-access-to-the-model">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#download-the-model-and-tokenizer">#</doc-anchor-trigger>
-        <span>Download the Model and Tokenizer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#acquire-access-to-the-model">#</doc-anchor-trigger>
+        <span>Acquire Access to the Model</span>
     </h2>
 </doc-anchor-target>
-<p>Let&#x27;s download the checkpoint and tokenizer for the Mistral 7B v0.1 model using Hugging Face. This process requires agreeing to the community license and providing your Hugging Face token information to access the Mistral model.</p>
+<p>To access and download the Mistral 7B v0.1 model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information.</p>
 <p>First, enter the required information on the Hugging Face website below and proceed with the license agreement.</p>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
@@ -316,55 +316,15 @@ $ cd quickstart
     <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1" class="absolute block inset-0"></a>
 </div>
 </p>
-<p>After submitting the agreement form, confirm that the status on the page has changed as follows:</p>
+<p>After submitting the agreement, confirm that the page status has changed as shown below.</p>
 <p><figure class="content-center">
     <img src="../alert.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>If the status has been updated, you can use the <strong><code v-pre>download_mistral_7b.py</code></strong> script located in the <strong><code v-pre>tutorial</code></strong> directory to download the model checkpoint and tokenizer into the <strong><code v-pre>./mistral-7b</code></strong> directory.</p>
-<p>Replace <strong><code v-pre>&lt;user-token&gt;</code></strong> with your Hugging Face token.</p>
+<p>Now you can authenticate your Hugging Face token with the following command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ python tutorial/download_mistral_7b.py --token &lt;user-token&gt;</code></pre>
-</doc-codeblock></div>
-<p>Check if the model checkpoint and tokenizer have been downloaded.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls ./mistral-7b
-config.json                       model-00003-of-00006.safetensors  model.safetensors.index.json  tokenizer.model
-generation_config.json            model-00004-of-00006.safetensors  special_tokens_map.json
-model-00001-of-00006.safetensors  model-00005-of-00006.safetensors  tokenizer_config.json
-model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.json</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="download-training-data">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#download-training-data">#</doc-anchor-trigger>
-        <span>Download Training Data</span>
-    </h2>
-</doc-anchor-target>
-<p>In this tutorial, we will use the <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca" class="outbound" target="_blank"><span>python_code_instructions_18k_alpaca</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> dataset available on Hugging Face among various datasets publicly available for code generation training.</p>
-<p>We will execute <strong><code v-pre>prepare_mistral_dataset.py</code></strong> to download the dataset and preprocess it for training.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">~/quickstart$ ls dataset
-...  prepare_mistral_dataset.py ...
-
-~/quickstart$ python dataset/dataset_qwen.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./mistral_dataset.pt
-
-~/quickstart$ ls
-... mistral_dataset.pt ...</code></pre>
-</doc-codeblock></div>
-<p>The preprocessed dataset will be saved as <strong><code v-pre>mistral_dataset.pt</code></strong>.</p>
-<p>You can load the saved dataset in your code as follows.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">dataset = torch.load(&quot;./mistral_dataset.pt&quot;)</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">huggingface-cli login</code></pre>
 </doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">

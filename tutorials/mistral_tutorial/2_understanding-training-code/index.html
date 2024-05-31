@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450074217">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770457991131">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770450074217" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770457991131" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450074217" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450074217" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770457991131" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770457991131" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -215,54 +215,58 @@
 <p>All the code used during training is exactly the same as when you&#x27;re using PyTorch in general.</p>
 <p>Import the necessary modules from the <strong><code v-pre>transformers</code></strong> library.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">from transformers import AutoModelForCausalLM, AdamW</code></pre>
+<pre class="language-python"><code v-pre class="language-python">from transformers import AutoModelForCausalLM, AutoTokenizer, AdamW</code></pre>
 </doc-codeblock></div>
 <p>Load the model configuration and checkpoint publicly available on Hugging Face.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained(&quot;./mistral-7b&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained(&quot;mistralai/Mistral-7B-v0.1&quot;)
+tokenizer = AutoTokenizer.from_pretrained(&quot;mistralai/Mistral-7B-v0.1&quot;)</code></pre>
 </doc-codeblock></div>
-<p>Then load the preprocessed dataset saved during the preparation for <a href="../1_prepare_fine-tuning/"><strong>1. Prepare Fine-tuning</strong></a>  and define the data loaders.</p>
+<p>Then load the training dataset from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
+In this tutorial, we will use the <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca" class="outbound" target="_blank"><span>python_code_instructions_18k_alpaca</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> dataset available on Hugging Face among various datasets publicly available for code generation training.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">  dataset = torch.load(&quot;mistral_dataset.pt&quot;)
+<pre class="language-python"><code v-pre class="language-python">dataset = torch.load(&quot;iamtarun/python_code_instructions_18k_alpaca&quot;)
+...
+dataset = dataset.map(preprocess, num_proc=16)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )</code></pre>
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)</code></pre>
 </doc-codeblock></div>
 <p>Subsequently, the training proceeds similarly to general AI model training with Pytorch.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+<pre class="language-python"><code v-pre class="language-python"># Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch[&quot;input_ids&quot;]
-            attn_mask = batch[&quot;attention_mask&quot;]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
-
-            loss = outputs[0]
-            loss.backward()
-
-            optim.step()
-            model.zero_grad(set_to_none=True)</code></pre>
+# Start training
+for epoch in range(args.epoch):
+	for i, batch in enumerate(train_dataloader, 0):
+		input_ids = batch[&quot;input_ids&quot;]
+		attn_mask = batch[&quot;attention_mask&quot;]
+		labels = mask_pads(input_ids, attn_mask)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
+	
+		loss = outputs[0]
+		loss.backward()
+	
+		optim.step()
+		model.zero_grad(set_to_none=True)</code></pre>
 </doc-codeblock></div>
 <p>With MoAI Platform, you can seamlessly use your existing PyTorch scripts without any modifications.</p>
 <doc-anchor-target id="about-advanced-parallelism">
@@ -310,8 +314,8 @@ torchrun --nnodes=2 --nproc_per_node=8 --rdzv_id=100 --rdzv_backend=c10d --rdzv_
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained(&quot;./mistral-7b&quot;)
-tokenizer = AutoTokenizer.from_pretrained(&quot;./mistral-7b&quot;) 
+model = AutoModelForCausalLM.from_pretrained(&quot;mistralai/Mistral-7B-v0.1&quot;)
+tokenizer = AutoTokenizer.from_pretrained(&quot;mistralai/Mistral-7B-v0.1&quot;) 
 ...</code></pre>
 </doc-codeblock></div>
 <p>MoAI Platform&#x27;s Advanced Parallelization(AP) provides optimization and automation features that are difficult to experience in other frameworks. Through the AP feature, users can experience the best distributed parallel processing. By leveraging AP, users can easily configure the optimal parameters and environment variables for Pipeline Parallelism and Tensor Parallelism required for training large-scale models with just a single line of code.</p>

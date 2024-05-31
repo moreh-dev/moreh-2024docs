@@ -17,14 +17,14 @@ order: 40
 먼저, `transformers` 라이브러리에서 필요한 모듈을 불러옵니다.
 
 ```python
-from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
+from transformers import AdamW, AutoModelForCausalLM, AutoTokenizer
 ```
 
 HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.
 
 ```python
 model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-13b-hf")
-tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-13b-hf")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-13b-hf")
 ```
 
 Hugging Face에 공개된 [학습 데이터셋](https://huggingface.co/datasets/abisee/cnn_dailymail)을 불러와 전처리하고, 데이터 로더를 정의합니다.

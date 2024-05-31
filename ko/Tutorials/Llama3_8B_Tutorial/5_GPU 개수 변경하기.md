@@ -29,7 +29,7 @@ $ moreh-switch-model
 다시 `train_llama3.py` 스크립트를 실행합니다.
 
 ```bash
-~/quickstart$ python tutorial/train_llama3.py --batch-size 512
+~/quickstart$ python tutorial/train_llama3.py --batch-size 1024
 ```
 
 사용 가능한 GPU 메모리가 **2배** 늘었기 때문에, 배치 사이즈 또한 기존 `256` 에서 `1024`로 변경하여 실행시켜 보겠습니다. 

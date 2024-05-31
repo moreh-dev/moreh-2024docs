@@ -16,60 +16,64 @@ order: 40
 먼저, `transformers` 라이브러리에서 필요한 모듈을 불러옵니다.
 
 ```python
-from transformers import AutoModelForCausalLM, AdamW
+from transformers import AutoModelForCausalLM, AutoTokenizer, AdamW
 ```
 
 HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다. 
 
 ```python
-model = AutoModelForCausalLM.from_pretrained("./mistral-7b")
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 ```
 
-[Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Hugging Face에 공개된 학습 데이터셋을 불러와 전처리하고, 데이터 로더를 정의합니다.
+이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터셋을 사용할 것입니다.
 
 ```python
-  dataset = torch.load("mistral_dataset.pt")
+dataset = torch.load("iamtarun/python_code_instructions_18k_alpaca")
+...
+dataset = dataset.map(preprocess, num_proc=16)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+for i, batch in enumerate(train_dataloader, 0):
+    input_ids = batch["input_ids"]
+    attn_mask = batch["attention_mask"]
+    labels = mask_pads(input_ids, attn_mask)
+    outputs = model(
+		input_ids.cuda(),
+		attention_mask=attn_mask.cuda(),
+		labels=labels.cuda(),
+		use_cache=False,
+    )
 
-            loss = outputs[0]
-            loss.backward()
+    loss = outputs[0]
+    loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+    optim.step()
+    model.zero_grad(set_to_none=True)
 ```
 
 **위와 같이 MoAI Platform에서는 기존 pytorch 코드와 동일한 방식으로 작성하실 수 있습니다.**
@@ -123,8 +127,8 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("./mistral-7b")
-tokenizer = AutoTokenizer.from_pretrained("./mistral-7b") 
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1") 
 ...
 ```
 

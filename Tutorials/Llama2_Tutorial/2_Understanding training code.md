@@ -16,14 +16,14 @@ All the code used during training is exactly the same as when you're using PyTor
 Import the necessary modules from the **`transformers`** library.
 
 ```python
-from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
+from transformers import AdamW, AutoModelForCausalLM, AutoTokenizer
 ```
 
 Load the model configuration and checkpoint publicly available on Hugging Face. 
 
 ```python
 model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-13b-hf")
-tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-13b-hf")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-13b-hf")
 ```
 
 Then load the [training dataset](https://huggingface.co/datasets/abisee/cnn_dailymail) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.

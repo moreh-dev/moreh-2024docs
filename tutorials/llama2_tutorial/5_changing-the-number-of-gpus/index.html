@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770459546250">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770464771698">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770459546250" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770464771698" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770459546250" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770464771698" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770459546250" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770459546250" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770459546250" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770464771698" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770464771698" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770464771698" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -245,42 +245,39 @@
 <pre class="language-bash"><code v-pre class="language-bash">...
 [info] Requesting resources for MoAI Accelerator from the server...
 [info] Initializing the worker daemon for MoAI Accelerator
-[info] [1/8] Connecting to resources on the server (192.168.110.1:24166)...
-[info] [2/8] Connecting to resources on the server (192.168.110.24:24166)...
-[info] [3/8] Connecting to resources on the server (192.168.110.25:24166)...
-[info] [4/8] Connecting to resources on the server (192.168.110.26:24166)...
-[info] [5/8] Connecting to resources on the server (192.168.110.51:24166)...
-[info] [6/8] Connecting to resources on the server (192.168.110.79:24166)...
-[info] [7/8] Connecting to resources on the server (192.168.110.80:24166)...
-[info] [8/8] Connecting to resources on the server (192.168.110.99:24166)...
+[info] [1/8] Connecting to resources on the server (192.168.110.12:24162)...
+[info] [2/8] Connecting to resources on the server (192.168.110.13:24162)...
+[info] [3/8] Connecting to resources on the server (192.168.110.14:24162)...
+[info] [4/8] Connecting to resources on the server (192.168.110.37:24162)...
+[info] [5/8] Connecting to resources on the server (192.168.110.39:24162)...
+[info] [6/8] Connecting to resources on the server (192.168.110.73:24162)...
+[info] [7/8] Connecting to resources on the server (192.168.110.75:24162)...
+[info] [8/8] Connecting to resources on the server (192.168.110.99:24162)...
 [info] Establishing links to the resources...
 [info] MoAI Accelerator is ready to use.
-[info] The number of candidates is 24.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977792
+[info] The number of candidates is 78.
 [info] Parallel Graph Compile start...
-[info] Elapsed Time to compile all candidates = 57920 [ms]
+[info] Elapsed Time to compile all candidates = 190703 [ms]
 [info] Parallel Graph Compile finished.
-[info] The number of possible candidates is 3.
+[info] The number of possible candidates is 58.
 [info] SelectBestGraphFromCandidates start...
-[info] Elapsed Time to compute cost for survived candidates = 2120 [ms]
+[info] Elapsed Time to compute cost for survived candidates = 110073 [ms]
 [info] SelectBestGraphFromCandidates finished.
 [info] Configuration for parallelism is selected.
-[info] num_stages : 2, num_micro_batches : 16, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
+[info] No PP, No TP, recomputation : default(1), distribute_param : true, distribute_low_prec_param : true
 [info] train: true
 
-| INFO     | __main__:main:136 - [Step 2/560] | Loss: 1.6953125 | Duration: 15.12 | Throughput: 69337.98 tokens/sec
-| INFO     | __main__:main:136 - [Step 4/560] | Loss: 1.6875 | Duration: 15.93 | Throughput: 65842.99 tokens/sec
-| INFO     | __main__:main:136 - [Step 6/560] | Loss: 1.703125 | Duration: 15.73 | Throughput: 66656.28 tokens/sec
-| INFO     | __main__:main:136 - [Step 8/560] | Loss: 1.6328125 | Duration: 15.36 | Throughput: 68263.53 tokens/sec
-| INFO     | __main__:main:136 - [Step 10/560] | Loss: 1.5859375 | Duration: 12.78 | Throughput: 82040.81 tokens/sec
-| INFO     | __main__:main:136 - [Step 12/560] | Loss: 1.59375 | Duration: 13.00 | Throughput: 80657.85 tokens/sec
-| INFO     | __main__:main:136 - [Step 14/560] | Loss: 1.6328125 | Duration: 12.65 | Throughput: 82906.48 tokens/sec
-| INFO     | __main__:main:136 - [Step 16/560] | Loss: 1.6796875 | Duration: 14.94 | Throughput: 70195.58 tokens/sec
-| INFO     | __main__:main:136 - [Step 18/560] | Loss: 1.6875 | Duration: 13.01 | Throughput: 80607.34 tokens/sec
+| INFO     | __main__:main:136 - [Step 2/560] | Loss: 1.8515625 | Duration: 3.62 | Throughput: 144909.28 tokens/sec
+| INFO     | __main__:main:136 - [Step 4/560] | Loss: 1.765625 | Duration: 1.59 | Throughput: 328842.71 tokens/sec
+| INFO     | __main__:main:136 - [Step 6/560] | Loss: 1.734375 | Duration: 1.51 | Throughput: 346245.79 tokens/sec
+| INFO     | __main__:main:136 - [Step 8/560] | Loss: 1.703125 | Duration: 1.70 | Throughput: 307668.92 tokens/sec
 ...</code></pre>
 </doc-codeblock></div>
 <p>Compared to the previous results obtained when the GPU count was halved, you&#x27;ll notice that the training is progressing similarly, but with an improved throughput.</p>
 <ul>
-<li>When using AMD MI250 GPU 16 → 32 : approximately 35,000 tokens/sec → 74,000 tokens/sec</li>
+<li>When using AMD MI250 GPU 16 → 32 : approximately 150,000 tokens/sec → 315,000 tokens/sec</li>
 </ul>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">

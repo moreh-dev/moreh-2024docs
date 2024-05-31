@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770445533039">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770446032829">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,13 +31,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770445533039" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770446032829" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770445533039" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770446032829" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770445533039" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770445533039" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770445533039" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770446032829" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770446032829" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770446032829" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -204,19 +204,7 @@
         <span>1. Preparing for Fine-tuning</span>
     </h1>
 </doc-anchor-target>
-<p>Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.<br>
-For a smooth tutorial experience, the following specifications are recommended:</p>
-<ul>
-<li><p>CPU: 16 cores or more</p>
-</li>
-<li><p>Memory: 256GB or more</p>
-</li>
-<li><p>MAF version: 24.5.0</p>
-</li>
-<li><p>Storage: 55GB or more</p>
-</li>
-</ul>
-<p>Please verify that your environment meets these requirements before starting the tutorial.</p>
+<p>Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.</p>
 <doc-anchor-target id="checking-pytorch-installation">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#checking-pytorch-installation">#</doc-anchor-trigger>
@@ -228,17 +216,16 @@ For a smooth tutorial experience, the following specifications are recommended:<
 <pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.3.0          pypi_0    pypi
 ...</code></pre>
 </doc-codeblock></div>
-<p>The version name includes both the PyTorch version and the MoAI version required to execute it. <br>
-In the example above, it indicates that PyTorch version 1.13.1+cu116 is running with MoAI version 24.5.0 installed.</p>
-<p>If you encounter a <code v-pre>conda: command not found</code> message, or if the torch package is not listed, or if the torch package exists but does not include &quot;moreh&quot; in the version name, please follow the instructions in the <strong><a href="../../../supported_documents/prepare_fine_tuning_moai/">Prepare Fine-tuning on MoAI Platform</a></strong> to create a conda environment.<br></p>
-<p>If the moreh version is not 24.5.0 but a different version, please execute the following code.</p>
+<p>The version name includes both the PyTorch version and the MoAI version required to execute it. In the example above, it indicates that PyTorch version 1.13.1+cu116 is running with MoAI version 24.3.0 installed.</p>
+<p>If you encounter a <code v-pre>conda: command not found</code> message, or if the torch package is not listed, or if the torch package exists but does not include &quot;moreh&quot; in the version name, please follow the instructions in the <strong><a href="../../../supported_documents/prepare_fine_tuning_moai/">Prepare Fine-tuning on MoAI Platform</a></strong> to create a conda environment.
+If the moreh version is not 24.3.0 but a different version, please execute the following code.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh --target 24.5.0
-Currently installed: 24.3.0
-Possible upgrading version: 24.5.0
+<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh --target 24.3.0
+Currently installed: 24.2.0
+Possible upgrading version: 24.3.0
 
 Do you want to upgrade? (y/n, default:n)
 y</code></pre>
@@ -274,7 +261,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
         <span>Download the Training Script</span>
     </h2>
 </doc-anchor-target>
-<p>Execute the following command to download the PyTorch script for training from the GitHub repository. <br>In this tutorial, we will be using the <code v-pre>train_baichuan2_13b.py</code> script located inside the <code v-pre>tutorial</code> directory.</p>
+<p>Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the <code v-pre>train_baichuan2_13b.py</code> script located inside the <code v-pre>tutorial</code> directory.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ sudo apt-get install git
 $ git clone https://github.com/moreh-dev/quickstart.git
@@ -298,6 +285,7 @@ $ cd quickstart
         <span>Download Training Data</span>
     </h2>
 </doc-anchor-target>
+<p>Execute the following command to install third-party Python packages required for script execution:</p>
 <p>To download the training data for this tutorial, we&#x27;ll use the <code v-pre>prepare_baichuan_dataset.py</code> script located inside the <code v-pre>dataset</code> directory. When you run the code, it will download the <a href="https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset" class="outbound" target="_blank"><span>Bitext-custormer-support-llm-chatbot</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> dataset, and preprocess it for training, and save it as <code v-pre>baichuan_dataset.pt</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">~/quickstart$ ls dataset
@@ -306,7 +294,7 @@ $ cd quickstart
 ~/quickstart$ python dataset/prepare_baichuan_dataset.py
 torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
 torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
 Loading Tokenizer...
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 Downloading dataset...

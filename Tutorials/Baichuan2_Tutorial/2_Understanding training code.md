@@ -29,11 +29,12 @@ model = AutoModelForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', t
 tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 ```
 
-Load the preprocessed dataset saved during the [**1. Preparing for Fine-tuning**](1_Prepare_Finetuning.md) and define the data loader.
-
+Then load the [training dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 
 ```python
- dataset = torch.load('./baichuan_dataset.pt')
+  dataset = load_dataset("bitext/Bitext-customer-support-llm-chatbot-training-dataset").with_format("torch")
+  ...
+  dataset = dataset.map(preprocess)
 
   # Create a DataLoader for the training set
   train_dataloader = torch.utils.data.DataLoader(

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770435588679">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770435616395">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.770435588679" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770435616395" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770435588679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770435616395" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770435588679" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770435588679" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770435616395" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770435616395" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -234,424 +234,171 @@
 <table class="comfortable">
 <thead>
 <tr>
-<th>모델명</th>
+<th>Model</th>
 <th>MoAI Platform version</th>
 <th>MoAI Accelerator</th>
-<th>Advanced Parallelism 적용 유무</th>
+<th>Advanced Parallelism is applied</th>
 <th>batch size</th>
 <th>sequence length</th>
-<th>vram 사용량</th>
-<th>학습 시간</th>
+<th>vram Usage</th>
+<th>Training Time</th>
 <th>throughput</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>1024</td>
-<td>543816 MiB</td>
-<td>872m</td>
-<td>8,934</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>1024</td>
-<td>749065 MiB</td>
-<td>586m</td>
-<td>11,562</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
+<td>24.5.0</td>
 <td>2xlarge</td>
 <td>True</td>
 <td>128</td>
 <td>1024</td>
-<td>790454 MiB</td>
-<td>400m</td>
-<td>65,565</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>2048</td>
-<td>1292886 MiB</td>
-<td>962m</td>
-<td>32,371</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>2048</td>
-<td>1600235 MiB</td>
-<td>720m</td>
-<td>63,893</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>2048</td>
-<td>1467646 MiB</td>
-<td>480m</td>
-<td>121,013</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>4096</td>
-<td>3181616 MiB</td>
-<td>1360m</td>
-<td>62,481</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>4096</td>
-<td>3143781 MiB</td>
-<td>720m</td>
-<td>125,180</td>
-</tr>
-<tr>
-<td>Llama2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>4096</td>
-<td>3013826 MiB</td>
+<td>699,751 MiB</td>
 <td>560m</td>
-<td>238,212</td>
+<td>78,274 TPS</td>
 </tr>
 <tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>256</td>
-<td>1024</td>
-<td>442,982 MiB</td>
-<td>59m</td>
-<td>15,972</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>512</td>
-<td>1024</td>
-<td>560,835 MiB</td>
-<td>20m</td>
-<td>32,563</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>1024</td>
-<td>1024</td>
-<td>790,572 MiB</td>
-<td>17m</td>
-<td>69,840</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
+<td>Llama2 13B</td>
+<td>24.5.0</td>
 <td>4xlarge</td>
 <td>True</td>
 <td>256</td>
-<td>2048</td>
-<td>1,138,546 MiB</td>
-<td>25m</td>
-<td>62,740</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>512</td>
-<td>2048</td>
-<td>1,138,546 MiB</td>
-<td>22m</td>
-<td>56,385</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>4xlarge</td>
-<td>True</td>
 <td>1024</td>
-<td>2048</td>
-<td>1,138,546 MiB</td>
-<td>24m</td>
-<td>62,582</td>
+<td>1,121,814 MiB</td>
+<td>233m</td>
+<td>150,406 TPS</td>
 </tr>
 <tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>256</td>
-<td>4096</td>
-<td>1,800,656 MiB</td>
-<td>36m</td>
-<td>157,859</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
+<td>Llama2 13B</td>
+<td>24.5.0</td>
 <td>8xlarge</td>
 <td>True</td>
 <td>512</td>
-<td>4096</td>
-<td>1,800,656 MiB</td>
+<td>1024</td>
+<td>1,853,432 MiB</td>
+<td>144m</td>
+<td>315,004 TPS</td>
+</tr>
+<tr>
+<td>Mistral 7B</td>
+<td>24.5.0</td>
+<td>2xlarge</td>
+<td>True</td>
+<td>256</td>
+<td>1024</td>
+<td>762652 MiB</td>
+<td>19m</td>
+<td>197,489 TPS</td>
+</tr>
+<tr>
+<td>Mistral 7B</td>
+<td>24.5.0</td>
+<td>4xlarge</td>
+<td>True</td>
+<td>512</td>
+<td>1024</td>
+<td>1,147,841 MiB</td>
+<td>15m</td>
+<td>392,573 TPS</td>
+</tr>
+<tr>
+<td>Mistral 7B</td>
+<td>24.5.0</td>
+<td>8xlarge</td>
+<td>True</td>
+<td>1024</td>
+<td>1024</td>
+<td>1,112,135 MiB</td>
+<td>16m</td>
+<td>798,760 TPS</td>
+</tr>
+<tr>
+<td>Qwen1.5 7B</td>
+<td>24.5.0</td>
+<td>2xlarge</td>
+<td>True</td>
+<td>128</td>
+<td>1024</td>
+<td>758,555 MiB</td>
 <td>30m</td>
-<td>144,124</td>
-</tr>
-<tr>
-<td>Mistral 7B</td>
-<td>24.2.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>1024</td>
-<td>4096</td>
-<td>1,767,888 MiB</td>
-<td>25m</td>
-<td>163,839</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>1024</td>
-<td>626,391  MiB</td>
-<td>12m</td>
-<td>24,156</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>1024</td>
-<td>784,485 MiB</td>
-<td>9m</td>
-<td>47,679</td>
+<td>95302 TPS</td>
 </tr>
 <tr>
 <td>Qwen1.5 7B</td>
 <td>24.5.0</td>
 <td>4xlarge</td>
 <td>True</td>
-<td>32</td>
-<td>2048</td>
-<td>1,403,047 MiB</td>
-<td>12m</td>
-<td>51,353</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>2048</td>
-<td>1,122,745 MiB</td>
-<td>8m</td>
-<td>93,165</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>2048</td>
-<td>1,680,233 MiB</td>
-<td>7m</td>
-<td>194,282</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>32</td>
-<td>4096</td>
-<td>1,706,797 MiB</td>
-<td>11m</td>
-<td>92,623</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>4096</td>
-<td>1,651,008 MiB</td>
-<td>8m</td>
-<td>186,353</td>
-</tr>
-<tr>
-<td>Qwen1.5 7B</td>
-<td>24.5.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>4096</td>
-<td>2,146,115 MiB</td>
-<td>7m</td>
-<td>376,493</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
-<td>True</td>
-<td>32</td>
+<td>256</td>
 <td>1024</td>
-<td>843,375 MiB</td>
-<td>40m</td>
-<td>26,111</td>
+<td>1,403,640 MiB</td>
+<td>16m</td>
+<td>190,433 TPS</td>
 </tr>
 <tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>2xlarge</td>
+<td>Qwen1.5 7B</td>
+<td>24.5.0</td>
+<td>8xlarge</td>
 <td>True</td>
-<td>64</td>
+<td>512</td>
 <td>1024</td>
-<td>858,128 MiB</td>
-<td>34m</td>
-<td>50,782</td>
+<td>1,899,079 MiB</td>
+<td>16m</td>
+<td>381,714 TPS</td>
 </tr>
 <tr>
 <td>Baichuan2 13B</td>
-<td>24.3.0</td>
+<td>24.5.0</td>
 <td>2xlarge</td>
 <td>True</td>
 <td>128</td>
 <td>1024</td>
 <td>866,656 MiB</td>
 <td>30m</td>
-<td>99,873</td>
+<td>99,873 TPS</td>
 </tr>
 <tr>
 <td>Baichuan2 13B</td>
-<td>24.3.0</td>
+<td>24.5.0</td>
 <td>4xlarge</td>
 <td>True</td>
-<td>32</td>
-<td>2048</td>
-<td>1403,2189</td>
-<td>38m</td>
-<td>58,531</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>2048</td>
-<td>1489,3</td>
-<td>35m</td>
-<td>109,872</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>4xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>2048</td>
-<td>154,12123</td>
+<td>256</td>
+<td>1024</td>
+<td>1,541,212 MiB</td>
 <td>28m</td>
-<td>191,605</td>
+<td>191,605 TPS</td>
 </tr>
 <tr>
 <td>Baichuan2 13B</td>
-<td>24.3.0</td>
+<td>24.5.0</td>
 <td>8xlarge</td>
 <td>True</td>
-<td>32</td>
-<td>4096</td>
-<td>2,645,347 MiB</td>
-<td>22m</td>
-<td>109,537</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>64</td>
-<td>4096</td>
-<td>2,800,000 MiB</td>
-<td>20m</td>
-<td>207,214</td>
-</tr>
-<tr>
-<td>Baichuan2 13B</td>
-<td>24.3.0</td>
-<td>8xlarge</td>
-<td>True</td>
-<td>128</td>
-<td>4096</td>
+<td>512</td>
+<td>1024</td>
 <td>2,845,656 MiB</td>
 <td>17m</td>
-<td>384,165</td>
+<td>384,165 TPS</td>
 </tr>
 <tr>
 <td>Cerebras GPT 13B</td>
-<td>24.2.0</td>
+<td>24.5.0</td>
 <td>4xlarge</td>
 <td>True</td>
 <td>16</td>
 <td>1024</td>
 <td>1,764,955 MiB</td>
 <td>81m</td>
-<td>6,841</td>
+<td>6,841 TPS</td>
 </tr>
 <tr>
 <td>Cerebras GPT 13B</td>
-<td>24.2.0</td>
+<td>24.5.0</td>
 <td>8xlarge</td>
 <td>True</td>
 <td>32</td>
 <td>1024</td>
 <td>3,460,240 MiB</td>
 <td>62m</td>
-<td>13,286</td>
+<td>13,286 TPS</td>
 </tr>
 <tr>
 <td>Cerebras GPT 13B</td>
@@ -662,7 +409,7 @@
 <td>2048</td>
 <td>1,951,344 MiB</td>
 <td>100m</td>
-<td>18,001</td>
+<td>18,001 TPS</td>
 </tr>
 </tbody>
 </table>

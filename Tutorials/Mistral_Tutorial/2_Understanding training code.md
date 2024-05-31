@@ -17,60 +17,64 @@ All the code used during training is exactly the same as when you're using PyTor
 Import the necessary modules from the **`transformers`** library.
 
 ```python
-from transformers import AutoModelForCausalLM, AdamW
+from transformers import AutoModelForCausalLM, AutoTokenizer, AdamW
 ```
 
 Load the model configuration and checkpoint publicly available on Hugging Face. 
 
 ```python
-model = AutoModelForCausalLM.from_pretrained("./mistral-7b")
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 ```
 
-Then load the preprocessed dataset saved during the preparation for [**1. Prepare Fine-tuning**](1_Prepare_Fine-tuning.md)  and define the data loaders. 
+Then load the training dataset from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
+In this tutorial, we will use the [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) dataset available on Hugging Face among various datasets publicly available for code generation training.
 
 ```python
-  dataset = torch.load("mistral_dataset.pt")
+dataset = torch.load("iamtarun/python_code_instructions_18k_alpaca")
+...
+dataset = dataset.map(preprocess, num_proc=16)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 Subsequently, the training proceeds similarly to general AI model training with Pytorch.
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+for i, batch in enumerate(train_dataloader, 0):
+    input_ids = batch["input_ids"]
+    attn_mask = batch["attention_mask"]
+    labels = mask_pads(input_ids, attn_mask)
+    outputs = model(
+		input_ids.cuda(),
+		attention_mask=attn_mask.cuda(),
+		labels=labels.cuda(),
+		use_cache=False,
+    )
 
-            loss = outputs[0]
-            loss.backward()
+    loss = outputs[0]
+    loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+    optim.step()
+    model.zero_grad(set_to_none=True)
 ```
 
 With MoAI Platform, you can seamlessly use your existing PyTorch scripts without any modifications.
@@ -126,8 +130,8 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("./mistral-7b")
-tokenizer = AutoTokenizer.from_pretrained("./mistral-7b") 
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1") 
 ...
 ```
 

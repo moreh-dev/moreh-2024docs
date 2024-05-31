@@ -100,7 +100,7 @@ To access and download the Llama3 70B model checkpoint from Hugging Face Hub, yo
 
 First, enter the necessary information and agree to the license on the Hugging Face website.
 
-[meta-llama/Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
+[!ref icon="link-external" text="meta-llama/Meta-Llama-3-70B · Hugging Face"](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
 
 Once you've submitted the agreement form, check that the status on the page has updated as follows:
 

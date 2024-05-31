@@ -30,42 +30,42 @@ tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
 Then load the [training dataset](https://huggingface.co/datasets/abisee/cnn_dailymail) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 
 ```python
-  dataset = load_dataset("cnn_dailymail", "3.0.0").with_format("torch")
-  ...
-  dataset = dataset.map(preprocess, num_proc=16)
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset["train"],
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+dataset = load_dataset("cnn_dailymail", "3.0.0").with_format("torch")
+...
+dataset = dataset.map(preprocess, num_proc=16)
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset["train"],
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 Subsequently, the training proceeds similarly to regular PyTorch model training.
 
 ```python
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.num_train_epochs):
-        for step, batch in enumerate(train_dataloader, start=1):
-            start_time = time.perf_counter()
-            input_ids = batch["input_ids"]
-            inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
-            attn_mask = create_mask(inputs, tokenizer)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
-            loss = outputs[0]
-            loss.backward()
+# Start training
+for epoch in range(args.num_train_epochs):
+	for step, batch in enumerate(train_dataloader, start=1):
+		start_time = time.perf_counter()
+		input_ids = batch["input_ids"]
+		inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
+		attn_mask = create_mask(inputs, tokenizer)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
 
 In this way, you can write code in MoAI Platform using the same approach as with standard PyTorch code.

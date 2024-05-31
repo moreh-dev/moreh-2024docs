@@ -28,11 +28,11 @@ HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
 ```
 
-[Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
-
+Hugging Face에 공개된 [학습 데이터셋](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca)을 불러와 전처리하고, 데이터 로더를 정의합니다. 
 ```python
-  dataset = torch.load("./qwen_dataset.pt")
-
+  dataset = load_dataset("iamtarun/python_code_instructions_18k_alpaca").with_format("torch")
+  ...
+  dataset = dataset.map(preprocess)
   # Create a DataLoader for the training set
   train_dataloader = torch.utils.data.DataLoader(
       dataset["train"],

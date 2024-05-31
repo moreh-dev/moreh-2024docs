@@ -71,11 +71,11 @@ $ pip install -r requirements/requirements_llama3.txt
 
 ## Acquire Access to the Model
 
-Before you start fine-tune the Llama3 8B model, you will need to agree to the community license and provide your Hugging Face token information. Additionally, for the Llama3 8B model, you should have approximately 20GB of free storage available for the checkpoint, which is around 16GB.
+To access and download the Llama3 8B model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information. Additionally, for the Llama3 8B model, you should have approximately 20GB of free storage available for the checkpoint, which is around 16GB.
 
 First, enter the required information and agree to the license on the following site.
 
-[https://huggingface.co/meta-llama/Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+[meta-llama/Meta-Llama-3-8B · Hugging Face](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 
 After submitting the agreement, confirm that the page status has changed as shown below.
 ![](alert.png)

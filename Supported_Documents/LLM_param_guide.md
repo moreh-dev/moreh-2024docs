@@ -27,8 +27,8 @@ Please note that the names specified for MoAI Accelerators may vary depending on
 | Mistral 7B | 24.5.0 | 4xlarge | True | 512 | 1024 | 1,147,841 MiB | 15m | 392,573 TPS |
 | Mistral 7B | 24.5.0 | 8xlarge | True | 1024 | 1024 | 1,112,135 MiB | 16m | 798,760 TPS |
 | Qwen1.5 7B | 24.5.0 | 2xlarge | True | 128 | 1024 | 758,555 MiB | 30m | 95302 TPS |
-| Qwen1.5 7B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,403,640 MiB | 16m | 190,433 TPS |
-| Qwen1.5 7B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,899,079 MiB | 16m | 381,714 TPS |
+| Qwen1.5 7B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,403,640 MiB | 15m | 190,433 TPS |
+| Qwen1.5 7B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,899,079 MiB | 14m | 381,714 TPS |
 | Baichuan2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 866,656 MiB | 30m | 99,873 TPS |
 | Baichuan2 13B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,541,212 MiB | 28m | 191,605 TPS |
 | Baichuan2 13B | 24.5.0 | 8xlarge | True | 512 | 1024 | 2,845,656 MiB | 17m | 384,165 TPS |

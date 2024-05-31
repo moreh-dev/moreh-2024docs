@@ -17,18 +17,18 @@ Please note that the names specified for MoAI Accelerators may vary depending on
 
 | Model | MoAI Platform version | MoAI Accelerator | Advanced Parallelism is applied | batch size | sequence length | vram Usage | Training Time | throughput |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Llama2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 790454 MiB | 400m | 65,565 |
-| Llama2 13B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,121,814 MiB | 233m | 150,406 |
-| Llama2 13B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,853,432 MiB | 560m | 315,004 |
-| Mistral 7B | 24.5.0 | 2xlarge | True | 1024 | 1024 | 790,572 MiB | 17m | 69,840 |
-| Mistral 7B | 24.5.0 | 4xlarge | True | 1024 | 1024 | 1,138,546 MiB | 24m | 62,582 |
-| Mistral 7B | 24.5.0 | 8xlarge | True | 1024 | 1024 | 1,767,888 MiB | 25m | 163,839 |
-| Qwen1.5 7B | 24.5.0 | 2xlarge | True | 128 | 1024 | 638,460 MiB | 13m | 15,890 |
-| Qwen1.5 7B | 24.5.0 | 4xlarge | True | 128 | 1024 | 1,680,233 MiB | 7m | 194,282 |
-| Qwen1.5 7B | 24.5.0 | 8xlarge | True | 128 | 1024 | 2,146,115 MiB | 7m | 376,493 |
-| Baichuan2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 866,656 MiB | 30m | 99,873 |
-| Baichuan2 13B | 24.5.0 | 4xlarge | True | 128 | 1024 | 154,12123 | 28m | 191,605 |
-| Baichuan2 13B | 24.5.0 | 8xlarge | True | 128 | 1024 | 2,845,656 MiB | 17m | 384,165 |
-| Cerebras GPT 13B | 24.5.0 | 4xlarge | True | 16 | 1024 | 1,764,955 MiB | 81m | 6,841 |
-| Cerebras GPT 13B | 24.5.0 | 8xlarge | True | 32 | 1024 | 3,460,240 MiB | 62m | 13,286 |
-| Cerebras GPT 13B | 24.5.0 | 8xlarge | True | 16 | 2048 | 1,951,344 MiB | 100m | 18,001 |
+| Llama2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 699,751 MiB | 560m | 78,274 TPS |
+| Llama2 13B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,121,814 MiB | 233m | 150,406 TPS|
+| Llama2 13B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,853,432 MiB | 144m | 315,004 TPS|
+| Mistral 7B | 24.5.0 | 2xlarge | True | 256 | 1024 | 762652 MiB | 19m | 197,489 TPS|
+| Mistral 7B | 24.5.0 | 4xlarge | True | 512 | 1024 | 1,147,841 MiB | 15m | 392,573 TPS|
+| Mistral 7B | 24.5.0 | 8xlarge | True | 1024 | 1024 | 1,112,135 MiB | 16m | 798,760 TPS|
+| Qwen1.5 7B | 24.5.0 | 2xlarge | True | 128 | 1024 | 758,555 MiB | 30m | 95302 TPS|
+| Qwen1.5 7B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,403,640 MiB | 16m | 190,433 TPS|
+| Qwen1.5 7B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,899,079 MiB | 16m | 381,714 TPS|
+| Baichuan2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 866,656 MiB | 30m | 99,873 TPS|
+| Baichuan2 13B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,541,212 MiB | 28m | 191,605 TPS|
+| Baichuan2 13B | 24.5.0 | 8xlarge | True | 512 | 1024 | 2,845,656 MiB | 17m | 384,165 TPS|
+| Cerebras GPT 13B | 24.5.0 | 4xlarge | True | 16 | 1024 | 1,764,955 MiB | 81m | 6,841 TPS|
+| Cerebras GPT 13B | 24.5.0 | 8xlarge | True | 32 | 1024 | 3,460,240 MiB | 62m | 13,286 TPS|
+| Cerebras GPT 13B | 24.5.0 | 8xlarge | True | 16 | 2048 | 1,951,344 MiB | 100m | 18,001 TPS|

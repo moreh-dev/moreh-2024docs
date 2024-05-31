@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770446037912">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770450079187">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>1. Fine-tuning 준비하기</title>
     <meta name="title" content="1. Fine-tuning 준비하기">
-    <meta name="description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta name="description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다. 단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.moreh.io/ko/tutorials/mistral_tutorial/1_fine-tuning_준비하기/">
@@ -21,26 +21,26 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.moreh.io/ko/tutorials/mistral_tutorial/1_fine-tuning_준비하기/">
     <meta property="og:title" content="1. Fine-tuning 준비하기">
-    <meta property="og:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta property="og:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다. 단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다.">
     <meta property="og:image" content="https://docs.moreh.io/ko/tutorials/mistral_tutorial/alert.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.moreh.io/ko/tutorials/mistral_tutorial/1_fine-tuning_준비하기/">
     <meta property="twitter:title" content="1. Fine-tuning 준비하기">
-    <meta property="twitter:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.">
+    <meta property="twitter:description" content="MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다. 단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다.">
     <meta property="twitter:image" content="https://docs.moreh.io/ko/tutorials/mistral_tutorial/alert.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770446037912" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770450079187" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770446037912" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770446037912" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770446037912" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770446037912" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770450079187" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770450079187" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,7 +207,19 @@
         <span>1. Fine-tuning 준비하기</span>
     </h1>
 </doc-anchor-target>
-<p>MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.</p>
+<p>MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.<br>
+단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다.</p>
+<ul>
+<li><p>CPU: 16 core 이상</p>
+</li>
+<li><p>memory: 256GB 이상</p>
+</li>
+<li><p>MAF 버전: 24.5.0</p>
+</li>
+<li><p>스토리지: 60GB 이상</p>
+</li>
+</ul>
+<p>원할한 튜토리얼 진행 전 실행 환경을 확인하시길 바랍니다.</p>
 <doc-anchor-target id="pytorch-설치-여부-확인하기">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-설치-여부-확인하기">#</doc-anchor-trigger>
@@ -219,11 +231,21 @@
 <pre class="language-bash"><code v-pre class="language-bash">$ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...</code></pre>
 </doc-codeblock></div>
-<p>버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.</p>
+<p>버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다.<br>
+위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.5.0 버전이 설치되어 있음을 의미합니다.</p>
 <p>만약 <code v-pre>conda: command not found</code> 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 <strong><a href="../../../supported_documents/prepare_fine_tuning_moai/">MoAI Platform에서 Fine-tuning 준비하기</a></strong> 문서에 따라 conda 환경을 생성하십시오.</p>
+<p>만약 해당 MoAI 버전이 24.5.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">$ update-moreh --target 24.5.0
+Currently installed: 24.3.0
+Possible upgrading version: 24.5.0
+
+Do you want to upgrade? (y/n, default:n)
+y</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="pytorch-동작-여부-확인하기">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pytorch-동작-여부-확인하기">#</doc-anchor-trigger>
@@ -255,7 +277,8 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
         <span>학습 스크립트 다운로드</span>
     </h2>
 </doc-anchor-target>
-<p>다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다. 본 튜토리얼에서는 <code v-pre>tutorial</code> 디렉토리 안에 있는 <code v-pre>train_mistral.py</code> 스크립트를 사용할 것입니다.</p>
+<p>다음과 같이 실행하여 GitHub 레포지토리에서 학습을 위한 PyTorch 스크립트를 다운로드합니다.<br>
+본 튜토리얼에서는 <code v-pre>tutorial</code> 디렉토리 안에 있는 <code v-pre>train_mistral.py</code> 스크립트를 사용할 것입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ sudo apt-get install git
 $ git clone https://github.com/moreh-dev/quickstart.git
@@ -279,7 +302,7 @@ $ cd quickstart
         <span>학습 모델 및 토크나이저 다운로드</span>
     </h2>
 </doc-anchor-target>
-<p>Hugging Face를 이용해 Mistral 7B v0.1 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Mistral 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 또한 Mistral 7B 모델의 경우 체크포인트 용량이 약 15GB이기 때문에 체크포인트를 위한 16GB 이상의 스토리지 여유가 권장됩니다.</p>
+<p>Hugging Face를 이용해 Mistral 7B v0.1 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Mistral 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다.</p>
 <p>먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.</p>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
@@ -320,7 +343,7 @@ model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.js
         <span>학습 데이터 다운로드</span>
     </h2>
 </doc-anchor-target>
-<p>이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca" class="outbound" target="_blank"><span>python_code_instructions_18k_alpaca</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 데이터셋(11.4 MB)을 사용할 것입니다.</p>
+<p>이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 <a href="https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca" class="outbound" target="_blank"><span>python_code_instructions_18k_alpaca</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> 데이터셋을 사용할 것입니다.</p>
 <p><code v-pre>prepare_mistral_dataset.py</code> 를 실행해 데이터셋을 다운로드하고, 학습에 사용할 수 있도록 전처리를 진행합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">~/quickstart$ ls dataset
@@ -329,7 +352,7 @@ model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.js
 ~/quickstart$ python dataset/dataset_qwen.py
 torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
 torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
 Loading Tokenizer...
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 Downloading dataset...

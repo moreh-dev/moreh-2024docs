@@ -16,6 +16,9 @@ MoAI Accelerator 에 명시된 명칭은 사용자가 이용하는 CSP에 따라
 
 | Model | MoAI Platform version | MoAI Accelerator | Advanced Parallelism is applied | batch size | sequence length | vram Usage | Training Time | throughput |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Llama3 8B | 24.5.0 | 2xlarge | True | 128 | 1024 | 867,021 MiB | 242m | 93,291 TPS |
+| Llama3 8B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,366,564 MiB | 158m | 190,949 TPS |
+| Llama3 8B | 24.5.0 | 8xlarge | True | 1024 | 1024 | 2,089,476 MiB | 84m | 394,605 TPS |
 | Llama2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 699,751 MiB | 560m | 78,274 TPS |
 | Llama2 13B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,121,814 MiB | 233m | 150,406 TPS |
 | Llama2 13B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,853,432 MiB | 144m | 315,004 TPS |

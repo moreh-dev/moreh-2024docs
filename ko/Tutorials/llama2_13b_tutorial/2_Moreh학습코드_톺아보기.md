@@ -20,17 +20,19 @@ order: 40
 from transformers import AdamW, LlamaForCausalLM, LlamaTokenizer
 ```
 
- 앞서 다운로드 받았던 모델 체크포인트와 토크나이저를 불러옵니다.
+HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.
 
 ```python
-model = AutoModelForCausalLM.from_pretrained("./llama-2-13b-hf")
-tokenizer = LlamaTokenizer.from_pretrained("./llama-2-13b-hf")
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-13b-hf")
+tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-13b-hf")
 ```
 
-[1. Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Hugging Face에 공개된 [학습 데이터셋](https://huggingface.co/datasets/abisee/cnn_dailymail)을 불러와 전처리하고, 데이터 로더를 정의합니다.
 
 ```python
-  dataset = torch.load("./llama2_dataset.pt")
+  dataset = load_dataset("cnn_dailymail", "3.0.0").with_format("torch")
+  ...
+  dataset = dataset.map(preprocess, num_proc=16)
 
   # Create a DataLoader for the training set
   train_dataloader = torch.utils.data.DataLoader(
@@ -134,7 +136,7 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("./llama-2-13b-hf")
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-13b-hf")
 ...
 ```
 

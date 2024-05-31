@@ -30,7 +30,7 @@ First, we'll use the **`moreh-smi`** command to check the currently used MoAI Ac
 ```bash
 $ moreh-smi
 +---------------------------------------------------------------------------------------------------+
-|                                                  Current Version: 24.2.0  Latest Version: 24.5.0  |
+|                                                  Current Version: 24.5.0  Latest Version: 24.5.0  |
 +---------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |      Model     |  Memory Usage  |  Total Memory  |  Utilization  |
 +===================================================================================================+
@@ -98,7 +98,7 @@ To confirm that the changes have been successfully applied, use the **`moreh-smi
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
@@ -124,30 +124,29 @@ If the training proceeds smoothly, you should see the following logs. By going t
 [info] Got DBs from backend for auto config.
 [info] Requesting resources for MoAI Accelerator from the server...
 [info] Initializing the worker daemon for MoAI Accelerator
-[info] [1/4] Connecting to resources on the server (192.168.110.1:24159)...
-[info] [2/4] Connecting to resources on the server (192.168.110.21:24159)...
-[info] [3/4] Connecting to resources on the server (192.168.110.22:24159)...
-[info] [4/4] Connecting to resources on the server (192.168.110.44:24159)...
+[info] [1/4] Connecting to resources on the server (192.168.110.1:24169)...
+[info] [2/4] Connecting to resources on the server (192.168.110.26:24169)...
+[info] [3/4] Connecting to resources on the server (192.168.110.61:24169)...
+[info] [4/4] Connecting to resources on the server (192.168.110.88:24169)...
 [info] Establishing links to the resources...
 [info] MoAI Accelerator is ready to use.
-[info] The number of candidates is 22.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977753
+[info] The number of candidates is 54.
 [info] Parallel Graph Compile start...
-[info] Elapsed Time to compile all candidates = 32827 [ms]
+[info] Elapsed Time to compile all candidates = 80292 [ms]
 [info] Parallel Graph Compile finished.
-[info] The number of possible candidates is 4.
+[info] The number of possible candidates is 37.
 [info] SelectBestGraphFromCandidates start...
-[info] Elapsed Time to compute cost for survived candidates = 1093 [ms]
+[info] Elapsed Time to compute cost for survived candidates = 49599 [ms]
 [info] SelectBestGraphFromCandidates finished.
 [info] Configuration for parallelism is selected.
-[info] num_stages : 2, num_micro_batches : 8, batch_per_device : 1, No TP, recomputation : true, distribute_param : true
+[info] No PP, No TP, recomputation : default(1), distribute_param : true, distribute_low_prec_param : true
 [info] train: true
-
-| INFO     | __main__:main:131 - [Step 2/1121] | Loss: 1.78125 | Duration: 16.31 | Throughput: 32150.92 tokens/sec
-| INFO     | __main__:main:131 - [Step 4/1121] | Loss: 1.7109375 | Duration: 15.65 | Throughput: 33494.69 tokens/sec
-| INFO     | __main__:main:131 - [Step 6/1121] | Loss: 1.75 | Duration: 15.68 | Throughput: 33444.54 tokens/sec
-| INFO     | __main__:main:131 - [Step 8/1121] | Loss: 1.609375 | Duration: 13.80 | Throughput: 37988.52 tokens/sec
-| INFO     | __main__:main:131 - [Step 10/1121] | Loss: 1.640625 | Duration: 16.25 | Throughput: 32272.10 tokens/sec
-| INFO     | __main__:main:131 - [Step 12/1121] | Loss: 1.6953125 | Duration: 13.08 | Throughput: 40094.50 tokens/sec
+| INFO     | __main__:main:136 - [Step 2/1121] | Loss: 1.84375 | Duration: 2.37 | Throughput: 110643.89 tokens/sec
+| INFO     | __main__:main:136 - [Step 4/1121] | Loss: 1.78125 | Duration: 1.66 | Throughput: 158266.52 tokens/sec
+| INFO     | __main__:main:136 - [Step 6/1121] | Loss: 1.71875 | Duration: 1.70 | Throughput: 154598.70 tokens/sec
+| INFO     | __main__:main:136 - [Step 8/1121] | Loss: 1.734375 | Duration: 1.82 | Throughput: 143925.00 tokens/sec
 ...
 
 Training Done
@@ -159,7 +158,7 @@ You can verify that the training is proceeding smoothly by checking the training
 
 The throughput displayed during training indicates how many tokens are being trained per second through the PyTorch script.
 
-- Throughput when using 16 AMD MI250 GPUs: Approximately 35,000 tokens/sec
+- Throughput when using 16 AMD MI250 GPUs: Approximately 150,000 tokens/sec
 
 Here are the approximate training times based on the type and number of GPUs:
 
@@ -172,10 +171,17 @@ During training, open another terminal and connect to the container. Then, execu
 ```bash
 $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
-|                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
+|                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Flavor     |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1806648 MiB   |  2096640 MiB   |    100%       |
+|  * 0     |  MoAI Accelerator   |  4xLarge.2048GB  |  1354751 MiB   |  2096640 MiB   |     100%      |
 +-----------------------------------------------------------------------------------------------------+
+
+Processes:
++--------------------------------------------------------------------------------------+
+|  Device  |  Job ID  |    PID    |             Process               |  Memory Usage  |
++======================================================================================+
+|       0  |  977753  |  2200972  |  python tutorial/train_llama2.py  |  1354751 MiB   |
++--------------------------------------------------------------------------------------+
 ```

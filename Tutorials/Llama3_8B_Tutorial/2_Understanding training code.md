@@ -20,19 +20,19 @@ Import the necessary modules from the **`transformers`** library.
 from transformers import AdamW, LlamaForCausalLM, AutoTokenizer
 ```
 
-Then, load up the model checkpoint and tokenizer you downloaded earlier.
+Load the model configuration and checkpoint publicly available on Hugging Face. 
 
 ```python
-model = LlamaForCausalLM.from_pretrained("./llama3-8b")
-tokenizer = AutoTokenizer.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ```
 
-Load your preprocessed dataset, which you prepared during the [1. Prepare fine-tuning](1_Prepare_Fine-tuning.md) step, and define your data loaders.
-
+Then load the [training dataset](https://huggingface.co/datasets/abisee/cnn_dailymail) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 
 ```python
-  dataset = torch.load("./llama3_dataset.pt")
-
+  dataset = load_dataset("cnn_dailymail", "3.0.0").with_format("torch")
+  ...
+  dataset = dataset.map(preprocess, num_proc=16)
   # Create a DataLoader for the training set
   train_dataloader = torch.utils.data.DataLoader(
       dataset["train"],
@@ -121,7 +121,7 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ...
 ```
 

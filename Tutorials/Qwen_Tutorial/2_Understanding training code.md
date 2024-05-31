@@ -29,12 +29,11 @@ Load the model configuration and checkpoint publicly available on Hugging Face.
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
 ```
 
-Then load the preprocessed dataset saved during the preparation for [**1. Prepare Fine-tuning**](1_Prepare_Fine-tuning.md) and define the data loaders.
-
-
+Then load the [training dataset](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 ```python
-  dataset = torch.load("./qwen_dataset.pt")
-
+  dataset = load_dataset("iamtarun/python_code_instructions_18k_alpaca").with_format("torch")
+  ...
+  dataset = dataset.map(preprocess)
   # Create a DataLoader for the training set
   train_dataloader = torch.utils.data.DataLoader(
       dataset["train"],

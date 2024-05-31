@@ -26,51 +26,54 @@ model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
 tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B") 
 ```
 
-[Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Hugging Face에 공개된 학습 데이터셋을 불러와 전처리하고, 데이터 로더를 정의합니다.
+이 튜토리얼에서는 [Evol-Instruct-Python-26k](https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k) 데이터셋을 사용합니다. 이 데이터셋은 주어진 프롬프트에 대응하여 작성된 파이썬 코드로 구성되어 있습니다.
 
 ```python
-  dataset = torch.load("gpt_dataset.pt")
+dataset = load_dataset("mlabonne/Evol-Instruct-Python-26k").with_format("torch")
+...
+dataset = dataset.map(preprocess)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+	for i, batch in enumerate(train_dataloader, 0):
+		input_ids = batch["input_ids"]
+		attn_mask = batch["attention_mask"]
+		labels = mask_pads(input_ids, attn_mask)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
 
-            loss = outputs[0]
-            loss.backward()
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
 
 **위와 같이 MoAI Platform에서는 기존 pytorch 코드와 동일한 방식으로 작성하실 수 있습니다.**

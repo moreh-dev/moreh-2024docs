@@ -60,21 +60,21 @@ optim = AdamW(model.parameters(), lr=args.lr)
 # Start training
 for epoch in range(args.epoch):
 	for i, batch in enumerate(train_dataloader, 0):
-	    input_ids = batch["input_ids"]
-	    attn_mask = batch["attention_mask"]
-	    labels = mask_pads(input_ids, attn_mask)
-	    outputs = model(
+		input_ids = batch["input_ids"]
+		attn_mask = batch["attention_mask"]
+		labels = mask_pads(input_ids, attn_mask)
+		outputs = model(
 			input_ids.cuda(),
 			attention_mask=attn_mask.cuda(),
 			labels=labels.cuda(),
 			use_cache=False,
-	    )
+		)
 	
-	    loss = outputs[0]
-	    loss.backward()
+		loss = outputs[0]
+		loss.backward()
 	
-	    optim.step()
-	    model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
 
 With MoAI Platform, you can seamlessly use your existing PyTorch scripts without any modifications.

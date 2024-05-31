@@ -90,66 +90,20 @@ Run the following command to install the third-party Python packages required to
 $ pip install -r requirements/requirements_mistral.txt
 ```
 
-## Download the Model and Tokenizer
+## Acquire Access to the Model
 
-Let's download the checkpoint and tokenizer for the Mistral 7B v0.1 model using Hugging Face. This process requires agreeing to the community license and providing your Hugging Face token information to access the Mistral model.
+To access and download the Mistral 7B v0.1 model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information.
 
 First, enter the required information on the Hugging Face website below and proceed with the license agreement.
 
 [!ref icon="link-external" text="mistralai/Mistral-7B-v0.1 · Hugging Face"](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 
-After submitting the agreement form, confirm that the status on the page has changed as follows:
+After submitting the agreement, confirm that the page status has changed as shown below.
 
 ![](alert.png)
 
-If the status has been updated, you can use the **`download_mistral_7b.py`** script located in the **`tutorial`** directory to download the model checkpoint and tokenizer into the **`./mistral-7b`** directory.
-
-Replace **`<user-token>`** with your Hugging Face token.
+Now you can authenticate your Hugging Face token with the following command:
 
 ```bash
-~/quickstart$ python tutorial/download_mistral_7b.py --token <user-token>
-```
-
-Check if the model checkpoint and tokenizer have been downloaded.
-
-```bash
-~/quickstart$ ls ./mistral-7b
-config.json                       model-00003-of-00006.safetensors  model.safetensors.index.json  tokenizer.model
-generation_config.json            model-00004-of-00006.safetensors  special_tokens_map.json
-model-00001-of-00006.safetensors  model-00005-of-00006.safetensors  tokenizer_config.json
-model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.json
-```
-
-## Download Training Data
-
-In this tutorial, we will use the [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) dataset available on Hugging Face among various datasets publicly available for code generation training.
-
-We will execute **`prepare_mistral_dataset.py`** to download the dataset and preprocess it for training.
-
-```
-~/quickstart$ ls dataset
-...  prepare_mistral_dataset.py ...
-
-~/quickstart$ python dataset/dataset_qwen.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./mistral_dataset.pt
-
-~/quickstart$ ls
-... mistral_dataset.pt ...
-```
-
-
-The preprocessed dataset will be saved as **`mistral_dataset.pt`**.
-
-You can load the saved dataset in your code as follows.
-
-```bash
-dataset = torch.load("./mistral_dataset.pt")
+huggingface-cli login
 ```

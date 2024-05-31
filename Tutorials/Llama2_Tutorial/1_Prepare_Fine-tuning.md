@@ -91,66 +91,20 @@ Execute the following command to install third-party Python packages required fo
 $ pip install -r requirements/requirements_llama2.txt
 ```
 
-## Download the Model and Tokenizer
+## Acquire Access to the Model
 
-Download the checkpoint and tokenizer for the Llama2-13b-hf model using Hugging Face. Please note that the Llama2 model requires community license agreement and Hugging Face token information.
+To access and download the Llama2-13b-hf model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information.
 
-Begin by visiting the following website and providing the required information to proceed with the license agreement.
+First, enter the required information and agree to the license on the following site.
 
 [meta-llama/Llama-2-13b-hf · Hugging Face](https://huggingface.co/meta-llama/Llama-2-13b-hf)
 
-Once you've submitted the agreement form, check that the status on the page has updated as follows:
+After submitting the agreement, confirm that the page status has changed as shown below.
 
 ![](alert.png)
 
-Once the status has changed, you can utilize the `download_llama2_13b.py` script found in the `tutorial` directory to download the model checkpoint and tokenizer into the `./llama-2-13b-hf directory.`
-
-Make sure to replace `<user-token>` with your Hugging Face token.
+Now you can authenticate your Hugging Face token with the following command:
 
 ```bash
-~/quickstart$ python tutorial/download_llama2_13b.py --token <user-token>
-```
-
-Check if the model checkpoint and tokenizer have been downloaded.
-
-```bash
-~/quickstart$ ls ./llama-2-13b-hf
-config.json                       model-00008-of-00011.safetensors
-generation_config.json            model-00009-of-00011.safetensors
-model-00001-of-00011.safetensors  model-00010-of-00011.safetensors
-model-00002-of-00011.safetensors  model-00011-of-00011.safetensors
-model-00003-of-00011.safetensors  model.safetensors.index.json
-model-00004-of-00011.safetensors  special_tokens_map.json
-model-00005-of-00011.safetensors  tokenizer_config.json
-model-00006-of-00011.safetensors  tokenizer.json
-model-00007-of-00011.safetensors  tokenizer.model
-```
-
-## Download Training Data
-
-To download the training data, we'll use the **`prepare_llama2_dataset.py`** script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as **`llama2_dataset.pt`** file. 
-
-```bash
-~/quickstart$ ls dataset
-...  prepare_llama2_dataset.py ...
-
-~/quickstart$ python dataset/prepare_llama2_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./llama2_dataset.pt
-
-~/quickstart$ ls
-... llama2_dataset.pt ...
-```
-
-You can then load the stored dataset in your code like this:
-
-```bash
-dataset = torch.load("./llama2_dataset.pt")
+huggingface-cli login
 ```

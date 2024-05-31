@@ -89,23 +89,3 @@ Run the following command to install the third-party Python packages required to
 ```bash
 $ pip install -r requirements/requirements_gpt.txt
 ```
-
-## Downloading Training Data
-
-Hugging Face provides not only model checkpoints but also various datasets that can be used for model fine-tuning.
-
-In this tutorial, we will use the [Evol-Instruct-Python-26k](https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k) dataset. This dataset consists of Python code written in response to given prompt conditions.
-
-To download the training data, we will use the **`prepare_gpt_dataset.py`** script located in the **`dataset`** directory to download the dataset available on Hugging Face and preprocess it for immediate use in fine-tuning training.
-
-```bash
-~/quickstart$ python dataset/prepare_gpt_dataset.py
-```
-
-The preprocessed dataset is saved as **`gpt_dataset.pt`**.
-
-The saved dataset can be loaded and used in code as follows.
-
-```python
-dataset = torch.load("gpt_dataset.pt")
-```

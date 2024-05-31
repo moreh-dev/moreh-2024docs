@@ -92,59 +92,20 @@ Execute the following command to install third-party Python packages required fo
 $ pip install -r requirements/requirements_llama3.txt
 ```
 
-## Download the Model and Tokenizer
+## Acquire Access to the Model
 
-Use Hugging Face to download the checkpoint and tokenizer for the Llama3-8b model. Note that you will need to agree to the community license and provide your Hugging Face token information.
+To access and download the Llama3 8B model checkpoint from Hugging Face Hub, you will need to agree to the community license and provide your Hugging Face token information. 
 
 First, enter the required information and agree to the license on the following site.
 
-[https://huggingface.co/meta-llama/Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+[!ref icon="link-external" text="meta-llama/Meta-Llama-3-8B · Hugging Face"](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 
 After submitting the agreement, confirm that the page status has changed as shown below.
 ![](alert.png)
 
-Once the status has changed, you can use the **`download_llama3_8b.py`** script in the **`tutorial`** directory to download the model checkpoint and tokenizer to the **`./llama3-8b`** directory.
 
-Replace **`<user-token>`** with your Hugging Face token.
-
+Now you can authenticate your Hugging Face token with the following command:
 
 ```bash
-~/quickstart$ python tutorial/download_llama3_8b.py --token <user-token>
-```
-
-Check if the model checkpoint and tokenizer have been downloaded successfully.
-
-```bash
-~/quickstart$ ls ./llama3-8b
-config.json             model-00001-of-00004.safetensors  model-00003-of-00004.safetensors  model.safetensors.index.json  tokenizer_config.json
-generation_config.json  model-00002-of-00004.safetensors  model-00004-of-00004.safetensors  special_tokens_map.json       tokenizer.json
-```
-
-## Download Training Data
-
-To download the training data, use the **`prepare_llama3_dataset.py`** script in the **`dataset`** directory. Running this script will download and preprocess the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset for training, saving it as the **`llama3_dataset.pt`** file.
-
-```bash
-~/quickstart$ ls dataset
-...  prepare_llama3_dataset.py ...
-
-~/quickstart$ python dataset/prepare_llama3_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./llama3_dataset.pt
-
-~/quickstart$ ls
-... llama3_dataset.pt ...
-```
-
-You can load and use the saved dataset in your code as follows.
-
-```bash
-dataset = torch.load("./llama3_dataset.pt")
+huggingface-cli login
 ```

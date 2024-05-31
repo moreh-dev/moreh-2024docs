@@ -89,37 +89,3 @@ $ cd quickstart
 ```bash
 $ pip install -r requirements/requirements_gpt.txt
 ```
-
-## 학습 데이터 다운로드
-학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_gpt_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [Evol-Instruct-Python-26k](https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `gpt_dataset.pt` 파일로 저장합니다.
-
-```bash
-~/quickstart$ python dataset/prepare_gpt_dataset.py
-```
-
-전처리가 진행된 데이터셋은 `gpt_dataset.pt` 로 저장됩니다. 
-```bash
-~/quickstart$ ls dataset
-...  prepare_gpt_dataset.py ...
-
-~/quickstart$ python dataset/prepare_gpt_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./gpt_dataset.pt
-
-~/quickstart$ ls
-... gpt_dataset.pt ...
-```
-
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
-
-```python
-dataset = torch.load("gpt_dataset.pt")
-```
-

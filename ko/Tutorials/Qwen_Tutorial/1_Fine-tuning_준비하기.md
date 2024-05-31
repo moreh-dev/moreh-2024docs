@@ -88,35 +88,3 @@ $ cd quickstart
 ```bash
 $ pip install -r requirements/requirements_qwen.txt
 ```
-
-
-## 학습 데이터 다운로드
-
-학습 데이터를 다운로드하기 위해 `dataset` 디렉터리 안에 있는 `prepare_qwen_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [python_code_instruction_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터를 다운로드하고 학습에 사용할 수 있도록 전처리를 진행하여 `qwen_dataset.pt` 파일로 저장합니다.
-
-```
-~/quickstart$ ls dataset
-...  prepare_qwen_dataset.py ...
-
-~/quickstart$ python dataset/prepare_qwen_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./qwen_dataset.pt
-
-~/quickstart$ ls
-... qwen_dataset.pt ...
-```
-
-전처리가 진행된 데이터셋은 `qwen_dataset.pt` 로 저장됩니다. 
-
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
-
-```bash
-dataset = torch.load("./qwen_dataset.pt")
-```

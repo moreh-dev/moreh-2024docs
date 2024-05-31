@@ -88,34 +88,3 @@ Run the following command to install the third-party Python packages required to
 ```bash
 $ pip install -r requirements/requirements_qwen.txt
 ```
-
-## Download Training Data
-
-To download the training data, we'll use the `prepare_qwen_dataset.py` script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as `qwen_dataset.pt` file.
-
-```bash
-~/quickstart$ ls dataset
-...  prepare_qwen_dataset.py ...
-
-~/quickstart$ python dataset/prepare_qwen_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./qwen_dataset.pt
-
-~/quickstart$ ls
-... qwen_dataset.pt ...
-```
-
-The preprocessed dataset is saved as `qwen_dataset.pt`.
-
-You can then load the stored dataset in your code like this:
-
-```bash
-dataset = torch.load("./qwen_dataset.pt")
-```

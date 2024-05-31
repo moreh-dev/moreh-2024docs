@@ -90,36 +90,3 @@ Execute the following command to install third-party Python packages required fo
 ```bash
 $ pip install -r requirements/requirements_baichuan.txt
 ```
-
-
-## Download Training Data
-
-To download the training data for this tutorial, we'll use the `prepare_baichuan_dataset.py` script located inside the `dataset` directory. When you run the code, it will download the [Bitext-custormer-support-llm-chatbot](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) dataset, and preprocess it for training, and save it as `baichuan_dataset.pt`.
-
-
-```bash
-~/quickstart$ ls dataset
-...  prepare_baichuan_dataset.py ...
-
-~/quickstart$ python dataset/prepare_baichuan_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./baichuan_dataset.pt
-
-~/quickstart$ ls
-... baichuan_dataset.pt ...
-```
-
-The preprocessed dataset is saved as `baichuan_dataset.pt`.
-
-Then, You can load the stored dataset in your code like this:
-
-```Python
-dataset = torch.load("baichuan_dataset.pt")
-```

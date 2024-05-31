@@ -93,57 +93,19 @@ $ pip install -r requirements/requirements_llama3.txt
 
 ## 학습 모델 및 토크나이저 다운로드
 
-Hugging Face를 이용해 Llama3-8b 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Llama3 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 
+Hugging Face에 공개된 Llama3 모델 체크포인트를 사용하기 위해서는 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다.
 
 먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
 
-[meta-llama/Meta-Llama-3-8B · Hugging Face](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+[!ref icon="link-external" text="meta-llama/Meta-Llama-3-8B · Hugging Face"](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 
 ![](alert.png)
 
-상태 변경이 되었다면, 다음과 같이 `tutorial` 디렉토리 안의 `download_llama3_8b.py` 스크립트를 이용해 모델 체크포인트와 토크나이저를 `./llama3-8b` 디렉토리에 다운로드 받을 수 있습니다. 
 
-`<user-token>` 은 사용자의 Hugging Face 토큰으로 치환합니다.
-
-```bash
-~/quickstart$ python tutorial/download_llama3_8b.py --token <user-token>
-```
-
-모델 체크포인트와 토크나이저가 다운로드 받아졌는지 확인합니다.
+다음과 같은 명령어를 터미널에 입력하고 안내에 따라 Hugging Face 사용자 토큰을 입력합니다. 
 
 ```bash
-~/quickstart$ ls ./llama3-8b
-config.json             model-00001-of-00004.safetensors  model-00003-of-00004.safetensors  model.safetensors.index.json  tokenizer_config.json
-generation_config.json  model-00002-of-00004.safetensors  model-00004-of-00004.safetensors  special_tokens_map.json       tokenizer.json
-```
-
-## 학습 데이터 다운로드
-
-학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_llama3_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `llama3_dataset.pt` 파일로 저장합니다.
-
-```bash
-~/quickstart$ ls dataset
-...  prepare_llama3_dataset.py ...
-
-~/quickstart$ python dataset/prepare_llama3_dataset.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./llama3_dataset.pt
-
-~/quickstart$ ls
-... llama3_dataset.pt ...
-```
-
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
-
-```bash
-dataset = torch.load("./llama3_dataset.pt")
+huggingface-cli login
 ```

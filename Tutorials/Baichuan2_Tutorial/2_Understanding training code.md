@@ -29,52 +29,54 @@ model = AutoModelForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', t
 tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 ```
 
-Load the preprocessed dataset saved during the [**1. Preparing for Fine-tuning**](1_Prepare_Finetuning.md) and define the data loader.
-
+Then load the [training dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 
 ```python
- dataset = torch.load('./baichuan_dataset.pt')
+# Load dataset
+dataset = load_dataset("bitext/Bitext-customer-support-llm-chatbot-training-dataset").with_format("torch")
+...
+dataset = dataset.map(preprocess)
 
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset,
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset,
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 Subsequent training proceeds just like any other model training with PyTorch. 
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+    labels[~idx_mask.bool()] = ignore_index
+    return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+    for i, batch in enumerate(train_dataloader, 0):
+	input_ids = batch["input_ids"]
+	attn_mask = batch["attention_mask"]
+	labels = mask_pads(input_ids, attn_mask)
+	outputs = model(
+		input_ids.cuda(),
+		attention_mask=attn_mask.cuda(),
+		labels=labels.cuda(),
+		use_cache=False,
+	)
 
-            loss = outputs[0]
-            loss.backward()
+	loss = outputs[0]
+	loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+	optim.step()
+	model.zero_grad(set_to_none=True)
 ```
 
 **As shown above, with MoAI Platform, you can use your existing PyTorch scripts without any modifications.**

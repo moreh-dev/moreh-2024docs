@@ -94,7 +94,7 @@ $ pip install -r requirements/requirements_mistral.txt
 
 ## 학습 모델 및 토크나이저 다운로드
 
-Hugging Face를 이용해 Mistral 7B v0.1 모델의 체크포인트와 토크나이저를 다운로드 받습니다. 이때 Mistral 모델은 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다. 
+Hugging Face를 이용해 Mistral 7B v0.1 모델 체크포인트를 사용하기 위해서는 커뮤니티 라이센스 동의와 Hugging Face 토큰 정보가 필요합니다.
 
 먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
 
@@ -104,53 +104,8 @@ Hugging Face를 이용해 Mistral 7B v0.1 모델의 체크포인트와 토크나
 
 ![](alert.png)
 
-상태 변경이 되었다면, 다음과 같이 `tutorial` 디렉토리 안의 `download_mistral_7b.py` 스크립트를 이용해 모델 체크포인트와 토크나이저를 `./mistral-7b` 디렉토리에 다운로드 받을 수 있습니다. 
-
-`<user-token>` 은 사용자의 Hugging Face 토큰으로 치환합니다.
+상태 변경이 되었다면, 다음과 같은 명령어를 터미널에 입력하고 안내에 따라 Hugging Face 사용자 토큰을 입력합니다.
 
 ```bash
-~/quickstart$ python tutorial/download_mistral_7b.py --token <user-token>
-```
-
-모델 체크포인트와 토크나이저가 다운로드 받아졌는지 확인합니다.
-
-```bash
-~/quickstart$ ls ./mistral-7b
-config.json                       model-00003-of-00006.safetensors  model.safetensors.index.json  tokenizer.model
-generation_config.json            model-00004-of-00006.safetensors  special_tokens_map.json
-model-00001-of-00006.safetensors  model-00005-of-00006.safetensors  tokenizer_config.json
-model-00002-of-00006.safetensors  model-00006-of-00006.safetensors  tokenizer.json
-```
-
-## 학습 데이터 다운로드
-
-이 튜토리얼에서는 코드 생성 훈련을 위해 공개된 여러 데이터셋들 중 Hugging Face에 공개되어 있는 [python_code_instructions_18k_alpaca](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) 데이터셋을 사용할 것입니다.
-
-`prepare_mistral_dataset.py` 를 실행해 데이터셋을 다운로드하고, 학습에 사용할 수 있도록 전처리를 진행합니다.
-
-```
-~/quickstart$ ls dataset
-...  prepare_mistral_dataset.py ...
-
-~/quickstart$ python dataset/dataset_qwen.py
-torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
-torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
-Loading Tokenizer...
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-Downloading dataset...
-Preprocessing dataset...
-Saving datset into torch format...
-Dataset saved as ./mistral_dataset.pt
-
-~/quickstart$ ls
-... mistral_dataset.pt ...
-```
-
-전처리가 진행된 데이터셋은 `mistral_dataset.pt` 로 저장됩니다. 
-
-저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
-
-```bash
-dataset = torch.load("./mistral_dataset.pt")
+huggingface-cli login
 ```

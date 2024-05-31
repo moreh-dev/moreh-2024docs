@@ -20,54 +20,55 @@ order: 40
 from transformers import AdamW, LlamaForCausalLM, AutoTokenizer
 ```
 
- 앞서 다운로드 받았던 모델 체크포인트와 토크나이저를 불러옵니다.
+HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.  
 
 ```python
-model = LlamaForCausalLM.from_pretrained("./llama3-8b")
-tokenizer = AutoTokenizer.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ```
 
-[1. Fine tuning 준비하기](1_Fine-tuning_준비하기.md) 단계에서 저장한 전처리된 데이터셋을 불러와 데이터로더를 정의합니다. 
+Hugging Face에 공개된 [학습 데이터셋](https://huggingface.co/datasets/abisee/cnn_dailymail)을 불러와 전처리하고, 데이터 로더를 정의합니다. 
 
 ```python
-  dataset = torch.load("./llama3_dataset.pt")
-
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset["train"],
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+dataset = load_dataset("cnn_dailymail", "3.0.0").with_format("torch")
+...
+dataset = dataset.map(preprocess, num_proc=16)
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset["train"],
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 이후 학습도 일반적인 Pytorch를 사용하여 모델 학습과 동일하게 진행됩니다. 
 
 ```python
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.num_train_epochs):
-        for step, batch in enumerate(train_dataloader, start=1):
-            start_time = time.perf_counter()
-            input_ids = batch["input_ids"]
-            inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
-            attn_mask = create_mask(inputs, tokenizer)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
-            loss = outputs[0]
-            loss.backward()
+# Start training
+for epoch in range(args.num_train_epochs):
+	for step, batch in enumerate(train_dataloader, start=1):
+		start_time = time.perf_counter()
+		input_ids = batch["input_ids"]
+		inputs, labels = input_ids, mask_pads(input_ids, tokenizer)
+		attn_mask = create_mask(inputs, tokenizer)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
-위와 같이 MoAI Platform에서는 기존 PyTorch 코드와 동일한 방식으로 작성하실 수 있습니다.
 
+위와 같이 MoAI Platform에서는 기존 PyTorch 코드와 동일한 방식으로 작성하실 수 있습니다.
 
 ## About Advanced Parallelism
 
@@ -121,7 +122,7 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = LlamaForCausalLM.from_pretrained("./llama3-8b")
+model = LlamaForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
 ...
 ```
 

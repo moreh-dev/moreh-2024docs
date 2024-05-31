@@ -97,7 +97,7 @@ Hugging Face에 공개된 Llama3 모델 체크포인트를 사용하기 위해�
 
 먼저 다음 사이트에서 필요한 정보를 입력한 후 라이센스 동의를 진행합니다.
 
-[meta-llama/Meta-Llama-3-8B · Hugging Face](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+[!ref icon="link-external" text="meta-llama/Meta-Llama-3-8B · Hugging Face"](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 

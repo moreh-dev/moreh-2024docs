@@ -98,7 +98,7 @@ Hugging Face에 공개된 Llama3 70B 모델 체크포인트를 사용하기 위�
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 
-[meta-llama/Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
+[!ref icon="link-external" text="meta-llama/Meta-Llama-3-70B · Hugging Face"](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
 
 동의서 제출 후 페이지의 상태가 다음과 같이 변경된 것을 확인합니다.
 

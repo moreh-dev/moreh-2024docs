@@ -160,7 +160,7 @@ The throughput displayed during training indicates how many tokens are being tra
 
 - Throughput when using 16 AMD MI250 GPUs: Approximately 150,000 tokens/sec
 
-Here are the approximate training times based on the type and number of GPUs:
+Here are the approximate training times based on the type and number of GPUs.
 
 - Training time when using 16 AMD MI250 GPUs: Approximately 10 hours
 

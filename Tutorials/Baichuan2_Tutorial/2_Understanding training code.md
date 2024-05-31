@@ -32,6 +32,7 @@ tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trus
 Then load the [training dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
 
 ```python
+# Load dataset
 dataset = load_dataset("bitext/Bitext-customer-support-llm-chatbot-training-dataset").with_format("torch")
 ...
 dataset = dataset.map(preprocess)

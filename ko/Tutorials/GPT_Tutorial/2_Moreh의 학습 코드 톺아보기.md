@@ -127,8 +127,8 @@ import torch
 ...
 torch.moreh.option.enable_advanced_parallelization()
 
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-7B")
+model = AutoModelForCausalLM.from_pretrained("cerebras/Cerebras-GPT-13B")
+tokenizer = AutoTokenizer.from_pretrained("cerebras/Cerebras-GPT-13B")
 ...
 ```
 다른 프레임워크에서는 경험할 수 없는 MoAI Platform만의 Advanced Parallelization(AP) 기능을 통해 최적의 자동화된 분산 병렬처리를 경험해보세요. 

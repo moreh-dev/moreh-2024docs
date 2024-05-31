@@ -98,7 +98,7 @@ To access and download the Llama3 8B model checkpoint from Hugging Face Hub, you
 
 First, enter the required information and agree to the license on the following site.
 
-[meta-llama/Meta-Llama-3-8B · Hugging Face](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+[!ref icon="link-external" text="meta-llama/Meta-Llama-3-8B · Hugging Face"](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 
 After submitting the agreement, confirm that the page status has changed as shown below.
 ![](alert.png)

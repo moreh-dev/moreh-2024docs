@@ -20,60 +20,62 @@ All the code used during training is exactly the same as the standard method of 
 Firstly, import the required modules from the **`transformers`** library.
 
 ```python
-from transformers import AutoModelForCausalLM, AdamW
+from transformers import AutoTokenizer, AutoModelForCausalLM, AdamW
 ```
 
 Load the model configuration and checkpoint publicly available on Hugging Face. 
 
 ```python
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen1.5-7B")
+tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-7B")
 ```
 
 Then load the [training dataset](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca) from Hugging Face Hub, preprocess loaded dataset, and define the data loader.
+
 ```python
-  dataset = load_dataset("iamtarun/python_code_instructions_18k_alpaca").with_format("torch")
-  ...
-  dataset = dataset.map(preprocess)
-  # Create a DataLoader for the training set
-  train_dataloader = torch.utils.data.DataLoader(
-      dataset["train"],
-      batch_size=args.batch_size,
-      shuffle=True,
-      drop_last=True,
-  )
+dataset = load_dataset("iamtarun/python_code_instructions_18k_alpaca").with_format("torch")
+...
+dataset = dataset.map(preprocess)
+# Create a DataLoader for the training set
+train_dataloader = torch.utils.data.DataLoader(
+	dataset["train"],
+	batch_size=args.batch_size,
+	shuffle=True,
+	drop_last=True,
+)
 ```
 
 Subsequently, the training proceeds similarly to general AI model training with Pytorch.
 
 ```python
-    # Mask pad tokens for training
-    def mask_pads(input_ids, attention_mask, ignore_index = -100):
-        idx_mask = attention_mask
-        labels = copy.deepcopy(input_ids)
-        labels[~idx_mask.bool()] = ignore_index
-        return labels
+# Mask pad tokens for training
+def mask_pads(input_ids, attention_mask, ignore_index = -100):
+	idx_mask = attention_mask
+	labels = copy.deepcopy(input_ids)
+	labels[~idx_mask.bool()] = ignore_index
+	return labels
 
-    # Define AdamW optimizer
-    optim = AdamW(model.parameters(), lr=args.lr)
+# Define AdamW optimizer
+optim = AdamW(model.parameters(), lr=args.lr)
 
-    # Start training
-    for epoch in range(args.epoch):
-        for i, batch in enumerate(train_dataloader, 0):
-            input_ids = batch["input_ids"]
-            attn_mask = batch["attention_mask"]
-            labels = mask_pads(input_ids, attn_mask)
-            outputs = model(
-                input_ids.cuda(),
-                attention_mask=attn_mask.cuda(),
-                labels=labels.cuda(),
-                use_cache=False,
-            )
+# Start training
+for epoch in range(args.epoch):
+	for i, batch in enumerate(train_dataloader, 0):
+		input_ids = batch["input_ids"]
+		attn_mask = batch["attention_mask"]
+		labels = mask_pads(input_ids, attn_mask)
+		outputs = model(
+			input_ids.cuda(),
+			attention_mask=attn_mask.cuda(),
+			labels=labels.cuda(),
+			use_cache=False,
+		)
 
-            loss = outputs[0]
-            loss.backward()
+		loss = outputs[0]
+		loss.backward()
 
-            optim.step()
-            model.zero_grad(set_to_none=True)
+		optim.step()
+		model.zero_grad(set_to_none=True)
 ```
 
 As shown above, you can code in the same way as traditional PyTorch code on MoAI Platform.

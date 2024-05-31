@@ -6,7 +6,18 @@ order: 40
 
 # 1. Preparing for Fine-tuning
 
-Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.
+Preparing the PyTorch script execution environment on the MoAI Platform is similar to doing so on a typical GPU server.<br>
+For a smooth tutorial experience, the following specifications are recommended:
+
+- CPU: 16 cores or more
+
+- Memory: 256GB or more
+
+- MAF version: 24.5.0
+
+- Storage: 105GB or more
+
+Please verify that your environment meets these requirements before starting the tutorial.
 
 ## Checking PyTorch Installation
 
@@ -16,20 +27,21 @@ After connecting to the container via SSH, run the following command to check if
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...
 ```
 
-The version name includes both the PyTorch version and the version of MoAI required to run it. In the example above, it indicates that version 24.2.0 of MoAI, which runs PyTorch version 1.13.1+cu116, is installed.
+The version name includes both the PyTorch version and the version of MoAI required to run it. <br>
+In the example above, it indicates that version 24.5.0 of MoAI, which runs PyTorch version 1.13.1+cu116, is installed.
 
 If you see the message `conda: command not found`, if the torch package is not listed, or if the torch package exists but does not include "moreh" in the version name, please follow the instructions in the ***[Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)*** document to create a conda environment.
 
-After connecting to the container via SSH, run the following command to check if PyTorch is installed in the current conda environment:
+If the moreh version is not 24.5.0 but a different version, please execute the following code.
 
 ```bash
-$ update-moreh --target 24.2.0
+$ update-moreh --target 24.5.0
 Currently installed: 24.3.0
-Possible upgrading version: 24.2.0
+Possible upgrading version: 24.5.0
 
 Do you want to upgrade? (y/n, default:n)
 y
@@ -61,7 +73,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## Download the Training Script
 
-Execute the following command to download the PyTorch script for training from the GitHub repository. In this tutorial, we will be using the **`train_llama2.py`** script located inside the **`tutorial`** directory.
+Execute the following command to download the PyTorch script for training from the GitHub repository.<br> In this tutorial, we will be using the **`train_llama2.py`** script located inside the **`tutorial`** directory.
 
 ```bash
 $ sudo apt-get install git
@@ -81,7 +93,7 @@ $ pip install -r requirements/requirements_llama2.txt
 
 ## Download the Model and Tokenizer
 
-Download the checkpoint and tokenizer for the Llama2-13b-hf model using Hugging Face. Please note that the Llama2 model requires community license agreement and Hugging Face token information. Additionally, since the checkpoint size for the Llama2 13B model is approximately 49GB, it is essential to have at least 50GB of storage space for the checkpoint.
+Download the checkpoint and tokenizer for the Llama2-13b-hf model using Hugging Face. Please note that the Llama2 model requires community license agreement and Hugging Face token information.
 
 Begin by visiting the following website and providing the required information to proceed with the license agreement.
 
@@ -116,7 +128,7 @@ model-00007-of-00011.safetensors  tokenizer.model
 
 ## Download Training Data
 
-To download the training data, we'll use the **`prepare_llama2_dataset.py`** script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as **`llama2_dataset.pt`** file.
+To download the training data, we'll use the **`prepare_llama2_dataset.py`** script located in the **`dataset`** directory. When you run the code, it will download the [cnn_dailymail](https://huggingface.co/datasets/cnn_dailymail) dataset, preprocess it for training, and save it as **`llama2_dataset.pt`** file. 
 
 ```bash
 ~/quickstart$ ls dataset
@@ -125,7 +137,7 @@ To download the training data, we'll use the **`prepare_llama2_dataset.py`** scr
 ~/quickstart$ python dataset/prepare_llama2_dataset.py
 torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
 torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
-datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.2.0 available.
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
 Loading Tokenizer...
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 Downloading dataset...

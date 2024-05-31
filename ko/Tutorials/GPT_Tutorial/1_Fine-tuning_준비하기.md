@@ -6,7 +6,18 @@ order: 40
 
 # 1. Fine-tuning 준비하기
 
-MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.
+MoAI Platform에서 PyTorch 스크립트 실행 환경을 준비하는 것은 일반적인 GPU 서버에서와 크게 다르지 않습니다.<br>
+단, 튜토리얼 진행을 위해 아래의 사양들이 권장됩니다:
+
+- CPU: 16 core 이상
+
+- memory: 256GB 이상
+
+- MAF 버전: 24.5.0
+
+- 스토리지: 100GB 이상
+
+원할한 튜토리얼 진행 전 실행 환경을 확인하시길 바랍니다.
 
 ## PyTorch 설치 여부 확인하기
 
@@ -16,13 +27,25 @@ SSH로 컨테이너에 접속한 다음 아래와 같이 실행하여 현재 con
 $ conda list torch
 ...
 # Name                    Version                   Build  Channel
-torch                     1.13.1+cu116.moreh24.2.0          pypi_0    pypi
+torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 ...
 ```
 
-버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.2.0 버전이 설치되어 있음을 의미합니다.
+버전명에는 PyTorch 버전과 이를 실행시키기 위한 MoAI 버전이 함께 표시되어 있습니다. 위 예시의 경우 PyTorch 1.13.1+cu116 버전을 실행하는 MoAI의 24.5.0 버전이 설치되어 있음을 의미합니다.
 
 만약 `conda: command not found` 메시지가 표시되거나, torch 패키지가 리스트되지 않거나, 혹은 torch 패키지가 존재하더라도 버전명에 “moreh”가 포함되지 않은 경우 **[MoAI Platform에서 Fine-tuning 준비하기](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)** 문서에 따라 conda 환경을 생성하십시오.
+
+만약 해당 MoAI 버전이 24.5.0이 아닌 다른 버전이라면 아래의 코드를 실행시키십시오.
+
+```bash
+$ update-moreh --target 24.5.0
+Currently installed: 24.2.0
+Possible upgrading version: 24.5.0
+
+Do you want to upgrade? (y/n, default:n)
+y
+```
+
 
 ## PyTorch 동작 여부 확인하기
 
@@ -68,18 +91,31 @@ $ pip install -r requirements/requirements_gpt.txt
 ```
 
 ## 학습 데이터 다운로드
-
-Huggingface에서는 model checkpoint뿐만 아니라 model fine-tuning에 사용할 수 있는 다양한 데이터셋이 공개되어 있습니다. 
-
-이번 튜토리얼에서 저희는 [mlabonne/Evol-Instruct-Python-26k](https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k) 데이터셋을 사용할 것입니다. 이 데이터셋은 주어진 질문 조건과 주어진 질문 조건에 맞게 작성된 python 코드로 이루어져 있습니다.
-
-학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는`prepare_gpt_dataset.py` 스크립트를 통해 huggingface에 공개된 데이터셋을 다운로드하고, fine-tuning 학습에 바로 사용할 수 있도록 전처리를 진행하겠습니다.
+학습 데이터를 다운로드 받기 위해 `dataset` 디렉토리 안에 있는 `prepare_gpt_dataset.py` 스크립트를 사용하겠습니다. 코드를 실행하면 [Evol-Instruct-Python-26k](https://huggingface.co/datasets/mlabonne/Evol-Instruct-Python-26k) 데이터를 다운로드 받고 학습에 사용할 수 있도록 전처리를 진행하여 `gpt_dataset.pt` 파일로 저장합니다.
 
 ```bash
 ~/quickstart$ python dataset/prepare_gpt_dataset.py
 ```
 
 전처리가 진행된 데이터셋은 `gpt_dataset.pt` 로 저장됩니다. 
+```bash
+~/quickstart$ ls dataset
+...  prepare_gpt_dataset.py ...
+
+~/quickstart$ python dataset/prepare_gpt_dataset.py
+torch.distributed.nn.jit.instantiator - INFO - Created a temporary directory at /tmp/tmpjkaqeu3r
+torch.distributed.nn.jit.instantiator - INFO - Writing /tmp/tmpjkaqeu3r/_remote_module_non_scriptable.py
+datasets - INFO - PyTorch version 1.13.1+cu116.moreh24.5.0 available.
+Loading Tokenizer...
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Downloading dataset...
+Preprocessing dataset...
+Saving datset into torch format...
+Dataset saved as ./gpt_dataset.pt
+
+~/quickstart$ ls
+... gpt_dataset.pt ...
+```
 
 저장된 데이터셋은 코드상에서 다음과 같이 로드하여 사용할 수 있습니다.
 

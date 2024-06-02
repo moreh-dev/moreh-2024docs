@@ -32,7 +32,7 @@ First, we'll use the `moreh-smi` command to check the currently used MoAI Accele
 ```bash
 $ moreh-smi
 +--------------------------------------------------------------------------------------------------+
-|                                                 Current Version: 24.3.0  Latest Version: 24.3.0  |
+|                                                 Current Version: 24.5.0  Latest Version: 24.5.0  |
 +--------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |      Model    |  Memory Usage  |  Total Memory  |  Utilization  |
 +==================================================================================================+
@@ -113,11 +113,11 @@ Now you can see that it has been successfully changed to [!badge variant="second
 
 # Training Execution
 
-Execute the `train_baichuan2_13b.py` script below.
+Execute the `train_baichuan2.py` script below.
 
 ```
 $ cd ~/quickstart
-~/quickstart$ python tutorial/train_baichuan2_13b.py
+~/quickstart$ python tutorial/train_baichuan2.py
 ```
 
 If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It's worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.
@@ -133,6 +133,8 @@ If the training proceeds smoothly, you should see the following logs. By going t
 [info] [4/4] Connecting to resources on the server (192.168.110.93:24170)...
 [info] Establishing links to the resources...
 [info] MoAI Accelerator is ready to use.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977890
 [info] The number of candidates is 45.
 [info] Parallel Graph Compile start...
 [info] Elapsed Time to compile all candidates = 12043 [ms]
@@ -163,7 +165,7 @@ You can confirm that the training is progressing smoothly by observing the loss 
 
 The throughput displayed during training indicates how many tokens per second are being processed through the PyTorch script.
 
-- When using 8 AMD MI250 GPUs: approximately 191605 tokens/sec
+- When using 8 AMD MI250 GPUs: approximately 191,000 tokens/sec
 
 Approximate training time based on GPU type and quantity is as follows:
 
@@ -182,6 +184,13 @@ $ moreh-smi
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |   MoAI Accelerator  |  4xLarge.2048GB  |  191605 MiB    |  2096640 MiB   |  100 %        |
+|  * 0     |   MoAI Accelerator  |  4xLarge.2048GB  |  1916050 MiB   |  2096640 MiB   |  100 %        |
 +-----------------------------------------------------------------------------------------------------+
+
+Processes:
++----------------------------------------------------------------------------------------+
+|  Device  |  Job ID  |    PID    |               Process               |  Memory Usage  |
++========================================================================================+
+|       0  |  977890  |  2219280  |  python tutorial/train_baichuan2.py |  1739561 MiB   |
++----------------------------------------------------------------------------------------+
 ```

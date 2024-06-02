@@ -29,7 +29,7 @@ MoAI Platform 또한 일반적인 AI 학습 환경과 유사하게  Python 기�
 3. MoAI Platform은 다양한 PyTorch 버전을 제공하고 있으므로 사용자가 필요한 환경에 맞는 버전을 선택해 설치할 수 있습니다. 
     
     ```bash
-    $ pip install torch==1.13.1+cu116.moreh24.2.0
+    $ pip install torch==1.13.1+cu116.moreh24.5.0
     ```
 
 4. `moreh-smi` 명령어를 입력해 설치된 MoAI Platform의 버전과 사용중인 [MoAI Accelerator](/MoAI_Features/Virtualization.md) 정보를 확인할 수 있습니다. 현재 사용중인 MoAI Accelerator는 [!badge variant="secondary" text=4xLarge.2048GB] 입니다.
@@ -37,7 +37,7 @@ MoAI Platform 또한 일반적인 AI 학습 환경과 유사하게  Python 기�
     ```bash
     $ moreh-smi
     +-----------------------------------------------------------------------------------------------------+
-    |                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
+    |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
     +-----------------------------------------------------------------------------------------------------+
     |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
     +=====================================================================================================+

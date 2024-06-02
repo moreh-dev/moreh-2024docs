@@ -29,7 +29,7 @@ The MoAI Platform supports Python-based programming, similar to typical AI train
 3. The MoAI Platform supports various PyTorch versions, allowing you to choose the one that fits your needs.
     
     ```bash
-    $ pip install torch==1.13.1+cu116.moreh24.2.0
+    $ pip install torch==1.13.1+cu116.moreh24.5.0
     ```
     
 4. Use the **`moreh-smi`** command to check the version of the installed Moreh solution and the details of the MoAI Accelerator in use. The current MoAI Accelerator is  [!badge variant="secondary" text="4xLarge.2048GB"]. For more information about the MoAI Accelerator, refer to the specifications.
@@ -37,7 +37,7 @@ The MoAI Platform supports Python-based programming, similar to typical AI train
     ```bash
     $ moreh-smi
     +-----------------------------------------------------------------------------------------------------+
-    |                                                    Current Version: 24.2.0  Latest Version: 24.5.0  |
+    |                                                    Current Version: 24.5.0  Latest Version: 24.5.0  |
     +-----------------------------------------------------------------------------------------------------+
     |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
     +=====================================================================================================+

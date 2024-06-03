@@ -34,7 +34,7 @@ MoAI Platform은 최적화된 병렬 처리를 위해 다양한 최적화 후보
 그 다음 모든 후보군에 대해서 연산 그래프를 생성합니다.
 
 ```bash
-[2024-04-15 14:07:08.919] [info] Elapsed Time to compile all candidates = 6103 [ms]
+[info] Elapsed Time to compile all candidates = 6103 [ms]
 ```
 
 위 로그를 통해 config 들을 compile 하는 데에 약 6.1초가 소요되었음을 알 수 있습니다.

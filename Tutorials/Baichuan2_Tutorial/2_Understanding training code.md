@@ -24,6 +24,7 @@ from modeling_baichuan import BaichuanForCausalLM
 ```
 
 Load the checkpoint from HuggingFace.
+
 For model optimization, we use the `BaichuanForCausalLM` predefined in the quickstart repository.
 
 ```python

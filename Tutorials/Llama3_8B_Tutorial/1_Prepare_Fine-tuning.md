@@ -34,7 +34,7 @@ torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 The version name includes both the PyTorch version and the MoAI version required to run it.<br>
 In the example above, it indicates that PyTorch 1.13.1+cu116 is installed with MoAI version 24.5.0.
 
-If you see the message `conda: command not found`, if the torch package is not listed, or if the torch package exists but does not include "moreh" in the version name, please follow the instructions in the ***[Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)*** document to create a conda environment.
+If you see the message `conda: command not found`, if the torch package is not listed, or if the torch package exists but does not include "moreh" in the version name, please follow the instructions in the **[Prepare Fine-tuning on MoAI Platform](/Supported_Documents/Prepare_Fine_tuning_MoAI.md)** document to create a conda environment.
 
 If the moreh version is not 24.5.0 but a different version, please execute the following code.
 

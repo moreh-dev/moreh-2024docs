@@ -17,8 +17,7 @@ branding:
 exclude:
   - "fr"
   - "ko"
-edit:
-  repo: https://github.com/moreh-dev/moreh-2024docs
+
 links: 
 - text: EN
   link: https://docs.moreh.io/

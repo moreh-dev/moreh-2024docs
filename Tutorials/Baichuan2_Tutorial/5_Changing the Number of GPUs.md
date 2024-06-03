@@ -32,7 +32,7 @@ Run the `train_baichuan2_13b.py` script again.
 ~/moreh-quickstart$ python tutorial/train_baichuan2_13b.py --batch-size 512
 ```
 
-Since the available GPU memory has doubled, let's increase the batch size to 2048 and run the training.
+Since the available GPU memory has doubled, let's increase the batch size to 512 and run the training.
 
 f the training proceeds normally, you should see the following log:
 

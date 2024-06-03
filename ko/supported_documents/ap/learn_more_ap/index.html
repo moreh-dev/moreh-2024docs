@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770689755801">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770689957130">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770689755801" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770689957130" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770689755801" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770689957130" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770689755801" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770689755801" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770689755801" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770689957130" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770689957130" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770689957130" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,45 +207,45 @@
 </doc-anchor-target>
 <p>AP와 관련된 로그를 조금 더 자세히 들여다보겠습니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">[2024-04-15 14:06:55.095] [info] Got DBs from backend for auto config.
+<pre class="language-bash"><code v-pre class="language-bash">[info] Got DBs from backend for auto config.
 ...
-[2024-04-15 14:07:02.815] [info] The number of candidates is 30.
-[2024-04-15 14:07:02.815] [info] Parallel Graph Compile start...
-[2024-04-15 14:07:08.919] [info] Elapsed Time to compile all candidates = 6103 [ms]
-[2024-04-15 14:07:08.919] [info] Parallel Graph Compile finished.
-[2024-04-15 14:07:08.919] [info] The number of possible candidates is 7.
-[2024-04-15 14:07:08.919] [info] SelectBestGraphFromCandidates start...
-[2024-04-15 14:07:09.728] [info] Elapsed Time to compute cost for survived candidates = 808 [ms]
-[2024-04-15 14:07:09.729] [info] SelectBestGraphFromCandidates finished.
-[2024-04-15 14:07:09.729] [info] Configuration for parallelism is selected.
-[2024-04-15 14:07:09.729] [info] num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
-[2024-04-15 14:07:09.731] [info] train: true</code></pre>
+[info] The number of candidates is 30.
+[info] Parallel Graph Compile start...
+[info] Elapsed Time to compile all candidates = 6103 [ms]
+[info] Parallel Graph Compile finished.
+[info] The number of possible candidates is 7.
+[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 808 [ms]
+[info] SelectBestGraphFromCandidates finished.
+[info] Configuration for parallelism is selected.
+[info] num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
+[info] train: true</code></pre>
 </doc-codeblock></div>
 <p>MoAI Platform은 최적화된 병렬 처리를 위해 다양한 최적화 후보 config들을 생성합니다. 다음 로그는 Compiler Config Generator가 병렬화를 위한 후보 config를 30개로 설정했다는 의미입니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">[2024-04-15 14:07:02.815] [info] The number of candidates is 30.</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">[info] The number of candidates is 30.</code></pre>
 </doc-codeblock></div>
 <p>그 다음 모든 후보군에 대해서 연산 그래프를 생성합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">[2024-04-15 14:07:08.919] [info] Elapsed Time to compile all candidates = 6103 [ms]</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">[info] Elapsed Time to compile all candidates = 6103 [ms]</code></pre>
 </doc-codeblock></div>
 <p>위 로그를 통해 config 들을 compile 하는 데에 약 6.1초가 소요되었음을 알 수 있습니다.</p>
 <p>여기서 다시 가능한 후보 config를 추정합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">[2024-04-15 14:07:08.919] [info] The number of possible candidates is 7.</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">[info] The number of possible candidates is 7.</code></pre>
 </doc-codeblock></div>
 <p>이로써 총 7개의 가능한 config들이 있다는 것을 확인했습니다.</p>
 <p>이제 graph simulator가 각 config에 대한 cost를 계산하고, 계산이 종료되면 최적의 config라고 판단한 1개의 config를 채택합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">[2024-04-15 14:07:08.919] [info] SelectBestGraphFromCandidates start...
-[2024-04-15 14:07:09.728] [info] Elapsed Time to compute cost for survived candidates = 808 [ms]
-[2024-04-15 14:07:09.729] [info] SelectBestGraphFromCandidates finished.</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">[info] SelectBestGraphFromCandidates start...
+[info] Elapsed Time to compute cost for survived candidates = 808 [ms]
+[info] SelectBestGraphFromCandidates finished.</code></pre>
 </doc-codeblock></div>
 <p>위 로그는 최종 config 1개가 설정되기까지 cost를 계산하는데 약 0.8초가 소요되었음을 보여줍니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">[2024-04-15 14:07:09.729] [info] Configuration for parallelism is selected.
-[2024-04-15 14:07:09.729] [info] num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
-[2024-04-15 14:07:09.731] [info] train: true</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">[info] Configuration for parallelism is selected.
+[info] num_stages : 2, num_micro_batches : 4, batch_per_device : 1, No TP, recomputation : 0, distribute_param : true, distribute_low_prec_param : false
+[info] train: true</code></pre>
 </doc-codeblock></div>
 <p>이 정보는 <code v-pre>advanced_parallelization_selected_config.dump</code>라는 파일에 기록되며 파이썬 프로그램을 실행한 위치에 생성됩니다. 이제 <code v-pre>advanced_parallelization_selected_config.dump</code>이 어떻게 생겼는지 확인해 봅시다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>

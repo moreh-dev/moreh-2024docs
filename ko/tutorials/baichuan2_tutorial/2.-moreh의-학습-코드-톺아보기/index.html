@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770681879463">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770689220149">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770681879463" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770689220149" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770681879463" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770689220149" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770681879463" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770681879463" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770681879463" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770689220149" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770689220149" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770689220149" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -216,11 +216,13 @@
 <p><strong>모든 코드는 일반적인 pytorch 사용 경험과 완벽하게 동일합니다.</strong></p>
 <p>먼저, <code v-pre>transformers</code> 라이브러리에서 필요한 모듈을 불러옵니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">from transformers import AutoModelForCausalLM, AdamW, AutoTokenizer</code></pre>
+<pre class="language-python"><code v-pre class="language-python">from transformers import AdamW, AutoTokenizer
+from modeling_baichuan import BaichuanForCausalLM</code></pre>
 </doc-codeblock></div>
-<p>HuggingFace에 공개된 모델 config와 체크포인트를 불러옵니다.</p>
+<p>HuggingFace에 공개된 모델 체크포인트를 불러옵니다.</p>
+<p>모델 최적화를 위해 quickstart repository에 미리 정의된 <code v-pre>BaichuanForCausalLM</code>를 사용합니다.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">model = AutoModelForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
+<pre class="language-python"><code v-pre class="language-python">model = BaichuanForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)</code></pre>
 </doc-codeblock></div>
 <p>Hugging Face에 공개된 <a href="https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset" class="outbound" target="_blank"><span>학습 데이터셋</span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>을 불러와 전처리하고, 데이터 로더를 정의합니다.</p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770681874482">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770689214865">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,13 +33,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770681874482" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770689214865" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770681874482" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770689214865" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770681874482" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770681874482" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770681874482" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770689214865" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770689214865" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770689214865" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -251,7 +251,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">$ moreh-smi
 +--------------------------------------------------------------------------------------------------+
-|                                                 Current Version: 24.3.0  Latest Version: 24.3.0  |
+|                                                 Current Version: 24.5.0  Latest Version: 24.5.0  |
 +--------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |      Model    |  Memory Usage  |  Total Memory  |  Utilization  |
 +==================================================================================================+
@@ -329,10 +329,10 @@ Selection (1-13, q, Q): q</code></pre>
         <span>Training Execution</span>
     </h1>
 </doc-anchor-target>
-<p>Execute the <code v-pre>train_baichuan2_13b.py</code> script below.</p>
+<p>Execute the <code v-pre>train_baichuan2.py</code> script below.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">$ cd ~/quickstart
-~/quickstart$ python tutorial/train_baichuan2_13b.py</code></pre>
+~/quickstart$ python tutorial/train_baichuan2.py</code></pre>
 </doc-codeblock></div>
 <p>If the training proceeds smoothly, you should see the following logs. By going through this logs, you can verify that the Advanced Parallelism feature, which determines the optimal parallelization settings, is functioning properly. It&#x27;s worth noting that, apart from the single line of AP code we looked at earlier in the PyTorch script, there is no handling for using multiple GPUs simultaneously in other parts of the script.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -346,6 +346,8 @@ Selection (1-13, q, Q): q</code></pre>
 [info] [4/4] Connecting to resources on the server (192.168.110.93:24170)...
 [info] Establishing links to the resources...
 [info] MoAI Accelerator is ready to use.
+[info] Moreh Version: 24.5.0
+[info] Moreh Job ID: 977890
 [info] The number of candidates is 45.
 [info] Parallel Graph Compile start...
 [info] Elapsed Time to compile all candidates = 12043 [ms]
@@ -377,7 +379,7 @@ Selection (1-13, q, Q): q</code></pre>
 </p>
 <p>The throughput displayed during training indicates how many tokens per second are being processed through the PyTorch script.</p>
 <ul>
-<li>When using 8 AMD MI250 GPUs: approximately 191605 tokens/sec</li>
+<li>When using 8 AMD MI250 GPUs: approximately 191,000 tokens/sec</li>
 </ul>
 <p>Approximate training time based on GPU type and quantity is as follows:</p>
 <ul>
@@ -397,8 +399,15 @@ Selection (1-13, q, Q): q</code></pre>
 +-----------------------------------------------------------------------------------------------------+
 |  Device  |        Name         |       Model      |  Memory Usage  |  Total Memory  |  Utilization  |
 +=====================================================================================================+
-|  * 0     |   MoAI Accelerator  |  4xLarge.2048GB  |  191605 MiB    |  2096640 MiB   |  100 %        |
-+-----------------------------------------------------------------------------------------------------+</code></pre>
+|  * 0     |   MoAI Accelerator  |  4xLarge.2048GB  |  1916050 MiB   |  2096640 MiB   |  100 %        |
++-----------------------------------------------------------------------------------------------------+
+
+Processes:
++----------------------------------------------------------------------------------------+
+|  Device  |  Job ID  |    PID    |               Process               |  Memory Usage  |
++========================================================================================+
+|       0  |  977890  |  2219280  |  python tutorial/train_baichuan2.py |  1739561 MiB   |
++----------------------------------------------------------------------------------------+</code></pre>
 </doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">

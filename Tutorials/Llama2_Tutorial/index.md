@@ -1,7 +1,7 @@
 ---
 icon: terminal
 tags: [tutorial, llama2]
-order: 1000
+order: 500
 ---
 
 # Llama2 13B Fine-tuning

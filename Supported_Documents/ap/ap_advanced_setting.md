@@ -3,6 +3,7 @@ icon: terminal
 tags: [guide]
 order: 18
 expanded: false
+visibility: private
 ---
 
 # Advanced Settings for AP

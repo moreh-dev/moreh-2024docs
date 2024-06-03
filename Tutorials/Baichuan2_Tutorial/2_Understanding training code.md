@@ -19,13 +19,16 @@ If you've prepared all the training data, let's now take a look at the contents 
 First, import the necessary modules from the transformers library.
 
 ```python
-from transformers import AutoModelForCausalLM, AdamW, AutoTokenizer
+from transformers import AdamW, AutoTokenizer
+from modeling_baichuan import BaichuanForCausalLM
 ```
 
-Load the model configuration and checkpoint from HuggingFace.
+Load the checkpoint from HuggingFace.
+
+For model optimization, we use the `BaichuanForCausalLM` predefined in the quickstart repository.
 
 ```python
-model = AutoModelForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
+model = BaichuanForCausalLM.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained('baichuan-inc/Baichuan-13B-Base', trust_remote_code=True)
 ```
 

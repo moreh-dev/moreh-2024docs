@@ -172,7 +172,7 @@ The throughput displayed during training indicates how many tokens per second ar
 
 Approximate training time based on GPU type and quantity is as follows:
 
-- When using 16 AMD MI250 GPUs: approximately 50 minutes
+- When using 16 AMD MI250 GPUs: approximately 15 minutes
 
 ## Checking Accelerator Status During Training
 

@@ -80,7 +80,7 @@ $ sudo apt-get install git
 $ git clone https://github.com/moreh-dev/quickstart.git
 $ cd quickstart
 ~/quickstart$ ls tutorial
-...  train_baichuan2_13b.py  ...
+...  train_baichuan2.py  ...
 ```
 
 ## Install Required Python Packages

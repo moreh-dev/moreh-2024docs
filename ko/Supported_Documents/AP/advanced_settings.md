@@ -3,6 +3,7 @@ icon: terminal
 tags: [ap]
 order: 18
 expanded: false
+visibility: private
 ---
 
 # AP 기능 고급 설정

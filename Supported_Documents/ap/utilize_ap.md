@@ -20,7 +20,7 @@ torch.moreh.option.enable_advanced_parallelization()
 ...
 ```
 
-### **Example Usage**
+### Example Usage
 
 If you have an environment with two or more nodes ready, you can now create training code to use the AP feature. In this guide, we'll set up code using the Llama2 model. Note that the Llama2 model requires community license agreement and Hugging Face token information. Please refer to [Llama2 Tutorial 1. Preparing for fine-tuning](https://docs.moreh.io/tutorials/llama2_tutorial/1_prepare_fine-tuning/) to prepare the training code.
 
@@ -52,7 +52,7 @@ The training configuration for testing is as follows. We will proceed with testi
 - Sequence Length: **`1024`**
 - MoAI Accelerator: **`4xLarge`**
 
-### **Enabling the AP Feature**
+### Enabling the AP Feature
 
 At the beginning of the program's main function, there's a line to enable the AP feature. Apply AP and then run the training as shown below.
 
@@ -91,7 +91,7 @@ info] Configuration for parallelism is selected.
 
 As shown, by adding just one line to enable the AP feature, complex distributed parallel processing is executed, and training progresses. Next, we'll explain the scenario users might encounter if they do not use the AP feature.
 
-### **Disabling the AP Feature**
+### Disabling the AP Feature
 
 Let's examine the situation when the AP feature is not used. To verify this, comment out the line that enables the AP feature at the beginning of the Python program's main function.
 

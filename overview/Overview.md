@@ -43,7 +43,7 @@ MoAI Platform supports various AI accelerators, allowing users to execute divers
 The virtualization feature of the MoAI Platform enables thousands of GPUs to be utilized as a singular unit, known as a Single Virtual Device. This allows AI engineers to easily and quickly conduct deep learning training and inference tasks without the complexities associated with multi-GPU and multi-node parallelization. 
 By assuming only one GPU and structuring Python code accordingly, users can perform these tasks effortlessly.
 
-Users can expand or shrink GPU resources as needed, increasing the scalability of the service. With a simple one-line command in the MoAI Platform, GPU resources virtualized into a single virtual device can be easily expanded or contracted.
+Users can expand or shrink GPU resources as needed, increasing the scalability of the service. With a simple one-line command in the MoAI Platform, GPU resources virtualized into a single virtual device can be easily expanded or contracted. 
 \
 &nbsp;
 

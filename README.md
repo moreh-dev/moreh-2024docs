@@ -8,8 +8,6 @@ expanded: true
 
 **MoAI(Moreh AI appliance for AI accelerators)** Platform is a scalable AI platform that allows for easy control of thousands of Graphics Processing Units (GPUs), which are required for developing large-scale deep learning models.
 
-- **Virtual GPU Clusters** - Gain access to virtualized GPU clusters, enabling smooth scalability of your computational resources.
-- **Advanced Parallelism** - Effortlessly use advanced parallelism techniques to optimize model training processes.
 ----
 
 ### Getting Started

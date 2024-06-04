@@ -110,7 +110,7 @@ Now you can see that it has been successfully changed to [!badge variant="second
 
 ## Training Execution
 
-Execute the given **`train_gpt.py`** script.
+Execute the given **`train_llama2.py`** script.
 
 ```bash
 $ cd ~/quickstart

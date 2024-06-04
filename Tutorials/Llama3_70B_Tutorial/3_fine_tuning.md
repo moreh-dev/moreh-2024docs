@@ -22,7 +22,7 @@ Select one of the following flavors to continue:
 - Using 64 AMD MI210 GPUs
 - Using 16 AMD MI300X GPUs
 
-Remember when we checked the MoAI Accelerator in the [1. Llama3 70B Fine-tuning](index.md)? Now let's set up the accelerator needed for learning.
+Remember when we checked the MoAI Accelerator in the [**Llama3 70B Fine-tuning - Getting Started**](index.md)? Now let's set up the accelerator needed for learning.
 
 First, use the **`moreh-smi`** command to check the current MoAI Accelerator in use.
 

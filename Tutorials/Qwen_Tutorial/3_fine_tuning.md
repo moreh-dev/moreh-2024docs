@@ -25,7 +25,7 @@ You can choose one of the following flavors to proceed:
 - AMD MI210 GPU with 32 units.
 - AMD MI300X GPU with 8 units.
 
-**Do you remember checking MoAI Accelerator in the [Mistral Fine-tuning](index.md) document? Now let's set up the accelerator needed for learning.**
+Do you remember checking MoAI Accelerator in the [**Mistral Fine-tuning - Getting Started**](index.md) document? Now let's set up the accelerator needed for learning.
 
 First, we'll use the **`moreh-smi`** command to check the currently used MoAI Accelerator.
 

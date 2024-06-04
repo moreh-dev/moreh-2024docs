@@ -24,7 +24,7 @@ You can choose one of the following flavors to proceed:
 - AMD MI210 GPU with 32 units.
 - AMD MI300X GPU with 8 units.
 
-Remember we checked the MoAI Accelerator in the previous [**Baichuan2 Finetuning**](index.md) step? Now, let's set up the required accelerators for the actual training process.
+Remember we checked the MoAI Accelerator in the previous [**Baichuan2 Finetuning - Getting Started**](index.md) step? Now, let's set up the required accelerators for the actual training process.
 
 First, we'll use the `moreh-smi` command to check the currently used MoAI Accelerator.
 

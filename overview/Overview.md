@@ -27,7 +27,7 @@ To address these challenges, the MoAI Platform offers the following features to 
 
 ---
 
-## 1. Multiple types of GPU Support
+## 1. Support Various Accelerators with Single GPU Abstraction
 
 -![](img_ov/l1.png)
 

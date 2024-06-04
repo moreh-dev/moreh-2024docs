@@ -12,7 +12,7 @@ expanded: true
 
 - [Advanced Parallelization (AP)](https://docs.moreh.io/supported_documents/ap/)
 
-- [LLM Fine-tuning Parameter guide](LLM_param_guide.md)
+- [LLM Fine-tuning Parameter Guide](LLM_param_guide.md)
 
 
 For technical support questions, it is best to report issue and we will investigate right away.

@@ -117,7 +117,7 @@ $ cd ~/quickstart
 
 If the training is running correctly, you will see logs similar to the following. These logs indicate that the Advanced Parallelism feature, which finds the optimal parallelization settings, is functioning correctly. Note that in the PyTorch script we reviewed earlier, no additional handling for using multiple GPUs simultaneously was necessary apart from the single AP code line.
 
-```bash
+```jsx
 ...
 [info] Got DBs from backend for auto config.
 [info] Requesting resources for MoAI Accelerator from the server...

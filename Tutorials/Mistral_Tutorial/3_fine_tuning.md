@@ -125,7 +125,7 @@ $ cd ~/quickstart
 
 If the training proceeds smoothly, you should see the following log. Take note of the sections highlighted in blue, as they indicate that the Advanced Parallelism feature is functioning correctly. It's worth noting that in the PyTorch script we examined earlier, there was no handling for using multiple GPUs simultaneously.
 
-```bash
+```jsx
 ...
 [info] Got DBs from backend for auto config.
 [info] Requesting resources for MoAI Accelerator from the server...

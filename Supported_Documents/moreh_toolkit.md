@@ -147,7 +147,7 @@ $ moreh-smi
 
 This time, let's try to remove a specific accelerator corresponding to the specified device ID with the command `moreh-smi device --rm {Device_ID}`.
 
-```bash
+```json
 $ moreh-smi --rm 1
 +---------------------------------------------------+
 |  Device  |        Name         |       Model      |
@@ -164,7 +164,7 @@ The MoAI Accelerator with Device ID 1, [!badge variant="secondary" text=8xLarge.
 
 `moreh-smi` provides various other options. You can use the `--help` option to see what options are available.
 
-```bash
+```
 $ moreh-smi --help
 
 Usage: moreh-smi [-h | --help] [-r | --reset] [-s | --server-version] [-v | --version] [-t | --token] [-i | --idx]

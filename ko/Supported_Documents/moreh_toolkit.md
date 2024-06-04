@@ -169,7 +169,7 @@ Remove device success.
 
 `moreh-smi` 는 이외에도 다양한 다양한 옵션을 제공합니다. 다음과 같이 `--help` 옵션을 활용하면 어떠한 옵션이 제공되는지 확인할 수 있습니다.
 
-```bash
+```
 $ moreh-smi --help
 
 Usage: moreh-smi [-h | --help] [-r | --reset] [-s | --server-version] [-v | --version] [-t | --token] [-i | --idx]

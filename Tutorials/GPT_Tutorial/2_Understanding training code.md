@@ -3,7 +3,7 @@ icon: terminal
 tags: [tutorial, gpt]
 order: 40
 ---
-# 2. Understanding training code
+# 2. Understanding Training Code
 
 Once you have prepared all the training data, let's take a look at the contents of the **`train_gpt.py`** script to execute the actual fine-tuning process. **In this step, you'll notice that the MoAI Platform offers full compatibility with PyTorch, meaning that the training code is 100% identical to typical PyTorch code for Nvidia GPUs.** **Furthermore, you'll see how efficiently the MoAI Platform implements complex parallelization techniques beyond what's traditionally possible.**
 

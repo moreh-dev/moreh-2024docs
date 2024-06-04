@@ -3,7 +3,7 @@ icon: terminal
 tags: [tutorial, mistral]
 order: 40
 ---
-# 2. Understanding training code
+# 2. Understanding Training Code
 
 Once you have prepared all the training data, let's delve into the contents of the **`train_mistral.py`** script to execute the actual fine-tuning process. In this step, you will confirm MoAI Platform's full compatibility with PyTorch, ensuring that the training code is identical to general PyTorch code for Nvidia GPUs. Moreover, you'll explore how efficiently MoAI Platform implements complex parallelization techniques beyond the conventional scope.
 

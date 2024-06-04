@@ -4,7 +4,7 @@ tags: [tutorial, baichuan]
 order: 40
 ---
 
-# 2. Understanding training code
+# 2. Understanding Training Code
 
 
 If you've prepared all the training data, let's now take a look at the contents of `train_baichuan2_13b.py` script for the actual fine-tuning process. **In this step, you'll notice that MoAI Platform ensures full compatibility with PyTorch, confirming that the training code is identical to the typical PyTorch code for NVIDIA GPUs.** Additionally, you'll explore how efficiently MoAI Platform implements complex parallelization techniques beyond this.

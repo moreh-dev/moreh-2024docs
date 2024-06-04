@@ -4,7 +4,7 @@ tags: [tutorial, qwen]
 order: 40
 ---
 
-# 2. Understanding training code
+# 2. Understanding Training Code
 
 If you've prepared all the training data, let's now take a look at the **`train_qwen.py`** script to actually run the fine-tuning process. This script is a standard PyTorch code that executes fine-tuning based on the implementation of the Qwen model available in the Hugging Face Transformers library.
 

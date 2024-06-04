@@ -3,7 +3,7 @@ icon: terminal
 tags:  [tutorial, llama2]
 order: 40
 ---
-# 2. Understanding training code
+# 2. Understanding Training Code
 
 If you've got all your training data ready, let's dive into running the actual fine-tuning process using the **`train_llama2.py`** script. This script is just standard PyTorch code, performing fine-tuning based on the Llama2 13B model from the Hugging Face Transformers library.
 

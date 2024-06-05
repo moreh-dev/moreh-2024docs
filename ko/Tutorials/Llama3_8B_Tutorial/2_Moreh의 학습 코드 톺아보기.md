@@ -7,7 +7,7 @@ order: 40
 
 학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_llama3.py` 스크립트의 내용에 대해 살펴 보겠습니다. 이 스크립트는 통상적인 PyTorch 코드로서 Hugging Face Transformers 라이브러리에 있는 Llama3 8B 모델 구현을 기반으로 fine tuning 작업을 실행합니다.
 
-**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Llama2 13B 모델을 다른 방식으로 fine-tuning 하는 것도 얼마든지 가능합니다. MoAI Platform은 PyTorch와의 완전한 호환성을 제공하기 때문입니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드([LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md))를 참고하십시오.
+**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Llama2 13B 모델을 다른 방식으로 fine-tuning 하는 것도 얼마든지 가능합니다. MoAI Platform은 PyTorch와의 완전한 호환성을 제공하기 때문입니다. 필요하시다면 Moreh에서 제공하는 [**LLM Fine-tuning 파라미터 가이드**](/Supported_Documents/LLM_param_guide.md)를 참고하십시오.
 
 
 ## Training Code

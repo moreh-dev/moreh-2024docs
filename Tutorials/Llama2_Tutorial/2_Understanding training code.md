@@ -7,7 +7,7 @@ order: 40
 
 If you've got all your training data ready, let's dive into running the actual fine-tuning process using the **`train_llama2.py`** script. This script is just standard PyTorch code, performing fine-tuning based on the Llama2 13B model from the Hugging Face Transformers library.
 
-**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md) provided by Moreh.
+**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Llama2 13B model or any other publicly available model in a different manner. If needed, refer to the [**LLM Fine-tuning Parameter Guide**](/Supported_Documents/LLM_param_guide.md).
 
 ## Training Code
 

@@ -7,7 +7,7 @@ order: 40
 
 Once you have prepared all the training data, let's take a look at the contents of the **`train_gpt.py`** script to execute the actual fine-tuning process. **In this step, you'll notice that the MoAI Platform offers full compatibility with PyTorch, meaning that the training code is 100% identical to typical PyTorch code for Nvidia GPUs.** **Furthermore, you'll see how efficiently the MoAI Platform implements complex parallelization techniques beyond what's traditionally possible.**
 
-**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Cerebras-GPT-13B model or any other publicly available model in a different manner. If needed, refer to the MoAI Platform application guide [LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md).
+**We highly recommend proceeding with the tutorial using the provided script as is.** Afterward, feel free to customize the script to fine-tune the Cerebras-GPT-13B model or any other publicly available model in a different manner. If needed, refer to the [LLM Fine-tuning Parameter Guide](/Supported_Documents/LLM_param_guide.md).
 
 
 ## Training Code

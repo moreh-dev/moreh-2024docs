@@ -7,7 +7,7 @@ order: 40
 
 학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 `train_gpt.py` 스크립트의 내용을 살펴 보겠습니다. **이번 단계에서는 MoAI Platform은 pytorch와의 완전한 호환성으로 학습 코드가 일반적인 nvidia gpu를 위한 pytorch 코드와 100% 동일하다는 것을 확인하실 수 있습니다.** **또한 이를 넘어서 기존의 복잡한 병렬화 기법들을 MoAI Platform에서는 얼마나 효율적으로 구현할 수 있는지도 확인하실 수 있습니다.**
 
-**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Cerebras-GPT-13B 모델, 혹은 다른 공개된 모델을 다른 방식으로 fine-tuning하는 것도 얼마든지 가능합니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드(**[LLM Fine-tuning 파라미터 가이드](/Supported_Documents/LLM_param_guide.md)**)를 참고하십시오.
+**우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.** 이후 스크립트를 원하는 대로 수정하셔서 Cerebras-GPT-13B 모델, 혹은 다른 공개된 모델을 다른 방식으로 fine-tuning하는 것도 얼마든지 가능합니다. 필요하시다면 Moreh에서 제공하는 [**LLM Fine-tuning 파라미터 가이드**](/Supported_Documents/LLM_param_guide.md)를 참고하십시오.
 
 ## Training Code
 

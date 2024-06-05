@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770801226217">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770867191808">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,13 +32,13 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../../static/favicon.png" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.5.0.770801226217" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770867191808" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770801226217" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770867191808" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770801226217" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770801226217" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770801226217" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/search.js?v=3.5.0.770867191808" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770867191808" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.770867191808" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -206,7 +206,7 @@
     </h1>
 </doc-anchor-target>
 <p>학습 데이터를 모두 준비하셨다면 다음으로는 실제 fine-tuning 과정을 실행할 <code v-pre>train_gpt.py</code> 스크립트의 내용을 살펴 보겠습니다. <strong>이번 단계에서는 MoAI Platform은 pytorch와의 완전한 호환성으로 학습 코드가 일반적인 nvidia gpu를 위한 pytorch 코드와 100% 동일하다는 것을 확인하실 수 있습니다.</strong> <strong>또한 이를 넘어서 기존의 복잡한 병렬화 기법들을 MoAI Platform에서는 얼마나 효율적으로 구현할 수 있는지도 확인하실 수 있습니다.</strong></p>
-<p><strong>우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.</strong> 이후 스크립트를 원하는 대로 수정하셔서 Cerebras-GPT-13B 모델, 혹은 다른 공개된 모델을 다른 방식으로 fine-tuning하는 것도 얼마든지 가능합니다. 필요하시다면 Moreh에서 제공하는 MoAI Platform 응용 가이드(<strong><a href="../../../supported_documents/llm_param_guide/">LLM Fine-tuning 파라미터 가이드</a></strong>)를 참고하십시오.</p>
+<p><strong>우선 제공된 스크립트를 그대로 사용하여 튜토리얼을 끝까지 진행해 보시기를 권장합니다.</strong> 이후 스크립트를 원하는 대로 수정하셔서 Cerebras-GPT-13B 모델, 혹은 다른 공개된 모델을 다른 방식으로 fine-tuning하는 것도 얼마든지 가능합니다. 필요하시다면 Moreh에서 제공하는 <a href="../../../supported_documents/llm_param_guide/"><strong>LLM Fine-tuning 파라미터 가이드</strong></a>를 참고하십시오.</p>
 <doc-anchor-target id="training-code">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#training-code">#</doc-anchor-trigger>

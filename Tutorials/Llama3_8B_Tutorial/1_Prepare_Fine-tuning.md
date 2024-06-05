@@ -1,6 +1,6 @@
 ---
 icon: terminal
-tags:  [tutorial, llama3]
+tags:  [tutorial, llama3_8b]
 order: 40
 ---
 

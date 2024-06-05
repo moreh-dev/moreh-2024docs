@@ -31,7 +31,3 @@ search:
 
 locale: ko
 
-integrations:
-  googleAnalytics:
-    id: G-ZN33DH2CKW
-

@@ -54,7 +54,7 @@ torch                     1.13.1+cu116.moreh24.5.0          pypi_0    pypi
 
 다음과 같이 실행하여 torch 패키지가 정상적으로 import되고 MoAI Accelerator가 인식되는지 확인합니다.
 
-```bash
+```s
 $ python
 >>> import torch
 ...

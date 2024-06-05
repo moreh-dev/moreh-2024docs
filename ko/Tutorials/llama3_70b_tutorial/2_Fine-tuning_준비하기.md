@@ -19,7 +19,7 @@ SSH로 접속한 다음 `moreh-smi` 명령을 실행하여 MoAI Accelerator가 �
 
 이 튜토리얼에서 안내할 Llama3 모델과 같은 sLLM을 학습하기 위해서는 적절한 크기의 MoAI Accelerator를 선택해야 합니다. 먼저 `moreh-smi` 명령어를 이용해 현재 사용중인 MoAI Accelerator를 확인합니다. 
 
-수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 “3. 학습 실행하기”에서 제공하겠습니다.  
+수행할 학습에 필요한 구체적인 MoAI Accelerator 설정에 대한 설명은 [3. 학습 실행하기](3_학습_실행하기.md)에서 제공하겠습니다.  
 
 ```bash
 $ moreh-smi

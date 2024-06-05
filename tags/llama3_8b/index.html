@@ -9,24 +9,21 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Automatic Parallelization</title>
-    <meta name="title" content="Automatic Parallelization">
-    <meta name="description" content="On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
+    <title>llama3_8b</title>
+    <meta name="title" content="llama3_8b">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.moreh.io/moai_features/parallelization/">
+    <link rel="canonical" href="https://docs.moreh.io/tags/llama3_8b/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.moreh.io/moai_features/parallelization/">
-    <meta property="og:title" content="Automatic Parallelization">
-    <meta property="og:description" content="On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
+    <meta property="og:url" content="https://docs.moreh.io/tags/llama3_8b/">
+    <meta property="og:title" content="llama3_8b">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.moreh.io/moai_features/parallelization/">
-    <meta property="twitter:title" content="Automatic Parallelization">
-    <meta property="twitter:description" content="On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU.">
+    <meta property="twitter:url" content="https://docs.moreh.io/tags/llama3_8b/">
+    <meta property="twitter:title" content="llama3_8b">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -37,7 +34,6 @@
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/search.js?v=3.5.0.770867611133" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770867611133" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770867611133" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,57 +170,81 @@
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../moai_features/" class="pr-4">
-                                                Mo​AI Platform Features
+                                            <a href="../../tags/" class="pr-4">
+                                                Tags
                                             </a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../moai_features/parallelization/" class="pr-4">
-                                                Automatic Parallelization
+                                            <a href="../../tags/llama3_8b/" class="pr-4">
+                                                llama​3_​8​b
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="automatic-parallelization" class="break-words">
+<doc-anchor-target id="tag-llama3-8b" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-parallelization">#</doc-anchor-trigger>
-        <span>Automatic Parallelization</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tag-llama3-8b">#</doc-anchor-trigger>
+        <span>Tag: llama3_8b</span>
     </h1>
 </doc-anchor-target>
-<p>On the MoAI Platform, users interact with the MoAI Accelerator, which is presented as a single virtualized GPU. This means users can write code assuming the use of a single GPU without needing to worry about parallelization. But how does the MoAI Platform handle multiple GPUs?</p>
-<p><strong>The MoAI Platform automatically optimizes and parallelizes based on the number of GPUs in use.</strong></p>
-<p>For instance, if you start training with an accelerator flavor that uses 8 GPUs, the MoAI Platform automatically divides the total batch size into 8 parts, distributing them across each GPU. Let&#x27;s take an example of fine-tuning the Llama3-8b model. If you select an accelerator flavor with 4 GPUs and set a batch size of 16, the platform automatically assigns 4 batches per GPU, processing approximately 125,000 tokens per second.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 16, GPU 4
-[Step 4/17944] | Loss: 2.03125 | Duration: 1.27 | Throughput: 12882.87 tokens/sec
-[Step 6/17944] | Loss: 2.03125 | Duration: 1.22 | Throughput: 13393.38 tokens/sec
-[Step 8/17944] | Loss: 2.109375 | Duration: 1.31 | Throughput: 12492.66 tokens/sec
-[Step 10/17944] | Loss: 2.015625 | Duration: 1.24 | Throughput: 13201.98 tokens/sec</code></pre>
-</doc-codeblock></div>
-<p>For faster and more efficient training, you can select an accelerator flavor with more GPUs and increase the batch size. If you choose an accelerator flavor with 16 GPUs and set the batch size to 64, the number of tokens processed per second can increase fourfold compared to the previous setup.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 64, GPU 16
-[Step 4/4486] | Loss: 2.125 | Duration: 1.42 | Throughput: 46148.86 tokens/sec
-[Step 6/4486] | Loss: 2.078125 | Duration: 1.33 | Throughput: 49221.88 tokens/sec
-[Step 8/4486] | Loss: 2.03125 | Duration: 1.33 | Throughput: 49392.99 tokens/sec
-[Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec</code></pre>
-</doc-codeblock></div>
-<p>But what if you want to use an even larger batch size? Without additional code modifications, a typical GPU cluster might run into Out of Memory (OOM) errors. However, the MoAI Platform can automatically parallelize the model to continue training.</p>
-<p>When you choose an accelerator flavor with 16 GPUs and set the batch size to 512, the platform applies model parallelization and data parallelization simultaneously. This allows training with a larger batch size using the same number of GPUs.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># Llama3-8b-base fine-tuning, batch-size 512, gpu 16
-[Step 4/560] | Loss: 1.953125 | Duration: 24.00 | Throughput: 21844.08 tokens/sec
-[Step 6/560] | Loss: 1.8671875 | Duration: 24.63 | Throughput: 21283.67 tokens/sec
-[Step 8/560] | Loss: 2.0 | Duration: 24.41 | Throughput: 21475.45 tokens/sec
-[Step 10/560] | Loss: 1.9609375 | Duration: 24.26 | Throughput: 21609.36 tokens/sec
-[Step 12/560] | Loss: 1.90625 | Duration: 24.43 | Throughput: 21463.95 tokens/sec</code></pre>
-</doc-codeblock></div>
-<p>Additionally, even large models like the 70B model can be automatically parallelized without any extra work, making training straightforward. The MoAI Platform provides automatic optimization and parallelization based on the model and batch size, <strong>enabling convenient and efficient use of multiple GPUs.</strong></p>
+<p>See all <a href="../">tags</a>.</p>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Llama3 8B Fine-tuning</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">This tutorial introduces an example of fine-tuning the open-source Llama3-8B model on the MoAI Platform.</p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/1_prepare_fine-tuning/">
+    <div class="relative shrink-0 bg-gray-300 md:w-5/12 pb-9/16 md:pb-0 dark:bg-dark-450">
+        <img class="absolute object-cover w-full h-full" src="../../tutorials/llama3_8b_tutorial/alert.png">
+    </div>
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials &#8226; Llama3 8B Fine-tuning</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">1. Preparing for Fine-tuning</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Setting up the PyTorch execution environment on the MoAI Platform is similar to setting it up on a typical GPU server.</p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/2_understanding-training-code/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials &#8226; Llama3 8B Fine-tuning</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">2. Understanding Training Code</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Once you have prepared all the training data, let's take a look at the contents of the <strong><code v-pre>train_llama3.py</code></strong></p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/3_fine_tuning/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials &#8226; Llama3 8B Fine-tuning</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">3. Model Fine-tuning</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Now, we will actually execute the fine-tuning process.</p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/4_checking_results/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials &#8226; Llama3 8B Fine-tuning</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">4. Checking Training Results</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">When you execute the <strong><code v-pre>train_llama3.py</code></strong> script as in the previous section, the resulting model will be saved in the </p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/5_changing-the-number-of-gpus/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials &#8226; Llama3 8B Fine-tuning</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">5. Changing the Number of GPUs</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Let's rerun the fine-tuning task with a different number of GPUs.</p></div>
+    </div>
+</a>
+<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../tutorials/llama3_8b_tutorial/6_conclusion/">
+    <div class="p-6">
+        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Fine-tuning Tutorials &#8226; Llama3 8B Fine-tuning</div>
+        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">6. Conclusion</div>
+        <div class="line-clamp-3"><p class="hidden mt-2 md:block">From this tutorial, we have seen how to fine-tune Llama3 8B on the MoAI Platform.</p></div>
+    </div>
+</a>
 
                                 
                                 <!-- Required only on API pages -->
@@ -232,27 +252,6 @@
                             </div>
                             <footer class="clear-both">
                             
-                                <nav class="flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../moai_features/virtualization/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">GPU Virtualization: Mo​AI Accelerator</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tutorials/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Fine-​tuning Tutorials</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
                             </footer>
                         </main>
                 
@@ -291,6 +290,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Automatic Parallelization", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "llama3_8b", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

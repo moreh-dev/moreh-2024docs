@@ -37,6 +37,8 @@ Run the code below.
 Upon inspecting the output, you can verify that the model has generated appropriate responses to the prompts.
 
 ```
+
+```sh
 ### Input
 input_text = f"[INST] I can no longer afford order 11234, cancel it [/INST]"
 

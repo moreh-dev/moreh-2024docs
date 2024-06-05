@@ -33,3 +33,8 @@ locale: eng
 
 breadcrumb:
   enabled: true 
+
+
+integrations:
+  googleAnalytics:
+    id: G-ZN33DH2CKW

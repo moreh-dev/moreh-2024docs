@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771910474175">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771919445848">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -36,12 +36,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.5.0.771910474175" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.771919445848" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.771910474175" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.771919445848" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/search.js?v=3.5.0.771910474175" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.771910474175" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/search.js?v=3.5.0.771919445848" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.771919445848" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -212,12 +212,6 @@
 </p>
 <p>As deep learning models advance, they become increasingly intricate, comprising numerous layers with a vast number of parameters. Consequently, large-scale computing resources have become essential elements of AI infrastructure. Utilizing these resources to develop models entails optimizing the training process, including parallelizing the model and manually configuring the cluster environment. Effectively managing GPU and node resources for optimal training demands considerable time and effort from developers.</p>
 <p>To address these challenges, the MoAI Platform offers the following features to facilitate efficient infrastructure in the era of large-scale AI:</p>
-<ol>
-<li><doc-anchor-trigger to="#1-various-accelerators-multi-gpu-support"><strong>Support Various Accelerators with Single GPU Abstraction</strong></doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#2-gpu-virtualization"><strong>GPU Virtualization</strong></doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#3-dynamic-gpu-allocation"><strong>Dynamic GPU Allocation</strong></doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#4-ai-compiler-automatic-parallelization"><strong>AI Compiler Automatic Parallelization</strong></doc-anchor-trigger></li>
-</ol>
 <hr>
 <doc-anchor-target id="1-support-various-accelerators-with-single-gpu-abstraction">
     <h2>
@@ -240,7 +234,7 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="img_ov/v_3.png" alt="">
+    <img src="/img_ov/v_3.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -260,9 +254,10 @@ By assuming only one GPU and structuring Python code accordingly, users can perf
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>In public cloud, billing starts when VM instances are created, and changing GPUs requires recreating the instances. Furthermore, once selected, it can be challenging to flexibly change the chosen virtual machine, which can hinder optimization according to the user&#x27;s needs.</p>
-<p>The MoAI Platform is designed to charge fees on a per-minute basis only when AI accelerators are actually in operation, allowing for a complete pay-as-you-go system. This design enables significant cost savings compared to existing cloud services by freeing GPUs from dependency on specific virtual machines (VMs) according to user usage patterns.
-<br />
+<p>In traditional public cloud, billing starts when VM instances are created, and changing GPUs requires recreating the instances. Furthermore, once selected, it can be challenging to flexibly change the chosen virtual machine, which can hinder optimization according to the user&#x27;s needs.</p>
+<p>The MoAI Platform is designed to charge fees on a per-minute basis only when AI accelerators are actually in operation, allowing for a complete pay-as-you-go system.
+Unlike traditional cloud services, where GPUs are tied to specific VMs and may remain underutilized, the MoAI Platform assigns GPUs only when they are needed for tasks, ensuring higher overall system utilization. This design not only enables significant cost savings compared to existing cloud services but also maximizes the efficiency of GPU usage by freeing them from dependency on specific virtual machines according to user usage patterns.</p>
+<p><br />
  </p>
 <doc-anchor-target id="4-ai-compiler-automatic-parallelization">
     <h2>

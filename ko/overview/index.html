@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ko">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771910479145">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771919450691">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -37,12 +37,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.5.0.771910479145" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.771919450691" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.771910479145" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.771919450691" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/search.js?v=3.5.0.771910479145" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.771910479145" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/search.js?v=3.5.0.771919450691" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.771919450691" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -262,8 +262,9 @@ MoAI Platform은 이러한 문제를 해결하기 위해 다음과 같은 기능
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>Public Cloud에서는 VM 인스턴스 생성 시 과금이 시작되며, GPU를 변경하려면 인스턴스를 다시 생성해야 합니다. 또한 선택한 가상 머신이 한 번 확정되면 학습에 따라 유연하게 변경하기 어려운 경우도 많습니다.</p>
-<p>MoAI Platform은 <strong>실제로 연산중일 때만 AI 가속기 사양에 따라 분 단위로 요금이 부과</strong>할 수 있는 설계이므로, 유저의 GPU 실사용시에만 과금하는 완전한 종량제 방식이 가능합니다. 이용자의 사용 패턴에 맞추어 기존 클라우드 서비스의 GPU를 특정 가상머신(VM)에 종속시키는 Passthrough 방식 대비 대규모의 비용 절감이 가능합니다.</p>
+<p>Public Cloud에서는 가상 머신(VM) 인스턴스가 생성될 때부터 과금이 시작되며, GPU를 변경하려면 인스턴스를 다시 생성해야 합니다. 또한 일단 가상 머신이 한 번 선택되면 학습에 따라 유연하게 변경하기 어려운 경우도 많습니다.</p>
+<p>MoAI Platform은 <strong>AI 가속기가 실제로 작동하는 동안에만 분 단위로 요금을 부과</strong>하여, 완전한 종량제 시스템을 제공합니다.
+따라서 전통적인 클라우드 서비스에서는 GPU가 특정 VM에 묶여 있어 유휴 상태로 남아 있을 수 있지만, MoAI Platform은 작업이 필요할 때만 GPU를 할당하여 전체 시스템 유틸리티를 높입니다. 이 설계는 기존 클라우드 서비스에 비해 상당한 비용 절감을 가능하게 할 뿐만 아니라, 사용자 이용 패턴에 따라 GPU를 특정 가상 머신에 종속시키지 않아 GPU 사용의 효율성을 극대화합니다.</p>
 <doc-anchor-target id="4-ai-compiler-자동-병렬화">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#4-ai-compiler-자동-병렬화">#</doc-anchor-trigger>

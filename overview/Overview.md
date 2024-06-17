@@ -6,6 +6,7 @@ outbound:
   enabled: false
 ---
 
+
 # Overview
 
 ## What is MoAI Platform?
@@ -20,10 +21,6 @@ As deep learning models advance, they become increasingly intricate, comprising 
 
 To address these challenges, the MoAI Platform offers the following features to facilitate efficient infrastructure in the era of large-scale AI:
 
-1. [**Support Various Accelerators with Single GPU Abstraction**](#1-various-accelerators-multi-gpu-support)
-2. [**GPU Virtualization**](#2-gpu-virtualization)
-3. [**Dynamic GPU Allocation**](#3-dynamic-gpu-allocation)
-4. [**AI Compiler Automatic Parallelization**](#4-ai-compiler-automatic-parallelization)
 
 ---
 
@@ -38,7 +35,7 @@ MoAI Platform supports various AI accelerators, allowing users to execute divers
 
 ## 2. GPU Virtualization
 
-![](img_ov/v_3.png)
+![](/img_ov/v_3.png)
 
 The virtualization feature of the MoAI Platform enables thousands of GPUs to be utilized as a singular unit, known as a Single Virtual Device. This allows AI engineers to easily and quickly conduct deep learning training and inference tasks without the complexities associated with multi-GPU and multi-node parallelization. 
 By assuming only one GPU and structuring Python code accordingly, users can perform these tasks effortlessly.
@@ -51,9 +48,11 @@ Users can expand or shrink GPU resources as needed, increasing the scalability o
 
 ![](img_ov/d_3.png)
 
-In public cloud, billing starts when VM instances are created, and changing GPUs requires recreating the instances. Furthermore, once selected, it can be challenging to flexibly change the chosen virtual machine, which can hinder optimization according to the user's needs.
+In traditional public cloud, billing starts when VM instances are created, and changing GPUs requires recreating the instances. Furthermore, once selected, it can be challenging to flexibly change the chosen virtual machine, which can hinder optimization according to the user's needs.
 
-The MoAI Platform is designed to charge fees on a per-minute basis only when AI accelerators are actually in operation, allowing for a complete pay-as-you-go system. This design enables significant cost savings compared to existing cloud services by freeing GPUs from dependency on specific virtual machines (VMs) according to user usage patterns.
+The MoAI Platform is designed to charge fees on a per-minute basis only when AI accelerators are actually in operation, allowing for a complete pay-as-you-go system.
+Unlike traditional cloud services, where GPUs are tied to specific VMs and may remain underutilized, the MoAI Platform assigns GPUs only when they are needed for tasks, ensuring higher overall system utilization. This design not only enables significant cost savings compared to existing cloud services but also maximizes the efficiency of GPU usage by freeing them from dependency on specific virtual machines according to user usage patterns.
+
 \
 &nbsp;
 

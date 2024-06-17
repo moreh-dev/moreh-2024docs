@@ -30,7 +30,6 @@ For faster and more efficient training, you can select an accelerator flavor wit
 [Step 10/4486] | Loss: 2.046875 | Duration: 1.24 | Throughput: 52744.78 tokens/sec
 ```
 
-
 But what if you want to use an even larger batch size? Without additional code modifications, a typical GPU cluster might run into Out of Memory (OOM) errors. However, the MoAI Platform can automatically parallelize the model to continue training.
 
 When you choose an accelerator flavor with 16 GPUs and set the batch size to 512, the platform applies model parallelization and data parallelization simultaneously. This allows training with a larger batch size using the same number of GPUs.
@@ -43,6 +42,5 @@ When you choose an accelerator flavor with 16 GPUs and set the batch size to 512
 [Step 10/560] | Loss: 1.9609375 | Duration: 24.26 | Throughput: 21609.36 tokens/sec
 [Step 12/560] | Loss: 1.90625 | Duration: 24.43 | Throughput: 21463.95 tokens/sec
 ```
-
 
 Additionally, even large models like the 70B model can be automatically parallelized without any extra work, making training straightforward. The MoAI Platform provides automatic optimization and parallelization based on the model and batch size, **enabling convenient and efficient use of multiple GPUs.**

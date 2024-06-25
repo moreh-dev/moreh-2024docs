@@ -23,7 +23,7 @@ Please note that the names specified for MoAI Accelerators may vary depending on
 | Llama2 13B | 24.5.0 | 2xlarge | True | 128 | 1024 | 699,751 MiB | 560m |
 | Llama2 13B | 24.5.0 | 4xlarge | True | 256 | 1024 | 1,121,814 MiB | 249m |
 | Llama2 13B | 24.5.0 | 8xlarge | True | 512 | 1024 | 1,853,432 MiB | 144m |
-| Mistral 7B | 24.5.0 | 2xlarge | True | 256 | 1024 | 762652 MiB | 19m |
+| Mistral 7B | 24.5.0 | 2xlarge | True | 256 | 1024 | 762,652 MiB | 19m |
 | Mistral 7B | 24.5.0 | 4xlarge | True | 512 | 1024 | 1,147,841 MiB | 15m |
 | Mistral 7B | 24.5.0 | 8xlarge | True | 1024 | 1024 | 1,112,135 MiB | 16m |
 | Qwen1.5 7B | 24.5.0 | 2xlarge | True | 128 | 1024 | 758,555 MiB | 30m |
